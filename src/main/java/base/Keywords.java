@@ -13,6 +13,7 @@ import xpath.XPathManager;
 public class Keywords {
 
     private static Logger log=Logger.getLogger(Keywords.class);
+
     public static AppiumDriver<WebElement> driver;
     public static WebDriverWait wait;
     public static XPathManager xpathOf=new XPathManager();

@@ -60,7 +60,7 @@ public class RunManager
         try {
             in=new FileInputStream(runHistory);
             prop.load(in);
-            out=new FileOutputStream(runHistory);
+            out=new FileOutputStream(runHistory,true);
             int runID=Integer.parseInt(prop.getProperty("Run").trim())+1;
             prop.replace("Run",Integer.toString(runID));
             prop.store(out,"lastRunID updated");
