@@ -19,7 +19,11 @@ public class PageManageRecipient extends Keywords
     private String keyBtnBack="Getgo.ManageRecipient.BtnBack.XPATH";
 
     private String newlyAddedRecipient= Test.faker.name().firstName()+" "+ Test.faker.name().lastName();
-    private String newlyAddedRecipientCard=String.valueOf(Test.faker.number().randomNumber(16,true));
+    private String newlyAddedRecipientCard=
+
+            String.valueOf(Test.faker.number().randomNumber(3,true))+
+            String.valueOf(Test.faker.number().randomNumber(10,true))+
+            String.valueOf(Test.faker.number().randomNumber(3,true));
 
     public void addNewRecipient() throws ApplicationException {
         click.elementBy(keyBtnAddNewRecipient);
@@ -34,7 +38,7 @@ public class PageManageRecipient extends Keywords
         WebElement parentElement;
         if(Test.attributes.get(Keys.OS).equalsIgnoreCase(OS.ANDROID))
         {
-            parentElement=get.elementBy(By.xpath("//android.widget.TextView[@text='"+recipientCard+"']/parent::*")).get(0);
+            parentElement=get.elementBy(By.xpath("//android.widget.TextView[@text='"+recipientCard+"']/parent::*"));
             parentElement.findElements(By.xpath("//"+ ObjectClass.AndroidImageButton)).get(0).click();
         }else if(Test.attributes.get(Keys.OS).equalsIgnoreCase(OS.iOS))
         {

@@ -1,0 +1,10 @@
+2018-07-16 12:53:45,292  INFO [main] RunManager:23 - Hey! TG2259, Logging everything from here ....
+2018-07-16 12:53:45,296  INFO [main] RunManager:24 - Run ID is --> Run-22
+2018-07-16 12:53:45,544  INFO [main] StepsBase:16 - Executing S C E N A R I O : As a tester, I want to add new recipients and tag some of them as favorites so that I can keep a list of recipients (From Card transfer page)
+2018-07-16 12:53:47,398 ERROR [main] StepsBase:23 - S C E N A R I O    F A I L E D !!!!!
+2018-07-16 12:53:47,398  INFO [main] Keywords:48 - Application closed
+2018-07-16 12:53:47,399  INFO [main] StepsBase:16 - Executing S C E N A R I O : As a tester, I want to add new recipients and tag some of them as favorites so that I can keep a list of recipients (From Beneficiaries page)
+2018-07-16 12:53:55,280 ERROR [main] StepsBase:23 - S C E N A R I O    F A I L E D !!!!!
+2018-07-16 12:53:55,280  INFO [main] Keywords:48 - Application closed
+2018-07-16 12:53:55,281 ERROR [main] Test:52 - Failed to generate report 
+java.lang.NullPointerException

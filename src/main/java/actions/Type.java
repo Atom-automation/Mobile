@@ -12,39 +12,35 @@ public class Type extends Keywords{
 
     public void data(String locatorKey,String value) throws ApplicationException {
         log.info("Type the value ["+value+"] into element ["+locatorKey+"]");
-        MobileElement ele= (MobileElement) get.elementBy(locatorKey).get(0);
-        ele.setValue(value);
+        get.elementBy(locatorKey).sendKeys(value);
         keyboard.hideIOS();
         log.info("Type Successful!");
     }
 
     public void sensitiveData(String locatorKey,String value) throws ApplicationException {
         log.info("Type the value ["+value.substring(0,2)+"*****] into element ["+locatorKey+"]");
-        MobileElement ele= (MobileElement) get.elementBy(locatorKey).get(0);
-        ele.setValue(value);
+        get.elementBy(locatorKey).sendKeys(value);
         keyboard.hideIOS();
         log.info("Type Successful!");
     }
 
     public void data(By locator, String value) throws ApplicationException {
         log.info("Type the value ["+value+"] into element ["+locator+"]");
-        MobileElement ele= (MobileElement) get.elementBy(locator).get(0);
-        ele.setValue(value);
+        get.elementBy(locator).sendKeys(value);
         keyboard.hideIOS();
         log.info("Type Successful!");
     }
 
     public void sensitiveData(By locator,String value) throws ApplicationException {
         log.info("Type the value ["+value.substring(0,2)+"*****] into element ["+locator+"]");
-        MobileElement ele= (MobileElement) get.elementBy(locator).get(0);
-        ele.setValue(value);
+        get.elementBy(locator).sendKeys(value);
         keyboard.hideIOS();
         log.info("Type Successful!");
     }
 
     public void data(String locatorKey,String value,boolean hideKeyboard) throws ApplicationException {
         log.info("Type the value ["+value+"] into element ["+locatorKey+"]");
-        get.elementBy(locatorKey).get(0).sendKeys(value.trim());
+        get.elementBy(locatorKey).sendKeys(value);
         if(hideKeyboard){
             keyboard.hide();
         }
@@ -53,7 +49,7 @@ public class Type extends Keywords{
 
     public void sensitiveData(String locatorKey,String value,boolean hideKeyboard) throws ApplicationException {
         log.info("Type the value ["+value.substring(0,2)+"*****] into element ["+locatorKey+"]");
-        get.elementBy(locatorKey).get(0).sendKeys(value.trim());
+        get.elementBy(locatorKey).sendKeys(value);
         if(hideKeyboard){
             keyboard.hide();
         }
@@ -62,7 +58,7 @@ public class Type extends Keywords{
 
     public void data(By locator, String value,boolean hideKeyboard) throws ApplicationException {
         log.info("Type the value ["+value+"] into element ["+locator+"]");
-        get.elementBy(locator).get(0).sendKeys(value.trim());
+        get.elementBy(locator).sendKeys(value);
         if(hideKeyboard){
             keyboard.hide();
         }
@@ -71,7 +67,7 @@ public class Type extends Keywords{
 
     public void sensitiveData(By locator,String value,boolean hideKeyboard) throws ApplicationException {
         log.info("Type the value ["+value.substring(0,2)+"*****] into element ["+locator+"]");
-        get.elementBy(locator).get(0).sendKeys(value.trim());
+        get.elementBy(locator).sendKeys(value);
         if(hideKeyboard){
             keyboard.hide();
         }

@@ -26,6 +26,7 @@ public abstract class DriverManager {
             capabilities.setCapability("platformVersion",PropertyReader.valueOf("Device."+Test.attributes.get(Keys.Device)+".Version"));
             capabilities.setCapability("deviceName", PropertyReader.valueOf("Device."+ Test.attributes.get(Keys.Device)+".Name"));
             capabilities.setCapability("udid", PropertyReader.valueOf("Device."+ Test.attributes.get(Keys.Device)+".ID"));
+            capabilities.setCapability("newCommandTimeout",Integer.parseInt(PropertyReader.valueOf("Driver.Appium.CommandTimeout")));
             createDriver();
             wait=new WebDriverWait(driver,Integer.parseInt(PropertyReader.valueOf("Driver.Timeout").trim()));
         }

@@ -14,6 +14,7 @@ public class AndroidManager extends DriverManager {
     @Override
     public void createDriver() throws Exception {
         capabilities.setCapability("platformName", "Android");
+        capabilities.setCapability("automationName","UiAutomator2");
         setAppCapabilities();
         Test.attributes.put(Keys.ObjectRepository,"src/test/resources/object-repository/Locators-Android.properties");
         driver = new AndroidDriver(new URL(PropertyReader.valueOf("Driver.ServerAddress").trim()), capabilities);

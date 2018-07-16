@@ -26,7 +26,7 @@ public class Verify extends Keywords{
 
     public void elementTextMatching(String locatorKey,String expectedValue) throws ApplicationException {
         log.info("Verify element ["+locatorKey+"] text is matching with ["+expectedValue+"]");
-        String actualValue=Test.tools.REMOVE_MULTIPLE_SPACES_AND_NEW_LINES(get.elementBy(locatorKey).get(0).getText().trim());
+        String actualValue=Test.tools.REMOVE_MULTIPLE_SPACES_AND_NEW_LINES(get.elementBy(locatorKey).getText().trim());
         try{
             isMatching(expectedValue,actualValue);
         }catch (Exception ex){
@@ -38,7 +38,7 @@ public class Verify extends Keywords{
 
     public void elementTextContains(String locatorKey,String expectedValue) throws ApplicationException {
         log.info("Verify element ["+locatorKey+"] text is matching with ["+expectedValue+"]");
-        String actualValue=Test.tools.REMOVE_MULTIPLE_SPACES_AND_NEW_LINES(get.elementBy(locatorKey).get(0).getText().trim());
+        String actualValue=Test.tools.REMOVE_MULTIPLE_SPACES_AND_NEW_LINES(get.elementBy(locatorKey).getText().trim());
         try{
             Assert.assertTrue(actualValue.contains(expectedValue.trim()),"Condition failed!, actual value doesn't contains the expected value");
         }catch (Exception ex){
@@ -50,7 +50,7 @@ public class Verify extends Keywords{
 
     public void elementTextMatching(By locator,String expectedValue) throws ApplicationException {
         log.info("Verify element ["+locator+"] text is matching with ["+expectedValue+"]");
-        String actualValue=Test.tools.REMOVE_MULTIPLE_SPACES_AND_NEW_LINES(get.elementBy(locator).get(0).getText().trim());
+        String actualValue=Test.tools.REMOVE_MULTIPLE_SPACES_AND_NEW_LINES(get.elementBy(locator).getText().trim());
         try{
             isMatching(expectedValue,actualValue);
         }catch (Exception ex){
@@ -62,7 +62,7 @@ public class Verify extends Keywords{
 
     public void elementTextContains(By locator,String expectedValue) throws ApplicationException {
         log.info("Verify element ["+locator+"] text is matching with ["+expectedValue+"]");
-        String actualValue=Test.tools.REMOVE_MULTIPLE_SPACES_AND_NEW_LINES(get.elementBy(locator).get(0).getText().trim());
+        String actualValue=Test.tools.REMOVE_MULTIPLE_SPACES_AND_NEW_LINES(get.elementBy(locator).getText().trim());
         try{
             Assert.assertTrue(actualValue.contains(expectedValue.trim()),"Condition failed!, actual value doesn't contains the expected value");
         }catch (Exception ex){

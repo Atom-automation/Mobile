@@ -15,24 +15,25 @@ public class Get extends Keywords{
 
     private static Logger log=Logger.getLogger(Get.class);
     private static List<WebElement> testObj=null;
+    private static WebElement singleTestObj=null;
 
-    public List<WebElement> elementBy(String locatorKey) throws ApplicationException {
+    public WebElement elementBy(String locatorKey) throws ApplicationException {
         try{
-            testObj=wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(PropertyReader.locatorOf(locatorKey)));
+            singleTestObj=wait.until(ExpectedConditions.presenceOfElementLocated(PropertyReader.locatorOf(locatorKey)));
         }catch(TimeoutException ex) {
             log.error("Element ["+locatorKey+"] not found!");
             throw new ApplicationException("Element ["+locatorKey+"] not found!");
         }
-        return testObj;
+        return singleTestObj;
     }
 
-    public List<WebElement> elementBy(By locator) throws ApplicationException {
+    public WebElement elementBy(By locator) throws ApplicationException {
         try{
-            testObj=wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(locator));
+            singleTestObj=wait.until(ExpectedConditions.presenceOfElementLocated(locator));
         }catch(TimeoutException ex) {
             log.error("Element ["+locator+"] not found!");
             throw new ApplicationException("Element ["+locator+"] not found!");
         }
-        return testObj;
+        return singleTestObj;
     }
 }

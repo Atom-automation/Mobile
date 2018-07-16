@@ -39,11 +39,11 @@ public class PageActivities extends Keywords {
     }
 
     public void verifyTransactionAmount(double transactionAmount) throws ApplicationException {
-        verify.isMatching(Test.tools.pesoAmount(transactionAmount), Test.tools.fixAmountIssue(get.elementBy(keyLblTransactionAmount).get(0).getText()));
+        verify.isMatching(Test.tools.pesoAmount(transactionAmount), Test.tools.fixAmountIssue(get.elementBy(keyLblTransactionAmount).getText()));
     }
 
     public void verifyEndingBalance(double amount,double beforeBalance) throws ApplicationException {
         double expectedBalance= beforeBalance-amount;
-        Assert.assertEquals("PHP "+Double.toString(expectedBalance), Test.tools.fixAmountIssue(get.elementBy(keyLblEndingBalance).get(0).getText()));
+        Assert.assertEquals("PHP "+Double.toString(expectedBalance), Test.tools.fixAmountIssue(get.elementBy(keyLblEndingBalance).getText()));
     }
 }

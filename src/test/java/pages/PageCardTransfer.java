@@ -58,7 +58,7 @@ public class PageCardTransfer extends Keywords
     }
 
     public void clickNext() throws ApplicationException {
-        beforeBalance= Double.parseDouble(get.elementBy(keyLblAvailableBalance).get(0).getText());
+        beforeBalance= Double.parseDouble(get.elementBy(keyLblAvailableBalance).getText());
         click.elementBy(keyBtnNext);
     }
 

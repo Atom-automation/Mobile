@@ -35,10 +35,10 @@ public class PageLogin extends Keywords {
         click.elementBy(keyBtnLogin);
     }
 
-    public void isLoginSuccess(String username,String accountType) throws ApplicationException {
+    public void isLoginSuccess(String username,String accountType,boolean failIfZeroBalance) throws ApplicationException {
         PageAccountDashboard pageAccountDashboard=new PageAccountDashboard();
         pageAccountDashboard.isOk(username);
-        pageAccountDashboard.displayMyAccountBalance(accountType);
+        pageAccountDashboard.displayMyAccountBalance(accountType,failIfZeroBalance);
     }
 
     public void doesUserNameScreenContains(String pageTitle, String pageCaption, String usernameBoxText, String passwordResetLinkText, String nextButtonText, String signUpLinkText) throws ApplicationException {

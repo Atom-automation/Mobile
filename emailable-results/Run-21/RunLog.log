@@ -1,0 +1,29 @@
+2018-07-16 12:48:06,407  INFO [main] RunManager:23 - Hey! TG2259, Logging everything from here ....
+2018-07-16 12:48:06,423  INFO [main] RunManager:24 - Run ID is --> Run-21
+2018-07-16 12:48:06,564  INFO [main] StepsBase:16 - Executing S C E N A R I O : As a tester, I want to add new recipients and tag some of them as favorites so that I can keep a list of recipients (From Card transfer page)
+2018-07-16 12:48:24,536  INFO [main] Keywords:41 - Application launched
+2018-07-16 12:48:24,552  INFO [main] Click:13 - Click element [Getgo.Welcome.BtnLogin.ID]
+2018-07-16 12:48:25,189  INFO [main] Click:15 - Click Successful!
+2018-07-16 12:48:25,205  INFO [main] Type:14 - Type the value [john@does.com] into element [Getgo.Login.TxtEmailAddress.XPATH]
+2018-07-16 12:48:31,422  INFO [main] Type:17 - Type Successful!
+2018-07-16 12:48:31,422  INFO [main] Click:13 - Click element [Getgo.Login.BtnNext.XPATH]
+2018-07-16 12:48:32,249  INFO [main] Click:15 - Click Successful!
+2018-07-16 12:48:32,250  INFO [main] Type:21 - Type the value [he*****] into element [Getgo.Login.TxtPassword.XPATH]
+2018-07-16 12:48:40,436  INFO [main] Type:24 - Type Successful!
+2018-07-16 12:48:40,436  INFO [main] Click:13 - Click element [Getgo.Login.BtnLogin.XPATH]
+2018-07-16 12:48:41,298  INFO [main] Click:15 - Click Successful!
+2018-07-16 12:48:41,298  INFO [main] Click:13 - Click element [Getgo.Dashboard.BtnMenu.ID]
+2018-07-16 12:48:45,361  INFO [main] Click:15 - Click Successful!
+2018-07-16 12:48:45,361  INFO [main] Click:19 - Click element [By.xpath: //android.widget.CheckedTextView[@text='Card transfer']]
+2018-07-16 12:48:46,787  INFO [main] Click:21 - Click Successful!
+2018-07-16 12:48:46,881  INFO [main] Click:13 - Click element [Getgo.CardTransfer.BtnAddRecipient.ID]
+2018-07-16 12:48:48,202  INFO [main] Click:15 - Click Successful!
+2018-07-16 12:48:48,218  INFO [main] Click:13 - Click element [Getgo.ManageRecipient.BtnAdd.ID]
+2018-07-16 12:48:49,079  INFO [main] Click:15 - Click Successful!
+2018-07-16 12:48:49,079  INFO [main] Type:14 - Type the value [8899331473298999] into element [Getgo.ManageRecipient.TxtCard.ID]
+2018-07-16 12:48:55,008  INFO [main] Type:17 - Type Successful!
+2018-07-16 12:48:55,008  INFO [main] Type:14 - Type the value [Ansley Sipes] into element [Getgo.ManageRecipient.TxtRecipientName.ID]
+2018-07-16 12:49:01,390  INFO [main] Type:17 - Type Successful!
+2018-07-16 12:49:01,390  INFO [main] Click:13 - Click element [Getgo.ManageRecipient.BtnSave.ID]
+2018-07-16 12:49:02,269  INFO [main] Click:15 - Click Successful!
+2018-07-16 12:50:29,432  INFO [main] Click:13 - Click element [Getgo.ManageRecipient.BtnBack.XPATH]

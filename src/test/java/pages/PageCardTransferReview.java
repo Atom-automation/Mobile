@@ -25,7 +25,7 @@ public class PageCardTransferReview extends Keywords {
     }
 
     public void transferAmount(double transferAmount) throws ApplicationException {
-        verify.isMatching(Test.tools.pesoAmount(transferAmount), Test.tools.fixAmountIssue(get.elementBy("Getgo.CardTransferReview.lblTransferAmount.XPATH").get(0).getText()));
+        verify.isMatching(Test.tools.pesoAmount(transferAmount), Test.tools.fixAmountIssue(get.elementBy("Getgo.CardTransferReview.lblTransferAmount.XPATH").getText()));
     }
 
     public void transferDate(String day,String month,String year) throws ParseException, ApplicationException {
@@ -41,7 +41,7 @@ public class PageCardTransferReview extends Keywords {
     }
 
     public void transferFees(double transferFees) throws ApplicationException {
-        verify.isMatching(Test.tools.pesoAmount(transferFees), Test.tools.fixAmountIssue(get.elementBy("Getgo.CardTransferReview.LblTransferFees.XPATH").get(0).getText()));
+        verify.isMatching(Test.tools.pesoAmount(transferFees), Test.tools.fixAmountIssue(get.elementBy("Getgo.CardTransferReview.LblTransferFees.XPATH").getText()));
     }
 
     public void clickTransfer() throws ApplicationException {

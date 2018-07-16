@@ -11,13 +11,13 @@ public class Click extends Keywords{
 
     public void elementBy(String locatorKey) throws ApplicationException {
         log.info("Click element ["+locatorKey+"]");
-        get.elementBy(locatorKey).get(0).click();
+        get.elementBy(locatorKey).click();
         log.info("Click Successful!");
     }
 
     public void elementBy(By locator) throws ApplicationException {
         log.info("Click element ["+locator+"]");
-        get.elementBy(locator).get(0).click();
+        get.elementBy(locator).click();
         log.info("Click Successful!");
     }
 }

@@ -1,0 +1,389 @@
+[
+  {
+    "comments": [
+      {
+        "line": 2,
+        "value": "# Author: Balabharathi Jayaraman"
+      },
+      {
+        "line": 3,
+        "value": "# Jira : GGP-520"
+      },
+      {
+        "line": 4,
+        "value": "# Jira URL : https://tms-jira.unionbankph.com/browse/GGP-520"
+      },
+      {
+        "line": 5,
+        "value": "# Functionality : As a tester, I want to complete a funds transfer transaction so that I can pass on funds to another cardholder."
+      },
+      {
+        "line": 6,
+        "value": "# Sub-tasks : GGP-555 - Automation Script Preparation [Android]"
+      },
+      {
+        "line": 7,
+        "value": "# Sub-tasks : GGP-549 - Automation Script Preparation [IOS]"
+      }
+    ],
+    "line": 10,
+    "elements": [
+      {
+        "line": 12,
+        "name": "Open Getgo mobile application",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "duration": 7421125372,
+              "error_message": "exceptions.EnvironmentException: Driver failed to launch \norg.openqa.selenium.WebDriverException: An unknown server-side error occurred while processing the command. Original error: Could not sign with default certificate. Original error Command \u0027\u0027X:\\\\Program Files\\\\Java\\\\jdk1.8.0_171\\\\bin\\\\java.exe\u0027 -jar \u0027X:\\\\Program Files (x86)\\\\Appium\\\\resources\\\\app\\\\node_modules\\\\appium\\\\node_modules\\\\appium-adb\\\\jars\\\\sign.jar\u0027 \u0027X:\\\\Program Files (x86)\\\\Appium\\\\resources\\\\app\\\\node_modules\\\\appium\\\\node_modules\\\\appium-uiautomator2-server\\\\apks\\\\appium-uiautomator2-server-v1.12.0.apk\u0027 --override\u0027 exited with code 1\nBuild info: version: \u00273.11.0\u0027, revision: \u0027e59cfb3\u0027, time: \u00272018-03-11T20:26:55.152Z\u0027\nSystem info: host: \u0027TMZ-DPC-2079\u0027, ip: \u0027192.168.122.51\u0027, os.name: \u0027Windows 10\u0027, os.arch: \u0027amd64\u0027, os.version: \u002710.0\u0027, java.version: \u00271.8.0_171\u0027\nDriver info: driver.version: AndroidDriver\nremote stacktrace: UnknownError: An unknown server-side error occurred while processing the command. Original error: Could not sign with default certificate. Original error Command \u0027\u0027X:\\\\Program Files\\\\Java\\\\jdk1.8.0_171\\\\bin\\\\java.exe\u0027 -jar \u0027X:\\\\Program Files (x86)\\\\Appium\\\\resources\\\\app\\\\node_modules\\\\appium\\\\node_modules\\\\appium-adb\\\\jars\\\\sign.jar\u0027 \u0027X:\\\\Program Files (x86)\\\\Appium\\\\resources\\\\app\\\\node_modules\\\\appium\\\\node_modules\\\\appium-uiautomator2-server\\\\apks\\\\appium-uiautomator2-server-v1.12.0.apk\u0027 --override\u0027 exited with code 1\n    at getResponseForW3CError (X:\\Program Files (x86)\\Appium\\resources\\app\\node_modules\\appium\\node_modules\\appium-base-driver\\lib\\protocol\\errors.js:806:13)\n    at asyncHandler$ (X:\\Program Files (x86)\\Appium\\resources\\app\\node_modules\\appium\\node_modules\\appium-base-driver\\lib\\protocol\\protocol.js:361:37)\n    at tryCatch (X:\\Program Files (x86)\\Appium\\resources\\app\\node_modules\\appium\\node_modules\\babel-runtime\\regenerator\\runtime.js:67:40)\n    at GeneratorFunctionPrototype.invoke [as _invoke] (X:\\Program Files (x86)\\Appium\\resources\\app\\node_modules\\appium\\node_modules\\babel-runtime\\regenerator\\runtime.js:315:22)\n    at GeneratorFunctionPrototype.prototype.(anonymous function) [as next] (X:\\Program Files (x86)\\Appium\\resources\\app\\node_modules\\appium\\node_modules\\babel-runtime\\regenerator\\runtime.js:100:21)\n    at GeneratorFunctionPrototype.invoke (X:\\Program Files (x86)\\Appium\\resources\\app\\node_modules\\appium\\node_modules\\babel-runtime\\regenerator\\runtime.js:136:37)\n    at \u003canonymous\u003e\r\n\tat base.Keywords.launchApplication(Keywords.java:38)\r\n\tat pages.PageWelcome.launchGetgo(PageWelcome.java:13)\r\n\tat stepdefinitions.Getgo_PageValidation.i_m_on_Getgo_landing_page(Getgo_PageValidation.java:21)\r\n\tat ✽.Given I\u0027m on Getgo landing page(Getgo_ManageRecipient.feature:13)\r\n",
+              "status": "failed"
+            },
+            "line": 13,
+            "name": "I\u0027m on Getgo landing page",
+            "match": {
+              "location": "Getgo_PageValidation.i_m_on_Getgo_landing_page()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 14,
+            "name": "I\u0027m on Getgo login page",
+            "match": {
+              "location": "Getgo_PageValidation.i_m_on_Getgo_login_page()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 15,
+            "name": "I enter a \"Peso_Username\" \u0026 click next",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Peso_Username",
+                  "offset": 11
+                }
+              ],
+              "location": "Getgo_PageValidation.i_enter_a_click_next(String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 16,
+            "name": "I enter password \"Peso_Password\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Peso_Password",
+                  "offset": 18
+                }
+              ],
+              "location": "Getgo_Login_NewCustomer.i_enter_password(String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 17,
+            "name": "I click login",
+            "match": {
+              "location": "Getgo_Login_NewCustomer.i_click_login()"
+            },
+            "keyword": "And "
+          }
+        ]
+      },
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 501637,
+              "status": "passed"
+            },
+            "match": {
+              "location": "StepsBase.beforeScenario(Scenario)"
+            }
+          }
+        ],
+        "line": 19,
+        "name": "As a tester, I want to add new recipients and tag some of them as favorites so that I can keep a list of recipients (From Card transfer page)",
+        "description": "",
+        "id": "manage-recipients-feature;as-a-tester,-i-want-to-add-new-recipients-and-tag-some-of-them-as-favorites-so-that-i-can-keep-a-list-of-recipients-(from-card-transfer-page)",
+        "after": [
+          {
+            "result": {
+              "duration": 419527,
+              "status": "passed"
+            },
+            "match": {
+              "location": "StepsBase.ifScenarioFailed(Scenario)"
+            }
+          },
+          {
+            "result": {
+              "duration": 178652,
+              "status": "passed"
+            },
+            "match": {
+              "location": "StepsBase.afterScenario()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 20,
+            "name": "I\u0027m on Getgo Fund transfer page",
+            "match": {
+              "location": "Getgo_CardTransfer_Peso.iMOnGetgoFundTransferPage()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 21,
+            "name": "I Choose Manage Recipients option",
+            "match": {
+              "location": "Getgo_ManageRecipient.iChooseManageRecipientsOption()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 22,
+            "name": "Add a recipient and tag it as a favorite",
+            "match": {
+              "location": "Getgo_ManageRecipient.addARecipientAndTagItAsAFavorite()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 23,
+            "name": "I Choose Manage Recipients option again",
+            "match": {
+              "location": "Getgo_ManageRecipient.iChooseManageRecipientsOptionAgain()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 24,
+            "name": "Recipient should be displayed in my favourites",
+            "match": {
+              "location": "Getgo_ManageRecipient.recipientShouldBeDisplayedInMyFavourites()"
+            },
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "line": 12,
+        "name": "Open Getgo mobile application",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "duration": 6540443955,
+              "error_message": "exceptions.EnvironmentException: Driver failed to launch \norg.openqa.selenium.WebDriverException: An unknown server-side error occurred while processing the command. Original error: Could not sign with default certificate. Original error Command \u0027\u0027X:\\\\Program Files\\\\Java\\\\jdk1.8.0_171\\\\bin\\\\java.exe\u0027 -jar \u0027X:\\\\Program Files (x86)\\\\Appium\\\\resources\\\\app\\\\node_modules\\\\appium\\\\node_modules\\\\appium-adb\\\\jars\\\\sign.jar\u0027 \u0027X:\\\\Program Files (x86)\\\\Appium\\\\resources\\\\app\\\\node_modules\\\\appium\\\\node_modules\\\\appium-uiautomator2-server\\\\apks\\\\appium-uiautomator2-server-v1.12.0.apk\u0027 --override\u0027 exited with code 1\nBuild info: version: \u00273.11.0\u0027, revision: \u0027e59cfb3\u0027, time: \u00272018-03-11T20:26:55.152Z\u0027\nSystem info: host: \u0027TMZ-DPC-2079\u0027, ip: \u0027192.168.122.51\u0027, os.name: \u0027Windows 10\u0027, os.arch: \u0027amd64\u0027, os.version: \u002710.0\u0027, java.version: \u00271.8.0_171\u0027\nDriver info: driver.version: AndroidDriver\nremote stacktrace: UnknownError: An unknown server-side error occurred while processing the command. Original error: Could not sign with default certificate. Original error Command \u0027\u0027X:\\\\Program Files\\\\Java\\\\jdk1.8.0_171\\\\bin\\\\java.exe\u0027 -jar \u0027X:\\\\Program Files (x86)\\\\Appium\\\\resources\\\\app\\\\node_modules\\\\appium\\\\node_modules\\\\appium-adb\\\\jars\\\\sign.jar\u0027 \u0027X:\\\\Program Files (x86)\\\\Appium\\\\resources\\\\app\\\\node_modules\\\\appium\\\\node_modules\\\\appium-uiautomator2-server\\\\apks\\\\appium-uiautomator2-server-v1.12.0.apk\u0027 --override\u0027 exited with code 1\n    at getResponseForW3CError (X:\\Program Files (x86)\\Appium\\resources\\app\\node_modules\\appium\\node_modules\\appium-base-driver\\lib\\protocol\\errors.js:806:13)\n    at asyncHandler$ (X:\\Program Files (x86)\\Appium\\resources\\app\\node_modules\\appium\\node_modules\\appium-base-driver\\lib\\protocol\\protocol.js:361:37)\n    at tryCatch (X:\\Program Files (x86)\\Appium\\resources\\app\\node_modules\\appium\\node_modules\\babel-runtime\\regenerator\\runtime.js:67:40)\n    at GeneratorFunctionPrototype.invoke [as _invoke] (X:\\Program Files (x86)\\Appium\\resources\\app\\node_modules\\appium\\node_modules\\babel-runtime\\regenerator\\runtime.js:315:22)\n    at GeneratorFunctionPrototype.prototype.(anonymous function) [as next] (X:\\Program Files (x86)\\Appium\\resources\\app\\node_modules\\appium\\node_modules\\babel-runtime\\regenerator\\runtime.js:100:21)\n    at GeneratorFunctionPrototype.invoke (X:\\Program Files (x86)\\Appium\\resources\\app\\node_modules\\appium\\node_modules\\babel-runtime\\regenerator\\runtime.js:136:37)\n    at \u003canonymous\u003e\r\n\tat base.Keywords.launchApplication(Keywords.java:38)\r\n\tat pages.PageWelcome.launchGetgo(PageWelcome.java:13)\r\n\tat stepdefinitions.Getgo_PageValidation.i_m_on_Getgo_landing_page(Getgo_PageValidation.java:21)\r\n\tat ✽.Given I\u0027m on Getgo landing page(Getgo_ManageRecipient.feature:13)\r\n",
+              "status": "failed"
+            },
+            "line": 13,
+            "name": "I\u0027m on Getgo landing page",
+            "match": {
+              "location": "Getgo_PageValidation.i_m_on_Getgo_landing_page()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 14,
+            "name": "I\u0027m on Getgo login page",
+            "match": {
+              "location": "Getgo_PageValidation.i_m_on_Getgo_login_page()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 15,
+            "name": "I enter a \"Peso_Username\" \u0026 click next",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Peso_Username",
+                  "offset": 11
+                }
+              ],
+              "location": "Getgo_PageValidation.i_enter_a_click_next(String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 16,
+            "name": "I enter password \"Peso_Password\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Peso_Password",
+                  "offset": 18
+                }
+              ],
+              "location": "Getgo_Login_NewCustomer.i_enter_password(String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 17,
+            "name": "I click login",
+            "match": {
+              "location": "Getgo_Login_NewCustomer.i_click_login()"
+            },
+            "keyword": "And "
+          }
+        ]
+      },
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 870807,
+              "status": "passed"
+            },
+            "match": {
+              "location": "StepsBase.beforeScenario(Scenario)"
+            }
+          }
+        ],
+        "line": 26,
+        "name": "As a tester, I want to add new recipients and tag some of them as favorites so that I can keep a list of recipients (From Beneficiaries page)",
+        "description": "",
+        "id": "manage-recipients-feature;as-a-tester,-i-want-to-add-new-recipients-and-tag-some-of-them-as-favorites-so-that-i-can-keep-a-list-of-recipients-(from-beneficiaries-page)",
+        "after": [
+          {
+            "result": {
+              "duration": 339663,
+              "status": "passed"
+            },
+            "match": {
+              "location": "StepsBase.ifScenarioFailed(Scenario)"
+            }
+          },
+          {
+            "result": {
+              "duration": 181859,
+              "status": "passed"
+            },
+            "match": {
+              "location": "StepsBase.afterScenario()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 27,
+            "name": "I\u0027m on Beneficiaries page",
+            "match": {
+              "location": "Getgo_ManageRecipient.iMOnBeneficiariesPage()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 28,
+            "name": "I add a recipient and tag it as a favorite",
+            "match": {
+              "location": "Getgo_ManageRecipient.iAddARecipientAndTagItAsAFavorite()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 29,
+            "name": "I open Beneficiaries page again",
+            "match": {
+              "location": "Getgo_ManageRecipient.iOpenBeneficiariesPageAgain()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 30,
+            "name": "Recipient should be displayed in my favourites",
+            "match": {
+              "location": "Getgo_ManageRecipient.recipientShouldBeDisplayedInMyFavourites()"
+            },
+            "keyword": "Then "
+          }
+        ]
+      }
+    ],
+    "name": "Manage Recipients Feature",
+    "description": "",
+    "id": "manage-recipients-feature",
+    "keyword": "Feature",
+    "uri": "Getgo_ManageRecipient.feature",
+    "tags": [
+      {
+        "line": 9,
+        "name": "@FundTransfer"
+      },
+      {
+        "line": 9,
+        "name": "@Peso+"
+      },
+      {
+        "line": 9,
+        "name": "@dryRun"
+      }
+    ]
+  }
+]

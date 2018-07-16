@@ -24,14 +24,14 @@ public class PageAccountDashboard extends Keywords {
         verify.elementTextMatching(keyLblUserName,userName);
     }
 
-    public void displayMyAccountBalance(String accountType) throws ApplicationException {
+    public void displayMyAccountBalance(String accountType,boolean failIfZeroBalance) throws ApplicationException {
         double actualBalance;
         switch (accountType.trim().toUpperCase()){
             case "VIRTUAL":
                 for(int i=1;i<=3;i++)
                 {
                    try{
-                       actualBalance=Double.parseDouble(get.elementBy(keyLblAvailableBalanceVirtualCard).get(0).getText().trim());
+                       actualBalance=Double.parseDouble(get.elementBy(keyLblAvailableBalanceVirtualCard).getText().trim());
                    }catch (NumberFormatException e){
                        actualBalance=0.00;
                    }
@@ -46,7 +46,7 @@ public class PageAccountDashboard extends Keywords {
                 for(int i=1;i<=3;i++)
                 {
                     try{
-                        actualBalance=Double.parseDouble(get.elementBy(keyLblAvailableBalancePeso).get(0).getText().trim());
+                        actualBalance=Double.parseDouble(get.elementBy(keyLblAvailableBalancePeso).getText().trim());
                     }catch (NumberFormatException e){
                         actualBalance=0.00;
                     }
@@ -58,11 +58,8 @@ public class PageAccountDashboard extends Keywords {
                 }
                 break;
         }
-        if(myAccountBalance!=0.00)
-        {
-            Reporter.addStepLog("My Account Balance is --> "+myAccountBalance);
-        }else
-        {
+        Reporter.addStepLog("My Account Balance is --> "+myAccountBalance);
+        if(failIfZeroBalance){
             throw new ApplicationException("Your account balance is "+myAccountBalance+" we can't proceed testing with this balance");
         }
     }
