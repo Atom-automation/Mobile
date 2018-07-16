@@ -25,6 +25,7 @@ public class Keywords {
     public static Type type=new Type();
     public static Screenshot screenshot=new Screenshot();
     public static Swipe swipe=new Swipe();
+    public static iOS ios=new iOS();
 
     public static void launchApplication() throws EnvironmentException {
         if(driver !=null){

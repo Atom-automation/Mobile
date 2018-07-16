@@ -1,0 +1,29 @@
+2018-07-16 17:10:23,635  INFO [main] RunManager:23 - Hey! ubp, Logging everything from here ....
+2018-07-16 17:10:23,639  INFO [main] RunManager:24 - Run ID is --> Run-70
+2018-07-16 17:10:23,856  INFO [main] StepsBase:16 - Executing S C E N A R I O : As a tester, I want to complete a funds transfer transaction so that I can pass on funds to another cardholder (Add recipient from saved list).
+2018-07-16 17:10:29,047  INFO [main] Keywords:42 - Application launched
+2018-07-16 17:10:29,056  INFO [main] Click:16 - Click element [Getgo.Welcome.BtnLogin.ID]
+2018-07-16 17:10:29,697  INFO [main] Click:22 - Click Successful!
+2018-07-16 17:10:29,704  INFO [main] Type:14 - Type the value [john@does.com] into element [Getgo.Login.TxtEmailAddress.XPATH]
+2018-07-16 17:10:33,705  INFO [main] Type:17 - Type Successful!
+2018-07-16 17:10:33,705  INFO [main] Click:16 - Click element [Getgo.Login.BtnNext.XPATH]
+2018-07-16 17:10:35,968  INFO [main] Click:22 - Click Successful!
+2018-07-16 17:10:35,970  INFO [main] Type:21 - Type the value [he*****] into element [Getgo.Login.TxtPassword.XPATH]
+2018-07-16 17:10:42,805  INFO [main] Type:24 - Type Successful!
+2018-07-16 17:10:42,807  INFO [main] Click:16 - Click element [Getgo.Login.BtnLogin.XPATH]
+2018-07-16 17:10:45,119  INFO [main] Click:22 - Click Successful!
+2018-07-16 17:10:45,124  INFO [main] Click:16 - Click element [Getgo.Dashboard.BtnMenu.ID]
+2018-07-16 17:10:49,219  INFO [main] Click:22 - Click Successful!
+2018-07-16 17:10:49,221  INFO [main] Click:26 - Click element [By.xpath: //XCUIElementTypeStaticText[@name='Card Transfer']]
+2018-07-16 17:10:53,947  INFO [main] Click:32 - Click Successful!
+2018-07-16 17:10:53,968  INFO [main] Click:16 - Click element [Getgo.CardTransfer.BtnAddRecipient.ID]
+2018-07-16 17:10:55,227  INFO [main] Click:22 - Click Successful!
+2018-07-16 17:11:07,829  INFO [main] Click:26 - Click element [By.xpath: //XCUIElementTypeStaticText[@name='testtransfer']]
+2018-07-16 17:11:31,880  INFO [main] Click:32 - Click Successful!
+2018-07-16 17:11:31,880  INFO [main] Type:14 - Type the value [5] into element [Getgo.CardTransfer.TxtAmount.XPATH]
+2018-07-16 17:12:04,955 ERROR [main] Get:26 - Element [Getgo.CardTransfer.TxtAmount.XPATH] not found!
+2018-07-16 17:12:04,964 ERROR [main] StepsBase:23 - S C E N A R I O    F A I L E D !!!!!
+2018-07-16 17:12:04,964  INFO [main] Screenshot:20 - Capture screenshot
+2018-07-16 17:12:05,345  INFO [main] Screenshot:25 - Captured!
+2018-07-16 17:12:05,668  INFO [main] Keywords:49 - Application closed
+2018-07-16 17:12:05,716  INFO [main] Test:50 - Report is generates @ emailable-results/Run-70/Automation-Dashboard.html

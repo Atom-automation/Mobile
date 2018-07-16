@@ -1,0 +1,25 @@
+2018-07-16 18:05:19,804  INFO [main] RunManager:23 - Hey! ubp, Logging everything from here ....
+2018-07-16 18:05:19,807  INFO [main] RunManager:24 - Run ID is --> Run-77
+2018-07-16 18:05:19,989  INFO [main] StepsBase:16 - Executing S C E N A R I O : As a tester, I want to complete a funds transfer transaction so that I can pass on funds to another cardholder (Add recipient from saved list).
+2018-07-16 18:05:24,439  INFO [main] Keywords:42 - Application launched
+2018-07-16 18:05:24,453  INFO [main] Click:16 - Click element [Getgo.Welcome.BtnLogin.ID]
+2018-07-16 18:05:25,150  INFO [main] Click:22 - Click Successful!
+2018-07-16 18:05:25,154  INFO [main] Type:14 - Type the value [john@does.com] into element [Getgo.Login.TxtEmailAddress.XPATH]
+2018-07-16 18:05:29,010  INFO [main] Type:17 - Type Successful!
+2018-07-16 18:05:29,010  INFO [main] Click:16 - Click element [Getgo.Login.BtnNext.XPATH]
+2018-07-16 18:05:31,291  INFO [main] Click:22 - Click Successful!
+2018-07-16 18:05:31,293  INFO [main] Type:21 - Type the value [he*****] into element [Getgo.Login.TxtPassword.XPATH]
+2018-07-16 18:05:37,539  INFO [main] Type:24 - Type Successful!
+2018-07-16 18:05:37,540  INFO [main] Click:16 - Click element [Getgo.Login.BtnLogin.XPATH]
+2018-07-16 18:05:39,892  INFO [main] Click:22 - Click Successful!
+2018-07-16 18:05:39,897  INFO [main] Click:16 - Click element [Getgo.Dashboard.BtnMenu.ID]
+2018-07-16 18:05:43,948  INFO [main] Click:22 - Click Successful!
+2018-07-16 18:05:43,950  INFO [main] Click:26 - Click element [By.xpath: //XCUIElementTypeStaticText[@name='Card Transfer']]
+2018-07-16 18:05:48,743  INFO [main] Click:32 - Click Successful!
+2018-07-16 18:05:48,753  INFO [main] Click:16 - Click element [Getgo.CardTransfer.BtnAddRecipient.ID]
+2018-07-16 18:05:50,520  INFO [main] Click:22 - Click Successful!
+2018-07-16 18:05:51,102 ERROR [main] StepsBase:23 - S C E N A R I O    F A I L E D !!!!!
+2018-07-16 18:05:51,102  INFO [main] Screenshot:20 - Capture screenshot
+2018-07-16 18:05:51,454  INFO [main] Screenshot:25 - Captured!
+2018-07-16 18:05:51,703  INFO [main] Keywords:49 - Application closed
+2018-07-16 18:05:51,751  INFO [main] Test:50 - Report is generates @ emailable-results/Run-77/Automation-Dashboard.html

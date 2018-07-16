@@ -20,7 +20,7 @@ public class PageCardTransferReview extends Keywords {
     }
 
     public void toDetails(String toCard,String toUser) throws ApplicationException {
-        verify.elementTextContains(xpathOf.textView(Contains.youDecide(toUser.substring(0,4))),toUser);
+        //verify.elementTextContains(xpathOf.textView(Contains.youDecide(toUser.substring(0,4))),toUser);
         verify.elementTextContains(xpathOf.textView(Contains.youDecide(toCard.substring(0,4))),toCard);
     }
 

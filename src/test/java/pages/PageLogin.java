@@ -12,8 +12,7 @@ public class PageLogin extends Keywords {
     private String keyLblPageCaption="Getgo.Login.LblCaption.XPATH";
     private String keyTxtEmailAddress="Getgo.Login.TxtEmailAddress.XPATH";
     private String keyBtnNext="Getgo.Login.BtnNext.XPATH";
-    private String keyBtnBackAndroid="Getgo.Login.BtnBack.XPATH";
-    private String keyBtnBackIOS="";
+    private String keyBtnBack="Getgo.Login.BtnBack.XPATH";
     private String keyBtnLogin="Getgo.Login.BtnLogin.XPATH";
     private String keyTogglePasswordVisibility="Getgo.Login.TogglePasswordVisibility.ID";
     private String keyTxtPassword="Getgo.Login.TxtPassword.XPATH";
@@ -42,32 +41,33 @@ public class PageLogin extends Keywords {
     }
 
     public void doesUserNameScreenContains(String pageTitle, String pageCaption, String usernameBoxText, String passwordResetLinkText, String nextButtonText, String signUpLinkText) throws ApplicationException {
-        if(Test.attributes.get(Keys.OS).equalsIgnoreCase(OS.ANDROID)){
-            verify.elementIsPresent(keyBtnBackAndroid);
-        }else if(Test.attributes.get(Keys.OS).equalsIgnoreCase(OS.iOS)){
-            verify.elementIsPresent(keyBtnBackIOS);
-        }
+        verify.elementIsPresent(keyBtnBack);
         keyboard.hideIfAndroid();
         verify.elementIsPresent(xpathOf.textView(Matching.youDecide(pageTitle)));
         verify.elementTextMatching(keyLblPageCaption,pageCaption);
         verify.elementTextMatching(keyTxtEmailAddress,usernameBoxText);
-        verify.elementIsPresent(xpathOf.textView(Matching.youDecide(passwordResetLinkText)));
+        if(Test.attributes.get(Keys.OS).equalsIgnoreCase(OS.ANDROID)){
+            verify.elementIsPresent(xpathOf.textView(Matching.text(passwordResetLinkText)));
+            verify.elementIsPresent(xpathOf.textView(Matching.youDecide(signUpLinkText)));
+        }else if(Test.attributes.get(Keys.OS).equalsIgnoreCase(OS.iOS)){
+            verify.elementIsPresent(xpathOf.button(Matching.name(passwordResetLinkText)));
+            verify.elementIsPresent(xpathOf.button(Matching.youDecide(signUpLinkText)));
+        }
         verify.elementTextMatching(keyBtnNext,nextButtonText);
-        verify.elementIsPresent(xpathOf.textView(Matching.youDecide(signUpLinkText)));
     }
 
     public void doesPasswordScreenContains(String pageTitle, String pageCaption, String passwordBoxText, String passwordResetLinkText, String loginButtonText) throws ApplicationException {
         verify.elementIsPresent(keyTogglePasswordVisibility);
         keyboard.hideIfAndroid();
-        if(Test.attributes.get(Keys.OS).equalsIgnoreCase(OS.ANDROID)){
-            verify.elementIsPresent(keyBtnBackAndroid);
-        }else if(Test.attributes.get(Keys.OS).equalsIgnoreCase(OS.iOS)){
-            verify.elementIsPresent(keyBtnBackIOS);
-        }
+        verify.elementIsPresent(keyBtnBack);
         verify.elementIsPresent(xpathOf.textView(Matching.youDecide(pageTitle)));
         verify.elementTextMatching(keyLblPageCaption,pageCaption);
         verify.elementTextMatching(keyTxtPassword,passwordBoxText);
-        verify.elementIsPresent(xpathOf.textView(Matching.youDecide(passwordResetLinkText)));
+        if(Test.attributes.get(Keys.OS).equalsIgnoreCase(OS.ANDROID)){
+            verify.elementIsPresent(xpathOf.textView(Matching.text(passwordResetLinkText)));
+        }else if(Test.attributes.get(Keys.OS).equalsIgnoreCase(OS.iOS)){
+            verify.elementIsPresent(xpathOf.button(Matching.name(passwordResetLinkText)));
+        }
         verify.elementTextMatching(keyBtnLogin,loginButtonText);
     }
 }

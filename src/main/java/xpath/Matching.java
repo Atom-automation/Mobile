@@ -21,7 +21,7 @@ public class Matching {
     }
 
     public static Matching name(String name){
-        return new Matching("[@text='"+name+"']");
+        return new Matching("[@name='"+name+"']");
     }
 
     public static Matching text(String text){

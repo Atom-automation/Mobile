@@ -6,7 +6,7 @@
 # Sub-tasks : GGP-555 - Automation Script Preparation [Android]
 # Sub-tasks : GGP-549 - Automation Script Preparation [IOS]
 
-@FundTransfer @Peso+ @dryRun
+@FundTransfer @Peso+
 Feature: Manage Recipients Feature
 
   Background: Open Getgo mobile application

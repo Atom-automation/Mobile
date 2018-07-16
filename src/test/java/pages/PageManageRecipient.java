@@ -18,14 +18,15 @@ public class PageManageRecipient extends Keywords
     private String keyBtnSave="Getgo.ManageRecipient.BtnSave.ID";
     private String keyBtnBack="Getgo.ManageRecipient.BtnBack.XPATH";
 
-    private String newlyAddedRecipient= Test.faker.name().firstName()+" "+ Test.faker.name().lastName();
-    private String newlyAddedRecipientCard=
-
-            String.valueOf(Test.faker.number().randomNumber(3,true))+
-            String.valueOf(Test.faker.number().randomNumber(10,true))+
-            String.valueOf(Test.faker.number().randomNumber(3,true));
+    private String newlyAddedRecipient=null;
+    private String newlyAddedRecipientCard=null;
 
     public void addNewRecipient() throws ApplicationException {
+        newlyAddedRecipient= Test.faker.name().firstName()+" "+ Test.faker.name().lastName();
+        newlyAddedRecipientCard=
+                        String.valueOf(Test.faker.number().randomNumber(3,true))+
+                        String.valueOf(Test.faker.number().randomNumber(10,true))+
+                        String.valueOf(Test.faker.number().randomNumber(3,true));
         click.elementBy(keyBtnAddNewRecipient);
         type.data(keyTxtRecipientCardNumber,newlyAddedRecipientCard);
         type.data(keyTxtRecipientName,newlyAddedRecipient);

@@ -6,6 +6,7 @@ import helper.PropertyReader;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.TimeoutException;
+import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
@@ -20,9 +21,12 @@ public class Get extends Keywords{
     public WebElement elementBy(String locatorKey) throws ApplicationException {
         try{
             singleTestObj=wait.until(ExpectedConditions.presenceOfElementLocated(PropertyReader.locatorOf(locatorKey)));
-        }catch(TimeoutException ex) {
+        }
+        catch(TimeoutException ex) {
             log.error("Element ["+locatorKey+"] not found!");
             throw new ApplicationException("Element ["+locatorKey+"] not found!");
+        }catch(WebDriverException ex){
+            singleTestObj=wait.until(ExpectedConditions.presenceOfElementLocated(PropertyReader.locatorOf(locatorKey)));
         }
         return singleTestObj;
     }
@@ -33,6 +37,8 @@ public class Get extends Keywords{
         }catch(TimeoutException ex) {
             log.error("Element ["+locator+"] not found!");
             throw new ApplicationException("Element ["+locator+"] not found!");
+        }catch(WebDriverException ex){
+            singleTestObj=wait.until(ExpectedConditions.presenceOfElementLocated(locator));
         }
         return singleTestObj;
     }

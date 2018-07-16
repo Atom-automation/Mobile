@@ -1,0 +1,78 @@
+2018-07-16 15:17:53,537  INFO [main] RunManager:23 - Hey! ubp, Logging everything from here ....
+2018-07-16 15:17:53,540  INFO [main] RunManager:24 - Run ID is --> Run-44
+2018-07-16 15:17:53,943  INFO [main] StepsBase:16 - Executing S C E N A R I O : As a tester, I want to be able to login using my credentials so that I can see my account(Virtual Card or Peso+) details
+2018-07-16 15:17:59,778  INFO [main] Keywords:41 - Application launched
+2018-07-16 15:17:59,782  INFO [main] Click:16 - Click element [Getgo.Welcome.BtnLogin.ID]
+2018-07-16 15:18:00,524  INFO [main] Click:22 - Click Successful!
+2018-07-16 15:18:00,558  INFO [main] Type:14 - Type the value [(3)Evelyn.dhamodaran@unionbankph.com] into element [Getgo.Login.TxtEmailAddress.XPATH]
+2018-07-16 15:18:04,934  INFO [main] Type:17 - Type Successful!
+2018-07-16 15:18:04,934  INFO [main] Click:16 - Click element [Getgo.Login.BtnNext.XPATH]
+2018-07-16 15:18:07,195  INFO [main] Click:22 - Click Successful!
+2018-07-16 15:18:07,197  INFO [main] Type:21 - Type the value [he*****] into element [Getgo.Login.TxtPassword.XPATH]
+2018-07-16 15:18:13,853  INFO [main] Type:24 - Type Successful!
+2018-07-16 15:18:13,854  INFO [main] Click:16 - Click element [Getgo.Login.BtnLogin.XPATH]
+2018-07-16 15:18:16,196  INFO [main] Click:22 - Click Successful!
+2018-07-16 15:18:16,211  INFO [main] Verify:16 - Verify element [Getgo.Dashboard.ImgProfilePicture.ID] is present
+2018-07-16 15:18:20,277  INFO [main] Verify:18 - Element is present!
+2018-07-16 15:18:20,278  INFO [main] Verify:28 - Verify element [Getgo.Dashboard.LblUsername.XPATH] text is matching with [Eve Kanmani]
+2018-07-16 15:18:22,441  INFO [main] Verify:36 - Condition verified!
+2018-07-16 15:18:42,282  INFO [main] Keywords:48 - Application closed
+2018-07-16 15:18:42,283  INFO [main] StepsBase:16 - Executing S C E N A R I O : As a tester, I want to be able to login using my credentials so that I can see my account(Virtual Card or Peso+) details
+2018-07-16 15:18:44,819  INFO [main] Keywords:41 - Application launched
+2018-07-16 15:18:44,821  INFO [main] Click:16 - Click element [Getgo.Welcome.BtnLogin.ID]
+2018-07-16 15:18:45,460  INFO [main] Click:22 - Click Successful!
+2018-07-16 15:18:45,461  INFO [main] Type:14 - Type the value [john@does.com] into element [Getgo.Login.TxtEmailAddress.XPATH]
+2018-07-16 15:18:49,323  INFO [main] Type:17 - Type Successful!
+2018-07-16 15:18:49,323  INFO [main] Click:16 - Click element [Getgo.Login.BtnNext.XPATH]
+2018-07-16 15:18:51,570  INFO [main] Click:22 - Click Successful!
+2018-07-16 15:18:51,571  INFO [main] Type:21 - Type the value [he*****] into element [Getgo.Login.TxtPassword.XPATH]
+2018-07-16 15:18:58,272  INFO [main] Type:24 - Type Successful!
+2018-07-16 15:18:58,285  INFO [main] Click:16 - Click element [Getgo.Login.BtnLogin.XPATH]
+2018-07-16 15:19:00,623  INFO [main] Click:22 - Click Successful!
+2018-07-16 15:19:00,624  INFO [main] Verify:16 - Verify element [Getgo.Dashboard.ImgProfilePicture.ID] is present
+2018-07-16 15:19:04,499  INFO [main] Verify:18 - Element is present!
+2018-07-16 15:19:04,499  INFO [main] Verify:28 - Verify element [Getgo.Dashboard.LblUsername.XPATH] text is matching with [John Berlin Fuertes]
+2018-07-16 15:19:05,887  INFO [main] Verify:36 - Condition verified!
+2018-07-16 15:19:28,297  INFO [main] Keywords:48 - Application closed
+2018-07-16 15:19:28,309  INFO [main] StepsBase:16 - Executing S C E N A R I O : Validate the fields & texts displayed on the Getgo Welcome & SignUp page
+2018-07-16 15:19:31,073  INFO [main] Keywords:41 - Application launched
+2018-07-16 15:19:31,074  INFO [main] Verify:16 - Verify element [Getgo.Welcome.ImgLogo.ID] is present
+2018-07-16 15:19:31,211  INFO [main] Verify:18 - Element is present!
+2018-07-16 15:19:31,212  INFO [main] Verify:28 - Verify element [Getgo.Welcome.LblCaption.XPATH] text is matching with [Now made easier. As simple as Ready, GetGo.]
+2018-07-16 15:19:32,136  INFO [main] Verify:36 - Condition verified!
+2018-07-16 15:19:32,137  INFO [main] Verify:28 - Verify element [Getgo.Welcome.BtnLogin.ID] text is matching with [LOG IN]
+2018-07-16 15:19:32,308  INFO [main] Verify:36 - Condition verified!
+2018-07-16 15:19:32,309  INFO [main] Verify:28 - Verify element [Getgo.Welcome.BtnSignUp.ID] text is matching with [SIGN UP]
+2018-07-16 15:19:32,474  INFO [main] Verify:36 - Condition verified!
+2018-07-16 15:19:32,475  INFO [main] Click:16 - Click element [Getgo.Welcome.BtnSignUp.ID]
+2018-07-16 15:19:33,050  INFO [main] Click:22 - Click Successful!
+2018-07-16 15:19:33,051  INFO [main] Verify:16 - Verify element [Getgo.SignUp.ImgGetgoCard.ID] is present
+2018-07-16 15:19:33,196  INFO [main] Verify:18 - Element is present!
+2018-07-16 15:19:33,196  INFO [main] Verify:28 - Verify element [Getgo.SignUp.BtnCreateVirtualCard.XPATH] text is matching with [No]
+2018-07-16 15:19:34,342  INFO [main] Verify:36 - Condition verified!
+2018-07-16 15:19:34,342  INFO [main] Verify:28 - Verify element [Getgo.SignUp.BtnRegisterPhysicalCard.XPATH] text is matching with [Yes]
+2018-07-16 15:19:35,693  INFO [main] Verify:36 - Condition verified!
+2018-07-16 15:19:35,693  INFO [main] Verify:28 - Verify element [Getgo.SignUp.LblCaption1.XPATH] text is matching with [Do you have a GetGo Peso Plus Card?]
+2018-07-16 15:19:37,040  INFO [main] Verify:36 - Condition verified!
+2018-07-16 15:19:37,040  INFO [main] Verify:28 - Verify element [Getgo.SignUp.LblCaption2.XPATH] text is matching with [Start shopping online by creating your GetGo Virtual Prepaid Card. Or register your Peso + Prepaid Card now.]
+2018-07-16 15:19:38,369  INFO [main] Verify:36 - Condition verified!
+2018-07-16 15:19:38,612  INFO [main] Keywords:48 - Application closed
+2018-07-16 15:19:38,614  INFO [main] StepsBase:16 - Executing S C E N A R I O : Validate the fields & texts displayed on the Getgo Login page
+2018-07-16 15:19:40,713  INFO [main] Keywords:41 - Application launched
+2018-07-16 15:19:40,714  INFO [main] Click:16 - Click element [Getgo.Welcome.BtnLogin.ID]
+2018-07-16 15:19:41,364  INFO [main] Click:22 - Click Successful!
+2018-07-16 15:19:41,365  INFO [main] Verify:16 - Verify element [Getgo.Login.BtnBack.XPATH] is present
+2018-07-16 15:19:42,479  INFO [main] Verify:18 - Element is present!
+2018-07-16 15:19:42,487  INFO [main] Verify:22 - Verify element [By.xpath: //XCUIElementTypeStaticText[@name='Login']] is present
+2018-07-16 15:19:43,501  INFO [main] Verify:24 - Element is present!
+2018-07-16 15:19:43,501  INFO [main] Verify:28 - Verify element [Getgo.Login.LblCaption.XPATH] text is matching with [Now made easier. As simple as Ready, GetGo.]
+2018-07-16 15:19:44,577  INFO [main] Verify:36 - Condition verified!
+2018-07-16 15:19:44,578  INFO [main] Verify:28 - Verify element [Getgo.Login.TxtEmailAddress.XPATH] text is matching with [Email]
+2018-07-16 15:19:45,642  INFO [main] Verify:36 - Condition verified!
+2018-07-16 15:19:45,642  INFO [main] Verify:22 - Verify element [By.xpath: //XCUIElementTypeButton[@text='Forgot password?']] is present
+2018-07-16 15:19:56,553 ERROR [main] Get:38 - Element [By.xpath: //XCUIElementTypeButton[@text='Forgot password?']] not found!
+2018-07-16 15:19:56,593 ERROR [main] StepsBase:23 - S C E N A R I O    F A I L E D !!!!!
+2018-07-16 15:19:56,593  INFO [main] Screenshot:20 - Capture screenshot
+2018-07-16 15:19:56,930  INFO [main] Screenshot:25 - Captured!
+2018-07-16 15:19:57,180  INFO [main] Keywords:48 - Application closed
+2018-07-16 15:19:57,241  INFO [main] Test:50 - Report is generates @ emailable-results/Run-44/Automation-Dashboard.html

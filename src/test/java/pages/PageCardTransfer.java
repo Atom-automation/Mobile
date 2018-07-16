@@ -16,7 +16,7 @@ public class PageCardTransfer extends Keywords
     private String keyBtnFrequencyDropdown="Getgo.CardTransfer.BtnFrequencyDropdown.ID";
     private String keyTxtMessage="Getgo.CardTransfer.TxtMessage.XPATH";
     private String keyBtnNext="Getgo.CardTransfer.BtnNext.ID";
-    private String keyLblAvailableBalance="Getgo.CardTransfer.LblAvailableBalance.ID";
+    private String keyLblAvailableBalance="Getgo.CardTransfer.LblAvailableBalance.XPATH";
     private String keyBtnAddRecipient="Getgo.CardTransfer.BtnAddRecipient.ID";
 
     private double beforeBalance;
@@ -44,13 +44,17 @@ public class PageCardTransfer extends Keywords
         if(Test.attributes.get(Keys.OS).equalsIgnoreCase(OS.ANDROID)) {
             click.elementBy("Getgo.CardTransfer.BtnAndroidDatePickerOk.ID");
         }else if(Test.attributes.get(Keys.OS).equalsIgnoreCase(OS.iOS)) {
-
+            ios.datePicker(day,month,year);
         }
     }
 
     public void selectFrequency(String frequency) throws ApplicationException {
         click.elementBy(keyBtnFrequencyDropdown);
-        click.elementBy(xpathOf.textView(Matching.youDecide(frequency)));
+        if(Test.attributes.get(Keys.OS).equalsIgnoreCase(OS.ANDROID)) {
+            click.elementBy(xpathOf.textView(Matching.youDecide(frequency)));
+        }else if(Test.attributes.get(Keys.OS).equalsIgnoreCase(OS.iOS)) {
+            ios.selectPicker(frequency);
+        }
     }
 
     public void enterMessage(String message) throws ApplicationException {
@@ -58,7 +62,7 @@ public class PageCardTransfer extends Keywords
     }
 
     public void clickNext() throws ApplicationException {
-        beforeBalance= Double.parseDouble(get.elementBy(keyLblAvailableBalance).getText());
+        beforeBalance= Double.parseDouble(get.elementBy(keyLblAvailableBalance).getText().replaceAll("\\u00A0","").replaceAll(",",""));
         click.elementBy(keyBtnNext);
     }
 

@@ -1,0 +1,13 @@
+2018-07-16 17:03:36,632  INFO [main] RunManager:23 - Hey! ubp, Logging everything from here ....
+2018-07-16 17:03:36,636  INFO [main] RunManager:24 - Run ID is --> Run-67
+2018-07-16 17:03:36,879  INFO [main] StepsBase:16 - Executing S C E N A R I O : As a tester, I want to complete a funds transfer transaction so that I can pass on funds to another cardholder (Add recipient from saved list).
+2018-07-16 17:04:08,374  INFO [main] Keywords:42 - Application launched
+2018-07-16 17:04:08,389  INFO [main] Click:16 - Click element [Getgo.Welcome.BtnLogin.ID]
+2018-07-16 17:04:09,044  INFO [main] Click:22 - Click Successful!
+2018-07-16 17:04:09,059  INFO [main] Type:14 - Type the value [john@does.com] into element [Getgo.Login.TxtEmailAddress.XPATH]
+2018-07-16 17:04:12,951  INFO [main] Type:17 - Type Successful!
+2018-07-16 17:04:12,951  INFO [main] Click:16 - Click element [Getgo.Login.BtnNext.XPATH]
+2018-07-16 17:04:15,212  INFO [main] Click:22 - Click Successful!
+2018-07-16 17:04:15,214  INFO [main] Type:21 - Type the value [he*****] into element [Getgo.Login.TxtPassword.XPATH]
+2018-07-16 17:04:22,035  INFO [main] Type:24 - Type Successful!
+2018-07-16 17:04:22,036  INFO [main] Click:16 - Click element [Getgo.Login.BtnLogin.XPATH]

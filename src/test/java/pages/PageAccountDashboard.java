@@ -11,7 +11,7 @@ import xpath.Matching;
 public class PageAccountDashboard extends Keywords {
 
     private String keyImgProfilePicture="Getgo.Dashboard.ImgProfilePicture.ID";
-    private String keyLblUserName="Getgo.Dashboard.LblUsername.ID";
+    private String keyLblUserName="Getgo.Dashboard.LblUsername.XPATH";
     private String keyBtnMenu="Getgo.Dashboard.BtnMenu.ID";
     private String keyLblAvailableBalancePeso="Getgo.Peso+Dashboard.LblAvailableBalance.XPATH";
     private String keyLblAvailableBalanceVirtualCard="Getgo.VirtualDashboard.LblAvailableBalance.XPATH";
@@ -28,10 +28,10 @@ public class PageAccountDashboard extends Keywords {
         double actualBalance;
         switch (accountType.trim().toUpperCase()){
             case "VIRTUAL":
-                for(int i=1;i<=3;i++)
+                for(int i=1;i<=5;i++)
                 {
                    try{
-                       actualBalance=Double.parseDouble(get.elementBy(keyLblAvailableBalanceVirtualCard).getText().trim());
+                       actualBalance=Double.parseDouble(get.elementBy(keyLblAvailableBalancePeso).getText().trim().replaceAll("\\u00A0",""));
                    }catch (NumberFormatException e){
                        actualBalance=0.00;
                    }
@@ -43,10 +43,10 @@ public class PageAccountDashboard extends Keywords {
                 }
                 break;
             case "PESO":
-                for(int i=1;i<=3;i++)
+                for(int i=1;i<=5;i++)
                 {
                     try{
-                        actualBalance=Double.parseDouble(get.elementBy(keyLblAvailableBalancePeso).getText().trim());
+                        actualBalance=Double.parseDouble(get.elementBy(keyLblAvailableBalancePeso).getText().trim().replaceAll("\\u00A0","").replaceAll(",",""));
                     }catch (NumberFormatException e){
                         actualBalance=0.00;
                     }
@@ -59,8 +59,10 @@ public class PageAccountDashboard extends Keywords {
                 break;
         }
         Reporter.addStepLog("My Account Balance is --> "+myAccountBalance);
-        if(failIfZeroBalance){
-            throw new ApplicationException("Your account balance is "+myAccountBalance+" we can't proceed testing with this balance");
+        if(myAccountBalance==0.00){
+            if(failIfZeroBalance){
+                throw new ApplicationException("Your account balance is "+myAccountBalance+" we can't proceed testing with this balance");
+            }
         }
     }
 
@@ -78,7 +80,7 @@ public class PageAccountDashboard extends Keywords {
             click.elementBy(xpathOf.checkedTextView(Matching.text(where)));
         }else
         {
-
+            click.elementBy(xpathOf.textView(Matching.name(where)));
         }
     }
 

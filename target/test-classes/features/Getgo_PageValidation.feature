@@ -30,6 +30,6 @@ Feature: Page Validation
   @IOS
   Scenario: Validate the fields & texts displayed on the Getgo Login page
     Given I'm on Getgo login page
-    Then  I should see back arrow, page title as "Login", a caption "Now made easier. As simple as Ready, GetGo.", a text box with inner text "Email", a link "Having problems with your account?", a "NEXT" button & a sign up link "Don’t have an account? SIGN UP NOW!"
+    Then  I should see back arrow, page title as "Login", a caption "Now made easier. As simple as Ready, GetGo.", a text box with inner text "Email", a link "Forgot password?", a "NEXT" button & a sign up link "Don’t have an account? SIGN UP NOW!"
     When  I enter a "Peso_Username" & click next
     Then  I should see back arrow, page title as "Login", a caption "Enter your password", a text box with inner text "Password", a link "Having problems with your account?", a "LOGIN" button & a password visibility toggle button

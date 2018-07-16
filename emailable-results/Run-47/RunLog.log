@@ -1,0 +1,18 @@
+2018-07-16 15:28:06,232  INFO [main] RunManager:23 - Hey! ubp, Logging everything from here ....
+2018-07-16 15:28:06,236  INFO [main] RunManager:24 - Run ID is --> Run-47
+2018-07-16 15:28:06,488  INFO [main] StepsBase:16 - Executing S C E N A R I O : As a tester, I want to be able to login using my credentials so that I can see my account(Virtual Card or Peso+) details
+2018-07-16 15:28:12,941  INFO [main] Keywords:41 - Application launched
+2018-07-16 15:28:12,963  INFO [main] Click:16 - Click element [Getgo.Welcome.BtnLogin.ID]
+2018-07-16 15:28:13,592  INFO [main] Click:22 - Click Successful!
+2018-07-16 15:28:13,612  INFO [main] Type:14 - Type the value [john@does.com] into element [Getgo.Login.TxtEmailAddress.XPATH]
+2018-07-16 15:28:17,535  INFO [main] Type:17 - Type Successful!
+2018-07-16 15:28:17,536  INFO [main] Click:16 - Click element [Getgo.Login.BtnNext.XPATH]
+2018-07-16 15:28:19,783  INFO [main] Click:22 - Click Successful!
+2018-07-16 15:28:19,785  INFO [main] Type:21 - Type the value [he*****] into element [Getgo.Login.TxtPassword.XPATH]
+2018-07-16 15:28:26,405  INFO [main] Type:24 - Type Successful!
+2018-07-16 15:28:26,413  INFO [main] Click:16 - Click element [Getgo.Login.BtnLogin.XPATH]
+2018-07-16 15:28:28,723  INFO [main] Click:22 - Click Successful!
+2018-07-16 15:28:28,745  INFO [main] Verify:16 - Verify element [Getgo.Dashboard.ImgProfilePicture.ID] is present
+2018-07-16 15:28:31,795  INFO [main] Verify:18 - Element is present!
+2018-07-16 15:28:31,796  INFO [main] Verify:28 - Verify element [Getgo.Dashboard.LblUsername.XPATH] text is matching with [John Berlin Fuertes]
+2018-07-16 15:28:33,177  INFO [main] Verify:36 - Condition verified!

@@ -1,0 +1,23 @@
+2018-07-16 16:36:40,208  INFO [main] RunManager:23 - Hey! ubp, Logging everything from here ....
+2018-07-16 16:36:40,212  INFO [main] RunManager:24 - Run ID is --> Run-62
+2018-07-16 16:36:40,425  INFO [main] StepsBase:16 - Executing S C E N A R I O : As a tester, I want to complete a funds transfer transaction so that I can pass on funds to another cardholder.
+2018-07-16 16:36:44,916  INFO [main] Keywords:41 - Application launched
+2018-07-16 16:36:44,930  INFO [main] Click:16 - Click element [Getgo.Welcome.BtnLogin.ID]
+2018-07-16 16:36:45,635  INFO [main] Click:22 - Click Successful!
+2018-07-16 16:36:45,645  INFO [main] Type:14 - Type the value [john@does.com] into element [Getgo.Login.TxtEmailAddress.XPATH]
+2018-07-16 16:36:49,501  INFO [main] Type:17 - Type Successful!
+2018-07-16 16:36:49,501  INFO [main] Click:16 - Click element [Getgo.Login.BtnNext.XPATH]
+2018-07-16 16:36:51,757  INFO [main] Click:22 - Click Successful!
+2018-07-16 16:36:51,759  INFO [main] Type:21 - Type the value [he*****] into element [Getgo.Login.TxtPassword.XPATH]
+2018-07-16 16:36:58,684  INFO [main] Type:24 - Type Successful!
+2018-07-16 16:36:58,685  INFO [main] Click:16 - Click element [Getgo.Login.BtnLogin.XPATH]
+2018-07-16 16:37:01,005  INFO [main] Click:22 - Click Successful!
+2018-07-16 16:37:01,009  INFO [main] Click:16 - Click element [Getgo.Dashboard.BtnMenu.ID]
+2018-07-16 16:37:05,982  INFO [main] Click:22 - Click Successful!
+2018-07-16 16:37:05,983  INFO [main] Click:26 - Click element [By.xpath: //XCUIElementTypeStaticText[@name='Card transfer']]
+2018-07-16 16:37:16,084 ERROR [main] Get:38 - Element [By.xpath: //XCUIElementTypeStaticText[@name='Card transfer']] not found!
+2018-07-16 16:37:16,097 ERROR [main] StepsBase:23 - S C E N A R I O    F A I L E D !!!!!
+2018-07-16 16:37:16,099  INFO [main] Screenshot:20 - Capture screenshot
+2018-07-16 16:37:16,472  INFO [main] Screenshot:25 - Captured!
+2018-07-16 16:37:16,721  INFO [main] Keywords:48 - Application closed
+2018-07-16 16:37:16,765  INFO [main] Test:50 - Report is generates @ emailable-results/Run-62/Automation-Dashboard.html

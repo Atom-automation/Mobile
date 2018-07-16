@@ -1,0 +1,20 @@
+2018-07-16 18:15:06,360  INFO [main] RunManager:23 - Hey! ubp, Logging everything from here ....
+2018-07-16 18:15:06,363  INFO [main] RunManager:24 - Run ID is --> Run-81
+2018-07-16 18:15:06,535  INFO [main] StepsBase:16 - Executing S C E N A R I O : As a tester, I want to complete a funds transfer transaction so that I can pass on funds to another cardholder (Add recipient from saved list).
+2018-07-16 18:15:11,526  INFO [main] Keywords:42 - Application launched
+2018-07-16 18:15:11,547  INFO [main] Click:16 - Click element [Getgo.Welcome.BtnLogin.ID]
+2018-07-16 18:15:12,173  INFO [main] Click:22 - Click Successful!
+2018-07-16 18:15:12,176  INFO [main] Type:14 - Type the value [john@does.com] into element [Getgo.Login.TxtEmailAddress.XPATH]
+2018-07-16 18:15:16,103  INFO [main] Type:17 - Type Successful!
+2018-07-16 18:15:16,104  INFO [main] Click:16 - Click element [Getgo.Login.BtnNext.XPATH]
+2018-07-16 18:15:18,383  INFO [main] Click:22 - Click Successful!
+2018-07-16 18:15:18,384  INFO [main] Type:21 - Type the value [he*****] into element [Getgo.Login.TxtPassword.XPATH]
+2018-07-16 18:15:25,284  INFO [main] Type:24 - Type Successful!
+2018-07-16 18:15:25,285  INFO [main] Click:16 - Click element [Getgo.Login.BtnLogin.XPATH]
+2018-07-16 18:15:27,616  INFO [main] Click:22 - Click Successful!
+2018-07-16 18:15:27,627  INFO [main] Click:16 - Click element [Getgo.Dashboard.BtnMenu.ID]
+2018-07-16 18:15:33,538  INFO [main] Click:22 - Click Successful!
+2018-07-16 18:15:33,541  INFO [main] Click:26 - Click element [By.xpath: //XCUIElementTypeStaticText[@name='Card Transfer']]
+2018-07-16 18:15:38,357  INFO [main] Click:32 - Click Successful!
+2018-07-16 18:15:38,373  INFO [main] Click:16 - Click element [Getgo.CardTransfer.BtnAddRecipient.ID]
+2018-07-16 18:15:39,440  INFO [main] Click:22 - Click Successful!

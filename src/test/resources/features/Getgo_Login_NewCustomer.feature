@@ -6,7 +6,6 @@
 # Sub-tasks : GGP-549 - Automation Script Preparation [IOS]
 
 @Login
-
 Feature: New Customer Login Feature
 
   Background: Open Getgo mobile application

@@ -5,6 +5,7 @@ import base.Test;
 import constants.Keys;
 import io.appium.java_client.MobileBy;
 import io.appium.java_client.MobileElement;
+import org.openqa.selenium.By;
 
 import java.util.List;
 
@@ -20,11 +21,11 @@ public class Keyboard extends Keywords {
 
     public void hideIOS(){
         try {
-            List<MobileElement> el=get.elementBy((MobileBy) MobileBy.className("XCUIElementTypeKeyboard")).findElements(MobileBy.className("XCUIElementTypeButton"));
+            List<MobileElement> el=get.elementBy(By.className("XCUIElementTypeKeyboard")).findElements(By.className("XCUIElementTypeButton"));
             if(el.size() > 2) {
                 el.get(0).click();
             }else if (el.size() == 0){
-                get.elementBy((MobileBy) MobileBy.xpath("//XCUIElementTypeButton[@name='Toolbar Done Button']")).click();
+                get.elementBy(By.xpath("//XCUIElementTypeButton[@name='Toolbar Done Button']")).click();
             }else {
                 el.get(el.size() - 1).click();
             }
