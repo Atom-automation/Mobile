@@ -1,3 +1,0 @@
-2018-07-16 15:38:19,831  INFO [main] RunManager:23 - Hey! ubp, Logging everything from here ....
-2018-07-16 15:38:19,835  INFO [main] RunManager:24 - Run ID is --> Run-50
-2018-07-16 15:38:20,107  INFO [main] StepsBase:16 - Executing S C E N A R I O : As a tester, I want to be able to login using my credentials so that I can see my account(Virtual Card or Peso+) details

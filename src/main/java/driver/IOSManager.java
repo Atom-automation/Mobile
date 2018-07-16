@@ -18,7 +18,6 @@ public class IOSManager extends DriverManager {
         setAppCapabilities();
         Test.attributes.put(Keys.ObjectRepository,"src/test/resources/object-repository/Locators-IOS.properties");
         driver = new IOSDriver(new URL(PropertyReader.valueOf("Driver.ServerAddress").trim()), capabilities);
-        driver.manage().timeouts().implicitlyWait(Integer.parseInt(PropertyReader.valueOf("Driver.Timeout").trim()), TimeUnit.SECONDS);
     }
 
     private void setAppCapabilities()
