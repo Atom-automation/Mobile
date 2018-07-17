@@ -13,28 +13,28 @@ public class Type extends Keywords{
     public void data(String locatorKey,String value) throws ApplicationException {
         log.info("Type the value ["+value+"] into element ["+locatorKey+"]");
         get.elementBy(locatorKey).sendKeys(value);
-        keyboard.hideIOS();
+        keyboard.hideIfIOS();
         log.info("Type Successful!");
     }
 
     public void sensitiveData(String locatorKey,String value) throws ApplicationException {
         log.info("Type the value ["+value.substring(0,2)+"*****] into element ["+locatorKey+"]");
         get.elementBy(locatorKey).sendKeys(value);
-        keyboard.hideIOS();
+        keyboard.hideIfIOS();
         log.info("Type Successful!");
     }
 
     public void data(By locator, String value) throws ApplicationException {
         log.info("Type the value ["+value+"] into element ["+locator+"]");
         get.elementBy(locator).sendKeys(value);
-        keyboard.hideIOS();
+        keyboard.hideIfIOS();
         log.info("Type Successful!");
     }
 
     public void sensitiveData(By locator,String value) throws ApplicationException {
         log.info("Type the value ["+value.substring(0,2)+"*****] into element ["+locator+"]");
         get.elementBy(locator).sendKeys(value);
-        keyboard.hideIOS();
+        keyboard.hideIfIOS();
         log.info("Type Successful!");
     }
 
@@ -42,7 +42,7 @@ public class Type extends Keywords{
         log.info("Type the value ["+value+"] into element ["+locatorKey+"]");
         get.elementBy(locatorKey).sendKeys(value);
         if(hideKeyboard){
-            keyboard.hide();
+            keyboard.hideAndroid();
         }
         log.info("Type Successful!");
     }
@@ -51,7 +51,7 @@ public class Type extends Keywords{
         log.info("Type the value ["+value.substring(0,2)+"*****] into element ["+locatorKey+"]");
         get.elementBy(locatorKey).sendKeys(value);
         if(hideKeyboard){
-            keyboard.hide();
+            keyboard.hideAndroid();
         }
         log.info("Type Successful!");
     }
@@ -60,7 +60,7 @@ public class Type extends Keywords{
         log.info("Type the value ["+value+"] into element ["+locator+"]");
         get.elementBy(locator).sendKeys(value);
         if(hideKeyboard){
-            keyboard.hide();
+            keyboard.hideAndroid();
         }
         log.info("Type Successful!");
     }
@@ -69,7 +69,7 @@ public class Type extends Keywords{
         log.info("Type the value ["+value.substring(0,2)+"*****] into element ["+locator+"]");
         get.elementBy(locator).sendKeys(value);
         if(hideKeyboard){
-            keyboard.hide();
+            keyboard.hideAndroid();
         }
         log.info("Type Successful!");
     }

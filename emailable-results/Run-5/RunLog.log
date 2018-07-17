@@ -1,0 +1,26 @@
+2018-07-17 18:14:32,683  INFO [main] RunManager:23 - Hey! Tg2259, Logging everything from here ....
+2018-07-17 18:14:32,683  INFO [main] RunManager:24 - Run ID is --> Run-5
+2018-07-17 18:14:32,916  INFO [main] StepsBase:16 - Executing S C E N A R I O : Validate the fields & texts displayed on the Getgo Welcome & SignUp page
+2018-07-17 18:15:00,741  INFO [main] Keywords:42 - Application launched
+2018-07-17 18:15:00,747  INFO [main] Verify:16 - Verify element [Getgo.Welcome.ImgLogo.ID] is present
+2018-07-17 18:15:00,998  INFO [main] Verify:18 - Element is present!
+2018-07-17 18:15:00,998  INFO [main] Verify:28 - Verify element [Getgo.Welcome.LblCaption.XPATH] text is matching with [Now made easier. As simple as Ready, GetGo.]
+2018-07-17 18:15:01,193  INFO [main] Verify:36 - Condition verified!
+2018-07-17 18:15:01,193  INFO [main] Verify:28 - Verify element [Getgo.Welcome.BtnLogin.ID] text is matching with [LOG IN]
+2018-07-17 18:15:01,296  INFO [main] Verify:36 - Condition verified!
+2018-07-17 18:15:01,312  INFO [main] Verify:28 - Verify element [Getgo.Welcome.BtnSignUp.ID] text is matching with [SIGN UP]
+2018-07-17 18:15:01,449  INFO [main] Verify:36 - Condition verified!
+2018-07-17 18:15:01,449  INFO [main] Click:16 - Click element [Getgo.Welcome.BtnSignUp.ID]
+2018-07-17 18:15:01,609  INFO [main] Click:22 - Click Successful!
+2018-07-17 18:15:01,609  INFO [main] Verify:16 - Verify element [Getgo.SignUp.ImgGetgoCard.ID] is present
+2018-07-17 18:15:01,697  INFO [main] Verify:18 - Element is present!
+2018-07-17 18:15:01,697  INFO [main] Verify:28 - Verify element [Getgo.SignUp.BtnCreateVirtualCard.XPATH] text is matching with [No]
+2018-07-17 18:15:02,599  INFO [main] Verify:36 - Condition verified!
+2018-07-17 18:15:02,599  INFO [main] Verify:28 - Verify element [Getgo.SignUp.BtnRegisterPhysicalCard.XPATH] text is matching with [Yes]
+2018-07-17 18:15:02,733  INFO [main] Verify:36 - Condition verified!
+2018-07-17 18:15:02,733  INFO [main] Verify:28 - Verify element [Getgo.SignUp.LblCaption1.XPATH] text is matching with [Do you have a GetGo Peso Plus Card?]
+2018-07-17 18:15:02,881  INFO [main] Verify:36 - Condition verified!
+2018-07-17 18:15:02,881  INFO [main] Verify:28 - Verify element [Getgo.SignUp.LblCaption2.XPATH] text is matching with [Start shopping online by creating your GetGo Virtual Prepaid Card. Or register your Peso + Prepaid Card now.]
+2018-07-17 18:15:03,016  INFO [main] Verify:36 - Condition verified!
+2018-07-17 18:15:04,320  INFO [main] Keywords:49 - Application closed
+2018-07-17 18:15:05,727  INFO [main] Test:50 - Report is generates @ emailable-results\Run-5/Automation-Dashboard.html

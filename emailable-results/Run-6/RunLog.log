@@ -1,0 +1,64 @@
+2018-07-17 18:22:32,384  INFO [main] RunManager:23 - Hey! Tg2259, Logging everything from here ....
+2018-07-17 18:22:32,399  INFO [main] RunManager:24 - Run ID is --> Run-6
+2018-07-17 18:22:32,682  INFO [main] StepsBase:16 - Executing S C E N A R I O : As a tester, I want to complete a funds transfer transaction so that I can pass on funds to another cardholder (Add recipient from saved list).
+2018-07-17 18:23:01,391  INFO [main] Keywords:42 - Application launched
+2018-07-17 18:23:01,400  INFO [main] Click:16 - Click element [Getgo.Welcome.BtnLogin.ID]
+2018-07-17 18:23:01,708  INFO [main] Click:22 - Click Successful!
+2018-07-17 18:23:01,714  INFO [main] Type:14 - Type the value [john@does.com] into element [Getgo.Login.TxtEmailAddress.XPATH]
+2018-07-17 18:23:13,958 ERROR [main] Get:38 - Element [By.className: XCUIElementTypeKeyboard] not found!
+2018-07-17 18:23:13,959  INFO [main] Type:17 - Type Successful!
+2018-07-17 18:23:13,959  INFO [main] Click:16 - Click element [Getgo.Login.BtnNext.XPATH]
+2018-07-17 18:23:14,104  INFO [main] Click:22 - Click Successful!
+2018-07-17 18:23:14,106  INFO [main] Type:21 - Type the value [he*****] into element [Getgo.Login.TxtPassword.XPATH]
+2018-07-17 18:23:28,354 ERROR [main] Get:38 - Element [By.className: XCUIElementTypeKeyboard] not found!
+2018-07-17 18:23:28,354  INFO [main] Type:24 - Type Successful!
+2018-07-17 18:23:28,355  INFO [main] Click:16 - Click element [Getgo.Login.BtnLogin.XPATH]
+2018-07-17 18:23:28,470  INFO [main] Click:22 - Click Successful!
+2018-07-17 18:23:28,475  INFO [main] Click:16 - Click element [Getgo.Dashboard.BtnMenu.ID]
+2018-07-17 18:23:36,687  INFO [main] Click:22 - Click Successful!
+2018-07-17 18:23:36,688  INFO [main] Click:26 - Click element [By.xpath: //android.widget.CheckedTextView[@text='Card Transfer']]
+2018-07-17 18:23:47,020 ERROR [main] Get:38 - Element [By.xpath: //android.widget.CheckedTextView[@text='Card Transfer']] not found!
+2018-07-17 18:23:47,041 ERROR [main] StepsBase:23 - S C E N A R I O    F A I L E D !!!!!
+2018-07-17 18:23:47,041  INFO [main] Screenshot:20 - Capture screenshot
+2018-07-17 18:23:47,375  INFO [main] Screenshot:25 - Captured!
+2018-07-17 18:23:48,669  INFO [main] Keywords:49 - Application closed
+2018-07-17 18:23:48,670  INFO [main] StepsBase:16 - Executing S C E N A R I O : As a tester, I want to complete a funds transfer transaction so that I can pass on funds to another cardholder.
+2018-07-17 18:23:54,597  INFO [main] Keywords:42 - Application launched
+2018-07-17 18:23:54,598  INFO [main] Click:16 - Click element [Getgo.Welcome.BtnLogin.ID]
+2018-07-17 18:23:55,083  INFO [main] Click:22 - Click Successful!
+2018-07-17 18:23:55,085  INFO [main] Type:14 - Type the value [john@does.com] into element [Getgo.Login.TxtEmailAddress.XPATH]
+2018-07-17 18:24:07,363 ERROR [main] Get:38 - Element [By.className: XCUIElementTypeKeyboard] not found!
+2018-07-17 18:24:07,363  INFO [main] Type:17 - Type Successful!
+2018-07-17 18:24:07,363  INFO [main] Click:16 - Click element [Getgo.Login.BtnNext.XPATH]
+2018-07-17 18:24:07,478  INFO [main] Click:22 - Click Successful!
+2018-07-17 18:24:07,479  INFO [main] Type:21 - Type the value [he*****] into element [Getgo.Login.TxtPassword.XPATH]
+2018-07-17 18:24:22,640 ERROR [main] Get:38 - Element [By.className: XCUIElementTypeKeyboard] not found!
+2018-07-17 18:24:22,640  INFO [main] Type:24 - Type Successful!
+2018-07-17 18:24:22,641  INFO [main] Click:16 - Click element [Getgo.Login.BtnLogin.XPATH]
+2018-07-17 18:24:22,779  INFO [main] Click:22 - Click Successful!
+2018-07-17 18:24:22,781  INFO [main] Click:16 - Click element [Getgo.Dashboard.BtnMenu.ID]
+2018-07-17 18:24:29,302  INFO [main] Click:22 - Click Successful!
+2018-07-17 18:24:29,302  INFO [main] Click:26 - Click element [By.xpath: //android.widget.CheckedTextView[@text='Card Transfer']]
+2018-07-17 18:24:39,427 ERROR [main] Get:38 - Element [By.xpath: //android.widget.CheckedTextView[@text='Card Transfer']] not found!
+2018-07-17 18:24:39,431 ERROR [main] StepsBase:23 - S C E N A R I O    F A I L E D !!!!!
+2018-07-17 18:24:39,433  INFO [main] Screenshot:20 - Capture screenshot
+2018-07-17 18:24:39,765  INFO [main] Screenshot:25 - Captured!
+2018-07-17 18:24:41,073  INFO [main] Keywords:49 - Application closed
+2018-07-17 18:24:41,076  INFO [main] StepsBase:16 - Executing S C E N A R I O : As a tester, I want to be able to login using my credentials so that I can see my account(Virtual Card or Peso+) details
+2018-07-17 18:24:47,049  INFO [main] Keywords:42 - Application launched
+2018-07-17 18:24:47,053  INFO [main] Click:16 - Click element [Getgo.Welcome.BtnLogin.ID]
+2018-07-17 18:24:47,530  INFO [main] Click:22 - Click Successful!
+2018-07-17 18:24:47,531  INFO [main] Type:14 - Type the value [(3)Evelyn.dhamodaran@unionbankph.com] into element [Getgo.Login.TxtEmailAddress.XPATH]
+2018-07-17 18:24:59,774 ERROR [main] Get:38 - Element [By.className: XCUIElementTypeKeyboard] not found!
+2018-07-17 18:24:59,774  INFO [main] Type:17 - Type Successful!
+2018-07-17 18:24:59,775  INFO [main] Click:16 - Click element [Getgo.Login.BtnNext.XPATH]
+2018-07-17 18:24:59,877  INFO [main] Click:22 - Click Successful!
+2018-07-17 18:24:59,879  INFO [main] Type:21 - Type the value [he*****] into element [Getgo.Login.TxtPassword.XPATH]
+2018-07-17 18:25:14,316 ERROR [main] Get:38 - Element [By.className: XCUIElementTypeKeyboard] not found!
+2018-07-17 18:25:14,316  INFO [main] Type:24 - Type Successful!
+2018-07-17 18:25:14,317  INFO [main] Click:16 - Click element [Getgo.Login.BtnLogin.XPATH]
+2018-07-17 18:25:14,426  INFO [main] Click:22 - Click Successful!
+2018-07-17 18:25:14,428  INFO [main] Verify:16 - Verify element [Getgo.Dashboard.ImgProfilePicture.ID] is present
+2018-07-17 18:25:19,910  INFO [main] Verify:18 - Element is present!
+2018-07-17 18:25:19,910  INFO [main] Verify:28 - Verify element [Getgo.Dashboard.LblUsername.XPATH] text is matching with [Eve Kanmani]
+2018-07-17 18:25:20,035  INFO [main] Verify:36 - Condition verified!
