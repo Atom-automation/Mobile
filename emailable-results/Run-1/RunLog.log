@@ -1,0 +1,230 @@
+2018-07-17 15:56:04,428  INFO [main] RunManager:23 - Hey! ubp, Logging everything from here ....
+2018-07-17 15:56:04,434  INFO [main] RunManager:24 - Run ID is --> Run-1
+2018-07-17 15:56:04,609  INFO [main] StepsBase:16 - Executing S C E N A R I O : As a tester, I want to complete a funds transfer transaction so that I can pass on funds to another cardholder (Add recipient from saved list).
+2018-07-17 15:56:13,044  INFO [main] Keywords:42 - Application launched
+2018-07-17 15:56:13,058  INFO [main] Click:16 - Click element [Getgo.Welcome.BtnLogin.ID]
+2018-07-17 15:56:14,510  INFO [main] Click:22 - Click Successful!
+2018-07-17 15:56:14,519  INFO [main] Type:14 - Type the value [john@does.com] into element [Getgo.Login.TxtEmailAddress.XPATH]
+2018-07-17 15:56:21,582  INFO [main] Type:17 - Type Successful!
+2018-07-17 15:56:21,583  INFO [main] Click:16 - Click element [Getgo.Login.BtnNext.XPATH]
+2018-07-17 15:56:24,780  INFO [main] Click:22 - Click Successful!
+2018-07-17 15:56:24,782  INFO [main] Type:21 - Type the value [he*****] into element [Getgo.Login.TxtPassword.XPATH]
+2018-07-17 15:56:33,838  INFO [main] Type:24 - Type Successful!
+2018-07-17 15:56:33,839  INFO [main] Click:16 - Click element [Getgo.Login.BtnLogin.XPATH]
+2018-07-17 15:56:36,466  INFO [main] Click:22 - Click Successful!
+2018-07-17 15:56:36,482  INFO [main] Click:16 - Click element [Getgo.Dashboard.BtnMenu.ID]
+2018-07-17 15:56:40,808  INFO [main] Click:22 - Click Successful!
+2018-07-17 15:56:40,824  INFO [main] Click:26 - Click element [By.xpath: //XCUIElementTypeStaticText[@name='Card Transfer']]
+2018-07-17 15:56:46,717  INFO [main] Click:32 - Click Successful!
+2018-07-17 15:56:46,731  INFO [main] Click:16 - Click element [Getgo.CardTransfer.BtnAddRecipient.ID]
+2018-07-17 15:56:48,364  INFO [main] Click:22 - Click Successful!
+2018-07-17 15:57:19,480  INFO [main] Swipe:65 - Scrolled to the element matching the text --> testtransfer
+2018-07-17 15:57:19,480  INFO [main] Click:26 - Click element [By.xpath: //XCUIElementTypeStaticText[@name='testtransfer']]
+2018-07-17 15:57:47,227  INFO [main] Click:32 - Click Successful!
+2018-07-17 15:57:47,227  INFO [main] Type:14 - Type the value [5] into element [Getgo.CardTransfer.TxtAmount.XPATH]
+2018-07-17 15:57:58,568  INFO [main] Type:17 - Type Successful!
+2018-07-17 15:57:58,568  INFO [main] Click:16 - Click element [Getgo.CardTransfer.BtnCalendar.ID]
+2018-07-17 15:58:00,138  INFO [main] Click:22 - Click Successful!
+2018-07-17 15:58:00,139  INFO [main] iOS:18 - Picking the specified day[17] month[7] year[2018] in the IOS calendar object
+2018-07-17 15:58:08,326  INFO [main] Click:16 - Click element [Getgo.CardTransfer.BtnFrequencyDropdown.ID]
+2018-07-17 15:58:09,967  INFO [main] Click:22 - Click Successful!
+2018-07-17 15:58:09,968  INFO [main] iOS:37 - Select the value {One Time Only} in IOS picker wheel
+2018-07-17 15:58:16,248  INFO [main] iOS:42 - Value One Time Only is selected!
+2018-07-17 15:58:16,248  INFO [main] Type:14 - Type the value [Automation Transaction!] into element [Getgo.CardTransfer.TxtMessage.XPATH]
+2018-07-17 15:58:24,733  INFO [main] Type:17 - Type Successful!
+2018-07-17 15:58:28,221  INFO [main] Click:16 - Click element [Getgo.CardTransfer.BtnNext.ID]
+2018-07-17 15:58:29,583  INFO [main] Click:22 - Click Successful!
+2018-07-17 15:58:29,597  INFO [main] Verify:64 - Verify element [By.xpath: //XCUIElementTypeStaticText[contains(@name,'John')]] text is matching with [John Berlin Fuertes]
+2018-07-17 15:58:32,202  INFO [main] Verify:72 - Condition verified!
+2018-07-17 15:58:32,202  INFO [main] Verify:64 - Verify element [By.xpath: //XCUIElementTypeStaticText[contains(@name,'****')]] text is matching with [**** **** **** 5506]
+2018-07-17 15:58:34,578  INFO [main] Verify:72 - Condition verified!
+2018-07-17 15:58:34,578  INFO [main] Verify:64 - Verify element [By.xpath: //XCUIElementTypeStaticText[contains(@name,'6019')]] text is matching with [6019990220004855]
+2018-07-17 15:58:36,821  INFO [main] Verify:72 - Condition verified!
+2018-07-17 15:58:39,105  INFO [main] Verify:64 - Verify element [By.xpath: //XCUIElementTypeStaticText[@name='Jul 17, 2018']] text is matching with [Jul 17, 2018]
+2018-07-17 15:58:41,425  INFO [main] Verify:72 - Condition verified!
+2018-07-17 15:58:41,425  INFO [main] Click:16 - Click element [Getgo.CardTransferReview.BtnTransfer.XPATH]
+2018-07-17 15:58:44,231  INFO [main] Click:22 - Click Successful!
+2018-07-17 15:58:44,232  INFO [main] Verify:22 - Verify element [By.xpath: //XCUIElementTypeStaticText[@name='Congratulations!']] is present
+2018-07-17 15:58:51,350  INFO [main] Verify:24 - Element is present!
+2018-07-17 15:58:51,350  INFO [main] Verify:22 - Verify element [By.xpath: //XCUIElementTypeStaticText[@name='You have successfully transfer fund.']] is present
+2018-07-17 15:58:52,788  INFO [main] Verify:24 - Element is present!
+2018-07-17 15:58:52,788  INFO [main] Click:16 - Click element [Getgo.CardTransferSuccess.BtnViewDetails.XPATH]
+2018-07-17 15:58:54,866  INFO [main] Click:22 - Click Successful!
+2018-07-17 15:59:00,553  INFO [main] Keywords:49 - Application closed
+2018-07-17 15:59:00,553  INFO [main] StepsBase:16 - Executing S C E N A R I O : As a tester, I want to complete a funds transfer transaction so that I can pass on funds to another cardholder.
+2018-07-17 15:59:04,047  INFO [main] Keywords:42 - Application launched
+2018-07-17 15:59:04,048  INFO [main] Click:16 - Click element [Getgo.Welcome.BtnLogin.ID]
+2018-07-17 15:59:05,232  INFO [main] Click:22 - Click Successful!
+2018-07-17 15:59:05,233  INFO [main] Type:14 - Type the value [john@does.com] into element [Getgo.Login.TxtEmailAddress.XPATH]
+2018-07-17 15:59:11,650  INFO [main] Type:17 - Type Successful!
+2018-07-17 15:59:11,651  INFO [main] Click:16 - Click element [Getgo.Login.BtnNext.XPATH]
+2018-07-17 15:59:14,566  INFO [main] Click:22 - Click Successful!
+2018-07-17 15:59:14,589  INFO [main] Type:21 - Type the value [he*****] into element [Getgo.Login.TxtPassword.XPATH]
+2018-07-17 15:59:23,133  INFO [main] Type:24 - Type Successful!
+2018-07-17 15:59:23,134  INFO [main] Click:16 - Click element [Getgo.Login.BtnLogin.XPATH]
+2018-07-17 15:59:25,797  INFO [main] Click:22 - Click Successful!
+2018-07-17 15:59:25,799  INFO [main] Click:16 - Click element [Getgo.Dashboard.BtnMenu.ID]
+2018-07-17 15:59:30,423  INFO [main] Click:22 - Click Successful!
+2018-07-17 15:59:30,423  INFO [main] Click:26 - Click element [By.xpath: //XCUIElementTypeStaticText[@name='Card Transfer']]
+2018-07-17 15:59:36,325  INFO [main] Click:32 - Click Successful!
+2018-07-17 15:59:36,326  INFO [main] Type:14 - Type the value [6019990220004855] into element [Getgo.CardTransfer.TxtCard.XPATH]
+2018-07-17 15:59:49,945  INFO [main] Type:17 - Type Successful!
+2018-07-17 15:59:49,945  INFO [main] Type:14 - Type the value [Oran Bechtelar] into element [Getgo.CardTransfer.TxtRecipientName.XPATH]
+2018-07-17 15:59:57,752  INFO [main] Type:17 - Type Successful!
+2018-07-17 15:59:57,752  INFO [main] Type:14 - Type the value [5] into element [Getgo.CardTransfer.TxtAmount.XPATH]
+2018-07-17 16:00:08,935  INFO [main] Type:17 - Type Successful!
+2018-07-17 16:00:08,936  INFO [main] Click:16 - Click element [Getgo.CardTransfer.BtnCalendar.ID]
+2018-07-17 16:00:10,565  INFO [main] Click:22 - Click Successful!
+2018-07-17 16:00:10,565  INFO [main] iOS:18 - Picking the specified day[17] month[7] year[2018] in the IOS calendar object
+2018-07-17 16:00:18,559  INFO [main] Click:16 - Click element [Getgo.CardTransfer.BtnFrequencyDropdown.ID]
+2018-07-17 16:00:19,921  INFO [main] Click:22 - Click Successful!
+2018-07-17 16:00:19,922  INFO [main] iOS:37 - Select the value {One Time Only} in IOS picker wheel
+2018-07-17 16:00:26,058  INFO [main] iOS:42 - Value One Time Only is selected!
+2018-07-17 16:00:26,059  INFO [main] Type:14 - Type the value [Automation Transaction!] into element [Getgo.CardTransfer.TxtMessage.XPATH]
+2018-07-17 16:00:34,850  INFO [main] Type:17 - Type Successful!
+2018-07-17 16:00:38,305  INFO [main] Click:16 - Click element [Getgo.CardTransfer.BtnNext.ID]
+2018-07-17 16:00:39,810  INFO [main] Click:22 - Click Successful!
+2018-07-17 16:00:39,811  INFO [main] Verify:64 - Verify element [By.xpath: //XCUIElementTypeStaticText[contains(@name,'John')]] text is matching with [John Berlin Fuertes]
+2018-07-17 16:00:42,260  INFO [main] Verify:72 - Condition verified!
+2018-07-17 16:00:42,261  INFO [main] Verify:64 - Verify element [By.xpath: //XCUIElementTypeStaticText[contains(@name,'****')]] text is matching with [**** **** **** 5506]
+2018-07-17 16:00:44,483  INFO [main] Verify:72 - Condition verified!
+2018-07-17 16:00:44,483  INFO [main] Verify:64 - Verify element [By.xpath: //XCUIElementTypeStaticText[contains(@name,'6019')]] text is matching with [6019990220004855]
+2018-07-17 16:00:46,675  INFO [main] Verify:72 - Condition verified!
+2018-07-17 16:00:48,879  INFO [main] Verify:64 - Verify element [By.xpath: //XCUIElementTypeStaticText[@name='Jul 17, 2018']] text is matching with [Jul 17, 2018]
+2018-07-17 16:00:51,143  INFO [main] Verify:72 - Condition verified!
+2018-07-17 16:00:51,143  INFO [main] Click:16 - Click element [Getgo.CardTransferReview.BtnTransfer.XPATH]
+2018-07-17 16:00:53,897  INFO [main] Click:22 - Click Successful!
+2018-07-17 16:00:53,900  INFO [main] Verify:22 - Verify element [By.xpath: //XCUIElementTypeStaticText[@name='Congratulations!']] is present
+2018-07-17 16:01:00,898  INFO [main] Verify:24 - Element is present!
+2018-07-17 16:01:00,899  INFO [main] Verify:22 - Verify element [By.xpath: //XCUIElementTypeStaticText[@name='You have successfully transfer fund.']] is present
+2018-07-17 16:01:02,417  INFO [main] Verify:24 - Element is present!
+2018-07-17 16:01:02,417  INFO [main] Click:16 - Click element [Getgo.CardTransferSuccess.BtnViewDetails.XPATH]
+2018-07-17 16:01:04,692  INFO [main] Click:22 - Click Successful!
+2018-07-17 16:01:10,503  INFO [main] Keywords:49 - Application closed
+2018-07-17 16:01:10,507  INFO [main] StepsBase:16 - Executing S C E N A R I O : As a tester, I want to be able to login using my credentials so that I can see my account(Virtual Card or Peso+) details
+2018-07-17 16:01:14,064  INFO [main] Keywords:42 - Application launched
+2018-07-17 16:01:14,066  INFO [main] Click:16 - Click element [Getgo.Welcome.BtnLogin.ID]
+2018-07-17 16:01:15,401  INFO [main] Click:22 - Click Successful!
+2018-07-17 16:01:15,409  INFO [main] Type:14 - Type the value [(3)Evelyn.dhamodaran@unionbankph.com] into element [Getgo.Login.TxtEmailAddress.XPATH]
+2018-07-17 16:01:22,313  INFO [main] Type:17 - Type Successful!
+2018-07-17 16:01:22,313  INFO [main] Click:16 - Click element [Getgo.Login.BtnNext.XPATH]
+2018-07-17 16:01:25,076  INFO [main] Click:22 - Click Successful!
+2018-07-17 16:01:25,077  INFO [main] Type:21 - Type the value [he*****] into element [Getgo.Login.TxtPassword.XPATH]
+2018-07-17 16:01:33,850  INFO [main] Type:24 - Type Successful!
+2018-07-17 16:01:33,851  INFO [main] Click:16 - Click element [Getgo.Login.BtnLogin.XPATH]
+2018-07-17 16:01:36,970  INFO [main] Click:22 - Click Successful!
+2018-07-17 16:01:36,971  INFO [main] Verify:16 - Verify element [Getgo.Dashboard.ImgProfilePicture.ID] is present
+2018-07-17 16:01:40,253  INFO [main] Verify:18 - Element is present!
+2018-07-17 16:01:40,254  INFO [main] Verify:28 - Verify element [Getgo.Dashboard.LblUsername.XPATH] text is matching with [Eve Kanmani]
+2018-07-17 16:01:42,719  INFO [main] Verify:36 - Condition verified!
+2018-07-17 16:02:04,936  INFO [main] Keywords:49 - Application closed
+2018-07-17 16:02:04,937  INFO [main] StepsBase:16 - Executing S C E N A R I O : As a tester, I want to be able to login using my credentials so that I can see my account(Virtual Card or Peso+) details
+2018-07-17 16:02:07,233  INFO [main] Keywords:42 - Application launched
+2018-07-17 16:02:07,234  INFO [main] Click:16 - Click element [Getgo.Welcome.BtnLogin.ID]
+2018-07-17 16:02:08,330  INFO [main] Click:22 - Click Successful!
+2018-07-17 16:02:08,331  INFO [main] Type:14 - Type the value [john@does.com] into element [Getgo.Login.TxtEmailAddress.XPATH]
+2018-07-17 16:02:15,026  INFO [main] Type:17 - Type Successful!
+2018-07-17 16:02:15,026  INFO [main] Click:16 - Click element [Getgo.Login.BtnNext.XPATH]
+2018-07-17 16:02:17,739  INFO [main] Click:22 - Click Successful!
+2018-07-17 16:02:17,740  INFO [main] Type:21 - Type the value [he*****] into element [Getgo.Login.TxtPassword.XPATH]
+2018-07-17 16:02:26,613  INFO [main] Type:24 - Type Successful!
+2018-07-17 16:02:26,614  INFO [main] Click:16 - Click element [Getgo.Login.BtnLogin.XPATH]
+2018-07-17 16:02:29,383  INFO [main] Click:22 - Click Successful!
+2018-07-17 16:02:29,384  INFO [main] Verify:16 - Verify element [Getgo.Dashboard.ImgProfilePicture.ID] is present
+2018-07-17 16:02:33,056  INFO [main] Verify:18 - Element is present!
+2018-07-17 16:02:33,056  INFO [main] Verify:28 - Verify element [Getgo.Dashboard.LblUsername.XPATH] text is matching with [John Berlin Fuertes]
+2018-07-17 16:02:35,531  INFO [main] Verify:36 - Condition verified!
+2018-07-17 16:02:38,076  INFO [main] Keywords:49 - Application closed
+2018-07-17 16:02:38,078  INFO [main] StepsBase:16 - Executing S C E N A R I O : As a tester, I want to add new recipients and tag some of them as favorites so that I can keep a list of recipients (From Beneficiaries page)
+2018-07-17 16:02:40,649  INFO [main] Keywords:42 - Application launched
+2018-07-17 16:02:40,650  INFO [main] Click:16 - Click element [Getgo.Welcome.BtnLogin.ID]
+2018-07-17 16:02:41,720  INFO [main] Click:22 - Click Successful!
+2018-07-17 16:02:41,721  INFO [main] Type:14 - Type the value [john@does.com] into element [Getgo.Login.TxtEmailAddress.XPATH]
+2018-07-17 16:02:48,078  INFO [main] Type:17 - Type Successful!
+2018-07-17 16:02:48,079  INFO [main] Click:16 - Click element [Getgo.Login.BtnNext.XPATH]
+2018-07-17 16:02:50,856  INFO [main] Click:22 - Click Successful!
+2018-07-17 16:02:50,857  INFO [main] Type:21 - Type the value [he*****] into element [Getgo.Login.TxtPassword.XPATH]
+2018-07-17 16:02:59,433  INFO [main] Type:24 - Type Successful!
+2018-07-17 16:02:59,434  INFO [main] Click:16 - Click element [Getgo.Login.BtnLogin.XPATH]
+2018-07-17 16:03:02,072  INFO [main] Click:22 - Click Successful!
+2018-07-17 16:03:02,083  INFO [main] Click:16 - Click element [Getgo.Dashboard.BtnMenu.ID]
+2018-07-17 16:03:06,429  INFO [main] Click:22 - Click Successful!
+2018-07-17 16:03:06,429  INFO [main] Click:26 - Click element [By.xpath: //XCUIElementTypeStaticText[@name='Beneficiaries']]
+2018-07-17 16:03:12,162  INFO [main] Click:32 - Click Successful!
+2018-07-17 16:03:15,170  INFO [main] Click:16 - Click element [Getgo.ManageRecipient.BtnAdd.ID]
+2018-07-17 16:03:20,436  INFO [main] Click:22 - Click Successful!
+2018-07-17 16:03:20,436  INFO [main] Type:14 - Type the value [8038461068443473] into element [Getgo.ManageRecipient.TxtCard.XPATH]
+2018-07-17 16:03:29,292  INFO [main] Type:17 - Type Successful!
+2018-07-17 16:03:29,292  INFO [main] Type:14 - Type the value [Estefania West] into element [Getgo.ManageRecipient.TxtRecipientName.XPATH]
+2018-07-17 16:03:35,939  INFO [main] Type:17 - Type Successful!
+2018-07-17 16:03:35,940  INFO [main] Click:16 - Click element [Getgo.ManageRecipient.BtnSave.ID]
+2018-07-17 16:03:37,792  INFO [main] Click:22 - Click Successful!
+2018-07-17 16:06:31,348  INFO [main] Swipe:65 - Scrolled to the element matching the text --> 8038461068443473
+2018-07-17 16:07:07,215  INFO [main] Click:16 - Click element [Getgo.ManageRecipient.BtnBack.XPATH]
+2018-07-17 16:07:41,610  INFO [main] Click:22 - Click Successful!
+2018-07-17 16:07:41,611  INFO [main] Click:16 - Click element [Getgo.Dashboard.BtnMenu.ID]
+2018-07-17 16:07:43,482  INFO [main] Click:22 - Click Successful!
+2018-07-17 16:07:43,482  INFO [main] Click:26 - Click element [By.xpath: //XCUIElementTypeStaticText[@name='Beneficiaries']]
+2018-07-17 16:07:51,839  INFO [main] Click:32 - Click Successful!
+2018-07-17 16:09:26,938  INFO [main] Keywords:49 - Application closed
+2018-07-17 16:09:26,955  INFO [main] StepsBase:16 - Executing S C E N A R I O : Validate the fields & texts displayed on the Getgo Welcome & SignUp page
+2018-07-17 16:09:30,405  INFO [main] Keywords:42 - Application launched
+2018-07-17 16:09:30,407  INFO [main] Verify:16 - Verify element [Getgo.Welcome.ImgLogo.ID] is present
+2018-07-17 16:09:30,834  INFO [main] Verify:18 - Element is present!
+2018-07-17 16:09:30,834  INFO [main] Verify:28 - Verify element [Getgo.Welcome.LblCaption.XPATH] text is matching with [Now made easier. As simple as Ready, GetGo.]
+2018-07-17 16:09:32,348  INFO [main] Verify:36 - Condition verified!
+2018-07-17 16:09:32,348  INFO [main] Verify:28 - Verify element [Getgo.Welcome.BtnLogin.ID] text is matching with [LOG IN]
+2018-07-17 16:09:32,820  INFO [main] Verify:36 - Condition verified!
+2018-07-17 16:09:32,820  INFO [main] Verify:28 - Verify element [Getgo.Welcome.BtnSignUp.ID] text is matching with [SIGN UP]
+2018-07-17 16:09:33,312  INFO [main] Verify:36 - Condition verified!
+2018-07-17 16:09:33,313  INFO [main] Click:16 - Click element [Getgo.Welcome.BtnSignUp.ID]
+2018-07-17 16:09:34,825  INFO [main] Click:22 - Click Successful!
+2018-07-17 16:09:34,826  INFO [main] Verify:16 - Verify element [Getgo.SignUp.ImgGetgoCard.ID] is present
+2018-07-17 16:09:35,410  INFO [main] Verify:18 - Element is present!
+2018-07-17 16:09:35,410  INFO [main] Verify:28 - Verify element [Getgo.SignUp.BtnCreateVirtualCard.XPATH] text is matching with [No]
+2018-07-17 16:09:37,229  INFO [main] Verify:36 - Condition verified!
+2018-07-17 16:09:37,230  INFO [main] Verify:28 - Verify element [Getgo.SignUp.BtnRegisterPhysicalCard.XPATH] text is matching with [Yes]
+2018-07-17 16:09:39,019  INFO [main] Verify:36 - Condition verified!
+2018-07-17 16:09:39,019  INFO [main] Verify:28 - Verify element [Getgo.SignUp.LblCaption1.XPATH] text is matching with [Do you have a GetGo Peso Plus Card?]
+2018-07-17 16:09:40,741  INFO [main] Verify:36 - Condition verified!
+2018-07-17 16:09:40,741  INFO [main] Verify:28 - Verify element [Getgo.SignUp.LblCaption2.XPATH] text is matching with [Start shopping online by creating your GetGo Virtual Prepaid Card. Or register your Peso + Prepaid Card now.]
+2018-07-17 16:09:42,479  INFO [main] Verify:36 - Condition verified!
+2018-07-17 16:09:42,999  INFO [main] Keywords:49 - Application closed
+2018-07-17 16:09:43,000  INFO [main] StepsBase:16 - Executing S C E N A R I O : Validate the fields & texts displayed on the Getgo Login page
+2018-07-17 16:09:45,266  INFO [main] Keywords:42 - Application launched
+2018-07-17 16:09:45,267  INFO [main] Click:16 - Click element [Getgo.Welcome.BtnLogin.ID]
+2018-07-17 16:09:46,292  INFO [main] Click:22 - Click Successful!
+2018-07-17 16:09:46,293  INFO [main] Verify:16 - Verify element [Getgo.Login.BtnBack.XPATH] is present
+2018-07-17 16:09:48,077  INFO [main] Verify:18 - Element is present!
+2018-07-17 16:09:48,077  INFO [main] Verify:22 - Verify element [By.xpath: //XCUIElementTypeStaticText[@name='Login']] is present
+2018-07-17 16:09:49,624  INFO [main] Verify:24 - Element is present!
+2018-07-17 16:09:49,624  INFO [main] Verify:28 - Verify element [Getgo.Login.LblCaption.XPATH] text is matching with [Now made easier. As simple as Ready, GetGo.]
+2018-07-17 16:09:51,271  INFO [main] Verify:36 - Condition verified!
+2018-07-17 16:09:51,271  INFO [main] Verify:28 - Verify element [Getgo.Login.TxtEmailAddress.XPATH] text is matching with [Email]
+2018-07-17 16:09:53,105  INFO [main] Verify:36 - Condition verified!
+2018-07-17 16:09:53,105  INFO [main] Verify:22 - Verify element [By.xpath: //XCUIElementTypeButton[@name='Forgot password?']] is present
+2018-07-17 16:09:54,544  INFO [main] Verify:24 - Element is present!
+2018-07-17 16:09:54,545  INFO [main] Verify:22 - Verify element [By.xpath: //XCUIElementTypeButton[@name='Don’t have an account? SIGN UP NOW!']] is present
+2018-07-17 16:09:56,005  INFO [main] Verify:24 - Element is present!
+2018-07-17 16:09:56,005  INFO [main] Verify:28 - Verify element [Getgo.Login.BtnNext.XPATH] text is matching with [NEXT]
+2018-07-17 16:09:57,731  INFO [main] Verify:36 - Condition verified!
+2018-07-17 16:09:57,738  INFO [main] Type:14 - Type the value [john@does.com] into element [Getgo.Login.TxtEmailAddress.XPATH]
+2018-07-17 16:10:03,690  INFO [main] Type:17 - Type Successful!
+2018-07-17 16:10:03,690  INFO [main] Click:16 - Click element [Getgo.Login.BtnNext.XPATH]
+2018-07-17 16:10:06,318  INFO [main] Click:22 - Click Successful!
+2018-07-17 16:10:06,319  INFO [main] Verify:16 - Verify element [Getgo.Login.TogglePasswordVisibility.ID] is present
+2018-07-17 16:10:08,112  INFO [main] Verify:18 - Element is present!
+2018-07-17 16:10:08,112  INFO [main] Verify:16 - Verify element [Getgo.Login.BtnBack.XPATH] is present
+2018-07-17 16:10:10,174  INFO [main] Verify:18 - Element is present!
+2018-07-17 16:10:10,174  INFO [main] Verify:22 - Verify element [By.xpath: //XCUIElementTypeStaticText[@name='Login']] is present
+2018-07-17 16:10:11,870  INFO [main] Verify:24 - Element is present!
+2018-07-17 16:10:11,870  INFO [main] Verify:28 - Verify element [Getgo.Login.LblCaption.XPATH] text is matching with [Enter your password]
+2018-07-17 16:10:13,515  INFO [main] Verify:36 - Condition verified!
+2018-07-17 16:10:13,516  INFO [main] Verify:28 - Verify element [Getgo.Login.TxtPassword.XPATH] text is matching with [Password]
+2018-07-17 16:10:15,137  INFO [main] Verify:36 - Condition verified!
+2018-07-17 16:10:15,137  INFO [main] Verify:22 - Verify element [By.xpath: //XCUIElementTypeButton[@name='Having problems with your account?']] is present
+2018-07-17 16:10:16,547  INFO [main] Verify:24 - Element is present!
+2018-07-17 16:10:16,547  INFO [main] Verify:28 - Verify element [Getgo.Login.BtnLogin.XPATH] text is matching with [LOGIN]
+2018-07-17 16:10:18,296  INFO [main] Verify:36 - Condition verified!
+2018-07-17 16:10:18,899  INFO [main] Keywords:49 - Application closed
+2018-07-17 16:10:18,962  INFO [main] Test:50 - Report is generates @ emailable-results/Run-1/Automation-Dashboard.html

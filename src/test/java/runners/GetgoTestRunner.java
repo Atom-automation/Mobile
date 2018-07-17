@@ -13,11 +13,10 @@ import org.junit.runner.RunWith;
         features = {"src/test/resources/features"},
         glue = {"stepdefinitions"},
         plugin = {"com.cucumber.listener.ExtentCucumberFormatter:","pretty","json:target/json-output/Automation-Summary.json"},
-        tags={"~@Android","@dryRun"}
+        tags={"~@Android","~@ignore"}
 )
 
 public class GetgoTestRunner extends Test {
-
     @BeforeClass
     public static void initialize(){
         String deviceName=System.getProperty("Device");

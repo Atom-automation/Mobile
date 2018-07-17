@@ -1,5 +1,8 @@
 package stepdefinitions;
 
+import base.Test;
+import constants.Keys;
+import constants.OS;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -51,6 +54,9 @@ public class Getgo_ManageRecipient
     @When("^I open Beneficiaries page again$")
     public void iOpenBeneficiariesPageAgain() throws Throwable
     {
+        if(Test.attributes.get(Keys.OS).equalsIgnoreCase(OS.iOS)){
+            dashboard.clickMenu();
+        }
         dashboard.navigateTo(MenuItem.Beneficiaries());
     }
 

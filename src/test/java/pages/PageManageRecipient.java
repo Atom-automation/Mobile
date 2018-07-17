@@ -8,6 +8,7 @@ import constants.ObjectClass;
 import exceptions.ApplicationException;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.testng.Assert;
 import xpath.Matching;
 
 public class PageManageRecipient extends Keywords
@@ -18,6 +19,9 @@ public class PageManageRecipient extends Keywords
     private String keyBtnSave="Getgo.ManageRecipient.BtnSave.ID";
     private String keyBtnBack="Getgo.ManageRecipient.BtnBack.XPATH";
 
+    private String keyBtnTxtRecipientCardNumber_iOS="Getgo.ManageRecipient.TxtCard.XPATH";
+    private String keyBtnTxtRecipientName_iOS="Getgo.ManageRecipient.TxtRecipientName.XPATH";
+
     private String newlyAddedRecipient=null;
     private String newlyAddedRecipientCard=null;
 
@@ -27,9 +31,15 @@ public class PageManageRecipient extends Keywords
                         String.valueOf(Test.faker.number().randomNumber(3,true))+
                         String.valueOf(Test.faker.number().randomNumber(10,true))+
                         String.valueOf(Test.faker.number().randomNumber(3,true));
+        WAIT.forSeconds(3);
         click.elementBy(keyBtnAddNewRecipient);
-        type.data(keyTxtRecipientCardNumber,newlyAddedRecipientCard);
-        type.data(keyTxtRecipientName,newlyAddedRecipient);
+        if(Test.attributes.get(Keys.OS).equalsIgnoreCase(OS.ANDROID)){
+            type.data(keyTxtRecipientCardNumber,newlyAddedRecipientCard);
+            type.data(keyTxtRecipientName,newlyAddedRecipient);
+        }else if(Test.attributes.get(Keys.OS).equalsIgnoreCase(OS.iOS)){
+            type.data(keyBtnTxtRecipientCardNumber_iOS,newlyAddedRecipientCard);
+            type.data(keyBtnTxtRecipientName_iOS,newlyAddedRecipient);
+        }
         click.elementBy(keyBtnSave);
     }
 
@@ -43,12 +53,24 @@ public class PageManageRecipient extends Keywords
             parentElement.findElements(By.xpath("//"+ ObjectClass.AndroidImageButton)).get(0).click();
         }else if(Test.attributes.get(Keys.OS).equalsIgnoreCase(OS.iOS))
         {
-
+            parentElement=get.elementBy(By.xpath("//XCUIElementTypeStaticText[@value='"+recipientCard+"']/parent::*"));
+            parentElement.findElements(By.xpath("//"+ ObjectClass.iOSButton)).get(0).click();
         }
     }
 
     public void isRecipientAvailableInFavourites(String recipientCard) throws ApplicationException {
-        verify.elementIsPresent(xpathOf.textView(Matching.youDecide(recipientCard)));
+        if(!(get.elementBy(xpathOf.textView(Matching.youDecide(recipientCard))).isDisplayed())){
+            swipe.scrollDownToText(recipientCard);
+        }
+        WebElement parentElement;
+        if(Test.attributes.get(Keys.OS).equalsIgnoreCase(OS.ANDROID))
+        {
+            verify.elementIsPresent(xpathOf.textView(Matching.youDecide(recipientCard)));
+        }else if(Test.attributes.get(Keys.OS).equalsIgnoreCase(OS.iOS))
+        {
+            parentElement=get.elementBy(By.xpath("//XCUIElementTypeStaticText[@value='"+recipientCard+"']/parent::*"));
+            Assert.assertEquals(parentElement.findElements(By.xpath("//"+ ObjectClass.iOSButton)).get(0).getAttribute("name"),"ic star filled");
+        }
     }
 
     public void goBack() throws ApplicationException {

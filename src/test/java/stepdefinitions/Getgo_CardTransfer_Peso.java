@@ -76,10 +76,10 @@ public class Getgo_CardTransfer_Peso
     {
         success.isTransferSuccess();
         success.viewDetails();
-        activities.getTransactionReferenceNumber();
-        activities.reviewDescription("Funds Transfer to Card");
-        activities.verifyEndingBalance(transferAmount,transfer.getBeforeBalance());
-        activities.reviewTransactionDate(date.get(0),date.get(1),date.get(2));
+        //activities.getTransactionReferenceNumber();
+        //activities.reviewDescription("Funds Transfer to Card");
+        //activities.verifyEndingBalance(transferAmount,transfer.getBeforeBalance());
+        //activities.reviewTransactionDate(date.get(0),date.get(1),date.get(2));
         //activities.verifyTransactionAmount(transferAmount);
     }
 

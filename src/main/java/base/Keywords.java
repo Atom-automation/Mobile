@@ -52,8 +52,4 @@ public class Keywords {
     public static void quitDriver(){
         driver.quit();
     }
-
-    public static void goBack(){
-        driver.navigate().back();
-    }
 }
