@@ -4,46 +4,16 @@
     <list default="true" id="2d777979-7eca-49b9-afdb-e8d53d97ee5d" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/dictionaries/Tg2259.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/Tg2259.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/actions/Get.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/actions/Get.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/actions/Verify.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/actions/Verify.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/helper/PropertyReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/helper/PropertyReader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/helper/Tools.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/helper/Tools.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pages/PageAccountDashboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/PageAccountDashboard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pages/PageActivities.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/PageActivities.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pages/PageCardTransfer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/PageCardTransfer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pages/PageCardTransferReview.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/PageCardTransferReview.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pages/PageCardTransferSuccess.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/PageCardTransferSuccess.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pages/PageLogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/PageLogin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pages/PageManageRecipient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/PageManageRecipient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pages/PageSignUp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/PageSignUp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pages/PageWelcome.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/PageWelcome.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/constants/Device.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/constants/Device.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/runners/GetgoTestRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/runners/GetgoTestRunner.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/stepdefinitions/Getgo_CardTransfer_Peso.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/stepdefinitions/Getgo_CardTransfer_Peso.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/stepdefinitions/Getgo_Login_NewCustomer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/stepdefinitions/Getgo_Login_NewCustomer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/resources/features/Getgo_ManageRecipient.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/Getgo_ManageRecipient.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/features/Getgo_PageValidation.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/Getgo_PageValidation.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/object-repository/Locators-Android.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/object-repository/Locators-Android.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/object-repository/Locators-iOS.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/object-repository/Locators-iOS.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/settings/ProjectSettings.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/settings/ProjectSettings.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/resources/settings/RunCount.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/settings/RunCount.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/actions/Get.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/actions/Get.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/actions/Verify.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/actions/Verify.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/helper/PropertyReader.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/helper/PropertyReader.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/helper/Tools.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/helper/Tools.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/constants/Device.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/constants/Device.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/json-output/Automation-Summary.json" beforeDir="false" afterPath="$PROJECT_DIR$/target/json-output/Automation-Summary.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/features/Getgo_ManageRecipient.feature" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/features/Getgo_ManageRecipient.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/features/Getgo_PageValidation.feature" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/features/Getgo_PageValidation.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/pages/PageAccountDashboard.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/pages/PageAccountDashboard.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/pages/PageActivities.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/pages/PageActivities.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/pages/PageCardTransfer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/pages/PageCardTransfer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/pages/PageCardTransferReview.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/pages/PageCardTransferReview.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/pages/PageCardTransferSuccess.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/pages/PageCardTransferSuccess.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/pages/PageLogin.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/pages/PageLogin.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/pages/PageManageRecipient.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/pages/PageManageRecipient.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/pages/PageSignUp.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/pages/PageSignUp.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/pages/PageWelcome.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/pages/PageWelcome.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/runners/GetgoTestRunner.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/runners/GetgoTestRunner.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/settings/ProjectSettings.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/settings/ProjectSettings.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/settings/RunCount.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/settings/RunCount.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/stepdefinitions/Getgo_CardTransfer_Peso.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/stepdefinitions/Getgo_CardTransfer_Peso.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -54,21 +24,30 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="GetgoTestRunner.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/runners/GetgoTestRunner.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="15" column="25" selection-start-line="15" selection-start-column="25" selection-end-line="15" selection-end-column="25" />
+            <state relative-caret-position="306">
+              <caret line="24" column="9" selection-start-line="24" selection-start-column="9" selection-end-line="24" selection-end-column="9" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PageManageRecipient.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/test/java/pages/PageManageRecipient.java">
+      <file leaf-file-name="Getgo_PageValidation.feature" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/resources/features/Getgo_PageValidation.feature">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="59" lean-forward="true" selection-start-line="59" selection-end-line="59" />
+            <state relative-caret-position="340">
+              <caret line="23" column="2" lean-forward="true" selection-start-line="23" selection-start-column="2" selection-end-line="23" selection-end-column="14" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Getgo_ManageRecipient.feature" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/test/resources/features/Getgo_ManageRecipient.feature">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="301">
+              <caret line="18" column="14" selection-start-line="18" selection-start-column="14" selection-end-line="18" selection-end-column="14" />
             </state>
           </provider>
         </entry>
@@ -93,7 +72,6 @@
         <option value="$PROJECT_DIR$/src/main/java/actions/Get.java" />
         <option value="$PROJECT_DIR$/src/main/java/actions/Verify.java" />
         <option value="$PROJECT_DIR$/src/test/java/stepdefinitions/Getgo_CardTransfer_Peso.java" />
-        <option value="$PROJECT_DIR$/src/test/resources/features/Getgo_ManageRecipient.feature" />
         <option value="$PROJECT_DIR$/src/test/research/NewLocatorStrategy.java" />
         <option value="$PROJECT_DIR$/src/main/java/helper/PropertyReader.java" />
         <option value="$PROJECT_DIR$/src/test/java/pages/PageWelcome.java" />
@@ -111,7 +89,10 @@
         <option value="$PROJECT_DIR$/src/test/resources/data/Data-Input.properties" />
         <option value="$PROJECT_DIR$/src/test/java/pages/PageCardTransferSuccess.java" />
         <option value="$PROJECT_DIR$/src/test/resources/features/Getgo_PageValidation.feature" />
+        <option value="$PROJECT_DIR$/src/test/resources/settings/ProjectSettings.properties" />
+        <option value="$PROJECT_DIR$/src/main/java/constants/Device.java" />
         <option value="$PROJECT_DIR$/src/test/java/runners/GetgoTestRunner.java" />
+        <option value="$PROJECT_DIR$/src/test/resources/features/Getgo_ManageRecipient.feature" />
       </list>
     </option>
   </component>
@@ -145,6 +126,17 @@
             <path>
               <item name="Cucumber-Java" type="b2602c69:ProjectViewProjectNode" />
               <item name="CucumberJava" type="462c0819:PsiDirectoryNode" />
+              <item name="emailable-results" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Cucumber-Java" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CucumberJava" type="462c0819:PsiDirectoryNode" />
+              <item name="emailable-results" type="462c0819:PsiDirectoryNode" />
+              <item name="Run-17" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Cucumber-Java" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CucumberJava" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -159,6 +151,14 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Cucumber-Java" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CucumberJava" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="constants" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Cucumber-Java" type="b2602c69:ProjectViewProjectNode" />
@@ -180,6 +180,14 @@
               <item name="test" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="pages" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Cucumber-Java" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CucumberJava" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="projectconstants" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Cucumber-Java" type="b2602c69:ProjectViewProjectNode" />
@@ -232,9 +240,9 @@
           <select />
         </subPane>
       </pane>
+      <pane id="AndroidView" />
       <pane id="PackagesPane" />
       <pane id="Scope" />
-      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -350,15 +358,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="GetgoTestRunner - 2018.07.17 at 18h 15m 06s.xml">
-      <configuration name="GetgoTestRunner" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="GetgoTestRunner - 2018.07.17 at 18h 25m 26s.xml">
-      <configuration name="GetgoTestRunner" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="GetgoTestRunner - 2018.07.17 at 18h 32m 11s.xml">
-      <configuration name="GetgoTestRunner" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="GetgoTestRunner - 2018.07.18 at 10h 21m 59s.xml">
       <configuration name="GetgoTestRunner" configurationId="JUnit" />
     </history-entry>
@@ -380,6 +379,15 @@
     <history-entry file="GetgoTestRunner - 2018.07.18 at 12h 08m 35s.xml">
       <configuration name="GetgoTestRunner" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="GetgoTestRunner - 2018.07.18 at 13h 23m 04s.xml">
+      <configuration name="GetgoTestRunner" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="GetgoTestRunner - 2018.07.18 at 13h 27m 04s.xml">
+      <configuration name="GetgoTestRunner" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="GetgoTestRunner - 2018.07.18 at 13h 37m 12s.xml">
+      <configuration name="GetgoTestRunner" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -387,30 +395,30 @@
     <layout>
       <window_info anchor="right" id="Palette" order="0" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Messages" weight="0.32913387" />
       <window_info anchor="right" id="Palette&#9;" order="1" />
       <window_info id="Image Layers" order="0" />
       <window_info anchor="right" id="Capture Analysis" order="2" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="right" id="Maven Projects" order="3" />
-      <window_info anchor="bottom" id="Version Control" />
-      <window_info anchor="bottom" x="0" y="23" width="1366" height="705" id="Run" order="2" side_tool="true" type="WINDOWED" visible="true" weight="0.5543307" />
-      <window_info anchor="bottom" id="Terminal" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info anchor="bottom" x="0" y="23" width="1366" height="705" id="Run" order="2" side_tool="true" type="WINDOWED" weight="0.5543307" />
+      <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Capture Tool" order="1" />
       <window_info id="Designer" order="2" />
-      <window_info active="true" anchor="right" content_ui="combo" id="Project" order="8" visible="true" weight="0.32503662" />
+      <window_info active="true" anchor="right" content_ui="combo" id="Project" order="8" visible="true" weight="0.32796487" />
       <window_info id="Structure" order="5" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="6" weight="0.25" />
       <window_info id="UI Designer" order="3" />
       <window_info anchor="right" id="Theme Preview" order="4" />
       <window_info id="Favorites" order="4" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="5" type="SLIDING" weight="0.4" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="7" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="5" type="SLIDING" weight="0.4" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Messages" order="7" weight="0.32913387" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -430,17 +438,20 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/test/java/runners/GetgoTestRunner.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="24" column="9" selection-start-line="24" selection-start-column="9" selection-end-line="24" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/emailable-results/Run-17/RunLog.log">
+      <provider selected="true" editor-type-id="LogFileEditorProvider" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/actions/Keyboard.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="247">
           <caret line="42" column="16" selection-start-line="42" selection-start-column="16" selection-end-line="42" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/projectconstants/MenuItem.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="29" lean-forward="true" selection-start-line="2" selection-start-column="29" selection-end-line="2" selection-end-column="29" />
         </state>
       </provider>
     </entry>
@@ -472,9 +483,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/emailable-results/Run-9/Automation-Dashboard.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/emailable-results/Run-9/Automation-Dashboard.html" />
     <entry file="jar://X:/Program Files/Java/jdk1.8.0_171/src.zip!/java/io/File.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="202">
@@ -486,11 +495,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="516">
           <caret line="82" column="5" lean-forward="true" selection-start-line="16" selection-start-column="4" selection-end-line="82" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#396#397#0" expanded="true" />
-            <element signature="e#432#433#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -533,13 +537,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="18" column="31" selection-start-line="18" selection-start-column="31" selection-end-line="18" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/resources/settings/ProjectSettings.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="32" column="4" selection-start-line="32" selection-start-column="4" selection-end-line="32" selection-end-column="4" />
         </state>
       </provider>
     </entry>
@@ -655,31 +652,56 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/resources/features/Getgo_ManageRecipient.feature">
+    <entry file="file://$PROJECT_DIR$/src/test/java/projectconstants/MenuItem.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="301">
-          <caret line="18" column="14" lean-forward="true" selection-start-line="18" selection-start-column="14" selection-end-line="18" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/resources/features/Getgo_PageValidation.feature">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="15" selection-start-line="3" selection-start-column="15" selection-end-line="3" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/runners/GetgoTestRunner.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="15" column="25" selection-start-line="15" selection-start-column="25" selection-end-line="15" selection-end-column="25" />
+        <state relative-caret-position="170">
+          <caret line="23" column="33" lean-forward="true" selection-start-line="23" selection-start-column="33" selection-end-line="23" selection-end-column="33" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/pages/PageManageRecipient.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="59" lean-forward="true" selection-start-line="59" selection-end-line="59" />
+        <state relative-caret-position="136">
+          <caret line="44" lean-forward="true" selection-start-line="44" selection-end-line="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/constants/Device.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="35" selection-start-line="4" selection-start-column="35" selection-end-line="4" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/resources/settings/ProjectSettings.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="32" column="20" lean-forward="true" selection-start-line="32" selection-start-column="20" selection-end-line="32" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/emailable-results/Run-17/RunLog.log">
+      <provider editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="LogFileEditorProvider" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/runners/GetgoTestRunner.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="24" column="9" selection-start-line="24" selection-start-column="9" selection-end-line="24" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/resources/features/Getgo_PageValidation.feature">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="23" column="2" lean-forward="true" selection-start-line="23" selection-start-column="2" selection-end-line="23" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/resources/features/Getgo_ManageRecipient.feature">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="301">
+          <caret line="18" column="14" selection-start-line="18" selection-start-column="14" selection-end-line="18" selection-end-column="14" />
         </state>
       </provider>
     </entry>
