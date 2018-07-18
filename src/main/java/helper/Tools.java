@@ -15,6 +15,11 @@ public class Tools {
         return i;
     }
 
+    public String nbspRemove(String text)
+    {
+        return text.trim().replaceAll("\\u00A0","");
+    }
+
     public String convertToLetterCase(String text) {
         String firstLetter = text.substring(0,1);
         String exceptFirstLetter = text.substring(1,text.length());

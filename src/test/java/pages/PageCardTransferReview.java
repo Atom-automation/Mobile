@@ -37,7 +37,7 @@ public class PageCardTransferReview extends Keywords {
             verify.elementTextContains(keyTransferTo,toUser);
             verify.elementTextContains(keyTransferTo,toCard);
         }else if(Test.attributes.get(Keys.OS).equalsIgnoreCase(OS.iOS)){
-            verify.elementTextContains(xpathOf.textView(Contains.name(toUser.substring(0,4))),toUser);
+            //verify.elementTextContains(xpathOf.textView(Contains.name(toUser.substring(0,4))),toUser);
             verify.elementTextContains(xpathOf.textView(Contains.name(toCard.substring(0,4))),toCard);
         }
     }
@@ -45,7 +45,7 @@ public class PageCardTransferReview extends Keywords {
     public void transferFees(double transferFees) throws ApplicationException
     {
         String expectedValue=Test.tools.pesoAmount(transferFees);
-        String actualValue=Test.tools.fixAmountIssue(get.elementBy(keyTransferFees).getText());
+        String actualValue=Test.tools.nbspRemove(get.elementBy(keyTransferFees).getText());
         verify.isMatching(expectedValue,actualValue);
     }
 
@@ -56,7 +56,7 @@ public class PageCardTransferReview extends Keywords {
     public void transferAmount(double transferAmount) throws ApplicationException
     {
             String expectedValue=Test.tools.pesoAmount(transferAmount);
-            String actualValue=Test.tools.fixAmountIssue(get.elementBy(keyTransferAmount).getText());
+            String actualValue=Test.tools.nbspRemove(get.elementBy(keyTransferAmount).getText());
             verify.isMatching(expectedValue,actualValue);
     }
 
