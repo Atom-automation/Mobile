@@ -13,14 +13,14 @@ import xpath.Matching;
 
 public class PageManageRecipient extends Keywords
 {
-    private String keyBtnAddNewRecipient="Getgo.ManageRecipient.BtnAdd.ID";
-    private String keyTxtRecipientCardNumber="Getgo.ManageRecipient.TxtCard.ID";
-    private String keyTxtRecipientName="Getgo.ManageRecipient.TxtRecipientName.ID";
-    private String keyBtnSave="Getgo.ManageRecipient.BtnSave.ID";
-    private String keyBtnBack="Getgo.ManageRecipient.BtnBack.XPATH";
+    private String keyBtnAddNewRecipient="Getgo.ManageRecipient.BtnAdd";
+    private String keyTxtRecipientCardNumber="Getgo.ManageRecipient.TxtCard";
+    private String keyTxtRecipientName="Getgo.ManageRecipient.TxtRecipientName";
+    private String keyBtnSave="Getgo.ManageRecipient.BtnSave";
+    private String keyBtnBack="Getgo.ManageRecipient.BtnBack";
 
-    private String keyBtnTxtRecipientCardNumber_iOS="Getgo.ManageRecipient.TxtCard.XPATH";
-    private String keyBtnTxtRecipientName_iOS="Getgo.ManageRecipient.TxtRecipientName.XPATH";
+    private String keyBtnTxtRecipientCardNumber_iOS="Getgo.ManageRecipient.TxtCard";
+    private String keyBtnTxtRecipientName_iOS="Getgo.ManageRecipient.TxtRecipientName";
 
     private String newlyAddedRecipient=null;
     private String newlyAddedRecipientCard=null;
@@ -59,17 +59,22 @@ public class PageManageRecipient extends Keywords
     }
 
     public void isRecipientAvailableInFavourites(String recipientCard) throws ApplicationException {
-        if(!(get.elementBy(xpathOf.textView(Matching.youDecide(recipientCard))).isDisplayed())){
+        try{
+            get.elementBy(xpathOf.textView(Matching.youDecide(recipientCard))).isDisplayed();
+        }catch (Throwable ex){
             swipe.scrollDownToText(recipientCard);
         }
         WebElement parentElement;
         if(Test.attributes.get(Keys.OS).equalsIgnoreCase(OS.ANDROID))
         {
-            verify.elementIsPresent(xpathOf.textView(Matching.youDecide(recipientCard)));
+            parentElement=get.elementBy(By.xpath("//android.widget.TextView[@text='"+recipientCard+"']/parent::*"));
+            String isSelected=parentElement.findElements(By.xpath("//"+ ObjectClass.AndroidImageButton)).get(0).getAttribute("selected").trim();
+            Assert.assertEquals(isSelected,"true","Recipient is not added to favourites");
         }else if(Test.attributes.get(Keys.OS).equalsIgnoreCase(OS.iOS))
         {
             parentElement=get.elementBy(By.xpath("//XCUIElementTypeStaticText[@value='"+recipientCard+"']/parent::*"));
-            Assert.assertEquals(parentElement.findElements(By.xpath("//"+ ObjectClass.iOSButton)).get(0).getAttribute("name"),"ic star filled");
+            String isSelected=parentElement.findElements(By.xpath("//"+ ObjectClass.iOSButton)).get(0).getAttribute("name").trim();
+            Assert.assertEquals(isSelected,"ic star filled","Recipient is not added to favourites");
         }
     }
 

@@ -75,4 +75,24 @@ public class Verify extends Keywords{
     public void isMatching(String expected,String actual){
         Assert.assertTrue(actual.equalsIgnoreCase(expected.trim()),"Condition failed!, actual value doesn't match with expected value");
     }
+
+    public void elementAttributeMatching(String locatorKey, String whichAttribute,String expectedValue) throws ApplicationException {
+        log.info("Verify if the element ["+locatorKey+"] attribute ["+whichAttribute+"] is matching with the value ["+expectedValue+"]");
+        try{
+            Assert.assertEquals(get.elementAttribute(locatorKey,whichAttribute),expectedValue.trim());
+        }catch (AssertionError ex){
+            log.error(ex);
+            throw new ApplicationException(ex.getMessage());
+        }
+    }
+
+    public void elementAttributeMatching(By locator, String whichAttribute,String expectedValue) throws ApplicationException {
+        log.info("Verify if the element ["+locator+"] attribute ["+whichAttribute+"] is matching with the value ["+expectedValue+"]");
+        try{
+            Assert.assertEquals(get.elementAttribute(locator,whichAttribute),expectedValue.trim());
+        }catch (AssertionError ex){
+            log.error(ex);
+            throw new ApplicationException(ex.getMessage());
+        }
+    }
 }

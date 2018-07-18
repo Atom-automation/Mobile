@@ -42,4 +42,52 @@ public class Get extends Keywords{
         }
         return singleTestObj;
     }
+
+    public String elementText(String locatorKey) throws ApplicationException {
+        log.info("Retrived the value of text property from the element ["+locatorKey+"]");
+        String txt=null;
+        try{
+            txt=elementBy(locatorKey).getText();
+        }catch (WebDriverException ex){
+            txt=elementBy(locatorKey).getText();
+        }
+        log.info("Text retrieved successfully!");
+        return txt.trim();
+    }
+
+    public String elementText(By locator) throws ApplicationException {
+        log.info("Retrieve the value of text property from the element ["+locator+"]");
+        String txt=null;
+        try{
+            txt=elementBy(locator).getText();
+        }catch (WebDriverException ex){
+            txt=elementBy(locator).getText();
+        }
+        log.info("Text retrieved successfully!");
+        return txt.trim();
+    }
+
+    public String elementAttribute(String locatorKey, String whichAttribute) throws ApplicationException {
+        log.info("Retrieve the value of ["+whichAttribute+"] property from the element ["+locatorKey+"]");
+        String txt=null;
+        try{
+            txt=elementBy(locatorKey).getAttribute(whichAttribute.trim());
+        }catch (WebDriverException ex){
+            txt=elementBy(locatorKey).getAttribute(whichAttribute.trim());
+        }
+        log.info("Value retrieved successfully!");
+        return txt.trim();
+    }
+
+    public String elementAttribute(By locator, String whichAttribute) throws ApplicationException {
+        log.info("Retrieve the value of ["+whichAttribute+"] property from the element ["+locator+"]");
+        String txt=null;
+        try{
+            txt=elementBy(locator).getAttribute(whichAttribute.trim());
+        }catch (WebDriverException ex){
+            txt=elementBy(locator).getAttribute(whichAttribute.trim());
+        }
+        log.info("Value retrieved successfully!");
+        return txt.trim();
+    }
 }

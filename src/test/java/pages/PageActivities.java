@@ -12,11 +12,11 @@ import java.text.ParseException;
 
 public class PageActivities extends Keywords {
 
-    private String keyLblTransactionReferenceNumber="Getgo.Activities.LblReferenceNumber.ID";
-    private String keyLblTransactionDate="Getgo.Activities.LblTransactionDate.ID";
-    private String keyLblDescription="Getgo.Activities.LblDescription.ID";
-    private String keyLblTransactionAmount="Getgo.Activities.LblTransactionAmount.ID";
-    private String keyLblEndingBalance="Getgo.Activities.LblEndingBalance.ID";
+    private String keyLblTransactionReferenceNumber="Getgo.Activities.LblReferenceNumber";
+    private String keyLblTransactionDate="Getgo.Activities.LblTransactionDate";
+    private String keyLblDescription="Getgo.Activities.LblDescription";
+    private String keyLblTransactionAmount="Getgo.Activities.LblTransactionAmount";
+    private String keyLblEndingBalance="Getgo.Activities.LblEndingBalance";
 
     public void getTransactionReferenceNumber() throws ApplicationException {
         Reporter.addStepLog("Transaction Reference Number is --> "+get.elementBy(keyLblTransactionReferenceNumber));

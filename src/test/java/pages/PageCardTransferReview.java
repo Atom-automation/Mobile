@@ -12,20 +12,52 @@ import java.text.ParseException;
 
 public class PageCardTransferReview extends Keywords {
 
-    private String keyBtnTransfer="Getgo.CardTransferReview.BtnTransfer.XPATH";
+    private String keyBtnTransfer="Getgo.CardTransferReview.BtnTransfer";
+    private String keyTransferFrom="Getgo.CardTransferReview.LblTransferFrom";
+    private String keyTransferTo="Getgo.CardTransferReview.LblTransferTo";
+    private String keyTransferFees="Getgo.CardTransferReview.LblTransferFees";
+    private String keyTransferAmount="Getgo.CardTransferReview.LblTransferAmount";
+    private String keyTransferDate="Getgo.CardTransferReview.LblTransferDate";
+    private String keyTransferMessage="Getgo.CardTransferReview.LblMessage";
 
     public void fromDetails(String fromCard,String fromUser) throws ApplicationException {
-        verify.elementTextContains(xpathOf.textView(Contains.youDecide(fromUser.substring(0,4))),fromUser);
-        verify.elementTextContains(xpathOf.textView(Contains.youDecide(fromCard.substring(0,4))),fromCard);
+        if(Test.attributes.get(Keys.OS).equalsIgnoreCase(OS.ANDROID))
+        {
+            verify.elementTextContains(keyTransferFrom,fromUser);
+            verify.elementTextContains(keyTransferFrom,fromCard);
+        }else if(Test.attributes.get(Keys.OS).equalsIgnoreCase(OS.iOS)){
+            verify.elementTextContains(xpathOf.textView(Contains.name(fromUser.substring(0,4))),fromUser);
+            verify.elementTextContains(xpathOf.textView(Contains.name(fromCard.substring(0,4))),fromCard);
+        }
     }
 
     public void toDetails(String toCard,String toUser) throws ApplicationException {
-        //verify.elementTextContains(xpathOf.textView(Contains.youDecide(toUser.substring(0,4))),toUser);
-        verify.elementTextContains(xpathOf.textView(Contains.youDecide(toCard.substring(0,4))),toCard);
+        if(Test.attributes.get(Keys.OS).equalsIgnoreCase(OS.ANDROID))
+        {
+            verify.elementTextContains(keyTransferTo,toUser);
+            verify.elementTextContains(keyTransferTo,toCard);
+        }else if(Test.attributes.get(Keys.OS).equalsIgnoreCase(OS.iOS)){
+            verify.elementTextContains(xpathOf.textView(Contains.name(toUser.substring(0,4))),toUser);
+            verify.elementTextContains(xpathOf.textView(Contains.name(toCard.substring(0,4))),toCard);
+        }
     }
 
-    public void transferAmount(double transferAmount) throws ApplicationException {
-        verify.isMatching(Test.tools.pesoAmount(transferAmount), Test.tools.fixAmountIssue(get.elementBy("Getgo.CardTransferReview.lblTransferAmount.XPATH").getText()));
+    public void transferFees(double transferFees) throws ApplicationException
+    {
+        String expectedValue=Test.tools.pesoAmount(transferFees);
+        String actualValue=Test.tools.fixAmountIssue(get.elementBy(keyTransferFees).getText());
+        verify.isMatching(expectedValue,actualValue);
+    }
+
+    public void transferMessage(String message) throws ApplicationException {
+        verify.elementTextContains(keyTransferMessage,message);
+    }
+
+    public void transferAmount(double transferAmount) throws ApplicationException
+    {
+            String expectedValue=Test.tools.pesoAmount(transferAmount);
+            String actualValue=Test.tools.fixAmountIssue(get.elementBy(keyTransferAmount).getText());
+            verify.isMatching(expectedValue,actualValue);
     }
 
     public void transferDate(String day,String month,String year) throws ParseException, ApplicationException {
@@ -33,15 +65,13 @@ public class PageCardTransferReview extends Keywords {
         if(Test.attributes.get(Keys.OS).equalsIgnoreCase(OS.ANDROID))
         {
             transferDate = Test.tools.getDateInFormat(day,month,year,"MMMM dd, YYYY");
+            verify.elementTextContains(keyTransferDate,transferDate);
+
         }else if(Test.attributes.get(Keys.OS).equalsIgnoreCase(OS.iOS))
         {
             transferDate = Test.tools.getDateInFormat(day,month,year,"MMM dd, YYYY");
+            verify.elementTextContains(xpathOf.textView(Matching.name(transferDate)),transferDate);
         }
-        verify.elementTextContains(xpathOf.textView(Matching.youDecide(transferDate)),transferDate);
-    }
-
-    public void transferFees(double transferFees) throws ApplicationException {
-        verify.isMatching(Test.tools.pesoAmount(transferFees), Test.tools.fixAmountIssue(get.elementBy("Getgo.CardTransferReview.LblTransferFees.XPATH").getText()));
     }
 
     public void clickTransfer() throws ApplicationException {

@@ -16,7 +16,7 @@ Feature: Manage Recipients Feature
     And   I enter password "Peso_Password"
     And   I click login
 
-  @ignore
+  @IgnoreIfIOS
   Scenario: As a tester, I want to add new recipients and tag some of them as favorites so that I can keep a list of recipients (From Card transfer page)
     Given I'm on Getgo Fund transfer page
     When  I Choose Manage Recipients option

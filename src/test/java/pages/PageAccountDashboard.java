@@ -6,16 +6,17 @@ import com.cucumber.listener.Reporter;
 import constants.Keys;
 import constants.OS;
 import exceptions.ApplicationException;
+import io.appium.java_client.MobileBy;
 import xpath.Matching;
 
 public class PageAccountDashboard extends Keywords {
 
-    private String keyImgProfilePicture="Getgo.Dashboard.ImgProfilePicture.ID";
-    private String keyLblUserName="Getgo.Dashboard.LblUsername.XPATH";
-    private String keyBtnMenu="Getgo.Dashboard.BtnMenu.ID";
-    private String keyLblAvailableBalancePeso="Getgo.Peso+Dashboard.LblAvailableBalance.XPATH";
-    private String keyLblAvailableBalanceVirtualCard="Getgo.VirtualDashboard.LblAvailableBalance.XPATH";
-    private String keyLogout="Getgo.Dashboard.LinkLogout.XPATH";
+    private String keyImgProfilePicture="Getgo.Dashboard.ImgProfilePicture";
+    private String keyLblUserName="Getgo.Dashboard.LblUsername";
+    private String keyBtnMenu="Getgo.Dashboard.BtnMenu";
+    private String keyLblAvailableBalancePeso="Getgo.Peso+Dashboard.LblAvailableBalance";
+    private String keyLblAvailableBalanceVirtualCard="Getgo.VirtualDashboard.LblAvailableBalance";
+    private String keyLogout="Getgo.Dashboard.LinkLogout";
 
     private double myAccountBalance=0.00;
 
@@ -31,7 +32,7 @@ public class PageAccountDashboard extends Keywords {
                 for(int i=1;i<=5;i++)
                 {
                    try{
-                       actualBalance=Double.parseDouble(get.elementBy(keyLblAvailableBalancePeso).getText().trim().replaceAll("\\u00A0",""));
+                       actualBalance=Double.parseDouble(get.elementBy(keyLblAvailableBalanceVirtualCard).getText().trim().replaceAll("\\u00A0",""));
                    }catch (NumberFormatException e){
                        actualBalance=0.00;
                    }
@@ -75,12 +76,10 @@ public class PageAccountDashboard extends Keywords {
     }
 
     public void navigateTo(String where) throws ApplicationException {
-        if(Test.attributes.get(Keys.OS).equalsIgnoreCase(OS.ANDROID))
-        {
+        if(Test.attributes.get(Keys.OS).equalsIgnoreCase(OS.ANDROID)) {
             click.elementBy(xpathOf.checkedTextView(Matching.text(where)));
-        }else
-        {
-            click.elementBy(xpathOf.textView(Matching.name(where)));
+        }else if(Test.attributes.get(Keys.OS).equalsIgnoreCase(OS.iOS)){
+            click.elementBy(MobileBy.AccessibilityId(where));
         }
     }
 

@@ -25,6 +25,6 @@ public class Getgo_Login_NewCustomer
     @Then("^I should see my \"([^\"]*)\" account dashboard with my profile picture & my full name$")
     public void i_should_see_my_account_dashboard_with_my_profile_picture_my_full_name(String accountType) throws Throwable
     {
-        loginPage.isLoginSuccess(PropertyReader.testDataOf(accountType + "_FullName"),accountType,false);
+        loginPage.isLoginSuccess(PropertyReader.testDataOf(accountType + "_FullName"));
     }
 }

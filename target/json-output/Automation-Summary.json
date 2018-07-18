@@ -37,7 +37,7 @@
         "steps": [
           {
             "result": {
-              "duration": 26669689103,
+              "duration": 30826824616,
               "status": "passed"
             },
             "line": 12,
@@ -49,7 +49,7 @@
           },
           {
             "result": {
-              "duration": 395202311,
+              "duration": 356924594,
               "status": "passed"
             },
             "line": 13,
@@ -61,7 +61,7 @@
           },
           {
             "result": {
-              "duration": 2790589689,
+              "duration": 3129854677,
               "status": "passed"
             },
             "line": 14,
@@ -79,7 +79,7 @@
           },
           {
             "result": {
-              "duration": 4317092572,
+              "duration": 3722778902,
               "status": "passed"
             },
             "line": 15,
@@ -97,7 +97,7 @@
           },
           {
             "result": {
-              "duration": 771517545,
+              "duration": 724092010,
               "status": "passed"
             },
             "line": 16,
@@ -113,7 +113,7 @@
         "before": [
           {
             "result": {
-              "duration": 587915,
+              "duration": 471167,
               "status": "passed"
             },
             "match": {
@@ -128,7 +128,7 @@
         "after": [
           {
             "result": {
-              "duration": 131824,
+              "duration": 370210274,
               "status": "passed"
             },
             "match": {
@@ -137,7 +137,7 @@
           },
           {
             "result": {
-              "duration": 1469255977,
+              "duration": 1374904620,
               "status": "passed"
             },
             "match": {
@@ -150,7 +150,7 @@
         "steps": [
           {
             "result": {
-              "duration": 6511245615,
+              "duration": 6641580759,
               "status": "passed"
             },
             "line": 19,
@@ -162,7 +162,7 @@
           },
           {
             "result": {
-              "duration": 21577252243,
+              "duration": 22150828166,
               "status": "passed"
             },
             "line": 20,
@@ -174,7 +174,7 @@
           },
           {
             "result": {
-              "duration": 1896326665,
+              "duration": 1829281161,
               "status": "passed"
             },
             "line": 21,
@@ -186,8 +186,9 @@
           },
           {
             "result": {
-              "duration": 9607207085,
-              "status": "passed"
+              "duration": 19945140681,
+              "error_message": "exceptions.ApplicationException: Element [Getgo.Activities.LblReferenceNumber] not found!\r\n\tat actions.Get.elementBy(Get.java:27)\r\n\tat pages.PageActivities.getTransactionReferenceNumber(PageActivities.java:22)\r\n\tat stepdefinitions.Getgo_CardTransfer_Peso.iShouldSeeTheConfirmationPage(Getgo_CardTransfer_Peso.java:79)\r\n\tat ✽.Then I should see the confirmation page(Getgo_CardTransfer_Peso.feature:22)\r\n",
+              "status": "failed"
             },
             "line": 22,
             "name": "I should see the confirmation page",
@@ -207,7 +208,7 @@
         "steps": [
           {
             "result": {
-              "duration": 5942253383,
+              "duration": 6148378677,
               "status": "passed"
             },
             "line": 12,
@@ -219,7 +220,7 @@
           },
           {
             "result": {
-              "duration": 481730827,
+              "duration": 485969402,
               "status": "passed"
             },
             "line": 13,
@@ -231,7 +232,7 @@
           },
           {
             "result": {
-              "duration": 2843634263,
+              "duration": 3014307878,
               "status": "passed"
             },
             "line": 14,
@@ -249,7 +250,7 @@
           },
           {
             "result": {
-              "duration": 4236498382,
+              "duration": 3747797882,
               "status": "passed"
             },
             "line": 15,
@@ -267,7 +268,7 @@
           },
           {
             "result": {
-              "duration": 767439018,
+              "duration": 712705109,
               "status": "passed"
             },
             "line": 16,
@@ -283,7 +284,7 @@
         "before": [
           {
             "result": {
-              "duration": 181859,
+              "duration": 311759,
               "status": "passed"
             },
             "match": {
@@ -298,7 +299,7 @@
         "after": [
           {
             "result": {
-              "duration": 32074,
+              "duration": 342727372,
               "status": "passed"
             },
             "match": {
@@ -307,7 +308,7 @@
           },
           {
             "result": {
-              "duration": 1428678876,
+              "duration": 1313677976,
               "status": "passed"
             },
             "match": {
@@ -320,7 +321,7 @@
         "steps": [
           {
             "result": {
-              "duration": 5723654521,
+              "duration": 6118942149,
               "status": "passed"
             },
             "line": 25,
@@ -332,7 +333,7 @@
           },
           {
             "result": {
-              "duration": 10728662230,
+              "duration": 10255903134,
               "status": "passed"
             },
             "line": 26,
@@ -344,7 +345,7 @@
           },
           {
             "result": {
-              "duration": 1687168776,
+              "duration": 1714420425,
               "status": "passed"
             },
             "line": 27,
@@ -356,8 +357,9 @@
           },
           {
             "result": {
-              "duration": 9164035906,
-              "status": "passed"
+              "duration": 14690773891,
+              "error_message": "exceptions.ApplicationException: Element [Getgo.Activities.LblReferenceNumber] not found!\r\n\tat actions.Get.elementBy(Get.java:27)\r\n\tat pages.PageActivities.getTransactionReferenceNumber(PageActivities.java:22)\r\n\tat stepdefinitions.Getgo_CardTransfer_Peso.iShouldSeeTheConfirmationPage(Getgo_CardTransfer_Peso.java:79)\r\n\tat ✽.Then I should see the confirmation page(Getgo_CardTransfer_Peso.feature:28)\r\n",
+              "status": "failed"
             },
             "line": 28,
             "name": "I should see the confirmation page",
@@ -423,7 +425,7 @@
         "steps": [
           {
             "result": {
-              "duration": 5995680598,
+              "duration": 6064086038,
               "status": "passed"
             },
             "line": 12,
@@ -439,7 +441,7 @@
         "before": [
           {
             "result": {
-              "duration": 277440,
+              "duration": 773944,
               "status": "passed"
             },
             "match": {
@@ -454,7 +456,7 @@
         "after": [
           {
             "result": {
-              "duration": 42017,
+              "duration": 27904,
               "status": "passed"
             },
             "match": {
@@ -463,7 +465,7 @@
           },
           {
             "result": {
-              "duration": 1333387111,
+              "duration": 1351585240,
               "status": "passed"
             },
             "match": {
@@ -476,7 +478,7 @@
         "steps": [
           {
             "result": {
-              "duration": 486159600,
+              "duration": 485285905,
               "status": "passed"
             },
             "line": 15,
@@ -488,7 +490,7 @@
           },
           {
             "result": {
-              "duration": 3802515112,
+              "duration": 3198971837,
               "status": "passed"
             },
             "line": 16,
@@ -509,7 +511,7 @@
           },
           {
             "result": {
-              "duration": 4189265932,
+              "duration": 3995999093,
               "status": "passed"
             },
             "line": 17,
@@ -530,7 +532,7 @@
           },
           {
             "result": {
-              "duration": 755624572,
+              "duration": 715509657,
               "status": "passed"
             },
             "line": 18,
@@ -542,7 +544,7 @@
           },
           {
             "result": {
-              "duration": 15261761765,
+              "duration": 5042279908,
               "status": "passed"
             },
             "line": 19,
@@ -578,7 +580,7 @@
         "steps": [
           {
             "result": {
-              "duration": 5978081611,
+              "duration": 6015433032,
               "status": "passed"
             },
             "line": 12,
@@ -594,7 +596,7 @@
         "before": [
           {
             "result": {
-              "duration": 689269,
+              "duration": 211367,
               "status": "passed"
             },
             "match": {
@@ -609,7 +611,7 @@
         "after": [
           {
             "result": {
-              "duration": 17962,
+              "duration": 20848,
               "status": "passed"
             },
             "match": {
@@ -618,7 +620,7 @@
           },
           {
             "result": {
-              "duration": 1377908989,
+              "duration": 1424757513,
               "status": "passed"
             },
             "match": {
@@ -631,7 +633,7 @@
         "steps": [
           {
             "result": {
-              "duration": 479516440,
+              "duration": 480829227,
               "status": "passed"
             },
             "line": 15,
@@ -643,7 +645,7 @@
           },
           {
             "result": {
-              "duration": 2992008449,
+              "duration": 3081405340,
               "status": "passed"
             },
             "line": 16,
@@ -664,7 +666,7 @@
           },
           {
             "result": {
-              "duration": 4278966884,
+              "duration": 3964872588,
               "status": "passed"
             },
             "line": 17,
@@ -685,7 +687,7 @@
           },
           {
             "result": {
-              "duration": 761573652,
+              "duration": 715780682,
               "status": "passed"
             },
             "line": 18,
@@ -697,7 +699,7 @@
           },
           {
             "result": {
-              "duration": 8287214065,
+              "duration": 5493251477,
               "status": "passed"
             },
             "line": 19,
@@ -775,7 +777,7 @@
         "steps": [
           {
             "result": {
-              "duration": 5996656930,
+              "duration": 5998673100,
               "status": "passed"
             },
             "line": 13,
@@ -787,7 +789,7 @@
           },
           {
             "result": {
-              "duration": 482931997,
+              "duration": 491082635,
               "status": "passed"
             },
             "line": 14,
@@ -799,7 +801,7 @@
           },
           {
             "result": {
-              "duration": 2864376820,
+              "duration": 3017985158,
               "status": "passed"
             },
             "line": 15,
@@ -817,7 +819,7 @@
           },
           {
             "result": {
-              "duration": 4800432228,
+              "duration": 3733256827,
               "status": "passed"
             },
             "line": 16,
@@ -835,7 +837,7 @@
           },
           {
             "result": {
-              "duration": 778457069,
+              "duration": 721580298,
               "status": "passed"
             },
             "line": 17,
@@ -851,7 +853,7 @@
         "before": [
           {
             "result": {
-              "duration": 203990,
+              "duration": 254347,
               "status": "passed"
             },
             "match": {
@@ -866,7 +868,7 @@
         "after": [
           {
             "result": {
-              "duration": 463204581,
+              "duration": 15075,
               "status": "passed"
             },
             "match": {
@@ -875,7 +877,7 @@
           },
           {
             "result": {
-              "duration": 1447407188,
+              "duration": 1331673398,
               "status": "passed"
             },
             "match": {
@@ -888,7 +890,7 @@
         "steps": [
           {
             "result": {
-              "duration": 6035839775,
+              "duration": 6300152704,
               "status": "passed"
             },
             "line": 21,
@@ -900,7 +902,7 @@
           },
           {
             "result": {
-              "duration": 1391089466,
+              "duration": 1446971624,
               "status": "passed"
             },
             "line": 22,
@@ -912,7 +914,7 @@
           },
           {
             "result": {
-              "duration": 51768476932,
+              "duration": 56568120462,
               "status": "passed"
             },
             "line": 23,
@@ -924,7 +926,7 @@
           },
           {
             "result": {
-              "duration": 1266535013,
+              "duration": 1185910354,
               "status": "passed"
             },
             "line": 24,
@@ -936,9 +938,8 @@
           },
           {
             "result": {
-              "duration": 10539906594,
-              "error_message": "exceptions.ApplicationException: Element [By.xpath: //android.widget.TextView[@text\u003d\u00279468150216310791\u0027]] not found!\r\n\tat actions.Get.elementBy(Get.java:39)\r\n\tat pages.PageManageRecipient.isRecipientAvailableInFavourites(PageManageRecipient.java:62)\r\n\tat stepdefinitions.Getgo_ManageRecipient.recipientShouldBeDisplayedInMyFavourites(Getgo_ManageRecipient.java:38)\r\n\tat ✽.Then Recipient should be displayed in my favourites(Getgo_ManageRecipient.feature:25)\r\n",
-              "status": "failed"
+              "duration": 13232970566,
+              "status": "passed"
             },
             "line": 25,
             "name": "Recipient should be displayed in my favourites",
@@ -951,7 +952,7 @@
         "tags": [
           {
             "line": 19,
-            "name": "@ignore"
+            "name": "@IgnoreIfIOS"
           }
         ]
       },
@@ -964,7 +965,7 @@
         "steps": [
           {
             "result": {
-              "duration": 6028917571,
+              "duration": 6252711132,
               "status": "passed"
             },
             "line": 13,
@@ -976,7 +977,7 @@
           },
           {
             "result": {
-              "duration": 473402500,
+              "duration": 481027765,
               "status": "passed"
             },
             "line": 14,
@@ -988,7 +989,7 @@
           },
           {
             "result": {
-              "duration": 2874638887,
+              "duration": 3029901921,
               "status": "passed"
             },
             "line": 15,
@@ -1006,7 +1007,7 @@
           },
           {
             "result": {
-              "duration": 4205631676,
+              "duration": 3751275021,
               "status": "passed"
             },
             "line": 16,
@@ -1024,7 +1025,7 @@
           },
           {
             "result": {
-              "duration": 762600340,
+              "duration": 702596677,
               "status": "passed"
             },
             "line": 17,
@@ -1040,7 +1041,7 @@
         "before": [
           {
             "result": {
-              "duration": 318815,
+              "duration": 240554,
               "status": "passed"
             },
             "match": {
@@ -1055,7 +1056,7 @@
         "after": [
           {
             "result": {
-              "duration": 427389824,
+              "duration": 16999,
               "status": "passed"
             },
             "match": {
@@ -1064,7 +1065,7 @@
           },
           {
             "result": {
-              "duration": 1518517747,
+              "duration": 1334259843,
               "status": "passed"
             },
             "match": {
@@ -1077,7 +1078,7 @@
         "steps": [
           {
             "result": {
-              "duration": 6156859676,
+              "duration": 7105874252,
               "status": "passed"
             },
             "line": 28,
@@ -1089,7 +1090,7 @@
           },
           {
             "result": {
-              "duration": 51523784934,
+              "duration": 55954525846,
               "status": "passed"
             },
             "line": 29,
@@ -1101,7 +1102,7 @@
           },
           {
             "result": {
-              "duration": 1390404687,
+              "duration": 1348797370,
               "status": "passed"
             },
             "line": 30,
@@ -1113,9 +1114,8 @@
           },
           {
             "result": {
-              "duration": 10515190714,
-              "error_message": "exceptions.ApplicationException: Element [By.xpath: //android.widget.TextView[@text\u003d\u00277209322434607403\u0027]] not found!\r\n\tat actions.Get.elementBy(Get.java:39)\r\n\tat pages.PageManageRecipient.isRecipientAvailableInFavourites(PageManageRecipient.java:62)\r\n\tat stepdefinitions.Getgo_ManageRecipient.recipientShouldBeDisplayedInMyFavourites(Getgo_ManageRecipient.java:38)\r\n\tat ✽.Then Recipient should be displayed in my favourites(Getgo_ManageRecipient.feature:31)\r\n",
-              "status": "failed"
+              "duration": 13940349472,
+              "status": "passed"
             },
             "line": 31,
             "name": "Recipient should be displayed in my favourites",
@@ -1165,7 +1165,7 @@
         "steps": [
           {
             "result": {
-              "duration": 6023447355,
+              "duration": 6080030971,
               "status": "passed"
             },
             "line": 8,
@@ -1195,7 +1195,7 @@
         "before": [
           {
             "result": {
-              "duration": 268139,
+              "duration": 174482,
               "status": "passed"
             },
             "match": {
@@ -1203,14 +1203,14 @@
             }
           }
         ],
-        "line": 14,
+        "line": 15,
         "name": "Validate the fields \u0026 texts displayed on the Getgo Welcome \u0026 SignUp page",
         "description": "",
         "id": "page-validation;validate-the-fields-\u0026-texts-displayed-on-the-getgo-welcome-\u0026-signup-page",
         "after": [
           {
             "result": {
-              "duration": 16679,
+              "duration": 14433,
               "status": "passed"
             },
             "match": {
@@ -1219,7 +1219,7 @@
           },
           {
             "result": {
-              "duration": 1311542491,
+              "duration": 1335373131,
               "status": "passed"
             },
             "match": {
@@ -1232,10 +1232,10 @@
         "steps": [
           {
             "result": {
-              "duration": 616507254,
+              "duration": 600155943,
               "status": "passed"
             },
-            "line": 15,
+            "line": 16,
             "name": "I should see two buttons \"LOG IN\" \"SIGN UP\", Getgo logo, a caption \"Now made easier. As simple as Ready, GetGo.\"",
             "match": {
               "arguments": [
@@ -1258,10 +1258,10 @@
           },
           {
             "result": {
-              "duration": 87844190,
+              "duration": 75909465,
               "status": "passed"
             },
-            "line": 16,
+            "line": 17,
             "name": "I\u0027m on Getgo SignUp page",
             "match": {
               "location": "Getgo_PageValidation.i_m_on_Getgo_SignUp_page()"
@@ -1270,10 +1270,10 @@
           },
           {
             "result": {
-              "duration": 1278661220,
+              "duration": 1190624586,
               "status": "passed"
             },
-            "line": 17,
+            "line": 18,
             "name": "I should see two button \"Yes\" \"No\", Getgo card image, two messages \"Do you have a GetGo Peso Plus Card?\" \u0026 \"Start shopping online by creating your GetGo Virtual Prepaid Card. Or register your Peso + Prepaid Card now.\"",
             "match": {
               "arguments": [
@@ -1309,7 +1309,7 @@
         "steps": [
           {
             "result": {
-              "duration": 6056502468,
+              "duration": 5950926826,
               "status": "passed"
             },
             "line": 8,
@@ -1324,22 +1324,22 @@
       {
         "comments": [
           {
-            "line": 19,
+            "line": 20,
             "value": "#\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d"
           },
           {
-            "line": 20,
+            "line": 21,
             "value": "#                                               Login Screen"
           },
           {
-            "line": 21,
+            "line": 22,
             "value": "#\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d"
           }
         ],
         "before": [
           {
             "result": {
-              "duration": 222273,
+              "duration": 206556,
               "status": "passed"
             },
             "match": {
@@ -1347,14 +1347,14 @@
             }
           }
         ],
-        "line": 24,
+        "line": 25,
         "name": "Validate the fields \u0026 texts displayed on the Getgo Login page",
         "description": "",
         "id": "page-validation;validate-the-fields-\u0026-texts-displayed-on-the-getgo-login-page",
         "after": [
           {
             "result": {
-              "duration": 13471,
+              "duration": 16679,
               "status": "passed"
             },
             "match": {
@@ -1363,7 +1363,7 @@
           },
           {
             "result": {
-              "duration": 1321584531,
+              "duration": 1373411576,
               "status": "passed"
             },
             "match": {
@@ -1376,10 +1376,10 @@
         "steps": [
           {
             "result": {
-              "duration": 478888752,
+              "duration": 483385202,
               "status": "passed"
             },
-            "line": 25,
+            "line": 26,
             "name": "I\u0027m on Getgo login page",
             "match": {
               "location": "Getgo_PageValidation.i_m_on_Getgo_login_page()"
@@ -1388,10 +1388,10 @@
           },
           {
             "result": {
-              "duration": 3689781201,
+              "duration": 3762114740,
               "status": "passed"
             },
-            "line": 26,
+            "line": 27,
             "name": "I should see back arrow, page title as \"Login\", a caption \"Enter your registered email address\", a text box with inner text \"Email address\", a link \"Forgot your password?\", a \"NEXT\" button \u0026 a sign up link \"Don’t have an account? SIGN UP NOW!\"",
             "match": {
               "arguments": [
@@ -1426,10 +1426,10 @@
           },
           {
             "result": {
-              "duration": 1420293778,
+              "duration": 1642218711,
               "status": "passed"
             },
-            "line": 27,
+            "line": 28,
             "name": "I enter a \"Peso_Username\" \u0026 click next",
             "match": {
               "arguments": [
@@ -1444,10 +1444,10 @@
           },
           {
             "result": {
-              "duration": 6146205986,
+              "duration": 5902694631,
               "status": "passed"
             },
-            "line": 28,
+            "line": 29,
             "name": "I should see back arrow, page title as \"Login\", a caption \"Enter your password\", a text box with inner text \"Password\", a link \"Having problems with your account?\", a \"LOGIN\" button \u0026 a password visibility toggle button",
             "match": {
               "arguments": [
@@ -1479,8 +1479,8 @@
         ],
         "tags": [
           {
-            "line": 23,
-            "name": "@Android"
+            "line": 24,
+            "name": "@AndroidOnly"
           }
         ]
       }

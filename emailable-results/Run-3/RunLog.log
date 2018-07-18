@@ -1,7 +1,0 @@
-2018-07-17 18:13:15,743  INFO [main] RunManager:23 - Hey! Tg2259, Logging everything from here ....
-2018-07-17 18:13:15,775  INFO [main] RunManager:24 - Run ID is --> Run-3
-2018-07-17 18:13:16,027  INFO [main] StepsBase:16 - Executing S C E N A R I O : Validate the fields & texts displayed on the Getgo Welcome & SignUp page
-2018-07-17 18:13:18,369 ERROR [main] StepsBase:23 - S C E N A R I O    F A I L E D !!!!!
-2018-07-17 18:13:18,369  INFO [main] Keywords:49 - Application closed
-2018-07-17 18:13:18,369 ERROR [main] Test:52 - Failed to generate report 
-java.lang.NullPointerException

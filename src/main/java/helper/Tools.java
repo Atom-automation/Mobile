@@ -11,7 +11,7 @@ import java.util.Locale;
 public class Tools {
 
     public String REMOVE_MULTIPLE_SPACES_AND_NEW_LINES(String text){
-        String i = text.replace("\n"," ").replaceAll("\\s{2,}", " ").trim();
+        String i = text.replace("\n"," ").replaceAll("\\s{2,}", " ").replaceAll("\\u00A0","").trim();
         return i;
     }
 
