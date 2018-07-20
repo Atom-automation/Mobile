@@ -40,10 +40,10 @@ public class Verify extends Keywords{
         log.info("Verify element ["+locatorKey+"] text is matching with ["+expectedValue+"]");
         String actualValue=Test.tools.REMOVE_MULTIPLE_SPACES_AND_NEW_LINES(get.elementBy(locatorKey).getText().trim());
         try{
-            Assert.assertTrue(actualValue.contains(expectedValue.trim()),"Condition failed!, actual value doesn't contains the expected value");
-        }catch (Exception ex){
-            log.error(ex);
-            throw new ApplicationException(ex.getMessage());
+            Assert.assertTrue(actualValue.contains(expectedValue.trim()));
+        }catch (AssertionError ex){
+            log.error("Actual value ["+actualValue+"] not matching with the Expected value["+expectedValue+"]");
+            throw new ApplicationException("Actual value ["+actualValue+"] not matching with the Expected value["+expectedValue+"]");
         }
         log.info("Condition verified!");
     }
@@ -72,8 +72,24 @@ public class Verify extends Keywords{
         log.info("Condition verified!");
     }
 
-    public void isMatching(String expected,String actual){
-        Assert.assertTrue(actual.equalsIgnoreCase(expected.trim()),"Condition failed!, actual value doesn't match with expected value");
+    public void isMatching(String expected,String actual) throws ApplicationException {
+        try{
+            Assert.assertEquals(Test.tools.nbspRemove(actual).toLowerCase(),expected.trim().toLowerCase());
+        }catch (AssertionError ex){
+            log.info(ex);
+            throw new ApplicationException(ex.getMessage());
+        }
+        log.info("Expected value ["+expected+"] is matching with the actual ["+actual+"]");
+    }
+
+    public void isMatching(double expected,double actual) throws ApplicationException {
+        try{
+            Assert.assertEquals(actual,expected);
+        }catch (AssertionError ex){
+            log.info(ex);
+            throw new ApplicationException(ex.getMessage());
+        }
+        log.info("Expected value ["+expected+"] is matching with the actual ["+actual+"]");
     }
 
     public void elementAttributeMatching(String locatorKey, String whichAttribute,String expectedValue) throws ApplicationException {

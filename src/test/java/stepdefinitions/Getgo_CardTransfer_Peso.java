@@ -14,9 +14,10 @@ import java.util.ArrayList;
 public class Getgo_CardTransfer_Peso
 {
 
-    private String fromCard,fromUser,toCard,fakeUser,toUser,message,frequency;
+    private String toCard,fakeUser,toUser,message,frequency;
     private double transferAmount,transferFees;
     private ArrayList<String> date;
+    private String accountType;
 
     /*
         Pages ~
@@ -30,15 +31,20 @@ public class Getgo_CardTransfer_Peso
 
     public Getgo_CardTransfer_Peso()
     {
-       fromCard= PropertyReader.testDataOf("Peso_CardNumber");
-       fromUser= PropertyReader.testDataOf("Peso_FullName");
-       toCard= PropertyReader.testDataOf("GGP520_RecipientCardNumber");
+       toCard= PropertyReader.testDataOf("RecipientCardNumber");
        fakeUser= Test.faker.name().firstName()+" "+ Test.faker.name().lastName();
-       toUser= PropertyReader.testDataOf("GGP520_RecipientName");
+       toUser= PropertyReader.testDataOf("RecipientName");
        message="Automation Transaction!";
        transferAmount=5.00;
        transferFees=20.00;
        frequency="One Time Only";
+    }
+
+    @Given("^I'm on Getgo Fund transfer page of my \"([^\"]*)\" card account$")
+    public void iMOnGetgoFundTransferPageOfMyCardAccount(String accountType) throws Throwable {
+        this.accountType=accountType.trim();
+        dashboard.clickMenu();
+        dashboard.navigateTo(MenuItem.CardTransfer());
     }
 
     @Given("^I'm on Getgo Fund transfer page$")
@@ -63,7 +69,7 @@ public class Getgo_CardTransfer_Peso
     @And("^I review transfer instruction and click submit$")
     public void iReviewTransferInstructionAndClickSubmit() throws Throwable
     {
-        review.fromDetails(fromCard,fromUser);
+        review.fromDetails(PropertyReader.testDataOf(accountType+"_CardNumber"),PropertyReader.testDataOf(accountType+"_FullName"));
         review.toDetails(toCard,toUser);
         review.transferAmount(transferAmount);
         review.transferFees(transferFees);

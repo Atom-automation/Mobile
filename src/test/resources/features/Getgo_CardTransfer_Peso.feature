@@ -5,7 +5,7 @@
 # Sub-tasks : GGP-555 - Automation Script Preparation [Android]
 # Sub-tasks : GGP-549 - Automation Script Preparation [IOS]
 
-@FundTransfer @Peso+
+@FundTransfer @Peso+ @ignore
 Feature: Card transfer Feature Using Peso+ Account
 
   Background: Open Getgo mobile application
@@ -15,14 +15,14 @@ Feature: Card transfer Feature Using Peso+ Account
     And   I enter password "Peso_Password"
     And   I click login
 
-  Scenario: As a tester, I want to complete a funds transfer transaction so that I can pass on funds to another cardholder (Add recipient from saved list).
-    Given I'm on Getgo Fund transfer page
+  Scenario: As a tester, I want to complete a funds transfer transaction from my Peso card account so that I can pass on funds to another cardholder (Add recipient from saved list).
+    Given I'm on Getgo Fund transfer page of my "Peso" card account
     When  I Enter card number, recipient name, amount, system date, frequency, and message - Add recipient from saved list by clicking on add button
     And   I review transfer instruction and click submit
     Then  I should see the confirmation page
 
-  Scenario: As a tester, I want to complete a funds transfer transaction so that I can pass on funds to another cardholder.
-    Given I'm on Getgo Fund transfer page
+  Scenario: As a tester, I want to complete a funds transfer transaction from my Peso card account so that I can pass on funds to another cardholder.
+    Given I'm on Getgo Fund transfer page of my "Peso" card account
     When  I Enter card number, recipient name, amount, system date, frequency, and message
     And   I review transfer instruction and click submit
     Then  I should see the confirmation page

@@ -51,7 +51,7 @@ public class Get extends Keywords{
         }catch (WebDriverException ex){
             txt=elementBy(locatorKey).getText();
         }
-        log.info("Text retrieved successfully!");
+        log.info("Text ["+txt+"] retrieved successfully!");
         return txt.trim();
     }
 

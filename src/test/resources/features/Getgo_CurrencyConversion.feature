@@ -5,7 +5,7 @@
 # Sub-tasks : GGP-555 - Automation Script Preparation [Android]
 # Sub-tasks : GGP-549 - Automation Script Preparation [IOS]
 
-
+@CurrencyConversion
 Feature: Currency Conversion
 
   Background: Login into account
@@ -15,9 +15,8 @@ Feature: Currency Conversion
     And   I enter password "Peso_Password"
     And   I click login
 
-  @dryRun
   Scenario Outline: As a tester, I want to be able to complete a currency conversion transaction so that I can transact in another currency.
-    Given I'm on Currency conversion screen
+    Given I'm on Currency conversion screen after noting down the balance of "<to>" currency
     When  I choose "<from>" currency and "<to>" currency
     And   I enter the conversion amount "<conversion_amount>"
     Then  Conversion amount will be automatically populated under To Amount field
@@ -26,5 +25,6 @@ Feature: Currency Conversion
 
     Examples:
       | from  | to    | conversion_amount |
-      | PHP   | CAD   | 45                |
+      | PHP   | AUD   | 10                |
+      | PHP   | CAD   | 10                |
 

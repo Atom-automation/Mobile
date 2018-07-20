@@ -1,8 +1,6 @@
 package helper;
 
-import java.text.NumberFormat;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
+import java.text.*;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Date;
@@ -68,5 +66,17 @@ public class Tools {
         Date date = inputFormat.parse(dateInString);
         SimpleDateFormat outputFormat = new SimpleDateFormat(format);
         return outputFormat.format(date);
+    }
+
+    public String currencyFormatter(double amount){
+        NumberFormat nf = NumberFormat.getCurrencyInstance();
+        DecimalFormatSymbols decimalFormatSymbols = ((DecimalFormat) nf).getDecimalFormatSymbols();
+        decimalFormatSymbols.setCurrencySymbol("");
+        ((DecimalFormat) nf).setDecimalFormatSymbols(decimalFormatSymbols);
+        return nf.format(amount).trim();
+    }
+
+    public String upto2Decimals(String amount){
+        return new DecimalFormat("#0.00").format(amount);
     }
 }
