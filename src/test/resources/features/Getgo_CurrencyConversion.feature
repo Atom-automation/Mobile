@@ -1,9 +1,8 @@
+
+# ========================================================================================================================================
 # Author: Balabharathi Jayaraman
-# Jira : GGP-521
-# Jira URL : https://tms-jira.unionbankph.com/browse/GGP-521
 # Functionality : As a tester, I want to be able to complete a currency conversion transaction so that I can transact in another currency.
-# Sub-tasks : GGP-555 - Automation Script Preparation [Android]
-# Sub-tasks : GGP-549 - Automation Script Preparation [IOS]
+# ========================================================================================================================================
 
 @CurrencyConversion
 Feature: Currency Conversion

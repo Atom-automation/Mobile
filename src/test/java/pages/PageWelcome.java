@@ -22,7 +22,7 @@ public class PageWelcome extends Keywords {
     }
 
     public void clickLogin() throws ApplicationException {
-	    click.elementBy(keyBtnLogin);
+        click.elementBy(keyBtnLogin);
     }
 
     public void clickSignUp() throws ApplicationException {

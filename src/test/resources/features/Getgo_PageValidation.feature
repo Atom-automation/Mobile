@@ -1,5 +1,8 @@
+
+# ======================================================================================
 # Author: Balabharathi Jayaraman
 # Functionality : Validate the fields & texts displayed on the Getgo application screens
+# ======================================================================================
 
 @PageValidation
 Feature: Page Validation
@@ -7,19 +10,16 @@ Feature: Page Validation
   Background: Open Getgo mobile application
     Given I'm on Getgo landing page
 
-  #=======================================================================================================================
-  #                                               Welcome & SignUp Screen
-  #=======================================================================================================================
-
+    # ~ W E L C O M E   &   S I G N - U P
+    # ------------------------------------------------------------------------------------------------------------------
 
   Scenario: Validate the fields & texts displayed on the Getgo Welcome & SignUp page
     Then  I should see two buttons "LOG IN" "SIGN UP", Getgo logo, a caption "Now made easier. As simple as Ready, GetGo."
     When  I'm on Getgo SignUp page
     Then  I should see two button "Yes" "No", Getgo card image, two messages "Do you have a GetGo Peso Plus Card?" & "Start shopping online by creating your GetGo Virtual Prepaid Card. Or register your Peso + Prepaid Card now."
 
-  #=======================================================================================================================
-  #                                               Login Screen
-  #=======================================================================================================================
+    # ~ L O G I N
+    # ------------------------------------------------------------------------------------------------------------------
 
   @AndroidOnly
   Scenario: Validate the fields & texts displayed on the Getgo Login page

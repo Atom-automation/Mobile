@@ -27,7 +27,7 @@ public class PageCardTransferReview extends Keywords {
             verify.elementTextContains(keyTransferFrom,fromCard);
         }else if(Test.attributes.get(Keys.OS).equalsIgnoreCase(OS.iOS)){
             verify.elementTextContains(xpathOf.textView(Contains.name(fromUser.substring(0,4))),fromUser);
-            verify.elementTextContains(xpathOf.textView(Contains.name(fromCard.substring(0,4))),fromCard);
+            verify.elementTextContains(xpathOf.textView(Contains.name(fromCard)),fromCard);
         }
     }
 
@@ -37,8 +37,8 @@ public class PageCardTransferReview extends Keywords {
             verify.elementTextContains(keyTransferTo,toUser);
             verify.elementTextContains(keyTransferTo,toCard);
         }else if(Test.attributes.get(Keys.OS).equalsIgnoreCase(OS.iOS)){
-            //verify.elementTextContains(xpathOf.textView(Contains.name(toUser.substring(0,4))),toUser);
-            verify.elementTextContains(xpathOf.textView(Contains.name(toCard.substring(0,4))),toCard);
+            verify.elementTextContains(xpathOf.textView(Contains.name(toUser.substring(0,4))),toUser);
+            verify.elementTextContains(xpathOf.textView(Contains.name(toCard)),toCard);
         }
     }
 

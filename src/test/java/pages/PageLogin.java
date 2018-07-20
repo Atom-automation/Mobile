@@ -5,6 +5,10 @@ import base.Test;
 import constants.Keys;
 import constants.OS;
 import exceptions.ApplicationException;
+import helper.Device;
+import helper.PropertyReader;
+import io.appium.java_client.MobileBy;
+import org.openqa.selenium.WebElement;
 import xpath.Matching;
 
 public class PageLogin extends Keywords {
@@ -16,6 +20,7 @@ public class PageLogin extends Keywords {
     private String keyBtnLogin="Getgo.Login.BtnLogin";
     private String keyTogglePasswordVisibility="Getgo.Login.TogglePasswordVisibility";
     private String keyTxtPassword="Getgo.Login.TxtPassword";
+
 
 
     public void enterEmail(String emailID) throws ApplicationException {
@@ -32,6 +37,45 @@ public class PageLogin extends Keywords {
 
     public void clickLogin() throws ApplicationException {
         click.elementBy(keyBtnLogin);
+    }
+
+    private void localLogin(String username,String password) throws ApplicationException {
+        enterEmail(username);
+        clickNext();
+        enterPassword(password);
+        clickLogin();
+    }
+
+    public void login(String accountType, String emailID, String password) throws ApplicationException {
+        if(Device.isAndroid())
+        {
+            localLogin(emailID,password);
+        }else if(Device.isIOS())
+        {
+            try{
+                String loggedInUserName;
+                WebElement usePassword=get.elementBy("Getgo.Welcome.BtnUsePassword");
+                loggedInUserName=get.elementText("Getgo.Welcome.LblLoggedInEmailAddress");
+                usePassword.click();
+                if(!(loggedInUserName.equalsIgnoreCase(emailID))){
+                    enterPassword(PropertyReader.testDataOf(loggedInUserName));
+                    clickLogin();
+                    PageAccountDashboard dashboard=new PageAccountDashboard();
+                    dashboard.clickMenu();
+                    dashboard.logout();
+                    click.elementBy(MobileBy.AccessibilityId("YES"));
+                    PageWelcome welcome=new PageWelcome();
+                    welcome.clickLogin();
+                    enterEmail(emailID);
+                    clickNext();
+                }
+                enterPassword(password);
+                clickLogin();
+            }catch (Throwable ex){
+                click.elementBy(keyBtnLogin);
+                localLogin(emailID,password);
+            }
+        }
     }
 
     public void isLoginSuccess(String username) throws ApplicationException {

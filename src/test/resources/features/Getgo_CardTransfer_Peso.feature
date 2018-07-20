@@ -1,28 +1,35 @@
-# Author: Balabharathi Jayaraman
-# Jira : GGP-520
-# Jira URL : https://tms-jira.unionbankph.com/browse/GGP-520
-# Functionality : As a tester, I want to complete a funds transfer transaction so that I can pass on funds to another cardholder.
-# Sub-tasks : GGP-555 - Automation Script Preparation [Android]
-# Sub-tasks : GGP-549 - Automation Script Preparation [IOS]
 
-@FundTransfer @Peso+ @ignore
+
+
+# ===============================================================================================================================
+# Author: Balabharathi Jayaraman
+# Functionality : As a tester, I want to complete a funds transfer transaction so that I can pass on funds to another cardholder.
+# ===============================================================================================================================
+
+@FundTransfer @Peso+ @dryRun
 Feature: Card transfer Feature Using Peso+ Account
 
   Background: Open Getgo mobile application
   	Given I'm on Getgo landing page
-    And   I'm on Getgo login page
-    When  I enter a "Peso_Username" & click next
-    And   I enter password "Peso_Password"
-    And   I click login
 
-  Scenario: As a tester, I want to complete a funds transfer transaction from my Peso card account so that I can pass on funds to another cardholder (Add recipient from saved list).
-    Given I'm on Getgo Fund transfer page of my "Peso" card account
+  Scenario Outline: As a tester, I want to complete a funds transfer transaction from my Peso card account so that I can pass on funds to another cardholder (Add recipient from saved list).
+    Given I'm login into my "<accountType>" account with my "<username>" and "<password>"
+    Given I'm on Getgo Fund transfer page of my "<accountType>" card account
     When  I Enter card number, recipient name, amount, system date, frequency, and message - Add recipient from saved list by clicking on add button
     And   I review transfer instruction and click submit
     Then  I should see the confirmation page
 
-  Scenario: As a tester, I want to complete a funds transfer transaction from my Peso card account so that I can pass on funds to another cardholder.
-    Given I'm on Getgo Fund transfer page of my "Peso" card account
+  Examples:
+    | accountType | username      | password      |
+    | Peso        | Peso_Username | Peso_Password |
+
+  Scenario Outline: As a tester, I want to complete a funds transfer transaction from my Peso card account so that I can pass on funds to another cardholder.
+    Given I'm login into my "<accountType>" account with my "<username>" and "<password>"
+    Given I'm on Getgo Fund transfer page of my "<accountType>" card account
     When  I Enter card number, recipient name, amount, system date, frequency, and message
     And   I review transfer instruction and click submit
     Then  I should see the confirmation page
+
+  Examples:
+    | accountType | username      | password      |
+    | Peso        | Peso_Username | Peso_Password |

@@ -30,4 +30,9 @@ public class Getgo_Login_NewCustomer
     {
         loginPage.isLoginSuccess(PropertyReader.testDataOf(accountType + "_FullName"));
     }
+
+    @Given("^I'm login into my \"([^\"]*)\" account with my \"([^\"]*)\" and \"([^\"]*)\"$")
+    public void iMLoginIntoMyAccountWithMyAnd(String accountType, String emailID, String password) throws Throwable {
+        loginPage.login(accountType,PropertyReader.testDataOf(emailID),PropertyReader.testDataOf(password));
+    }
 }

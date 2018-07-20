@@ -65,9 +65,9 @@ public class Verify extends Keywords{
         String actualValue=Test.tools.REMOVE_MULTIPLE_SPACES_AND_NEW_LINES(get.elementBy(locator).getText().trim());
         try{
             Assert.assertTrue(actualValue.contains(expectedValue.trim()),"Condition failed!, actual value doesn't contains the expected value");
-        }catch (Exception ex){
-            log.error(ex);
-            throw new ApplicationException(ex.getMessage());
+        }catch (AssertionError ex){
+            log.error("Actual value ["+actualValue+"] don't contain the Expected value["+expectedValue+"]");
+            throw new ApplicationException("Actual value ["+actualValue+"] don't contain the Expected value["+expectedValue+"]");
         }
         log.info("Condition verified!");
     }

@@ -6,7 +6,7 @@ public final class MenuItem {
         return "My Card";
     }
     public static String CardTransfer(){
-        return "Card transfer";
+        return "Card Transfer";
     }
     public static String CurrencyConverter(){
         return "Currency Converter";

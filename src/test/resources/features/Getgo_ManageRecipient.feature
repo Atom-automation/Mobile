@@ -1,10 +1,8 @@
 
+# ===============================================================================================================================
 # Author: Balabharathi Jayaraman
-# Jira : GGP-520
-# Jira URL : https://tms-jira.unionbankph.com/browse/GGP-520
 # Functionality : As a tester, I want to complete a funds transfer transaction so that I can pass on funds to another cardholder.
-# Sub-tasks : GGP-555 - Automation Script Preparation [Android]
-# Sub-tasks : GGP-549 - Automation Script Preparation [IOS]
+# ===============================================================================================================================
 
 @FundTransfer @Peso+
 Feature: Manage Recipients Feature
