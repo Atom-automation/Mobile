@@ -19,4 +19,8 @@ public class PageSignUp extends Keywords {
         verify.elementTextMatching(keyLblPageCaption1,caption);
         verify.elementTextMatching(KeyLblPageCaption2,caption2);
     }
+
+    public void registerVirtualCard() throws ApplicationException {
+        click.elementBy(keyBtnCreateVirutalCard);
+    }
 }

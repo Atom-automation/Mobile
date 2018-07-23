@@ -1,0 +1,234 @@
+[
+  {
+    "comments": [
+      {
+        "line": 1,
+        "value": "# \u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d"
+      },
+      {
+        "line": 2,
+        "value": "# Author: Balabharathi Jayaraman"
+      },
+      {
+        "line": 3,
+        "value": "# Functionality : As a tester, I want to be able to register my personal details so that I can be issued a virtual card."
+      },
+      {
+        "line": 4,
+        "value": "# \u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d"
+      }
+    ],
+    "line": 7,
+    "elements": [
+      {
+        "line": 9,
+        "name": "Open Getgo mobile application",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "duration": 26146886813,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "I\u0027m on Getgo landing page",
+            "match": {
+              "location": "Getgo_PageValidation.i_m_on_Getgo_landing_page()"
+            },
+            "keyword": "Given "
+          }
+        ]
+      },
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 441657,
+              "status": "passed"
+            },
+            "match": {
+              "location": "StepsBase.beforeScenario(Scenario)"
+            }
+          }
+        ],
+        "line": 13,
+        "name": "Register a new virtual card",
+        "description": "",
+        "id": "new-virtual-card-registration;register-a-new-virtual-card",
+        "after": [
+          {
+            "result": {
+              "duration": 95259,
+              "status": "passed"
+            },
+            "match": {
+              "location": "StepsBase.ifScenarioFailed(Scenario)"
+            }
+          },
+          {
+            "result": {
+              "duration": 1326650313,
+              "status": "passed"
+            },
+            "match": {
+              "location": "StepsBase.afterScenario()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 1275046330,
+              "status": "passed"
+            },
+            "line": 14,
+            "name": "I\u0027m on Getgo virtual card registration screen",
+            "match": {
+              "location": "Getgo_VirtualCardRegistration.iMOnGetgoVirtualCardRegistrationScreen()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 9909544930,
+              "status": "passed"
+            },
+            "line": 15,
+            "name": "I enter Mobile Number, Email Address, and Nominate and Confirm password",
+            "match": {
+              "location": "Getgo_VirtualCardRegistration.iEnterMobileNumberEmailAddressAndNominateAndConfirmPassword()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 7559446367,
+              "status": "passed"
+            },
+            "line": 16,
+            "name": "I enter one time password",
+            "match": {
+              "location": "Getgo_VirtualCardRegistration.iEnterOneTimePassword()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 51879118045,
+              "status": "passed"
+            },
+            "line": 17,
+            "name": "I fill my personal details",
+            "match": {
+              "location": "Getgo_VirtualCardRegistration.iFillMyPersonalDetails()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 3579535198,
+              "status": "passed"
+            },
+            "line": 18,
+            "name": "I review \u0026 submit",
+            "match": {
+              "location": "Getgo_VirtualCardRegistration.iReviewSubmit()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 3579855295,
+              "status": "passed"
+            },
+            "line": 19,
+            "name": "I click verify now",
+            "match": {
+              "location": "Getgo_VirtualCardRegistration.iClickVerifyNow()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1325238742,
+              "status": "passed"
+            },
+            "line": 20,
+            "name": "I should see the dashboard",
+            "match": {
+              "location": "Getgo_VirtualCardRegistration.iShouldSeeTheDashboard()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 17320,
+              "status": "passed"
+            },
+            "line": 21,
+            "name": "I click the verification email link from my inbox",
+            "match": {
+              "location": "Getgo_VirtualCardRegistration.iClickTheVerificationEmailLinkFromMyInbox()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 9301,
+              "status": "passed"
+            },
+            "line": 22,
+            "name": "I should see a message account is verified",
+            "match": {
+              "location": "Getgo_VirtualCardRegistration.iShouldSeeAMessageAccountIsVerified()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 8018,
+              "status": "passed"
+            },
+            "line": 23,
+            "name": "I login with the My Email next time",
+            "match": {
+              "location": "Getgo_VirtualCardRegistration.iLoginWithTheMyEmailNextTime()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 9622,
+              "status": "passed"
+            },
+            "line": 24,
+            "name": "I should see my virtual card in the dashboard",
+            "match": {
+              "location": "Getgo_VirtualCardRegistration.iShouldSeeMyVirtualCardInTheDashboard()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "line": 12,
+            "name": "@AndroidOnly"
+          },
+          {
+            "line": 12,
+            "name": "@Debug"
+          }
+        ]
+      }
+    ],
+    "name": "New Virtual Card Registration",
+    "description": "",
+    "id": "new-virtual-card-registration",
+    "keyword": "Feature",
+    "uri": "Getgo_CardRegistration_Virtual.feature"
+  }
+]

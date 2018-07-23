@@ -8,7 +8,11 @@ import exceptions.ApplicationException;
 import helper.Device;
 import helper.PropertyReader;
 import io.appium.java_client.MobileBy;
+import org.openqa.selenium.By;
+import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import xpath.Matching;
 
 public class PageLogin extends Keywords {
@@ -20,8 +24,6 @@ public class PageLogin extends Keywords {
     private String keyBtnLogin="Getgo.Login.BtnLogin";
     private String keyTogglePasswordVisibility="Getgo.Login.TogglePasswordVisibility";
     private String keyTxtPassword="Getgo.Login.TxtPassword";
-
-
 
     public void enterEmail(String emailID) throws ApplicationException {
         type.data(keyTxtEmailAddress,emailID);
@@ -39,42 +41,54 @@ public class PageLogin extends Keywords {
         click.elementBy(keyBtnLogin);
     }
 
-    private void localLogin(String username,String password) throws ApplicationException {
-        enterEmail(username);
+    public void login(String emailID, String password) throws ApplicationException {
+        if(Device.isAndroid())
+        {
+            androidLoginFlow(emailID,password);
+        }else if(Device.isIOS())
+        {
+            iOSLoginFlow(emailID,password);
+        }
+    }
+
+    private void androidLoginFlow(String emailID, String password) throws ApplicationException {
+        PageWelcome welcome=new PageWelcome();
+        welcome.clickLogin();
+        enterEmail(emailID);
         clickNext();
         enterPassword(password);
         clickLogin();
     }
 
-    public void login(String accountType, String emailID, String password) throws ApplicationException {
-        if(Device.isAndroid())
-        {
-            localLogin(emailID,password);
-        }else if(Device.isIOS())
-        {
-            try{
-                String loggedInUserName;
-                WebElement usePassword=get.elementBy("Getgo.Welcome.BtnUsePassword");
-                loggedInUserName=get.elementText("Getgo.Welcome.LblLoggedInEmailAddress");
-                usePassword.click();
-                if(!(loggedInUserName.equalsIgnoreCase(emailID))){
-                    enterPassword(PropertyReader.testDataOf(loggedInUserName));
-                    clickLogin();
-                    PageAccountDashboard dashboard=new PageAccountDashboard();
-                    dashboard.clickMenu();
-                    dashboard.logout();
-                    click.elementBy(MobileBy.AccessibilityId("YES"));
-                    PageWelcome welcome=new PageWelcome();
-                    welcome.clickLogin();
-                    enterEmail(emailID);
-                    clickNext();
-                }
-                enterPassword(password);
+    private void iOSLoginFlow(String emailID, String password) throws ApplicationException {
+        WebDriverWait tempWait=new WebDriverWait(driver,5);
+        String currentUser;
+        try{
+            WebElement btnUsePassword=tempWait.until(ExpectedConditions.presenceOfElementLocated(MobileBy.AccessibilityId("USE PASSWORD")));
+            currentUser=get.elementText(By.xpath("(//XCUIElementTypeStaticText)[2]"));
+            btnUsePassword.click();
+            if(!(currentUser.equalsIgnoreCase(emailID)))
+            {
+                enterPassword(PropertyReader.testDataOf(currentUser));
                 clickLogin();
-            }catch (Throwable ex){
-                click.elementBy(keyBtnLogin);
-                localLogin(emailID,password);
+                PageAccountDashboard dashboard=new PageAccountDashboard();
+                dashboard.clickMenu();
+                dashboard.logout();
+                click.elementBy(MobileBy.AccessibilityId("YES"));
+                PageWelcome welcome=new PageWelcome();
+                welcome.clickLogin();
+                enterEmail(emailID);
+                clickNext();
             }
+        }
+        catch (Throwable ex){
+            PageWelcome welcome=new PageWelcome();
+            welcome.clickLogin();
+            enterEmail(emailID);
+            clickNext();
+        }finally {
+            enterPassword(password);
+            clickLogin();
         }
     }
 

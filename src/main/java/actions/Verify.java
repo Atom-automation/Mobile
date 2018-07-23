@@ -62,7 +62,7 @@ public class Verify extends Keywords{
 
     public void elementTextContains(By locator,String expectedValue) throws ApplicationException {
         log.info("Verify element ["+locator+"] text is matching with ["+expectedValue+"]");
-        String actualValue=Test.tools.REMOVE_MULTIPLE_SPACES_AND_NEW_LINES(get.elementBy(locator).getText().trim());
+        String actualValue=Test.tools.nbspRemove(get.elementBy(locator).getText().trim());
         try{
             Assert.assertTrue(actualValue.contains(expectedValue.trim()),"Condition failed!, actual value doesn't contains the expected value");
         }catch (AssertionError ex){

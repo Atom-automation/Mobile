@@ -5,6 +5,7 @@ import exceptions.ApplicationException;
 import io.appium.java_client.MobileElement;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
+import org.openqa.selenium.StaleElementReferenceException;
 
 public class Type extends Keywords{
 
@@ -12,14 +13,22 @@ public class Type extends Keywords{
 
     public void data(String locatorKey,String value) throws ApplicationException {
         log.info("Type the value ["+value+"] into element ["+locatorKey+"]");
-        get.elementBy(locatorKey).sendKeys(value);
+        try{
+            get.elementBy(locatorKey).sendKeys(value);
+        }catch (StaleElementReferenceException ex){
+            get.elementBy(locatorKey).sendKeys(value);
+        }
         keyboard.hideIfIOS();
         log.info("Type Successful!");
     }
 
     public void sensitiveData(String locatorKey,String value) throws ApplicationException {
         log.info("Type the value ["+value.substring(0,2)+"*****] into element ["+locatorKey+"]");
-        get.elementBy(locatorKey).sendKeys(value);
+        try{
+            get.elementBy(locatorKey).sendKeys(value);
+        }catch (StaleElementReferenceException ex){
+            get.elementBy(locatorKey).sendKeys(value);
+        }
         keyboard.hideIfIOS();
         log.info("Type Successful!");
     }

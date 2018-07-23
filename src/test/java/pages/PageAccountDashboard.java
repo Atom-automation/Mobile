@@ -22,6 +22,7 @@ public class PageAccountDashboard extends Keywords {
     private String keyLblAvailableBalancePeso="Getgo.Peso+Dashboard.LblAvailableBalance";
     private String keyLblAvailableBalanceVirtualCard="Getgo.VirtualDashboard.LblAvailableBalance";
     private String keyLogout="Getgo.Dashboard.LinkLogout";
+    private String keyLblVerifyYourEmail="Getgo.Dashboard.LblVerifyYourEmail";
 
     private double myAccountBalance=0.00;
     private double currencyBalance=0.00;
@@ -29,6 +30,10 @@ public class PageAccountDashboard extends Keywords {
     public void isOk(String userName) throws ApplicationException {
         verify.elementIsPresent(keyImgProfilePicture);
         verify.elementTextMatching(keyLblUserName,userName);
+    }
+
+    public void isVerifyYourEmailIsPresent() throws ApplicationException {
+        verify.elementIsPresent(keyLblVerifyYourEmail);
     }
 
     public void displayMyAccountBalance(String accountType,boolean failIfZeroBalance) throws ApplicationException {

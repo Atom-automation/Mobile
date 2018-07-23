@@ -5,7 +5,7 @@
 # ===============================================================================================================================
 
 @FundTransfer
-Feature: Fund Transfer (Virtual)
+Feature: Fund Transfer from Virtual card to another card
 
   Background: Open Getgo mobile application
     Given I'm on Getgo landing page

@@ -1,13 +1,11 @@
 
-
-
 # ===============================================================================================================================
 # Author: Balabharathi Jayaraman
 # Functionality : As a tester, I want to complete a funds transfer transaction so that I can pass on funds to another cardholder.
 # ===============================================================================================================================
 
 @FundTransfer
-Feature: Fund Transfer (Virtual)
+Feature: Fund Transfer from Virtual card to another card
 
   Background: Open Getgo mobile application
     Given I'm on Getgo landing page
