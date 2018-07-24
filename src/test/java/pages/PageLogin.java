@@ -25,6 +25,17 @@ public class PageLogin extends Keywords {
     private String keyTogglePasswordVisibility="Getgo.Login.TogglePasswordVisibility";
     private String keyTxtPassword="Getgo.Login.TxtPassword";
 
+    private String errorMessage="com.unionbankph.getgopay.qat:id/md_content";
+
+
+    public void userisNotEnrolled() throws ApplicationException {
+        verify.elementTextMatching(errorMessage,"User is not enrolled to GetGo Pay yet.");
+    }
+
+    public void invalidLoginDetails() throws ApplicationException {
+        verify.elementTextMatching(errorMessage,"Invalid login details. Please try again.");
+    }
+
     public void enterEmail(String emailID) throws ApplicationException {
         type.data(keyTxtEmailAddress,emailID);
     }

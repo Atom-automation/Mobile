@@ -13,6 +13,11 @@ public class PageWelcome extends Keywords {
 	    launchApplication();
     }
 
+    public void launchGetgoFresh() throws EnvironmentException {
+        driver=null;
+        launchApplication();
+    }
+
     public void doesPageContains(String loginBtnTxt,String signUpBtnTxt,String captionTxt) throws ApplicationException
     {
 	    verify.elementIsPresent("Getgo.Welcome.ImgLogo");

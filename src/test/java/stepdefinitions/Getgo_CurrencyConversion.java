@@ -18,6 +18,7 @@ public class Getgo_CurrencyConversion {
 
     @Given("^I'm on Currency conversion screen after noting down the balance of \"([^\"]*)\" currency$")
     public void iMOnCurrencyConversionScreenAfterNotingDownTheBalanceOfCurrency(String toCurrency) throws Throwable {
+        Thread.sleep(1000);
         dashboard.displayBalanceOfCurrency(toCurrency);
         dashboard.clickMenu();
         dashboard.navigateTo(MenuItem.CurrencyConverter());

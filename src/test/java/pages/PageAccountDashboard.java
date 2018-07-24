@@ -11,7 +11,6 @@ import helper.Device;
 import io.appium.java_client.MobileBy;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.testng.Assert;
 import xpath.Matching;
 
 public class PageAccountDashboard extends Keywords {
@@ -26,6 +25,10 @@ public class PageAccountDashboard extends Keywords {
 
     private double myAccountBalance=0.00;
     private double currencyBalance=0.00;
+
+    public void isVirtualCardDisplayed() throws ApplicationException {
+        verify.elementIsPresent("Getgo.Dashboard.ImgCard");
+    }
 
     public void isOk(String userName) throws ApplicationException {
         verify.elementIsPresent(keyImgProfilePicture);

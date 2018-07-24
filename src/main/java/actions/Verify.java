@@ -3,10 +3,9 @@ package actions;
 import base.Keywords;
 import base.Test;
 import exceptions.ApplicationException;
-import io.appium.java_client.MobileBy;
 import org.apache.log4j.Logger;
+import org.junit.Assert;
 import org.openqa.selenium.By;
-import org.testng.Assert;
 
 public class Verify extends Keywords{
 
@@ -64,7 +63,7 @@ public class Verify extends Keywords{
         log.info("Verify element ["+locator+"] text is matching with ["+expectedValue+"]");
         String actualValue=Test.tools.nbspRemove(get.elementBy(locator).getText().trim());
         try{
-            Assert.assertTrue(actualValue.contains(expectedValue.trim()),"Condition failed!, actual value doesn't contains the expected value");
+            Assert.assertTrue(actualValue.contains(expectedValue.trim()));
         }catch (AssertionError ex){
             log.error("Actual value ["+actualValue+"] don't contain the Expected value["+expectedValue+"]");
             throw new ApplicationException("Actual value ["+actualValue+"] don't contain the Expected value["+expectedValue+"]");

@@ -22,3 +22,14 @@ Feature: New Customer Login Feature
       | username         | password         | accountType |
       | Virtual_Username | Virtual_Password | Virtual     |
       | Peso_Username    | Peso_Password    | Peso        |
+
+
+  Scenario: Invalid login (Invalid Email)
+    Given I'm on Getgo login page
+    When  I enter a "Invalid_Email" & click next
+    Then System should through an invalid email error message
+
+  Scenario: Invalid login (Invalid Password)
+    Given I'm on Getgo login page
+    When  I enter a "Virtual_Username" & click next
+    Then System should through an invalid password message

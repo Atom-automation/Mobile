@@ -17,9 +17,11 @@ public class Getgo_VirtualCardRegistration {
     private static PageVirtualCardRegistrationReview vReview=new PageVirtualCardRegistrationReview();
     private static PageVirtualCardRegistrationSuccess success=new PageVirtualCardRegistrationSuccess();
     private static PageAccountDashboard dashboard=new PageAccountDashboard();
+    private static PageVerificationLink verifyAccount=new PageVerificationLink();
+    private static PageLogin login=new PageLogin();
 
     private String mobileNumber=PropertyReader.testDataOf("RegistrationMobileNumber");
-    private String emailAddress="("+Test.faker.number().randomNumber(3,true)+")"+PropertyReader.testDataOf("RegistrationEmailAddress");
+    private String emailAddress="("+Test.faker.number().randomNumber(5,true)+")"+PropertyReader.testDataOf("RegistrationEmailAddress");
     private String password=PropertyReader.testDataOf("RegistrationPassword");
     private String firstName=Test.faker.name().firstName();
     private String middleName=Test.faker.name().firstName();
@@ -65,22 +67,27 @@ public class Getgo_VirtualCardRegistration {
 
     @When("^I click the verification email link from my inbox$")
     public void iClickTheVerificationEmailLinkFromMyInbox() throws Throwable {
-
+        String outlookUsername=PropertyReader.testDataOf("RegistrationEmailAddress");
+        String outlookPassword=PropertyReader.testDataOf(outlookUsername);
+        verifyAccount.openOutlook(outlookUsername,outlookPassword);
+        verifyAccount.openVerificationEmail(firstName+" "+lastName);
     }
 
     @Then("^I should see a message account is verified$")
     public void iShouldSeeAMessageAccountIsVerified() throws Throwable {
-
+        verifyAccount.isVerificationSuccess();
     }
 
     @When("^I login with the My Email next time$")
     public void iLoginWithTheMyEmailNextTime() throws Throwable {
-
+        welcome.launchGetgoFresh();
+        welcome.clickLogin();
+        login.login(emailAddress,password);
     }
 
     @Then("^I should see my virtual card in the dashboard$")
     public void iShouldSeeMyVirtualCardInTheDashboard() throws Throwable {
-
+        dashboard.isVirtualCardDisplayed();
     }
 
     @And("^I review & submit$")

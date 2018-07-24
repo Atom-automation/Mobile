@@ -35,4 +35,14 @@ public class Getgo_Login_NewCustomer
     public void iMLoginIntoMyAccountWithMyAnd(String accountType, String emailID, String password) throws Throwable {
         loginPage.login(PropertyReader.testDataOf(emailID),PropertyReader.testDataOf(password));
     }
+
+    @Then("^System should through an invalid email error message$")
+    public void systemShouldThroughAnInvalidEmailErrorMessage() throws Throwable {
+        loginPage.userisNotEnrolled();
+    }
+
+    @Then("^System should through an invalid password message$")
+    public void systemShouldThroughAnInvalidPasswordMessage() throws Throwable {
+        loginPage.invalidLoginDetails();
+    }
 }

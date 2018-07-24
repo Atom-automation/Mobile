@@ -6,9 +6,9 @@ import constants.Keys;
 import constants.OS;
 import constants.ObjectClass;
 import exceptions.ApplicationException;
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.testng.Assert;
 import xpath.Matching;
 
 public class PageManageRecipient extends Keywords
