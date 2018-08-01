@@ -25,14 +25,16 @@ public class PageLogin extends Keywords {
     private String keyTogglePasswordVisibility="Getgo.Login.TogglePasswordVisibility";
     private String keyTxtPassword="Getgo.Login.TxtPassword";
 
-    private String errorMessage="com.unionbankph.getgopay.qat:id/md_content";
+    private By errorMessage=By.id("com.unionbankph.getgopay.qat:id/md_content");
 
 
-    public void userisNotEnrolled() throws ApplicationException {
+    public void userisNotEnrolled() throws ApplicationException, InterruptedException {
+    	WAIT.forSeconds(10);
         verify.elementTextMatching(errorMessage,"User is not enrolled to GetGo Pay yet.");
     }
 
-    public void invalidLoginDetails() throws ApplicationException {
+    public void invalidLoginDetails() throws ApplicationException, InterruptedException {
+    	WAIT.forSeconds(10);
         verify.elementTextMatching(errorMessage,"Invalid login details. Please try again.");
     }
 

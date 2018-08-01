@@ -68,7 +68,7 @@ public class Getgo_VirtualCardRegistration {
     @When("^I click the verification email link from my inbox$")
     public void iClickTheVerificationEmailLinkFromMyInbox() throws Throwable {
         String outlookUsername=PropertyReader.testDataOf("RegistrationEmailAddress");
-        String outlookPassword=PropertyReader.testDataOf(outlookUsername);
+        String outlookPassword=PropertyReader.testDataOf("outlookpassword");
         verifyAccount.openOutlook(outlookUsername,outlookPassword);
         verifyAccount.openVerificationEmail(firstName+" "+lastName);
     }

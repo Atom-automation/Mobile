@@ -6,13 +6,14 @@ import exceptions.ApplicationException;
 import org.apache.log4j.Logger;
 import org.junit.Assert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class Verify extends Keywords{
 
     private static Logger log=Logger.getLogger(Verify.class);
 
     public void elementIsPresent(String locatorKey) throws ApplicationException {
-        log.info("Verify element ["+locatorKey+"] is present");
+        log.info("Verify element ["+locatorKey+"] is present");        
         get.elementBy(locatorKey);
         log.info("Element is present!");
     }
@@ -83,7 +84,8 @@ public class Verify extends Keywords{
 
     public void isMatching(double expected,double actual) throws ApplicationException {
         try{
-            Assert.assertEquals(actual,expected);
+
+            Assert.assertEquals(actual,expected,1);
         }catch (AssertionError ex){
             log.info(ex);
             throw new ApplicationException(ex.getMessage());

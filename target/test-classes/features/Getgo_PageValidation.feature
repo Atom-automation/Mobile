@@ -12,7 +12,13 @@ Feature: Page Validation
 
     # ~ W E L C O M E   &   S I G N - U P
     # ------------------------------------------------------------------------------------------------------------------
+ @AndroidOnly
+  Scenario: Validate the fields & texts displayed on the Getgo Welcome & SignUp page
+    Then  I should see two buttons "LOG IN" "SIGN UP", Getgo logo, a caption "Now made easier. As simple as Ready, GetGo."
+    When  I'm on Getgo SignUp page
+    Then  I should see two button "Yes" "No", Getgo card image, two messages "Do you have a GetGo Peso Plus Card?" & "Start shopping online by creating your GetGo Virtual Prepaid Card. Or register your Peso + Prepaid Card now."
 
+@IOSOnly
   Scenario: Validate the fields & texts displayed on the Getgo Welcome & SignUp page
     Then  I should see two buttons "LOG IN" "SIGN UP", Getgo logo, a caption "Now made easier. As simple as Ready, GetGo."
     When  I'm on Getgo SignUp page

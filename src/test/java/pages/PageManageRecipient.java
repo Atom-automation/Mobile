@@ -69,7 +69,8 @@ public class PageManageRecipient extends Keywords
         {
             parentElement=get.elementBy(By.xpath("//android.widget.TextView[@text='"+recipientCard+"']/parent::*"));
             String isSelected=parentElement.findElements(By.xpath("//"+ ObjectClass.AndroidImageButton)).get(0).getAttribute("selected").trim();
-            Assert.assertEquals(isSelected,"true","Recipient is not added to favourites");
+            Assert.assertEquals(isSelected,"true");
+            //Assert.assertEquals(isSelected,"true","Recipient is not added to favourites");
         }else if(Test.attributes.get(Keys.OS).equalsIgnoreCase(OS.iOS))
         {
             parentElement=get.elementBy(By.xpath("//XCUIElementTypeStaticText[@value='"+recipientCard+"']/parent::*"));

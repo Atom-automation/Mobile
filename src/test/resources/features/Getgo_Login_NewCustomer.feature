@@ -30,6 +30,9 @@ Feature: New Customer Login Feature
     Then System should through an invalid email error message
 
   Scenario: Invalid login (Invalid Password)
-    Given I'm on Getgo login page
-    When  I enter a "Virtual_Username" & click next
+    Given I'm on Getgo login page with "Valid_Email"
+    When  I enter a "Invalid_Password" and click next  
     Then System should through an invalid password message
+    
+    
+    
