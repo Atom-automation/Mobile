@@ -70,4 +70,51 @@ public class PageVerificationLink extends Keywords {
         }
         return ele;
     }
+
+    private boolean verifyElementValue(By locator,String iactual) throws ApplicationException {
+        boolean breturn=false;
+        try{
+            String expectedString=getWebElement(locator).getText();
+            Assert.assertEquals(expectedString,iactual);
+            breturn=true;
+        }catch (Throwable ex){
+            breturn=false;
+            throw new ApplicationException("Error in verifying the value" +ex.getMessage());
+        }
+        return breturn;
+    }
+
+
+    public void openResetPasswordVerificationEmail() throws ApplicationException, InterruptedException {
+        //getWebElement(By.xpath("//span[text()='Other']")).click();
+        Thread.sleep(2000);
+        browser.navigate().refresh();
+        Thread.sleep(5000);
+        getWebElement(By.xpath("//span[text()='Password Reset']")).click();
+        String verificationLink=getWebElement(By.xpath("//a[contains(text(),'https://qz1lx46m.ngrok.io/reset-password?passwordResetId=')]")).getText();
+        browser.get(verificationLink);
+    }
+
+    public void verifyandEnterReset(String pwd,String confirmpwd) throws ApplicationException, InterruptedException {
+       String expectedString=getWebElement(By.xpath("//h1[text()='Reset your Password']")).getText();
+       Assert.assertEquals(expectedString,"Reset your Password");
+       getWebElement(By.id("new_password")).isDisplayed();
+        getWebElement(By.id("confirm_password")).isDisplayed();
+
+        getWebElement(By.id("new_password")).sendKeys(pwd);
+        getWebElement(By.id("confirm_password")).sendKeys(confirmpwd);
+        Thread.sleep(3000);
+         getWebElement(By.xpath("//button[@type='submit']")).click();
+
+        String expectedmessage=getWebElement(By.xpath("//p[text()='Your password has been successfully changed']")).getText();
+        Assert.assertEquals(expectedmessage,"Your password has been successfully changed");
+        getWebElement(By.linkText("BACK TO LOGIN")).isDisplayed();
+    }
+
+    public void closebrowser()
+    {
+        browser.quit();
+    }
+
+
 }

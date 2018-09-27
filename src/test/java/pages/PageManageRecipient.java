@@ -26,11 +26,14 @@ public class PageManageRecipient extends Keywords
     private String newlyAddedRecipientCard=null;
 
     public void addNewRecipient() throws ApplicationException {
+
         newlyAddedRecipient= Test.faker.name().firstName()+" "+ Test.faker.name().lastName();
-        newlyAddedRecipientCard=
+        newlyAddedRecipientCard=Test.tools.cardgenerator("441125",16);
+
+        /*newlyAddedRecipientCard=
                         String.valueOf(Test.faker.number().randomNumber(3,true))+
                         String.valueOf(Test.faker.number().randomNumber(10,true))+
-                        String.valueOf(Test.faker.number().randomNumber(3,true));
+                        String.valueOf(Test.faker.number().randomNumber(3,true));*/
         WAIT.forSeconds(3);
         click.elementBy(keyBtnAddNewRecipient);
         if(Test.attributes.get(Keys.OS).equalsIgnoreCase(OS.ANDROID)){
@@ -59,6 +62,7 @@ public class PageManageRecipient extends Keywords
     }
 
     public void isRecipientAvailableInFavourites(String recipientCard) throws ApplicationException {
+        WAIT.forSeconds(2);
         try{
             get.elementBy(xpathOf.textView(Matching.youDecide(recipientCard))).isDisplayed();
         }catch (Throwable ex){
@@ -75,12 +79,15 @@ public class PageManageRecipient extends Keywords
         {
             parentElement=get.elementBy(By.xpath("//XCUIElementTypeStaticText[@value='"+recipientCard+"']/parent::*"));
             String isSelected=parentElement.findElements(By.xpath("//"+ ObjectClass.iOSButton)).get(0).getAttribute("name").trim();
-            Assert.assertEquals(isSelected,"ic star filled","Recipient is not added to favourites");
+           // Assert.assertEquals(isSelected,"ic star filled","Recipient is not added to favourites");
+            Assert.assertEquals(isSelected,"ic star filled");
+
         }
     }
 
     public void goBack() throws ApplicationException {
         click.elementBy(keyBtnBack);
+        WAIT.forSeconds(2);
     }
 
     public String getNewlyAddedRecipientCard()

@@ -27,6 +27,8 @@ public class Keywords {
     public static Swipe swipe=new Swipe();
     public static iOS ios=new iOS();
 
+    public static CurrencyLocator currencylocator=new CurrencyLocator();
+
     public static void launchApplication() throws EnvironmentException {
         if(driver !=null){
             driver.launchApp();

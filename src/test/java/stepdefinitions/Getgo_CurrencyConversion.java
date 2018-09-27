@@ -4,6 +4,7 @@ import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import helper.PropertyReader;
 import pages.*;
 import projectconstants.MenuItem;
 
@@ -18,7 +19,6 @@ public class Getgo_CurrencyConversion {
 
     @Given("^I'm on Currency conversion screen after noting down the balance of \"([^\"]*)\" currency$")
     public void iMOnCurrencyConversionScreenAfterNotingDownTheBalanceOfCurrency(String toCurrency) throws Throwable {
-        Thread.sleep(1000);
         dashboard.displayBalanceOfCurrency(toCurrency);
         dashboard.clickMenu();
         dashboard.navigateTo(MenuItem.CurrencyConverter());
@@ -46,10 +46,11 @@ public class Getgo_CurrencyConversion {
 
     @When("^I review conversion details and submit$")
     public void iReviewConversionDetailsAndSubmit() throws Throwable {
-        //review.transferFrom(PropertyReader.testDataOf("Peso_FullName"),PropertyReader.testDataOf("Peso_CardNumber"));
+        //need to check
+        review.transferFrom(PropertyReader.testDataOf("Peso_FullName"),PropertyReader.testDataOf("Peso_CardNumber"));
         review.transferAmount(fromCurrency + " " + String.valueOf(cc.getAmount()));
         review.convertedAmount(toCurrency + " " + String.valueOf(cc.getToAmount()));
-        review.conversionRate("1 Philippine Peso equals "+cc.getExchangeRate());
+        review.conversionRate("1 Philippine Peso = "+cc.getExchangeRate());
         review.clickConvert();
         otp.enterOTP();
     }

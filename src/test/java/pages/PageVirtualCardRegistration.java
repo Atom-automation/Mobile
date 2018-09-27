@@ -2,12 +2,14 @@ package pages;
 
 import base.Keywords;
 import exceptions.ApplicationException;
+import helper.Device;
 import io.appium.java_client.MobileBy;
 import org.openqa.selenium.By;
 import xpath.Matching;
 
 public class PageVirtualCardRegistration extends Keywords {
 
+    private String keyLblPageTitle="Getgo.CreateVirtualCard.LblPageTitle";
     private String keyTxtMobileNumber="Getgo.CreateVirtualCard.TxtMobileNumber";
     private String keyTxtEmailAddress="Getgo.CreateVirtualCard.TxtEmailAddress";
     private String keyTxtNominatePassword="Getgo.CreateVirtualCard.TxtNominatePassword";
@@ -21,12 +23,25 @@ public class PageVirtualCardRegistration extends Keywords {
     private String keyBtnNationality="Getgo.CreateVirtualCard.BtnNationalityDropdown";
     private String keyRadioGender_Male="Getgo.CreateVirtualCard.BtnGender.Male";
     private String keyRadionGender_Female="Getgo.CreateVirtualCard.BtnGender.Female";
+    private String keyTxtDOB="Getgo.CreateVirtualCard.TxtDOB";
 
     private String dob;
 
+    public void verifyPageTitle(String ititle) throws ApplicationException {
+        if(Device.isAndroid()) {
+            verify.elementTextMatching(keyLblPageTitle, ititle);
+        }
+        else
+        {
+            verify.elementTextMatching(keyLblPageTitle, "CEB GetGo Prepaid Virtual");
+        }
+    }
+
     public void enterBasicDetails(String mobileNumber, String emailID, String password) throws ApplicationException {
         type.data(keyTxtMobileNumber,mobileNumber);
-        type.data(keyTxtEmailAddress,emailID);
+        //need to check it
+       // type.data(keyTxtEmailAddress,emailID);
+        verify.elementIsPresent(keyTxtEmailAddress);
         type.sensitiveData(keyTxtNominatePassword,password);
         type.sensitiveData(keyTxtConfirmPassword,password);
     }
@@ -36,12 +51,33 @@ public class PageVirtualCardRegistration extends Keywords {
     }
 
     public void enterPersonalDetails(String firstName,String middleName,String lastName,String nationality, String gender) throws ApplicationException {
-        type.data(keyTxtFirstName,firstName);
-        type.data(keyTxtMiddleName,middleName);
-        type.data(keyTxtLastName,lastName);
-        selectDOB("23","July","1992");
-        selectNationality(nationality);
-        selectGender(gender);
+        if(Device.isAndroid()) {
+            type.data(keyTxtFirstName, firstName);
+            type.data(keyTxtMiddleName, middleName);
+            type.data(keyTxtLastName, lastName);
+            selectDOB("23", "July", "1992");
+            selectNationality(nationality);
+            selectGender(gender);
+        }
+        else
+        {
+            type.data(keyTxtFirstName, firstName);
+            type.data(keyTxtMiddleName, middleName);
+            type.data(keyTxtLastName, lastName);
+
+            click.elementBy(keyBtnCalendar);
+            WAIT.forSeconds(4);
+            ios.selectPickerByIndex("12",1);
+            ios.selectPickerByIndex("July",2);
+           ios.selectPickerByIndex("1992",3);
+            get.elementBy(xpathOf.button(Matching.name("Done"))).click();
+            //selectDOB("23", "July", "1992");
+
+            click.elementBy(keyBtnNationality);
+            WAIT.forSeconds(5);
+            ios.selectPicker(nationality);
+            selectGender(gender);
+        }
     }
 
     public void selectNationality(String nationality) throws ApplicationException {
@@ -84,4 +120,9 @@ public class PageVirtualCardRegistration extends Keywords {
     public String getDob() {
         return dob;
     }
+    public String getDobvalue() throws ApplicationException {
+        dob=get.elementText(keyTxtDOB);
+        return dob;
+    }
+
 }

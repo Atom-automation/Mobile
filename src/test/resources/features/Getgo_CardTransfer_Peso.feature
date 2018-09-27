@@ -6,7 +6,7 @@
 # Functionality : As a tester, I want to complete a funds transfer transaction so that I can pass on funds to another cardholder.
 # ===============================================================================================================================
 
-@FundTransfer @Peso+
+@FundTransferphysical
 Feature: Fund Transfer from Peso+ card to another card
 
   Background: Open Getgo mobile application

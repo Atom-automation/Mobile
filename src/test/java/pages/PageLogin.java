@@ -8,6 +8,7 @@ import exceptions.ApplicationException;
 import helper.Device;
 import helper.PropertyReader;
 import io.appium.java_client.MobileBy;
+import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebElement;
@@ -24,8 +25,21 @@ public class PageLogin extends Keywords {
     private String keyBtnLogin="Getgo.Login.BtnLogin";
     private String keyTogglePasswordVisibility="Getgo.Login.TogglePasswordVisibility";
     private String keyTxtPassword="Getgo.Login.TxtPassword";
+    private String keyLnkForgotPassword="Getgo.Login.LnkForgotPassword";
+
 
     private By errorMessage=By.id("com.unionbankph.getgopay.qat:id/md_content");
+
+    private String keyLblLogoImage="Getgo.Login.LblLogoImage";
+    private String keyLblusername="Getgo.Login.Lblusername";
+    private String keyLblEmailId="Getgo.Login.LblEmailId";
+    private String keyBtnPassword="Getgo.Login.BtnPassword";
+    private String keyBtnFingerprint="Getgo.Login.BtnFingerprint";
+    private String keyLblfingerPrintContent="Getgo.Login.LblfingerPrintContent";
+    private String keyBtnToswipeup="Getgo.Login.BtnToswipeup";
+    private String keyLblToswipeup="Getgo.Login.LblToswipeup";
+
+
 
 
     public void userisNotEnrolled() throws ApplicationException, InterruptedException {
@@ -47,24 +61,55 @@ public class PageLogin extends Keywords {
     }
 
     public void clickNext() throws ApplicationException {
+        WAIT.forSeconds(2);
         click.elementBy(keyBtnNext);
     }
 
     public void clickLogin() throws ApplicationException {
         click.elementBy(keyBtnLogin);
-    }
+
+        //need to revamp/redesign the approach
+        try {
+                PageOTP otp = new PageOTP();
+                otp.enterOTP();
+
+                //After login check if finger print pop is displayed and if its present handle it by clicking not now
+                if (Device.isAndroid())
+                    {
+                        if (get.elementBy(By.id("com.unionbankph.getgopay.qat:id/tvModalTitle")).isDisplayed()) {
+                        click.elementBy(By.id("com.unionbankph.getgopay.qat:id/btnCancel"));
+
+                        }
+
+                    }
+                else
+                    {
+
+                        if (get.elementBy(MobileBy.AccessibilityId("Enable Face ID Authentication")).isDisplayed()) {
+                            click.elementBy(MobileBy.AccessibilityId("NOT NOW"));
+
+                        }
+                    }
+        }
+        catch(Exception ex)
+            {
+
+            }
+
+        }
 
     public void login(String emailID, String password) throws ApplicationException {
         if(Device.isAndroid())
         {
-            androidLoginFlow(emailID,password);
+            isAndroidLoginFlow(emailID,password);
         }else if(Device.isIOS())
         {
             iOSLoginFlow(emailID,password);
         }
+        WAIT.forSeconds(8);
     }
 
-    private void androidLoginFlow(String emailID, String password) throws ApplicationException {
+    public void androidLoginFlow(String emailID, String password) throws ApplicationException {
         PageWelcome welcome=new PageWelcome();
         welcome.clickLogin();
         enterEmail(emailID);
@@ -73,7 +118,7 @@ public class PageLogin extends Keywords {
         clickLogin();
     }
 
-    private void iOSLoginFlow(String emailID, String password) throws ApplicationException {
+    public void iOSLoginFlow(String emailID, String password) throws ApplicationException {
         WebDriverWait tempWait=new WebDriverWait(driver,5);
         String currentUser;
         try{
@@ -82,7 +127,41 @@ public class PageLogin extends Keywords {
             btnUsePassword.click();
             if(!(currentUser.equalsIgnoreCase(emailID)))
             {
+                //enterPassword(PropertyReader.testDataOf(currentUser));
+                //clickLogin();
+               // PageAccountDashboard dashboard=new PageAccountDashboard();
+               // dashboard.clickMenu();
+               //dashboard.logout();
+              //  click.elementBy(MobileBy.AccessibilityId("YES"));
+               // PageWelcome welcome=new PageWelcome();
+               // welcome.clickLogin();
+               // enterEmail(emailID);
+               // clickNext();
+                btnUsePassword.click();
+            }
+        }
+        catch (Throwable ex){
+            PageWelcome welcome=new PageWelcome();
+            welcome.clickLogin();
+            enterEmail(emailID);
+            clickNext();
+        }finally {
+            enterPassword(password);
+            clickLogin();
+        }
+    }
+
+    public void isAndroidLoginFlow(String emailID, String password) throws ApplicationException {
+         WebDriverWait tempWait=new WebDriverWait(driver,5);
+        String currentUser;
+        try{
+            WebElement btnUsePassword=tempWait.until(ExpectedConditions.presenceOfElementLocated(By.id("com.unionbankph.getgopay.qat:id/btnUsePassword")));
+            currentUser=get.elementText(By.id("com.unionbankph.getgopay.qat:id/tvEmail"));
+            btnUsePassword.click();
+            if(!(currentUser.equalsIgnoreCase(emailID)))
+            {
                 enterPassword(PropertyReader.testDataOf(currentUser));
+                //enterPassword(PropertyReader.dynamicReadTestDataOf(currentUser));
                 clickLogin();
                 PageAccountDashboard dashboard=new PageAccountDashboard();
                 dashboard.clickMenu();
@@ -153,4 +232,36 @@ public class PageLogin extends Keywords {
             verify.elementIsPresent(xpathOf.button(Matching.name(passwordResetLinkText)));
         }
     }
-}
+
+/// verification to check the contents of the loginpage after logout scenario
+
+    public void isLogoutSuccess(String username) throws ApplicationException {
+
+        if (Device.isAndroid()) {
+
+            verify.elementIsPresent(keyLblLogoImage);
+            verify.elementIsPresent(keyLblusername);
+            verify.elementTextMatching(keyLblEmailId, username);
+            verify.elementIsPresent(keyBtnPassword);
+            verify.elementIsPresent(keyBtnFingerprint);
+            verify.elementTextMatching(keyLblfingerPrintContent, "Login with fingerprint");
+            verify.elementIsPresent(keyBtnToswipeup);
+            verify.elementTextMatching(keyLblToswipeup, "SWIPE UP TO LEARN MORE");
+        } else {
+            verify.elementIsPresent(keyLblLogoImage);
+            verify.elementIsPresent(keyLblusername);
+            verify.elementTextMatching(keyLblEmailId, username);
+            verify.elementIsPresent(keyBtnPassword);
+            verify.elementIsPresent(keyBtnToswipeup);
+            verify.elementTextMatching(keyBtnToswipeup, "TAP HERE TO LEARN MORE");
+        }
+    }
+
+        public void clickForgotPasswordLink() throws ApplicationException {
+        click.elementBy(keyLnkForgotPassword);
+        WAIT.forSeconds(2);
+
+        }
+
+
+    }

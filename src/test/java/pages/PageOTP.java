@@ -5,7 +5,9 @@ import base.Test;
 import constants.Keys;
 import constants.OS;
 import exceptions.ApplicationException;
+import helper.PropertyReader;
 import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.ios.IOSDriver;
 import org.openqa.selenium.By;
 
 public class PageOTP extends Keywords {
@@ -22,6 +24,23 @@ public class PageOTP extends Keywords {
                 aDriver.pressKeyCode(7);
             }
         }else if(Test.attributes.get(Keys.OS).equalsIgnoreCase(OS.iOS)){
+            try {
+                if (get.elementBy(By.xpath("//XCUIElementTypeStaticText[contains(@name,'OTP')]/parent::*/XCUIElementTypeOther")).isDisplayed()) {
+                    type.OTPdata(By.xpath("//XCUIElementTypeStaticText[contains(@name,'OTP')]/parent::*/XCUIElementTypeOther"), PropertyReader.testDataOf("OTP"));
+                }
+                else
+                {
+                    type.OTPdata(By.xpath("(//XCUIElementTypeStaticText[@name=\"You will receive a One-Time-Password (OTP) on your registered mobile number ending 0000\"])[2]/parent::*/XCUIElementTypeOther"), PropertyReader.testDataOf("OTP"));
+                }
+
+            }
+            catch (Exception e)
+            {
+                if (get.elementBy(By.xpath("//XCUIElementTypeStaticText[@name='We’ll be sending you a 6 digit password to your mobile number ending in 0000. Please enter the code below.']/parent::*/XCUIElementTypeOther")).isDisplayed()) {
+                    type.OTPdata(By.xpath("//XCUIElementTypeStaticText[@name='We’ll be sending you a 6 digit password to your mobile number ending in 0000. Please enter the code below.']/parent::*/XCUIElementTypeOther"), PropertyReader.testDataOf("OTP"));
+                }
+
+            }
 
         }
     }

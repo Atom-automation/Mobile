@@ -1,12 +1,21 @@
 package projectconstants;
 
+import helper.Device;
+
 public final class MenuItem {
 
     public static String MyCard(){
         return "My Card";
     }
     public static String CardTransfer(){
-        return "Card transfer";
+        if(Device.isAndroid())
+            {
+                return "Card transfer";
+            }
+        else
+            {
+            return "Card Transfer";
+            }
     }
     public static String CurrencyConverter(){
         return "Currency Converter";

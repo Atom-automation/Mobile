@@ -2,18 +2,29 @@ package pages;
 
 import base.Keywords;
 import exceptions.ApplicationException;
+import helper.Device;
 
 public class PageCurrencyConversionReview extends Keywords {
 
     private String keyLblTransferFrom="Getgo.CurrencyConversionReview.LblTransferFrom";
+    private String keyLblTransferFromcard="Getgo.CurrencyConversionReview.LblTransferFromCard";
     private String keyLblTransferAmount="Getgo.CurrencyConversionReview.LblConvertCurrencyFrom";
     private String keyLblConvertedAmount="Getgo.CurrencyConversionReview.LblConvertCurrencyTo";
     private String keyLblConversionRate="Getgo.CurrencyConversionReview.LblConversionExchangeRate";
     private String keyBtnConvert="Getgo.CurrencyConversionReview.BtnTransfer";
 
     public void transferFrom(String username, String userCard) throws ApplicationException {
-        verify.elementTextContains(keyLblTransferFrom,username);
-        verify.elementTextContains(keyLblTransferFrom,userCard);
+        if(Device.isAndroid()) {
+            verify.elementTextContains(keyLblTransferFrom, username);
+            WAIT.forSeconds(2);
+//            verify.elementTextContains(keyLblTransferFromcard, userCard);
+        }
+        else
+        {
+            verify.elementTextContains(keyLblTransferFrom, username);
+            WAIT.forSeconds(2);
+          //  verify.elementTextContains(keyLblTransferFromcard, userCard);
+        }
     }
 
     public void transferAmount(String amount) throws ApplicationException {
@@ -29,6 +40,9 @@ public class PageCurrencyConversionReview extends Keywords {
     }
 
     public void clickConvert() throws ApplicationException {
+        WAIT.forSeconds(2);
         click.elementBy(keyBtnConvert);
+        WAIT.forSeconds(2);
+
     }
 }

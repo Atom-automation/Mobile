@@ -8,6 +8,9 @@ import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
+import java.util.HashMap;
+import java.util.LinkedHashMap;
+
 public class Verify extends Keywords{
 
     private static Logger log=Logger.getLogger(Verify.class);
@@ -82,6 +85,16 @@ public class Verify extends Keywords{
         log.info("Expected value ["+expected+"] is matching with the actual ["+actual+"]");
     }
 
+    public void isMatchingPartial(String expected,String actual) throws ApplicationException {
+        try{
+            Assert.assertTrue(Test.tools.nbspRemove(actual).toLowerCase().contains(expected.trim().toLowerCase()));
+        }catch (AssertionError ex){
+            log.info(ex);
+            throw new ApplicationException(ex.getMessage());
+        }
+        log.info("Expected value ["+expected+"] is matching with the actual ["+actual+"]");
+    }
+
     public void isMatching(double expected,double actual) throws ApplicationException {
         try{
 
@@ -112,4 +125,32 @@ public class Verify extends Keywords{
             throw new ApplicationException(ex.getMessage());
         }
     }
+
+    public String verifyDOBinreviewpage(String idata) {
+
+
+        String selectdata[]=idata.split("-");
+        String year=selectdata[0];
+        String month=selectdata[1];
+        String date=selectdata[2];
+
+        HashMap<String,String> map=new LinkedHashMap<String,String>();
+        map.put("01","Jan");
+        map.put("02","Feb");
+        map.put("03","Mar");
+        map.put("04","Apr");
+        map.put("05","May");
+        map.put("06","Jun");
+        map.put("07","Jul");
+        map.put("08","Aug");
+        map.put("09","Sep");
+        map.put("10","Oct");
+        map.put("11","Nov");
+        map.put("12","Dec");
+
+        return map.get(month)+" "+date+", "+year;
+
+
+    }
+
 }

@@ -6,44 +6,54 @@ import com.cucumber.listener.Reporter;
 import constants.Keys;
 import constants.OS;
 import exceptions.ApplicationException;
+import helper.Device;
 import org.junit.Assert;
+import xpath.Matching;
 
 import java.text.ParseException;
 
-public class PageActivities extends Keywords {
+public class PageSettings extends Keywords {
 
-    private String keyLblTransactionReferenceNumber="Getgo.Activities.LblReferenceNumber";
-    private String keyLblTransactionDate="Getgo.Activities.LblTransactionDate";
-    private String keyLblDescription="Getgo.Activities.LblDescription";
-    private String keyLblTransactionAmount="Getgo.Activities.LblTransactionAmount";
-    private String keyLblEndingBalance="Getgo.Activities.LblEndingBalance";
+    private String keySettingsPageTitle="Getgo.Settings.LblTitle";
+    private String keyPasswordOption="Getgo.Settings.LblPassword";
+    private String keyMenuBtn="Getgo.Settings.Menu";
 
-    public void getTransactionReferenceNumber() throws ApplicationException {
-        Reporter.addStepLog("Transaction Reference Number is --> "+get.elementBy(keyLblTransactionReferenceNumber));
-    }
 
-    public void reviewTransactionDate(String day,String month,String year) throws ParseException, ApplicationException {
-        String transferDate=null;
-        if(Test.attributes.get(Keys.OS).equalsIgnoreCase(OS.ANDROID))
-        {
-            transferDate = Test.tools.getDateInFormat(day,month,year,"MMMM dd, YYYY");
-        }else if(Test.attributes.get(Keys.OS).equalsIgnoreCase(OS.iOS))
-        {
-            transferDate = Test.tools.getDateInFormat(day,month,year,"MMM dd, YYYY");
+
+    public void verifyPageTitle(String ititle) throws ApplicationException {
+        if(Device.isAndroid()) {
+            verify.elementTextMatching(xpathOf.textView(Matching.text("Settings")), ititle);
         }
-        verify.elementTextContains(keyLblTransactionDate,transferDate);
+        else
+        {
+            verify.elementTextMatching(xpathOf.textView(Matching.name("Settings")), ititle);
+        }
+
+        WAIT.forSeconds(5);
     }
 
-    public void reviewDescription(String description) throws ApplicationException {
-        verify.elementTextMatching(keyLblDescription,description);
+    public void clickPasswordOption() throws ApplicationException {
+
+
+        if(Device.isAndroid()) {
+            click.elementBy(xpathOf.textView(Matching.text("Password")));
+        }
+        else
+        {
+            click.elementBy(xpathOf.textView(Matching.name("Password")));
+        }
     }
 
-    public void verifyTransactionAmount(double transactionAmount) throws ApplicationException {
-        verify.isMatching(Test.tools.pesoAmount(transactionAmount), Test.tools.fixAmountIssue(get.elementBy(keyLblTransactionAmount).getText()));
+
+    public void clickOption(String ioptions) throws ApplicationException {
+
+        click.elementBy(xpathOf.textView(Matching.youDecide(ioptions)));
+
     }
 
-    public void verifyEndingBalance(double amount,double beforeBalance) throws ApplicationException {
-        double expectedBalance= beforeBalance-amount;
-        Assert.assertEquals("PHP "+Double.toString(expectedBalance), Test.tools.fixAmountIssue(get.elementBy(keyLblEndingBalance).getText()));
+    public void clickMenu() throws ApplicationException {
+      click.elementBy(keyMenuBtn);
+
     }
+
 }

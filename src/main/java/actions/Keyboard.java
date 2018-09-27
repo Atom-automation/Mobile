@@ -3,6 +3,7 @@ package actions;
 import base.Keywords;
 import base.Test;
 import constants.Keys;
+import helper.Device;
 import io.appium.java_client.MobileBy;
 import io.appium.java_client.MobileElement;
 import org.openqa.selenium.By;
@@ -51,6 +52,18 @@ public class Keyboard extends Keywords {
             hideAndroid();
         }else if(Test.attributes.get(Keys.OS).equalsIgnoreCase("IOS")){
             hideIOS();
+        }
+    }
+    public void hideIOS1(){
+        if(Device.isIOS()) {
+            try {
+                WAIT.forSeconds(1);
+                click.elementBy(By.xpath("//XCUIElementTypeButton[@name=\"Toolbar Done Button\"]"));
+                WAIT.forSeconds(1);
+
+            } catch (Throwable e) {
+
+            }
         }
     }
 }

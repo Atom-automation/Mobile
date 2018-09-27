@@ -1,38 +1,32 @@
 
 
 # ================================================================================================================
-# Author: Balabharathi Jayaraman
-# Functionality : As a tester, I want to be able to login using my credentials so that I can see my card details.
+# Author: Gopinath Rajaram
+# Functionality : As a tester, I want to login into the GetGo app and Logout so that Login-Logout process verification is successfull
 # ================================================================================================================
 
-@Login
-Feature: New Customer Login Feature
+@Logout
+Feature: Logout Feature
 
   Background: Open Getgo mobile application
     Given I'm on Getgo landing page
 
-  Scenario Outline: As a tester, I want to be able to login using my credentials so that I can see my account(Virtual Card or Peso+) details
+  Scenario Outline: As a tester, I want to login into the GetGo app and Logout so that Login-Logout process verification is successfull
     Given I'm on Getgo login page
     When  I enter a "<username>" & click next
     And   I enter password "<password>"
     And   I click login
     Then  I should see my "<accountType>" account dashboard with my profile picture & my full name
+    When I choose logout option from the menu
+    Then I should see a "Logout?" popup window prompting you to logout from the current session
+    When I click yes
+    Then I should be logged out from the current session & redirected to signin page with logged "<username>"
 
     Examples: 
       | username         | password         | accountType |
-      | Virtual_Username | Virtual_Password | Virtual     |
+ #     | Virtual_Username | Virtual_Password | Virtual     |
       | Peso_Username    | Peso_Password    | Peso        |
 
 
-  Scenario: Invalid login (Invalid Email)
-    Given I'm on Getgo login page
-    When  I enter a "Invalid_Email" & click next
-    Then System should through an invalid email error message
 
-  Scenario: Invalid login (Invalid Password)
-    Given I'm on Getgo login page with "Valid_Email"
-    When  I enter a "Invalid_Password" and click next  
-    Then System should through an invalid password message
-    
-    
     

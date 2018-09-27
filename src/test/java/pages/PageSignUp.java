@@ -13,6 +13,7 @@ public class PageSignUp extends Keywords {
 
     public void doesPageContains(String caption, String caption2, String createVirutalCardBtnTxt, String registerPhysicalCardBtnTxt) throws ApplicationException
     {
+        WAIT.forSeconds(5);
         verify.elementIsPresent(keyImgGetgoCard);
         verify.elementTextMatching(keyBtnCreateVirutalCard,createVirutalCardBtnTxt);
         verify.elementTextMatching(keyBtnRegisterPesoCard,registerPhysicalCardBtnTxt);
@@ -21,6 +22,7 @@ public class PageSignUp extends Keywords {
     }
 
     public void registerVirtualCard() throws ApplicationException {
+        WAIT.forSeconds(5);
         click.elementBy(keyBtnCreateVirutalCard);
     }
 }

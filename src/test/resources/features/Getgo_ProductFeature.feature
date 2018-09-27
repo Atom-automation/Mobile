@@ -1,38 +1,27 @@
 
 
 # ================================================================================================================
-# Author: Balabharathi Jayaraman
-# Functionality : As a tester, I want to be able to login using my credentials so that I can see my card details.
+# Author: Gopinath Rajaram
+# Functionality : As a tester, I want to launch the GetGo Pay application freshly so that I am able to see the product welcome feature details
 # ================================================================================================================
 
-@Login
-Feature: New Customer Login Feature
+@ProductFeature
+Feature: Product Feature
 
-  Background: Open Getgo mobile application
-    Given I'm on Getgo landing page
-
-  Scenario Outline: As a tester, I want to be able to login using my credentials so that I can see my account(Virtual Card or Peso+) details
-    Given I'm on Getgo login page
-    When  I enter a "<username>" & click next
-    And   I enter password "<password>"
-    And   I click login
-    Then  I should see my "<accountType>" account dashboard with my profile picture & my full name
-
-    Examples: 
-      | username         | password         | accountType |
-      | Virtual_Username | Virtual_Password | Virtual     |
-      | Peso_Username    | Peso_Password    | Peso        |
+  Scenario: As a tester, I want to launch the GetGo Pay application freshly so that I am able to see the product welcome feature details
+    Given I'm on Getgo application with welcome page one content details,greeting image & next button
+    When  I click on next button
+    Then  welcome page two should be displayed with contents,greeting image & next button
+    When  I click on next button
+    Then  welcome page three should be displayed with contents,greeting image & next button
+    When  I click on next button
+    Then  welcome page four should be displayed with contents,greeting image & next button
+    When  I click on next button
+    Then  welcome page five should be displayed with contents,greeting image & get Started button
+    And   I click on Get Started button
+    Then  GetGo pay login/signup page should be displayed
 
 
-  Scenario: Invalid login (Invalid Email)
-    Given I'm on Getgo login page
-    When  I enter a "Invalid_Email" & click next
-    Then System should through an invalid email error message
-
-  Scenario: Invalid login (Invalid Password)
-    Given I'm on Getgo login page with "Valid_Email"
-    When  I enter a "Invalid_Password" and click next  
-    Then System should through an invalid password message
     
     
     

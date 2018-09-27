@@ -1,38 +1,32 @@
 
 
 # ================================================================================================================
-# Author: Balabharathi Jayaraman
-# Functionality : As a tester, I want to be able to login using my credentials so that I can see my card details.
+# Author: Gopinath Rajaram
+# Functionality : As a tester, I want to be able to login using my credentials so that I may be able to see my virtual card details.
 # ================================================================================================================
 
-@Login
-Feature: New Customer Login Feature
+@ExistingAccountUserLogin
+Feature: Existing Customer Login Feature
 
   Background: Open Getgo mobile application
     Given I'm on Getgo landing page
-
-  Scenario Outline: As a tester, I want to be able to login using my credentials so that I can see my account(Virtual Card or Peso+) details
+@retry
+  Scenario Outline: As a tester, I want to be able to login using my credentials so that I may be able to see my virtual card details.
     Given I'm on Getgo login page
-    When  I enter a "<username>" & click next
-    And   I enter password "<password>"
-    And   I click login
-    Then  I should see my "<accountType>" account dashboard with my profile picture & my full name
+    When Enter "<email>"
+    And Enter virtual/physical "<account_type>" card details - "<card_number>","<cvv>", "<expirary>"
+  And Nominate "<new_password>" and "<confirm_password>" & click Next
+    Then User will see dashboard page
 
     Examples: 
-      | username         | password         | accountType |
-      | Virtual_Username | Virtual_Password | Virtual     |
-      | Peso_Username    | Peso_Password    | Peso        |
+      |email                            |card_number     |cvv|expirary|new_password|confirm_password|account_type|
+   #  |bren.aviador@whitecloak.com     |6019990220015059|052|01/25   |test@123     |test@123       |Virtual      |
+      |jameson.candava@whitecloak.com|6019990220010167|399|01/25   |test@123     |test@123       |peso        |
 
 
-  Scenario: Invalid login (Invalid Email)
-    Given I'm on Getgo login page
-    When  I enter a "Invalid_Email" & click next
-    Then System should through an invalid email error message
 
-  Scenario: Invalid login (Invalid Password)
-    Given I'm on Getgo login page with "Valid_Email"
-    When  I enter a "Invalid_Password" and click next  
-    Then System should through an invalid password message
+
+
     
     
     

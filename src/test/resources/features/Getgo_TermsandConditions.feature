@@ -1,26 +1,22 @@
 
 # ========================================================================================================================================
-# Author: Balabharathi Jayaraman
-# Functionality : As a tester, I want to be able to complete a currency conversion transaction so that I can transact in another currency.
+# Author: Gopinath Rajaram
+# Functionality : As a tester, I want to be see the Terms and Conditions page of the GetoPay app so that i am aware about the TERMS & CONDITIONS and PRIVACY POLICY details
 # ========================================================================================================================================
 
-@CurrencyConversion
-Feature: Currency Conversion
+@TermsandConditions
+Feature: TermsandConditions
 
   Background: Login into account
     Given I'm on Getgo landing page
 
-  Scenario Outline: As a tester, I want to be able to complete a currency conversion transaction so that I can transact in another currency.
+  Scenario: As a tester, I want to be see the Terms and Conditions page of the GetoPay app so that i am aware about the TERMS & CONDITIONS and PRIVACY POLICY details
     Given I'm login into my "Peso" account with my "Peso_Username" and "Peso_Password"
-    Given I'm on Currency conversion screen after noting down the balance of "<to>" currency
-    When  I choose "<from>" currency and "<to>" currency
-    And   I enter the conversion amount "<conversion_amount>"
-    Then  Conversion amount will be automatically populated under To Amount field
-    When  I review conversion details and submit
-    Then  Amount should be converted & displayed in the dashboard
+    When I choose More menu options from the GetGopay dashboard page
+    Then More page should be displayed with the options "About the Cards", "Contact Us","Frequently Asked Questions" & "Terms & Conditions"
+    When I click on "Terms & Conditions" option
+    Then Terms & Conditions page should be displayed with two sections "TERMS & CONDITIONS" and "PRIVACY POLICY" & verify the contents
 
-    Examples:
-      | from  | to    | conversion_amount |
- #     | PHP   | AUD   | 10                |
-      | PHP   | CAD   | 10                |
+
+
 

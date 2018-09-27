@@ -48,15 +48,15 @@ public class Getgo_ManageRecipient
     @When("^I Choose Manage Recipients option again$")
     public void iChooseManageRecipientsOptionAgain() throws Throwable
     {
+        manageRecipient.goBack();
         transfer.clickAddRecipient();
     }
 
     @When("^I open Beneficiaries page again$")
     public void iOpenBeneficiariesPageAgain() throws Throwable
     {
-        if(Test.attributes.get(Keys.OS).equalsIgnoreCase(OS.iOS)){
-            dashboard.clickMenu();
-        }
+       // manageRecipient.goBack();
+        dashboard.clickMenu();
         dashboard.navigateTo(MenuItem.Beneficiaries());
     }
 

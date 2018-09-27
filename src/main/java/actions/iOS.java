@@ -45,4 +45,18 @@ public class iOS extends Keywords {
             throw new ApplicationException(e.getMessage());
         }
     }
+
+    public void selectPickerByIndex(String value,int indexoccurance) throws ApplicationException {
+        log.info("Select the value {"+value+"} in IOS picker wheel");
+        try{
+            MobileElement ele = (MobileElement) driver.findElementsByClassName(ObjectClass.iOSPickerWheel).get(indexoccurance-1);
+            ele.sendKeys(value.trim());
+            //get.elementBy(xpathOf.button(Matching.name("Done"))).click();
+            log.info("Value "+value+" is selected!");
+        }catch(Throwable e){
+            log.error("Failed to select the value "+value+" in IOS picker wheel");
+            throw new ApplicationException(e.getMessage());
+        }
+    }
+
 }

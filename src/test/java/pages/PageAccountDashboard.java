@@ -13,15 +13,20 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import xpath.Matching;
 
-public class PageAccountDashboard extends Keywords {
+public class
+PageAccountDashboard extends Keywords {
 
     private String keyImgProfilePicture="Getgo.Dashboard.ImgProfilePicture";
     private String keyLblUserName="Getgo.Dashboard.LblUsername";
-    private String keyBtnMenu="Getgo.Dashboard.BtnMenu";
+    private String keyBtnMenu1="Getgo.Dashboard.BtnMenu1";
+    private String keyBtnMenu2="Getgo.Dashboard.BtnMenu2";
     private String keyLblAvailableBalancePeso="Getgo.Peso+Dashboard.LblAvailableBalance";
     private String keyLblAvailableBalanceVirtualCard="Getgo.VirtualDashboard.LblAvailableBalance";
     private String keyLogout="Getgo.Dashboard.LinkLogout";
     private String keyLblVerifyYourEmail="Getgo.Dashboard.LblVerifyYourEmail";
+    private String keySettingsOption="Getgo.Dashboard.SettingsMenuOption";
+
+
 
     private double myAccountBalance=0.00;
     private double currencyBalance=0.00;
@@ -86,7 +91,15 @@ public class PageAccountDashboard extends Keywords {
     }
 
     public void clickMenu() throws ApplicationException {
-        click.elementBy(keyBtnMenu);
+        WAIT.forSeconds(3);
+        try {
+            click.elementBy(keyBtnMenu1);
+        }
+        catch(Exception e)
+        {
+            click.elementBy(keyBtnMenu2);
+        }
+        WAIT.forSeconds(2);
     }
 
     public void navigateTo(String where) throws ApplicationException {
@@ -99,6 +112,13 @@ public class PageAccountDashboard extends Keywords {
 
     public void logout() throws ApplicationException {
         click.elementBy(keyLogout);
+        if(Device.isAndroid())
+        {
+        click.elementBy(xpathOf.textView(Matching.text("YES")));
+        }
+        else {
+            click.elementBy(MobileBy.AccessibilityId("YES"));
+        }
     }
 
     /*
@@ -110,11 +130,24 @@ public class PageAccountDashboard extends Keywords {
     private boolean isCurrencyDisplayedOnDashboard(String currencyName){
         boolean isDisplayed=false;
         try{
-            isDisplayed=get.elementBy(xpathOf.textView(Matching.youDecide(currencyName))).isDisplayed();
+            if(Device.isAndroid()) {
+                isDisplayed = get.elementBy(xpathOf.textView(Matching.youDecide(currencyName))).isDisplayed();
+            }
+            else
+            {
+                isDisplayed = get.elementBy(By.xpath(currencylocator.locator(currencyName))).isDisplayed();
+            }
         }catch (Throwable ex1){
             try{
-                swipe.vertical(2,0.9,0.5,2);
-                isDisplayed=get.elementBy(xpathOf.textView(Matching.youDecide(currencyName))).isDisplayed();
+                if(Device.isAndroid()) {
+                    swipe.vertical(2, 0.9, 0.5, 2);
+                    isDisplayed = get.elementBy(xpathOf.textView(Matching.youDecide(currencyName))).isDisplayed();
+                }
+                else {
+                    swipe.vertical(2, 0.9, 0.5, 2);
+                    isDisplayed = get.elementBy(By.xpath(currencylocator.locator(currencyName))).isDisplayed();
+
+                }
             }catch (Throwable ex2){
             }
         }
@@ -130,8 +163,12 @@ public class PageAccountDashboard extends Keywords {
 
     private double getBalanceOfCurrency_iOS(String currencyName) throws ApplicationException {
         double balance;
-        WebElement parentElement=get.elementBy(By.xpath("//XCUIElementTypeStaticText[@value='"+currencyName+"']/parent::*"));
-        balance=Double.parseDouble(parentElement.findElements(By.xpath("//"+ ObjectClass.iOSTextView)).get(1).getText().trim().split(" ")[1].trim());
+
+        //WebElement parentElement=get.elementBy(By.xpath("//XCUIElementTypeStaticText[@value='"+currencyName+"']/parent::*"));
+        //balance=Double.parseDouble(parentElement.findElements(By.xpath("//"+ ObjectClass.iOSTextView)).get(1).getText().trim().split(" ")[1].trim());
+
+
+        balance=Double.parseDouble(get.elementText(By.xpath(currencylocator.AmountLocator(currencyName))).trim().replaceAll("\\u00A0",""));
         return balance;
     }
 
@@ -154,6 +191,7 @@ public class PageAccountDashboard extends Keywords {
     }
 
     public void displayBalanceOfCurrency(String currency) throws ApplicationException {
+        WAIT.forSeconds(20);
         currencyBalance=getBalanceOf(currency);
         Reporter.addStepLog("Balance of currency "+currency+" is --> "+currencyBalance);
     }
@@ -163,13 +201,13 @@ public class PageAccountDashboard extends Keywords {
         /*
             Validate Main Balance
          */
-
+         WAIT.forSeconds(3);
         double actualMainBalance;
         if(accountType.equalsIgnoreCase("peso"))
         {
-            actualMainBalance=Double.parseDouble(get.elementText(keyLblAvailableBalancePeso).replaceAll(",",""));
+            actualMainBalance=Double.parseDouble(Test.tools.nbspRemove(get.elementText(keyLblAvailableBalancePeso).replaceAll(",","")));
         }else{
-            actualMainBalance=Double.parseDouble(get.elementText(keyLblAvailableBalanceVirtualCard).replaceAll(",",""));
+            actualMainBalance=Double.parseDouble(Test.tools.nbspRemove(get.elementText(keyLblAvailableBalanceVirtualCard).replaceAll(",","")));
         }
 
         verify.isMatching(expectedMainBalance,actualMainBalance);
@@ -179,6 +217,48 @@ public class PageAccountDashboard extends Keywords {
          */
 
         double actualCurrencyBalance=getBalanceOf(currency);
-        verify.isMatching(expectedCurrencyBalance,expectedCurrencyBalance);
+        verify.isMatching(expectedCurrencyBalance,actualCurrencyBalance);
     }
+
+
+    public void clickSettingsMenuOptions() throws ApplicationException {
+        if(Device.isAndroid()) {
+            click.elementBy(keySettingsOption);
+        }
+        else
+        {
+            navigateTo("Settings");
+        }
+    }
+
+    public void checkDashboardPageProfilePic() throws ApplicationException {
+        verify.elementIsPresent(keyImgProfilePicture);
+    }
+
+    public void clicklogoutoptiononly() throws ApplicationException {
+        click.elementBy(keyLogout);
+    }
+
+    public void clickAvailableBalance() throws ApplicationException {
+        if(Device.isAndroid()) {
+            click.elementBy(keyLblAvailableBalanceVirtualCard);
+            WAIT.forSeconds(2);
+        }
+        else
+        {
+            //need to write logic for ios virtual and physical card
+            WAIT.forSeconds(12);
+                try
+                    {
+                        click.elementBy(keyLblAvailableBalancePeso);
+                    }
+                catch(Exception ex)
+                    {
+                        click.elementBy(keyLblAvailableBalanceVirtualCard);
+                    }
+            WAIT.forSeconds(2);
+        }
+
+    }
+
 }

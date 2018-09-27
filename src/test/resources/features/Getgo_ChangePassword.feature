@@ -1,26 +1,26 @@
-
 # ========================================================================================================================================
-# Author: Balabharathi Jayaraman
-# Functionality : As a tester, I want to be able to complete a currency conversion transaction so that I can transact in another currency.
+# Author: Gopinath Rajaram
+# Functionality : As a tester, I want to be able to be able to change my password real-time so I can keep my account secure.
 # ========================================================================================================================================
 
-@CurrencyConversion
-Feature: Currency Conversion
+@ChangePassword
+Feature: Change Password
 
   Background: Login into account
     Given I'm on Getgo landing page
 
-  Scenario Outline: As a tester, I want to be able to complete a currency conversion transaction so that I can transact in another currency.
-    Given I'm login into my "Peso" account with my "Peso_Username" and "Peso_Password"
-    Given I'm on Currency conversion screen after noting down the balance of "<to>" currency
-    When  I choose "<from>" currency and "<to>" currency
-    And   I enter the conversion amount "<conversion_amount>"
-    Then  Conversion amount will be automatically populated under To Amount field
-    When  I review conversion details and submit
-    Then  Amount should be converted & displayed in the dashboard
+  Scenario: As a tester, I want to be able to be able to change my password real-time so that I can keep my account secure.
+    Given I'm on "Dashboard" page of GetGo pay with valid "change_username" and "change_password"
+    When  I choose Settings option from the menu
+    Then  I should see "Settings" page
+    When  I choose "Password" option from settings page
+    Then  I should see "Update Password" page with "Enter Old password","Enter New password","Confirm New password" and  "SUBMIT" button
+    When  I Enter old password, Nominate and confirm new password
+    And   click submit button
+    And   I should see One Time Password page
+    And   Enter OTP details
+    Then  Password should be updated
+    When  I logout and login with updated password
+    Then  Login should be successfull and Dashboard page should be displayed
 
-    Examples:
-      | from  | to    | conversion_amount |
-      | PHP   | AUD   | 10                |
-      | PHP   | CAD   | 10                |
 

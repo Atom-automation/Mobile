@@ -1,10 +1,13 @@
 package stepdefinitions;
 
+import actions.Swipe;
 import base.Test;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import exceptions.ApplicationException;
+import helper.Device;
 import helper.PropertyReader;
 import pages.*;
 import projectconstants.MenuItem;
@@ -28,6 +31,7 @@ public class Getgo_CardTransfer_Peso
     private static PageCardTransferReview review=new PageCardTransferReview();
     private static PageCardTransferSuccess success=new PageCardTransferSuccess();
     private static PageActivities activities=new PageActivities();
+    private static PageOTP otp=new PageOTP();
 
     public Getgo_CardTransfer_Peso()
     {
@@ -35,16 +39,22 @@ public class Getgo_CardTransfer_Peso
        fakeUser= Test.faker.name().firstName()+" "+ Test.faker.name().lastName();
        toUser= PropertyReader.testDataOf("RecipientName");
        message="Automation Transaction!";
-       transferAmount=5.00;
+       transferAmount=10.00;
        transferFees=20.00;
-       frequency="One Time Only";
+       frequency="Weekly";
     }
 
     @Given("^I'm on Getgo Fund transfer page of my \"([^\"]*)\" card account$")
     public void iMOnGetgoFundTransferPageOfMyCardAccount(String accountType) throws Throwable {
         this.accountType=accountType.trim();
         dashboard.clickMenu();
-        dashboard.navigateTo(MenuItem.CardTransfer());
+        if(Device.isAndroid()) {
+            dashboard.navigateTo(MenuItem.CardTransfer());
+        }
+        else
+        {
+            dashboard.navigateTo("Card Transfer");
+        }
     }
 
     @Given("^I'm on Getgo Fund transfer page$")
@@ -72,9 +82,10 @@ public class Getgo_CardTransfer_Peso
         review.fromDetails(PropertyReader.testDataOf(accountType+"_CardNumber"),PropertyReader.testDataOf(accountType+"_FullName"));
         review.toDetails(toCard,toUser);
         review.transferAmount(transferAmount);
-        review.transferFees(transferFees);
-        review.transferDate(date.get(0),date.get(1),date.get(2));
+//        review.transferFees(transferFees);
+//        review.transferDate(date.get(0),date.get(1),date.get(2));
         review.clickTransfer();
+
     }
 
     @Then("^I should see the confirmation page$")
@@ -82,13 +93,22 @@ public class Getgo_CardTransfer_Peso
     {
         success.isTransferSuccess();
         success.viewDetails();
-        /*
-        activities.getTransactionReferenceNumber();
-        activities.reviewDescription("Funds Transfer to Card");
-        activities.verifyEndingBalance(transferAmount,transfer.getBeforeBalance());
-        activities.reviewTransactionDate(date.get(0),date.get(1),date.get(2));
-        activities.verifyTransactionAmount(transferAmount);
-        */
+
+        String irefno=activities.getTransactionReferenceNumber();
+        String idescription=activities.reviewDescription("Funds Transfer to");
+        String iendingbalanceamt=activities.verifyEndingBalance(transferAmount,transfer.getBeforeBalance());
+        String idate=activities.reviewTransactionDate(date.get(0),date.get(1),date.get(2));
+        String itransferamt=activities.verifyTransactionAmount(transferAmount);
+
+        activities.closeActivityDetailedPage();
+       dashboard.clickAvailableBalance();
+       activities.verifyActivityPageTitle("Activities");
+       activities.selectActivityByReferneceNo(irefno);
+       activities.verifyFundTransferDetailsActivityPage(irefno,idate,idescription,itransferamt,iendingbalanceamt);
+        activities.closeActivityDetailedPage();
+        activities.closeActivityPage();
+
+
     }
 
     @When("^I Enter card number, recipient name, amount, system date, frequency, and message$")

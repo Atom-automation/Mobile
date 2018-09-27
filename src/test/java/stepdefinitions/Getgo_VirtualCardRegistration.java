@@ -5,6 +5,7 @@ import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import helper.Device;
 import helper.PropertyReader;
 import pages.*;
 
@@ -21,7 +22,7 @@ public class Getgo_VirtualCardRegistration {
     private static PageLogin login=new PageLogin();
 
     private String mobileNumber=PropertyReader.testDataOf("RegistrationMobileNumber");
-    private String emailAddress="("+Test.faker.number().randomNumber(5,true)+")"+PropertyReader.testDataOf("RegistrationEmailAddress");
+    private String emailAddress="("+Test.faker.number().randomNumber(3,true)+")"+PropertyReader.testDataOf("RegistrationEmailAddress");
     private String password=PropertyReader.testDataOf("RegistrationPassword");
     private String firstName=Test.faker.name().firstName();
     private String middleName=Test.faker.name().firstName();
@@ -33,7 +34,9 @@ public class Getgo_VirtualCardRegistration {
 
     @When("^I enter Mobile Number, Email Address, and Nominate and Confirm password$")
     public void iEnterMobileNumberEmailAddressAndNominateAndConfirmPassword() throws Throwable {
-        vRegister.enterBasicDetails(mobileNumber,emailAddress,password);vRegister.clickNext();
+        vRegister.verifyPageTitle("Create Virtual Prepaid Card");
+        vRegister.enterBasicDetails(mobileNumber,emailAddress,password);
+        vRegister.clickNext();
     }
 
     @And("^I enter one time password$")
@@ -44,7 +47,7 @@ public class Getgo_VirtualCardRegistration {
     @And("^I fill my personal details$")
     public void iFillMyPersonalDetails() throws Throwable {
         vRegister.enterPersonalDetails(firstName,middleName,lastName,nationality,gender);
-        dob=vRegister.getDob();
+        dob=vRegister.getDobvalue();
         vRegister.clickNext();
     }
 
@@ -62,37 +65,49 @@ public class Getgo_VirtualCardRegistration {
     @Given("^I'm on Getgo virtual card registration screen$")
     public void iMOnGetgoVirtualCardRegistrationScreen() throws Throwable {
         welcome.clickSignUp();
+        // new logic adde dna dneed to confirm
+        login.enterEmail(emailAddress);
+        login.clickNext();
+        //
         signUp.registerVirtualCard();
     }
 
     @When("^I click the verification email link from my inbox$")
     public void iClickTheVerificationEmailLinkFromMyInbox() throws Throwable {
-        String outlookUsername=PropertyReader.testDataOf("RegistrationEmailAddress");
-        String outlookPassword=PropertyReader.testDataOf("outlookpassword");
-        verifyAccount.openOutlook(outlookUsername,outlookPassword);
-        verifyAccount.openVerificationEmail(firstName+" "+lastName);
+        if (Device.isAndroid()) {
+            String outlookUsername = PropertyReader.testDataOf("RegistrationEmailAddress");
+            String outlookPassword = PropertyReader.testDataOf("outlookpassword");
+            verifyAccount.openOutlook(outlookUsername, outlookPassword);
+            verifyAccount.openVerificationEmail(firstName + " " + lastName);
+        }
     }
 
     @Then("^I should see a message account is verified$")
     public void iShouldSeeAMessageAccountIsVerified() throws Throwable {
-        verifyAccount.isVerificationSuccess();
+        if (Device.isAndroid()) {
+            verifyAccount.isVerificationSuccess();
+        }
     }
 
     @When("^I login with the My Email next time$")
     public void iLoginWithTheMyEmailNextTime() throws Throwable {
-        welcome.launchGetgoFresh();
-        welcome.clickLogin();
-        login.login(emailAddress,password);
+        if (Device.isAndroid()) {
+            welcome.launchGetgoFresh();
+            welcome.clickLogin();
+            login.login(emailAddress, password);
+        }
     }
 
     @Then("^I should see my virtual card in the dashboard$")
     public void iShouldSeeMyVirtualCardInTheDashboard() throws Throwable {
-        dashboard.isVirtualCardDisplayed();
+        if (Device.isAndroid()) {
+            dashboard.isVirtualCardDisplayed();
+        }
     }
 
     @And("^I review & submit$")
     public void iReviewSubmit() throws Throwable {
-        vReview.reviewDetails(emailAddress,fullName,dob,mobileNumber,nationality,gender);
+        vReview.reviewDetails(emailAddress,fullName,dob,"+63 "+mobileNumber,nationality,gender);
         vReview.clickSubmit();
     }
 }

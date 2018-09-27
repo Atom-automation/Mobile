@@ -21,6 +21,6 @@ Feature: Currency Conversion
 
     Examples:
       | from  | to    | conversion_amount |
-      | PHP   | AUD   | 10                |
+     | PHP   | AUD   | 10                |
       | PHP   | CAD   | 10                |
 

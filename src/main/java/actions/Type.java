@@ -14,11 +14,12 @@ public class Type extends Keywords{
     public void data(String locatorKey,String value) throws ApplicationException {
         log.info("Type the value ["+value+"] into element ["+locatorKey+"]");
         try{
+            get.elementBy(locatorKey).clear();
             get.elementBy(locatorKey).sendKeys(value);
         }catch (StaleElementReferenceException ex){
             get.elementBy(locatorKey).sendKeys(value);
         }
-        keyboard.hideIfIOS();
+        keyboard.hideIOS1();
         log.info("Type Successful!");
     }
 
@@ -37,6 +38,11 @@ public class Type extends Keywords{
         log.info("Type the value ["+value+"] into element ["+locator+"]");
         get.elementBy(locator).sendKeys(value);
         keyboard.hideIfIOS();
+        log.info("Type Successful!");
+    }
+    public void OTPdata(By locator, String value) throws ApplicationException {
+        log.info("Type the value ["+value+"] into element ["+locator+"]");
+        get.elementBy(locator).sendKeys(value);
         log.info("Type Successful!");
     }
 

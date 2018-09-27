@@ -15,6 +15,9 @@ public class AndroidManager extends DriverManager {
     public void createDriver() throws Exception {
         capabilities.setCapability("platformName", "Android");
         capabilities.setCapability("automationName","UiAutomator2");
+        capabilities.setCapability("resetKeyboard","true");
+        capabilities.setCapability("unicodeKeyboard","true");
+        capabilities.setCapability("fullReset","false");
         setAppCapabilities();
         Test.attributes.put(Keys.ObjectRepository,"src/test/resources/object-repository/Locators-Android.properties");
         driver = new AndroidDriver(new URL(PropertyReader.valueOf("Driver.ServerAddress").trim()), capabilities);

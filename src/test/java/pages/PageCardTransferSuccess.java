@@ -21,20 +21,25 @@ public class PageCardTransferSuccess extends Keywords {
     public void isTransferSuccess() throws ApplicationException {
         if(Test.attributes.get(Keys.OS).equalsIgnoreCase(OS.ANDROID))
         {
+            WAIT.forSeconds(6);
             verify.elementTextContains(keyLblCongrats,"Congratulations!");
             verify.elementTextContains(keyLblMessage,"You have successfully transfer fund.");
         }else if(Test.attributes.get(Keys.OS).equalsIgnoreCase(OS.iOS))
         {
+            WAIT.forSeconds(5);
             verify.elementIsPresent(keyLblCongrats);
             verify.elementIsPresent(keyLblMessage);
+            WAIT.forSeconds(2);
         }
     }
 
     public void viewDetails() throws ApplicationException {
         click.elementBy(keyBtnViewDetails);
+        WAIT.forSeconds(35);
     }
 
     public void gotoDashboard() throws ApplicationException {
         click.elementBy(keyBtnDashboard);
+        WAIT.forSeconds(5);
     }
 }

@@ -28,6 +28,10 @@ public class Matching {
         return new Matching("[@text='"+text+"']");
     }
 
+    public static Matching value(String text){
+        return new Matching("[@value='"+text+"']");
+    }
+
     public static Matching youDecide(String value){
         if(Test.attributes.get(Keys.OS).toString().equalsIgnoreCase(OS.ANDROID)){
             return new Matching("[@text='"+value+"']");

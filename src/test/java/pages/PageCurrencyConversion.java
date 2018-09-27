@@ -4,6 +4,8 @@ import base.Keywords;
 import base.Test;
 import com.cucumber.listener.Reporter;
 import exceptions.ApplicationException;
+import helper.Device;
+import helper.Tools;
 import xpath.Matching;
 
 import java.text.DecimalFormat;
@@ -25,26 +27,45 @@ public class PageCurrencyConversion extends Keywords {
     private double toAmount=0.00;
 
     public void isPageLoaded() throws ApplicationException {
-        WAIT.forSeconds(5);
+        WAIT.forSeconds(10);
         verify.elementTextMatching(keyLblPageTitle,"Currency Converter");
-        balanceBeforeConversion=Double.parseDouble(get.elementText(keyLblAvailableBalance).replaceAll(",",""));
+        balanceBeforeConversion=Double.parseDouble(Test.tools.nbspRemove(get.elementText(keyLblAvailableBalance).replaceAll(",","")));
         keyboard.hideIfAndroid();
         Reporter.addStepLog("Balance before conversion is "+balanceBeforeConversion);
     }
 
     public void selectFromCurrency(String fromCurrency) throws ApplicationException {
+        if(Device.isAndroid())
+        {
         click.elementBy(keyBtnFromCurrencyDropdown);
         click.elementBy(xpathOf.textView(Matching.youDecide(fromCurrency.trim())));
+        }
+        else
+        {
+            click.elementBy(keyBtnFromCurrencyDropdown);
+            ios.selectPicker(fromCurrency.trim());
+            //swipe.scrollDownToText(fromCurrency.trim());
+            //click.elementBy(xpathOf.textView(Matching.youDecide(fromCurrency.trim())));
+        }
     }
 
     public void selectToCurrency(String toCurrency) throws ApplicationException {
-        click.elementBy(keyBtnToCurrencyDropdown);
-        WAIT.forSeconds(1);
-        try{
-            driver.findElement(xpathOf.textView(Matching.youDecide(toCurrency.trim()))).click();
-        }catch (Exception ex){
-            swipe.vertical(4,0.7,0.4,1);
-            click.elementBy(xpathOf.textView(Matching.youDecide(toCurrency.trim())));
+        if(Device.isAndroid()) {
+            click.elementBy(keyBtnToCurrencyDropdown);
+            WAIT.forSeconds(1);
+            try {
+                driver.findElement(xpathOf.textView(Matching.youDecide(toCurrency.trim()))).click();
+            } catch (Exception ex) {
+                swipe.vertical(4, 0.7, 0.4, 1);
+                click.elementBy(xpathOf.textView(Matching.youDecide(toCurrency.trim())));
+            }
+        }
+        else
+        {
+            click.elementBy(keyBtnToCurrencyDropdown);
+            WAIT.forSeconds(1);
+            ios.selectPicker(toCurrency.trim());
+            //swipe.scrollDownToText(toCurrency.trim());
         }
     }
 

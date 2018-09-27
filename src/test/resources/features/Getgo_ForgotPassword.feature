@@ -1,38 +1,34 @@
 
 
 # ================================================================================================================
-# Author: Balabharathi Jayaraman
-# Functionality : As a tester, I want to be able to login using my credentials so that I can see my card details.
+# Author: Gopinath Rajaram
+# Functionality : As a tester, I want to reset the password details through forgot password functionality so that I can login into the account successfully while I am not remembering my password
 # ================================================================================================================
 
-@Login
-Feature: New Customer Login Feature
+@ForgotPassword
+Feature: Forgot Password Feature
 
   Background: Open Getgo mobile application
     Given I'm on Getgo landing page
-
-  Scenario Outline: As a tester, I want to be able to login using my credentials so that I can see my account(Virtual Card or Peso+) details
+@dummy1
+  Scenario Outline: As a tester, I want to reset the password details through forgot password functionality so that I can login into the account successfully while I am not remembering my password
     Given I'm on Getgo login page
-    When  I enter a "<username>" & click next
-    And   I enter password "<password>"
-    And   I click login
-    Then  I should see my "<accountType>" account dashboard with my profile picture & my full name
+    When  I enter a "<username>" detail & click next
+    Then  A page should be displayed with password textbox, NEXT button and "Forgot your password?" link
+    When I click on Forgot your password link
+    And Enter email address & click submit
+    Then I should see a message We have sent you an email to reset your password in the Forgot your password page
+    When I reset the password details through the Password Reset email & click submit
+    Then I see an message as Your password has been successfully changed
+    When I login with reset password details
+    Then Login should be successfull and I should see Dashboard page
+
 
     Examples: 
-      | username         | password         | accountType |
-      | Virtual_Username | Virtual_Password | Virtual     |
-      | Peso_Username    | Peso_Password    | Peso        |
+      | username         |
+      | forgotpassword_username |
 
 
-  Scenario: Invalid login (Invalid Email)
-    Given I'm on Getgo login page
-    When  I enter a "Invalid_Email" & click next
-    Then System should through an invalid email error message
 
-  Scenario: Invalid login (Invalid Password)
-    Given I'm on Getgo login page with "Valid_Email"
-    When  I enter a "Invalid_Password" and click next  
-    Then System should through an invalid password message
-    
     
     

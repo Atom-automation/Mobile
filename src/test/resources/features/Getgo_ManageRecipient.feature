@@ -4,7 +4,7 @@
 # Functionality : As a tester, I want to complete a funds transfer transaction so that I can pass on funds to another cardholder.
 # ===============================================================================================================================
 
-@FundTransfer @Peso+
+@ManageRecipient
 Feature: Manage Recipients Feature
 
   Background: Open Getgo mobile application
@@ -21,8 +21,9 @@ Feature: Manage Recipients Feature
 
   Examples:
     | accountType | username         | password         |
-    | Virtual     | Virtual_Username | Virtual_Password |
+ #  | Virtual     | Virtual_Username | Virtual_Password |
     | Peso        | Peso_Username    | Peso_Password    |
+
 
   Scenario Outline: As a tester, I want to add new recipients and tag some of them as favorites so that I can keep a list of recipients (From Beneficiaries page)
     Given I'm login into my "<accountType>" account with my "<username>" and "<password>"
@@ -33,5 +34,5 @@ Feature: Manage Recipients Feature
 
   Examples:
     | accountType | username         | password         |
-    | Virtual     | Virtual_Username | Virtual_Password |
+  #  | Virtual     | Virtual_Username | Virtual_Password |
     | Peso        | Peso_Username    | Peso_Password    |

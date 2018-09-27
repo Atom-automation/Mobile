@@ -4,7 +4,7 @@
 # Functionality : As a tester, I want to complete a funds transfer transaction so that I can pass on funds to another cardholder.
 # ===============================================================================================================================
 
-@FundTransfer
+@FundTransfervirtual
 Feature: Fund Transfer from Virtual card to another card
 
   Background: Open Getgo mobile application
@@ -20,6 +20,7 @@ Feature: Fund Transfer from Virtual card to another card
   Examples:
     | accountType | username         | password         |
     | Virtual     | Virtual_Username | Virtual_Password |
+
 
   Scenario Outline: As a tester, I want to complete a funds transfer transaction from my virtual card account so that I can pass on funds to another cardholder.
     Given I'm login into my "<accountType>" account with my "<username>" and "<password>"

@@ -1,118 +1,52 @@
 package stepdefinitions;
 
-import cucumber.api.PendingException;
-import cucumber.api.java.en.And;
-import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import helper.PropertyReader;
-import pages.*;
-import projectconstants.MenuItem;
+import org.junit.Assert;
+import pages.PageChangePIN;
+import pages.PageEditProfile;
+import pages.PageOTP;
 
-public class Getgo_EditProfile {
+public class Getgo_ChangePIN {
 
     private String fromCurrency,toCurrency;
     private static PageOTP otp=new PageOTP();
-    private static PageEditProfile editprofile=new PageEditProfile();
+    private static PageChangePIN changepin=new PageChangePIN();
 
 
-    @Then("^I should see \"([^\"]*)\" page with \"([^\"]*)\" , \"([^\"]*)\" and \"([^\"]*)\" sections$")
-    public void i_should_see_page_with_and_sections(String arg1, String arg2, String arg3, String arg4) throws Throwable {
+    @Then("^I should see \"([^\"]*)\" page with \"([^\"]*)\" , \"([^\"]*)\" and \"([^\"]*)\" textboxes, close and Save buttons$")
+    public void i_should_see_page_with_and_textboxes_close_and_Save_buttons(String arg1, String arg2, String arg3, String arg4) throws Throwable {
         // Write code here that turns the phrase above into concrete actions
-        editprofile.verifyManageProfilePageTitle(arg1);
-        editprofile.verifyPagefields(arg2,arg3,arg4);
+        changepin.verifyChangePINPageTitle(arg1);
+        changepin.verifyChangePINPageElements();
     }
 
-    @When("^I click on edit link in the \"([^\"]*)\" section$")
-    public void i_click_on_edit_link_in_the_section(String arg1) throws Throwable {
+    @When("^I Enter Current PIN, New PIN and Confirm PIN details$")
+    public void i_Enter_Current_PIN_New_PIN_and_Confirm_PIN_details() throws Throwable {
         // Write code here that turns the phrase above into concrete actions
-        editprofile.clickEditLink(arg1);
+        changepin.enterPINDetailsToUpdate(
+                PropertyReader.testDataOf("changePIN_old"),
+                PropertyReader.testDataOf("changePIN_new"),
+                PropertyReader.testDataOf("changePIN_confirm")
+        );
     }
 
-    @Then("^\"([^\"]*)\" page should be displayed with a edit mobile textbox, \"([^\"]*)\" and \"([^\"]*)\" button$")
-    public void page_should_be_displayed_with_a_edit_mobile_textbox_and_button(String arg1, String arg2, String arg3) throws Throwable {
+    @When("^click submit button in the update card PIN page$")
+    public void click_submit_button_in_the_update_card_PIN_page() throws Throwable {
         // Write code here that turns the phrase above into concrete actions
-        editprofile.verifyUpdateMobilePageTitle(arg1);
-        editprofile.verifyUpdateMobilePageElements();
+        changepin.clicksubmit();
     }
 
-    @When("^I enter new mobile number$")
-    public void i_enter_new_mobile_number() throws Throwable {
+    @When("^I Enter OTP details$")
+    public void i_Enter_OTP_details() throws Throwable {
         // Write code here that turns the phrase above into concrete actions
-        editprofile.enterUpdateMobilenumber(PropertyReader.testDataOf("edit_mobilenumber"));
+    otp.enterOTP();
     }
 
-    @When("^click next button$")
-    public void click_next_button() throws Throwable {
+    @Then("^PIN should be updated successfully$")
+    public void pin_should_be_updated_successfully() throws Throwable {
         // Write code here that turns the phrase above into concrete actions
-        editprofile.clickNextBtn();
-
+        changepin.verifyPINChangeIsSuccessfull();
     }
-
-    @Then("^Mobile number should be updated and verified in \"([^\"]*)\" page$")
-    public void mobile_number_should_be_updated_and_verified_in_page(String arg1) throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
-        editprofile.verifySuccessfullProfileUpdate();
-        editprofile.clickGoToProfileBtn();
-        //logic for vrification
-        editprofile.verifyUpdatedValuesforEditMobilenumber(PropertyReader.testDataOf("edit_mobilenumber"));
-    }
-
-    @Then("^\"([^\"]*)\" page should be displayed with Country,State,City Combo Boxes,Edit House/Street textbox and \"([^\"]*)\" button$")
-    public void page_should_be_displayed_with_Country_State_City_Combo_Boxes_Edit_House_Street_textbox_and_button(String arg1, String arg2) throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
-        editprofile.verifyUpdateAddressPageTitle(arg1);
-        editprofile.verifyUpdateAddressPageElements();
-    }
-
-    @When("^I click on SAVE button with updated address details$")
-    public void i_click_on_SAVE_button_with_updated_address_details() throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
-        //editprofile.chooseNewCountry("Slovenia");
-        editprofile.enterStreetDetails(PropertyReader.testDataOf("edit_addresss"));
-        editprofile.clickSavebtnUpdateAddress();
-
-    }
-
-    @Then("^Address details should be updated and verified in \"([^\"]*)\" page$")
-    public void address_details_should_be_updated_and_verified_in_page(String arg1) throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
-        editprofile.verifySuccessfullProfileUpdate();
-        ///logic for verification
-        editprofile.clickGoToProfileBtn();
-        editprofile.verifyUpdatedValuesforEditAddress(PropertyReader.testDataOf("edit_addresss"));
-    }
-
-    @Then("^\"([^\"]*)\" page should be displayed$")
-    public void page_should_be_displayed(String arg1) throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
-        editprofile.verifyUpdateOtherDetailsPageTitle(arg1);
-        editprofile.verifyUpdateOtherDetailsPageElements();
-    }
-
-    @When("^I click on SAVE button with updated other details$")
-    public void i_click_on_SAVE_button_with_updated_other_details() throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
-    editprofile.ChooseandEnterIdentitydetails(PropertyReader.testDataOf("edit_identityType"),PropertyReader.testDataOf("edit_identityValue"));
-        editprofile.ChooseSourceoffunds(PropertyReader.testDataOf("edit_sourceoffunds"));
-        editprofile.ChooseAndEnterEmployerdetails(PropertyReader.testDataOf("edit_employertype"),PropertyReader.testDataOf("edit_employername"));
-    editprofile.ClickTopSaveBtnUpdateOtherDetailsPage();
-
-    }
-
-    @Then("^Other details should be updated and verified in \"([^\"]*)\" page$")
-    public void other_details_should_be_updated_and_verified_in_page(String arg1) throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
-        editprofile.verifySuccessfullProfileUpdate();
-        editprofile.clickGoToProfileBtn();
-
-        editprofile.verifyUpdatedValuesforEditOtherdetails(
-                PropertyReader.testDataOf("edit_identityType"),
-                PropertyReader.testDataOf("edit_identityValue"),
-                PropertyReader.testDataOf("edit_sourceoffunds"),
-                PropertyReader.testDataOf("edit_employertype"),
-                PropertyReader.testDataOf("edit_employername")
-                );
-    }
-
 }

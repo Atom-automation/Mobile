@@ -19,6 +19,9 @@ public class PageCardTransfer extends Keywords
     private String keyBtnNext="Getgo.CardTransfer.BtnNext";
     private String keyLblAvailableBalance="Getgo.CardTransfer.LblAvailableBalance";
     private String keyBtnAddRecipient="Getgo.CardTransfer.BtnAddRecipient";
+    private String keyBtnManageRecipientBottom="Getgo.CardTransfer.BtnManageRecipientBottom";
+    private String keyLblPageTitle="Getgo.CardTransfer.LblPageTitle";
+    private String keyBtnActivitiesBottom="Getgo.CardTransfer.BtnActivitiesBottom";
 
     private double beforeBalance;
 
@@ -32,6 +35,7 @@ public class PageCardTransfer extends Keywords
 
     public void selectRecipientFromSavedList(String recipient) throws ApplicationException {
         click.elementBy(keyBtnAddRecipient);
+        WAIT.forSeconds(3);
         swipe.scrollDownToText(recipient);
         if(Test.attributes.get(Keys.OS).equalsIgnoreCase(OS.ANDROID))
         {
@@ -74,16 +78,31 @@ public class PageCardTransfer extends Keywords
     }
 
     public void clickNext() throws ApplicationException {
+        WAIT.forSeconds(10);
         beforeBalance= Double.parseDouble(get.elementText(keyLblAvailableBalance).replaceAll("\\u00A0","").replaceAll(",",""));
         click.elementBy(keyBtnNext);
     }
 
     public void clickAddRecipient() throws ApplicationException {
-        click.elementBy(keyBtnAddRecipient);
+        WAIT.forSeconds(3);
+        swipe.vertical(2,0.9,0.4,5);
+        click.elementBy(keyBtnManageRecipientBottom);
     }
+
 
     public double getBeforeBalance()
     {
         return beforeBalance;
+    }
+
+    public void verifyPageTitle(String ititle) throws ApplicationException {
+        WAIT.forSeconds(3);
+        verify.elementTextMatching(keyLblPageTitle,ititle);
+    }
+
+    public void clickActivitiesOption() throws ApplicationException {
+        swipe.vertical(2,0.8,0.5,3);
+        click.elementBy(keyBtnActivitiesBottom);
+        WAIT.forSeconds(5);
     }
 }

@@ -1,22 +1,20 @@
 package stepdefinitions;
 
 import cucumber.api.java.en.Then;
-import cucumber.api.java.en.When;
-import pages.PageAccountDashboard;
+import pages.PageAboutTheCards;
 import pages.PageContactUs;
-import pages.PageMore;
-import pages.PageTermsandConditions;
 
-public class Getgo_ContactUs {
+public class Getgo_AboutTheCards {
 
-    private static PageContactUs contactus=new PageContactUs();
+    private static PageAboutTheCards aboutTheCards=new PageAboutTheCards();
 
-
-    @Then("^Contact Us page should be displayed with contact us information details$")
-    public void contact_Us_page_should_be_displayed_with_contact_us_information_details() throws Throwable {
+    @Then("^About the Cards page should be displayed with details about the cards$")
+    public void about_the_Cards_page_should_be_displayed_with_details_about_the_cards() throws Throwable {
         // Write code here that turns the phrase above into concrete actions
-        contactus.verifyPageTitle("Contact Us");
-        contactus.verifyPageContents();
+        aboutTheCards.verifyPageTitle("About the Cards");
+        aboutTheCards.verifyPageContents();
+
     }
+
 
 }

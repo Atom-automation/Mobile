@@ -1,65 +1,154 @@
 package stepdefinitions;
 
+import base.Test;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import exceptions.ApplicationException;
+import helper.Device;
+import helper.PropertyReader;
+import io.appium.java_client.MobileBy;
 import pages.*;
 import projectconstants.MenuItem;
 
-public class Getgo_CurrencyConversion {
+public class Getgo_ChangePassword {
 
-    private String fromCurrency,toCurrency;
-    private static PageOTP otp=new PageOTP();
+    /*
+        Pages ~
+     */
+    private static PageWelcome welcome=new PageWelcome();
+    private static PageLogin login=new PageLogin();
     private static PageAccountDashboard dashboard=new PageAccountDashboard();
-    private PageCurrencyConversion cc=new PageCurrencyConversion();
-    private PageCurrencyConversionReview review=new PageCurrencyConversionReview();
-    private PageCurrencyConversionSuccess success=new PageCurrencyConversionSuccess();
+    private static PageSettings settings=new PageSettings();
+    private static PageOTP otp=new PageOTP();
+    private static PageChangePassword changepassword=new PageChangePassword();
 
-    @Given("^I'm on Currency conversion screen after noting down the balance of \"([^\"]*)\" currency$")
-    public void iMOnCurrencyConversionScreenAfterNotingDownTheBalanceOfCurrency(String toCurrency) throws Throwable {
-        Thread.sleep(1000);
-        dashboard.displayBalanceOfCurrency(toCurrency);
+    public static String passworddetails;
+    public static String email;
+
+    @Given("^I'm on \"([^\"]*)\" page of GetGo pay with valid \"([^\"]*)\" and \"([^\"]*)\"$")
+    public void i_m_on_page_of_GetGo_pay_with_valid_and(String arg1, String arg2, String arg3) throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        passworddetails=arg3;
+        email=PropertyReader.testDataOf(arg2);
+       if(Device.isAndroid()) {
+           welcome.clickLogin();
+           login.enterEmail(PropertyReader.testDataOf(arg2));
+           login.clickNext();
+           login.enterPassword(PropertyReader.testDataOf(arg3));
+           //login.enterPassword(PropertyReader.dynamicReadTestDataOf(arg3));
+
+           login.clickLogin();
+           //dashboard.
+       }
+       else
+       {
+           login.iOSLoginFlow(PropertyReader.testDataOf(arg2),PropertyReader.testDataOf(arg3));
+       }
+
+    }
+
+    @When("^I choose Settings option from the menu$")
+    public void i_choose_Settings_option_from_the_menu() throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+
         dashboard.clickMenu();
-        dashboard.navigateTo(MenuItem.CurrencyConverter());
+        dashboard.clickSettingsMenuOptions();
     }
 
-    @When("^I choose \"([^\"]*)\" currency and \"([^\"]*)\" currency$")
-    public void iChooseCurrencyAndCurrency(String fromCurrency, String toCurrency) throws Throwable {
-        this.fromCurrency=fromCurrency.trim().toUpperCase();
-        this.toCurrency=toCurrency.trim().toUpperCase();
-        cc.isPageLoaded();
-        cc.selectFromCurrency(fromCurrency);
-        cc.selectToCurrency(toCurrency);
+    @Then("^I should see \"([^\"]*)\" page$")
+    public void i_should_see_page(String arg1) throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        settings.verifyPageTitle(arg1);
+
+
     }
 
-    @And("^I enter the conversion amount \"([^\"]*)\"$")
-    public void iEnterTheConversionAmount(String amount) throws Throwable {
-        cc.enterAmount(amount.trim());
+    @When("^I choose \"([^\"]*)\" option from settings page$")
+    public void i_choose_option_from_settings_page(String arg1) throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        settings.clickOption(arg1);
     }
 
-    @Then("^Conversion amount will be automatically populated under To Amount field$")
-    public void conversionAmountWillBeAutomaticallyPopulatedUnderToAmountField() throws Throwable {
-        cc.verifyIfToAmountIsAutoPopulatedBasedonExchangeRate();
-        cc.clickNext();
+    @Then("^I should see \"([^\"]*)\" page with \"([^\"]*)\",\"([^\"]*)\",\"([^\"]*)\" and  \"([^\"]*)\" button$")
+    public void i_should_see_page_with_and_button(String arg1, String arg2, String arg3, String arg4, String arg5) throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        changepassword.verifyPageTitle(arg1);
+    }
+    @When("^I Enter old password, Nominate and confirm new password$")
+    public void i_Enter_old_password_Nominate_and_confirm_new_password() throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        changepassword.enterPwdDetails(PropertyReader.testDataOf("change_password"),PropertyReader.testDataOf("new_Password"),PropertyReader.testDataOf("new_Password"));
+
+        //changepassword.enterPwdDetails(PropertyReader.dynamicReadTestDataOf("change_password"),PropertyReader.dynamicReadTestDataOf("new_Password"),PropertyReader.dynamicReadTestDataOf("confirm_new_Password"));
+
     }
 
-    @When("^I review conversion details and submit$")
-    public void iReviewConversionDetailsAndSubmit() throws Throwable {
-        //review.transferFrom(PropertyReader.testDataOf("Peso_FullName"),PropertyReader.testDataOf("Peso_CardNumber"));
-        review.transferAmount(fromCurrency + " " + String.valueOf(cc.getAmount()));
-        review.convertedAmount(toCurrency + " " + String.valueOf(cc.getToAmount()));
-        review.conversionRate("1 Philippine Peso equals "+cc.getExchangeRate());
-        review.clickConvert();
+    /*@When("^I  Enter old password\\. Nominate and confirm new password$")
+    public void i_Enter_old_password_Nominate_and_confirm_new_password() throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        changepassword.enterPwdDetails(PropertyReader.testDataOf("change_password"),PropertyReader.testDataOf("new_Password"),PropertyReader.testDataOf("new_Password"));
+    }*/
+
+    @When("^click submit button$")
+    public void click_submit_button() throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        changepassword.clickSubmitBtn();
+    }
+
+    @When("^I should see One Time Password page$")
+    public void i_should_see_One_Time_Password_page() throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        //otp.
+    }
+
+    @When("^Enter OTP details$")
+    public void enter_OTP_details() throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
         otp.enterOTP();
     }
 
-    @Then("^Amount should be converted & displayed in the dashboard$")
-    public void amountShouldBeConvertedDisplayedInTheDashboard() throws Throwable {
-        success.isConversionSuccess();
-        success.gotoDashboard();
-        double mainBalance=cc.getBalanceBeforeConversion()-Double.parseDouble(cc.getAmount());
-        double currencyBalance=dashboard.getCurrencyBalance()+Double.parseDouble(cc.getToAmount());
-        dashboard.verifyBalanceAfterConversionForCurrency("peso",mainBalance,toCurrency,currencyBalance);
+    @Then("^Password should be updated$")
+    public void password_should_be_updated() throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        changepassword.verifyPasswordIsSuccessfull("Success","Congratulations!","You have successfully updated your password.");
+        changepassword.closeSuccessPwdUpdate();
+
+       /* long numeric=Test.faker.number().randomNumber(2,true);
+        PropertyReader.dynamicWriteTestDataOf("change_password",PropertyReader.dynamicReadTestDataOf("new_Password"));
+        PropertyReader.dynamicWriteTestDataOf(email,PropertyReader.dynamicReadTestDataOf("new_Password"));
+
+        PropertyReader.dynamicWriteTestDataOf("new_Password","update"+numeric+"@123");
+        PropertyReader.dynamicWriteTestDataOf("confirm_new_Password","update"+numeric+"@123");
+        */
     }
+
+    @When("^I logout and login with updated password$")
+    public void i_logout_and_login_with_updated_password() throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+
+        if(Device.isAndroid())
+        {
+        settings.clickMenu();
+        dashboard.logout();
+            login.isAndroidLoginFlow(PropertyReader.testDataOf("change_username"), PropertyReader.testDataOf("new_Password"));
+
+            //login.isAndroidLoginFlow(PropertyReader.dynamicReadTestDataOf("change_username"), PropertyReader.dynamicReadTestDataOf("change_password"));
+        }
+        else {
+            dashboard.clickMenu();
+            dashboard.logout();
+            login.iOSLoginFlow(PropertyReader.testDataOf("change_username"), PropertyReader.testDataOf("new_Password"));
+
+            //login.iOSLoginFlow(PropertyReader.dynamicReadTestDataOf("change_username"), PropertyReader.dynamicReadTestDataOf("change_password"));
+        }
+    }
+
+    @Then("^Login should be successfull and Dashboard page should be displayed$")
+    public void login_should_be_successfull_and_Dashboard_page_should_be_displayed() throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        dashboard.checkDashboardPageProfilePic();
+}
+
 }

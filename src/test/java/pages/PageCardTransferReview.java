@@ -5,6 +5,7 @@ import base.Test;
 import constants.Keys;
 import constants.OS;
 import exceptions.ApplicationException;
+import helper.Device;
 import xpath.Contains;
 import xpath.Matching;
 
@@ -26,8 +27,8 @@ public class PageCardTransferReview extends Keywords {
             verify.elementTextContains(keyTransferFrom,fromUser);
             verify.elementTextContains(keyTransferFrom,fromCard);
         }else if(Test.attributes.get(Keys.OS).equalsIgnoreCase(OS.iOS)){
-            verify.elementTextContains(xpathOf.textView(Contains.name(fromUser.substring(0,4))),fromUser);
-            verify.elementTextContains(xpathOf.textView(Contains.name(fromCard)),fromCard);
+           verify.elementTextContains(keyTransferFrom,fromUser);
+            verify.elementTextContains(xpathOf.textView(Contains.name("fund-transfer-from-card")),fromCard);
         }
     }
 
@@ -37,16 +38,24 @@ public class PageCardTransferReview extends Keywords {
             verify.elementTextContains(keyTransferTo,toUser);
             verify.elementTextContains(keyTransferTo,toCard);
         }else if(Test.attributes.get(Keys.OS).equalsIgnoreCase(OS.iOS)){
-            verify.elementTextContains(xpathOf.textView(Contains.name(toUser.substring(0,4))),toUser);
-            verify.elementTextContains(xpathOf.textView(Contains.name(toCard)),toCard);
+            verify.elementTextContains(keyTransferTo,toUser);
+            verify.elementTextContains(xpathOf.textView(Contains.name("fund-transfer-to-card")),toCard);
         }
     }
 
     public void transferFees(double transferFees) throws ApplicationException
     {
-        String expectedValue=Test.tools.pesoAmount(transferFees);
-        String actualValue=Test.tools.nbspRemove(get.elementBy(keyTransferFees).getText());
-        verify.isMatching(expectedValue,actualValue);
+        if(Device.isAndroid()) {
+            String expectedValue = Test.tools.pesoAmount(transferFees);
+            String actualValue = Test.tools.nbspRemove(get.elementBy(keyTransferFees).getText());
+            verify.isMatching(expectedValue, actualValue);
+        }
+        else
+        {
+            String expectedValue = Test.tools.pesoAmount(transferFees);
+            String actualValue = Test.tools.nbspRemove(get.elementBy(keyTransferFees).getText());
+            verify.isMatching(expectedValue, actualValue);
+        }
     }
 
     public void transferMessage(String message) throws ApplicationException {
@@ -55,9 +64,17 @@ public class PageCardTransferReview extends Keywords {
 
     public void transferAmount(double transferAmount) throws ApplicationException
     {
-            String expectedValue=Test.tools.pesoAmount(transferAmount);
-            String actualValue=Test.tools.nbspRemove(get.elementBy(keyTransferAmount).getText());
-            verify.isMatching(expectedValue,actualValue);
+        if(Device.isAndroid()) {
+            String expectedValue = Test.tools.pesoAmount(transferAmount);
+            String actualValue = Test.tools.nbspRemove(get.elementBy(keyTransferAmount).getText());
+            verify.isMatching(expectedValue, actualValue);
+        }
+        else
+        {
+            String expectedValue = Test.tools.pesoAmount(transferAmount);
+            String actualValue = Test.tools.nbspRemove(get.elementBy(keyTransferAmount).getText());
+            verify.isMatching(expectedValue, actualValue);
+        }
     }
 
     public void transferDate(String day,String month,String year) throws ParseException, ApplicationException {
@@ -70,11 +87,12 @@ public class PageCardTransferReview extends Keywords {
         }else if(Test.attributes.get(Keys.OS).equalsIgnoreCase(OS.iOS))
         {
             transferDate = Test.tools.getDateInFormat(day,month,year,"MMM dd, YYYY");
-            verify.elementTextContains(xpathOf.textView(Matching.name(transferDate)),transferDate);
+            verify.elementTextContains(keyTransferDate,transferDate);
         }
     }
 
     public void clickTransfer() throws ApplicationException {
+        swipe.vertical(2,0.9,0.5,5);
         click.elementBy(keyBtnTransfer);
     }
 }
