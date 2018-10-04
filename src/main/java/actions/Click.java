@@ -70,4 +70,53 @@ public class Click extends Keywords{
         }
 
     }
+    public void chooseDOB(String tyear,String tmonth,String tday) throws ApplicationException {
+        screenshot.attachScreenshot("chooseDOB");
+        int year=Integer.parseInt(tyear);
+        String month=tmonth.substring(0,3).trim();
+        //int date=Integer.parseInt(tday);
+        String formatdate=tday+" "+tmonth+" "+tyear;
+        String imonth;
+        //for loop iteration
+        int loopcount=10;
+        String iyear;
+        iyear=driver.findElement(By.id("android:id/date_picker_header_year")).getText();
+        if(year==Integer.parseInt(iyear.trim()))
+        {
+
+        }
+        else
+        {
+            click.elementBy(By.id("android:id/date_picker_header_year"));
+
+            for(int i=0;i<loopcount;i++)
+            {
+                try
+                {
+                    List<WebElement> el=driver.findElements(By.id("android:id/text1"));
+                    for(int j=0;j<el.size();j++)
+                    {
+                        if(el.get(j).getText().toString().contentEquals(tyear.toLowerCase().trim()))
+                        {
+                            el.get(j).click();
+                            break;
+                        }
+                        else
+                        {
+                            swipe.vertical(2,0.3,0.8,5);
+
+                        }
+                    }
+                    click.elementBy(By.id("android:id/button1"));
+                }
+                catch(Exception ex)
+                {
+                    swipe.vertical(2,0.8,0.4,5);
+                }
+
+            }
+
+        }
+    }
+
 }

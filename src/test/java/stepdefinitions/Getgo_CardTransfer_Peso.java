@@ -53,7 +53,7 @@ public class Getgo_CardTransfer_Peso
         }
         else
         {
-            dashboard.navigateTo("Card Transfer");
+            dashboard.navigateTo("Send Money");
         }
     }
 
@@ -61,7 +61,13 @@ public class Getgo_CardTransfer_Peso
     public void iMOnGetgoFundTransferPage() throws Throwable
     {
         dashboard.clickMenu();
-        dashboard.navigateTo(MenuItem.CardTransfer());
+        if(Device.isAndroid()) {
+            dashboard.navigateTo(MenuItem.CardTransfer());
+        }
+        else
+        {
+            dashboard.navigateTo("Send Money");
+        }
     }
 
     @When("^I Enter card number, recipient name, amount, system date, frequency, and message - Add recipient from saved list by clicking on add button$")

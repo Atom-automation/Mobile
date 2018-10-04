@@ -75,7 +75,7 @@ public class Getgo_TransactionHistory_Activities {
             login.iOSLoginFlow(PropertyReader.testDataOf(arg2),PropertyReader.testDataOf(arg3));
             dashboard.checkDashboardPageProfilePic();
             dashboard.clickMenu();
-            dashboard.navigateTo("Card Transfer");
+            dashboard.navigateTo("Send Money");
             transfer.verifyPageTitle(arg1.trim());
         }
 

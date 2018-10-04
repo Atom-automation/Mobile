@@ -103,19 +103,34 @@ public class PageWelcome extends Keywords {
     }
 
     public void clickSignUp() throws ApplicationException {
+        if(Device.isAndroid()) {
+            try {
+                    click.elementBy(xpathOf.button(Matching.youDecide("NEXT")));
+                    click.elementBy(xpathOf.button(Matching.youDecide("NEXT")));
+                    click.elementBy(xpathOf.button(Matching.youDecide("NEXT")));
+                    click.elementBy(xpathOf.button(Matching.youDecide("NEXT")));
+                    click.elementBy(xpathOf.button(Matching.youDecide("GET STARTED")));
+                    click.elementBy(keyBtnSignUp);
+                } catch (Exception e) {
 
-        try{
-        click.elementBy(keyBtnSignUp);}
-        catch(Exception e)
-        {
-            /*click.elementBy(xpathOf.button(Matching.youDecide("NEXT")));
-            click.elementBy(xpathOf.button(Matching.youDecide("NEXT")));
-            click.elementBy(xpathOf.button(Matching.youDecide("NEXT")));
-            click.elementBy(xpathOf.button(Matching.youDecide("NEXT")));
-            click.elementBy(xpathOf.button(Matching.youDecide("GET STARTED")));*/
-            iosProductFeature();
-            click.elementBy(keyBtnSignUp);
-        }
+                    click.elementBy(keyBtnSignUp);
+                }
+            }
+
+            else
+            {
+                try {
+                    click.elementBy(keyBtnSignUp);
+                } catch (Exception e) {
+                /*click.elementBy(xpathOf.button(Matching.youDecide("NEXT")));
+                click.elementBy(xpathOf.button(Matching.youDecide("NEXT")));
+                click.elementBy(xpathOf.button(Matching.youDecide("NEXT")));
+                click.elementBy(xpathOf.button(Matching.youDecide("NEXT")));
+                click.elementBy(xpathOf.button(Matching.youDecide("GET STARTED")));*/
+                    iosProductFeature();
+                    click.elementBy(keyBtnSignUp);
+                }
+            }
     }
 
     public void iosProductFeature() throws ApplicationException {

@@ -123,7 +123,21 @@ public class Swipe extends Keywords {
         }
     }
 
-
+    public void Horizontal(int divideScreenInto, double startPointPercentage, double endPointPercentage, double slowDownDurationInSeconds) throws ApplicationException {
+        Dimension size = driver.manage().window().getSize();
+        int y = size.width / divideScreenInto;
+        int startPoint = (int) ( size.height * startPointPercentage );
+        int endPoint = (int) ( size.height * endPointPercentage );
+        log.info("Slowly swipe vertically from {" + startPoint + "} to {" + endPoint + "}");
+        try {
+            new TouchAction(driver).press(PointOption.point(startPoint, y)).waitAction(new WaitOptions().withDuration(Duration.ofSeconds((long) slowDownDurationInSeconds))).moveTo(PointOption.point(endPoint, y)).release().perform();
+        } catch (WebDriverException e) {
+            new TouchAction(driver).press(PointOption.point(startPoint, y)).waitAction(new WaitOptions().withDuration(Duration.ofSeconds((long) slowDownDurationInSeconds))).moveTo(PointOption.point(endPoint, y)).release().perform();
+        } catch (Throwable e) {
+            throw new ApplicationException(e.getMessage());
+        }
+        log.info("Swiped!");
+    }
 
 }
 

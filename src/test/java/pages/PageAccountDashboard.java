@@ -227,7 +227,7 @@ PageAccountDashboard extends Keywords {
         }
         else
         {
-            navigateTo("Settings");
+            navigateTo("Manage My Settings");
         }
     }
 

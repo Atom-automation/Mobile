@@ -62,17 +62,14 @@ public class PageChangePIN extends Keywords {
 
     public void verifyPINChangeIsSuccessfull() throws ApplicationException {
         verify.elementIsPresent(keyIMGGetGopayLogo);
-        verify.elementIsPresent(keyLBLCongratulations);
+        //verify.elementIsPresent(keyLBLCongratulations);
         verify.elementIsPresent(keyLBLSuccessfullUpdatePINVerbiage);
         verify.elementIsPresent(keyBTNGoToProfile);
 
-        verify.elementTextMatching(keyLBLCongratulations,"Congratulations!");
-        verify.elementTextMatching(keyLBLSuccessfullUpdatePINVerbiage,"Successfully updated pin.");
+        //verify.elementTextMatching(keyLBLCongratulations,"Congratulations!");
+        verify.elementTextMatching(keyLBLSuccessfullUpdatePINVerbiage,"You have successfully changed your Card PIN.");
 
-        if(Device.isAndroid())
-        {
-            verify.elementTextMatching(keyBTNGoToProfile,"GO TO PROFILE");
-        }
+        verify.elementTextMatching(keyBTNGoToProfile,"CLOSE");
 
         WAIT.forSeconds(2);
 

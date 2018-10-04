@@ -26,9 +26,10 @@ public class PageLogin extends Keywords {
     private String keyTogglePasswordVisibility="Getgo.Login.TogglePasswordVisibility";
     private String keyTxtPassword="Getgo.Login.TxtPassword";
     private String keyLnkForgotPassword="Getgo.Login.LnkForgotPassword";
+    private String errorMessage="Getgo.Login.ErrorMessage";
+    private String keyInvalidErrorMessage="Getgo.Login.InvalidErrorMessage";
 
-
-    private By errorMessage=By.id("com.unionbankph.getgopay.qat:id/md_content");
+    //private By errorMessage=By.id("com.unionbankph.getgopay.qat:id/md_content");
 
     private String keyLblLogoImage="Getgo.Login.LblLogoImage";
     private String keyLblusername="Getgo.Login.Lblusername";
@@ -49,7 +50,18 @@ public class PageLogin extends Keywords {
 
     public void invalidLoginDetails() throws ApplicationException, InterruptedException {
     	WAIT.forSeconds(10);
-        verify.elementTextMatching(errorMessage,"Invalid login details. Please try again.");
+       // verify.elementTextMatching(errorMessage,"Invalid login details. Please try again.");
+        verify.elementTextMatching(errorMessage,"Incorrect user details provided.");
+
+    }
+
+    public void invalidEmailIdFormat() throws ApplicationException, InterruptedException {
+        WAIT.forSeconds(10);
+        verify.elementTextMatching(keyInvalidErrorMessage,"Invalid email format");
+    }
+    public void blankvalueEmailId() throws ApplicationException, InterruptedException {
+        WAIT.forSeconds(10);
+        verify.elementTextMatching(keyInvalidErrorMessage,"Username is required");
     }
 
     public void enterEmail(String emailID) throws ApplicationException {

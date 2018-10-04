@@ -33,6 +33,18 @@ Feature: New Customer Login Feature
     Given I'm on Getgo login page with "Valid_Email"
     When  I enter a "Invalid_Password" and click next  
     Then System should through an invalid password message
+
+  @blank
+  Scenario: Invalid login (Blank spaces in Email)
+    Given I'm on Getgo login page
+    When  I enter a blank spaces in email field
+    Then System should through an email error message as "Invalid email format"
+
+  @blank
+  Scenario: Invalid login (Blank spaces in password)
+    Given I'm on Getgo login page with "Valid_Email"
+    When  I enter a blank spaces in password field and click next
+    Then System should through an invalid password message
     
     
     

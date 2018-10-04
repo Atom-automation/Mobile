@@ -63,4 +63,11 @@ public class Getgo_PageValidation
     {
         loginPage.doesPasswordScreenContains(pageTitle, caption, passwordInnerTxt, havingProblemsLinkTxt, loginBtnTxt);
     }
+
+    @When("^I enter a blank spaces in email field$")
+    public void i_enter_a_blank_spaces_in_email_field() throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        loginPage.enterEmail("       ");
+    }
+
 }

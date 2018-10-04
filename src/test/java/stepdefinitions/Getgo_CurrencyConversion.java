@@ -4,6 +4,7 @@ import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import helper.Device;
 import helper.PropertyReader;
 import pages.*;
 import projectconstants.MenuItem;
@@ -21,7 +22,13 @@ public class Getgo_CurrencyConversion {
     public void iMOnCurrencyConversionScreenAfterNotingDownTheBalanceOfCurrency(String toCurrency) throws Throwable {
         dashboard.displayBalanceOfCurrency(toCurrency);
         dashboard.clickMenu();
-        dashboard.navigateTo(MenuItem.CurrencyConverter());
+        if(Device.isAndroid()) {
+            dashboard.navigateTo(MenuItem.CurrencyConverter());
+        }
+        else
+        {
+            dashboard.navigateTo("Convert to Other Currencies");
+        }
     }
 
     @When("^I choose \"([^\"]*)\" currency and \"([^\"]*)\" currency$")

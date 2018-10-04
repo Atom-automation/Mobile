@@ -31,10 +31,16 @@ public class Getgo_VirtualCardRegistration {
     private String dob;
     private String gender="Male";
     private String nationality="Philippines, Republic of the";
+    private String sourceoffunds="Salary";
+
+    private String street="123 main street";
+    private String state="Metro Manila (NCR)";
+    private String city="Manila";
+    private String fulladdress=street+", "+city+", "+state+", "+nationality;
 
     @When("^I enter Mobile Number, Email Address, and Nominate and Confirm password$")
     public void iEnterMobileNumberEmailAddressAndNominateAndConfirmPassword() throws Throwable {
-        vRegister.verifyPageTitle("Create Virtual Prepaid Card");
+        vRegister.verifyPageTitle("CEB GetGo Prepaid Virtual");
         vRegister.enterBasicDetails(mobileNumber,emailAddress,password);
         vRegister.clickNext();
     }
@@ -46,14 +52,17 @@ public class Getgo_VirtualCardRegistration {
 
     @And("^I fill my personal details$")
     public void iFillMyPersonalDetails() throws Throwable {
-        vRegister.enterPersonalDetails(firstName,middleName,lastName,nationality,gender);
+        vRegister.enterPersonalDetails(firstName,middleName,lastName,nationality,gender,sourceoffunds);
+
         dob=vRegister.getDobvalue();
         vRegister.clickNext();
+        vRegister.enterPresentAddressDetails(nationality,state,city,street);
+        vRegister.clickNextBtnAddressPage();
     }
 
     @And("^I click verify now$")
     public void iClickVerifyNow() throws Throwable {
-        success.isRegistrationSuccess();
+        success.isRegistrationSuccess(emailAddress);
         success.verifyNow();
     }
 
@@ -66,8 +75,10 @@ public class Getgo_VirtualCardRegistration {
     public void iMOnGetgoVirtualCardRegistrationScreen() throws Throwable {
         welcome.clickSignUp();
         // new logic adde dna dneed to confirm
-        login.enterEmail(emailAddress);
-        login.clickNext();
+        signUp.verifyPageTitle("Sign-up");
+        signUp.verifySignUpPageContents();
+        signUp.enterEmailAddress(emailAddress);
+        signUp.clickNext();
         //
         signUp.registerVirtualCard();
     }
@@ -107,7 +118,11 @@ public class Getgo_VirtualCardRegistration {
 
     @And("^I review & submit$")
     public void iReviewSubmit() throws Throwable {
-        vReview.reviewDetails(emailAddress,fullName,dob,"+63 "+mobileNumber,nationality,gender);
+        vReview.reviewDetails(emailAddress,fullName,dob,mobileNumber,nationality,gender,sourceoffunds,fulladdress);
+
+       // vReview.reviewDetails(emailAddress,fullName,dob,"+63 "+mobileNumber,nationality,gender,sourceoffunds,fulladdress);
+        vReview.clickTermsandConditionCheckBox();
+        vReview.clickPrivacyPolicyCheckBox();
         vReview.clickSubmit();
     }
 }

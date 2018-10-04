@@ -4,6 +4,7 @@ import helper.Device;
 
 public final class MenuItem {
 
+
     public static String MyCard(){
         return "My Card";
     }

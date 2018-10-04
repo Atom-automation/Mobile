@@ -5,7 +5,10 @@ import exceptions.ApplicationException;
 import helper.Device;
 import io.appium.java_client.MobileBy;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import xpath.Matching;
+
+import java.util.List;
 
 public class PageVirtualCardRegistration extends Keywords {
 
@@ -24,6 +27,30 @@ public class PageVirtualCardRegistration extends Keywords {
     private String keyRadioGender_Male="Getgo.CreateVirtualCard.BtnGender.Male";
     private String keyRadionGender_Female="Getgo.CreateVirtualCard.BtnGender.Female";
     private String keyTxtDOB="Getgo.CreateVirtualCard.TxtDOB";
+    private String keyBtnSourceofFunds="Getgo.CreateVirtualCard.BtnSourceofFunds";
+
+    private String keyLblStepNumber="Getgo.CreateVirtualCard.LblStepNumber";
+    private String keyLblStepHeader="Getgo.CreateVirtualCard.LblStepHeader";
+    private String keyLblStepIndicator="Getgo.CreateVirtualCard.LblStepIndicator";
+
+    private String keyLblNoteAddressDetailsPage="Getgo.CreateVirtualCard.LblNoteAddressDetailsPage";
+    private String keyLblPresentAddressVerbiage="Getgo.CreateVirtualCard.LblPresentAddressVerbiage";
+    private String keyLblPermanentAddressVerbiage="Getgo.CreateVirtualCard.LblPermanentAddressVerbiage";
+    private String keyBtnPresentCountry="Getgo.CreateVirtualCard.BtnPresentCountry";
+    private String keyBtnPresentState="Getgo.CreateVirtualCard.BtnPresentState";
+    private String keyBtnPresentCity="Getgo.CreateVirtualCard.BtnPresentCity";
+    private String keyTxtPresentAddress="Getgo.CreateVirtualCard.TxtPresentAddress";
+    private String keyCheckBoxSameAddress="Getgo.CreateVirtualCard.CheckBoxSameAddress";
+    private String keyLblSameAddressVerbiage="Getgo.CreateVirtualCard.LblSameAddressVerbiage";
+    private String keyBtnNextAddressPage="Getgo.CreateVirtualCard.BtnNextAddressPage";
+
+    private String keyBtnPermanentCountry="Getgo.CreateVirtualCard.BtnPermanentCountry";
+    private String keyBtnPermanentState="Getgo.CreateVirtualCard.BtnPermanentState";
+    private String keyBtnPermanentCity="Getgo.CreateVirtualCard.BtnPermanentCity";
+    private String keyTxtPermanentAddress="Getgo.CreateVirtualCard.TxtPermanentAddress";
+
+    private String keyTxtPresentCountry="Getgo.CreateVirtualCard.TxtPresentCountry";
+
 
     private String dob;
 
@@ -42,6 +69,7 @@ public class PageVirtualCardRegistration extends Keywords {
         //need to check it
        // type.data(keyTxtEmailAddress,emailID);
         verify.elementIsPresent(keyTxtEmailAddress);
+        verify.elementTextMatching(keyTxtEmailAddress,emailID);
         type.sensitiveData(keyTxtNominatePassword,password);
         type.sensitiveData(keyTxtConfirmPassword,password);
     }
@@ -50,7 +78,7 @@ public class PageVirtualCardRegistration extends Keywords {
         click.elementBy(keyNext);
     }
 
-    public void enterPersonalDetails(String firstName,String middleName,String lastName,String nationality, String gender) throws ApplicationException {
+    public void enterPersonalDetails(String firstName,String middleName,String lastName,String nationality, String gender,String sourceoffunds) throws ApplicationException {
         if(Device.isAndroid()) {
             type.data(keyTxtFirstName, firstName);
             type.data(keyTxtMiddleName, middleName);
@@ -58,6 +86,8 @@ public class PageVirtualCardRegistration extends Keywords {
             selectDOB("23", "July", "1992");
             selectNationality(nationality);
             selectGender(gender);
+            WAIT.forSeconds(3);
+            selectSourceofFunds(sourceoffunds);
         }
         else
         {
@@ -77,6 +107,8 @@ public class PageVirtualCardRegistration extends Keywords {
             WAIT.forSeconds(5);
             ios.selectPicker(nationality);
             selectGender(gender);
+            WAIT.forSeconds(3);
+            ios.selectPicker(sourceoffunds);
         }
     }
 
@@ -85,6 +117,12 @@ public class PageVirtualCardRegistration extends Keywords {
         swipe.scrollDownToText(nationality);
         click.elementBy(xpathOf.textView(Matching.youDecide(nationality)));
     }
+    public void selectSourceofFunds(String sourcefunds) throws ApplicationException {
+        click.elementBy(keyBtnSourceofFunds);
+        swipe.scrollDownToText(sourcefunds);
+        click.elementBy(xpathOf.textView(Matching.youDecide(sourcefunds)));
+    }
+
 
     public void selectGender(String gender) throws ApplicationException {
         if(gender.equalsIgnoreCase("male")){
@@ -96,20 +134,40 @@ public class PageVirtualCardRegistration extends Keywords {
 
     public void selectDOB(String day,String month, String year) throws ApplicationException {
         click.elementBy(keyBtnCalendar);
-        int systemYear=Integer.parseInt(get.elementText(By.id("com.unionbankph.getgopay.qat:id/mdtp_date_picker_year")));
+        int systemYear=Integer.parseInt(get.elementText(By.id("android:id/date_picker_header_year")));
         int maximumLoopTime=(systemYear-Integer.parseInt(year.trim()))/5;
         boolean clickedYear=false;
-        for(int i=0;i<=maximumLoopTime;i++){
-            try{
-                driver.findElement(MobileBy.AccessibilityId(year.trim())).click();
-                get.elementBy(By.id("com.unionbankph.getgopay.qat:id/mdtp_ok")).click();
-                clickedYear=true;
-                break;
-            }catch (Throwable ex){
-                swipe.vertical(2,0.4,0.9,2);
-                WAIT.forSeconds(2);
+        get.elementBy(By.id("android:id/date_picker_header_year")).click();
+
+        for(int i=0;i<=maximumLoopTime;i++) {
+
+                List<WebElement> el = driver.findElements(By.id("android:id/text1"));
+                try {
+                    for (int j = 0; j < el.size(); j++) {
+                        if (el.get(j).getText().toString().contentEquals(year.toLowerCase().trim())) {
+                            el.get(j).click();
+                            WAIT.forSeconds(2);
+                            get.elementBy(By.id("android:id/button1")).click();
+                            clickedYear = true;
+                            break;
+                        }
+                    }
+
+                    if (clickedYear == false) {
+                        swipe.vertical(2, 0.4, 0.9, 2);
+
+                    }
+                    else
+                    {
+                       break;
+                    }
+
+                } catch (Throwable ex) {
+                    swipe.vertical(2, 0.4, 0.9, 2);
+                    WAIT.forSeconds(2);
+                }
             }
-        }
+
         if(!clickedYear){
             throw new ApplicationException("Failed to select the date of birth");
         }else{
@@ -121,8 +179,39 @@ public class PageVirtualCardRegistration extends Keywords {
         return dob;
     }
     public String getDobvalue() throws ApplicationException {
-        dob=get.elementText(keyTxtDOB);
+        dob=get.elementText(keyBtnCalendar);
         return dob;
+    }
+
+    public void selectState(String state) throws ApplicationException {
+        click.elementBy(keyBtnPresentState);
+        swipe.scrollDownToText(state);
+        click.elementBy(xpathOf.textView(Matching.youDecide(state)));
+    }
+
+    public void selectCity(String city) throws ApplicationException {
+        click.elementBy(keyBtnPresentCity);
+        swipe.scrollDownToText(city);
+        click.elementBy(xpathOf.textView(Matching.youDecide(city)));
+    }
+
+
+    public void enterPresentAddressDetails(String country,String state,String city,String address) throws ApplicationException {
+
+    if(Device.isAndroid()) {
+        WAIT.forSeconds(3);
+        verify.elementTextMatching(keyTxtPresentCountry,country);
+        selectState(state);
+        WAIT.forSeconds(3);
+        selectCity(city);
+        WAIT.forSeconds(2);
+        type.data(keyTxtPresentAddress, address);
+    }
+
+    }
+
+    public void clickNextBtnAddressPage() throws ApplicationException {
+        click.elementBy(keyBtnNextAddressPage);
     }
 
 }

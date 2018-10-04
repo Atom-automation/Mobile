@@ -62,4 +62,19 @@ public class Getgo_Login_NewCustomer
     	loginPage.enterPassword(PropertyReader.testDataOf(arg1));
     	loginPage.clickLogin();
     }
+
+    @When("^I enter a blank spaces in password field and click next$")
+    public void i_enter_a_blank_spaces_in_password_field_and_click_next() throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        loginPage.enterPassword("    ");
+        loginPage.clickLogin();
+    }
+
+    @Then("^System should through an email error message as \"([^\"]*)\"$")
+    public void system_should_through_an_email_error_message_as(String arg1) throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        loginPage.invalidEmailIdFormat();
+    }
+
+
 }

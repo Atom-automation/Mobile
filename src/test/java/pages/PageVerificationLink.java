@@ -37,10 +37,12 @@ public class PageVerificationLink extends Keywords {
         }
         browser.get("https://outlook.office.com");
         browserWait=new WebDriverWait(browser,30);
-        getWebElement(By.name("loginfmt")).sendKeys(username);
+        getWebElement(By.id("i0116")).sendKeys(username);
+        keyboard.hideIfAndroid();
         getWebElement(By.id("idSIButton9")).click();
         WAIT.forSeconds(2);
         getWebElement(By.id("i0118")).sendKeys(password);
+        keyboard.hideIfAndroid();
         getWebElement(By.id("idSIButton9")).click();
         WAIT.forSeconds(2);
         getWebElement(By.id("idBtn_Back")).click();
