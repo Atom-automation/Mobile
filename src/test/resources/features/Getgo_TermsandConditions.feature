@@ -4,7 +4,7 @@
 # Functionality : As a tester, I want to be see the Terms and Conditions page of the GetoPay app so that i am aware about the TERMS & CONDITIONS and PRIVACY POLICY details
 # ========================================================================================================================================
 
-@TermsandConditions
+@TermsandConditions @RegressionPack1
 Feature: TermsandConditions
 
   Background: Login into account

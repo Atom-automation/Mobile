@@ -56,7 +56,8 @@ public class PageVerificationLink extends Keywords {
 
     public void isVerificationSuccess() throws ApplicationException {
         String expectedValue="Email Verified";
-        String actualValue=getWebElement(By.xpath("//h1[@class='text-ggp mb-4']")).getText().trim();
+        WAIT.forSeconds(2);
+        String actualValue=getWebElement(By.xpath("//h1[text()='Email Verified']")).getText().trim();
         Assert.assertEquals(actualValue,expectedValue);
         browser.quit();
     }

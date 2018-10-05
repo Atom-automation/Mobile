@@ -104,8 +104,8 @@ public class Getgo_VirtualCardRegistration {
     public void iLoginWithTheMyEmailNextTime() throws Throwable {
         if (Device.isAndroid()) {
             welcome.launchGetgoFresh();
-            welcome.clickLogin();
-            login.login(emailAddress, password);
+            //welcome.clickLogin();
+            login.androidLoginFlow(emailAddress, password);
         }
     }
 

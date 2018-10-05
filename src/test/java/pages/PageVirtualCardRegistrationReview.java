@@ -30,7 +30,7 @@ public class PageVirtualCardRegistrationReview extends Keywords {
             verify.elementTextMatching(keyLblNationality, nationality);
             verify.elementTextMatching(keyLblGender, gender);
             verify.elementTextMatching(keyLblSourceofFunds, sourceoffunds);
-            swipe.vertical(2, 0.7, 0.3);
+            swipe.vertical(2, 0.9, 0.2);
             verify.elementTextMatching(keyLblPresentAddress,"Present Address: "+ fulladdressdetails);
             verify.elementTextMatching(keyLblPremanentAddress, "Permanent Address: "+fulladdressdetails);
 

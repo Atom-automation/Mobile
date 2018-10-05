@@ -60,7 +60,7 @@ public class PageTermsandConditions extends Keywords {
     public void verifyPageTermsandConditionsLastelement(String icontent) throws ApplicationException {
         WAIT.forSeconds(3);
         if (Device.isAndroid()) {
-            for (int i = 0; i < 35; i++) {
+            for (int i = 0; i < 33; i++) {
                 swipe.vertical(2, 0.9, 0.3, 1);
             }
             verify.elementTextMatching(keyLbllastelement, icontent);

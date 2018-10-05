@@ -70,4 +70,10 @@ public class Getgo_PageValidation
         loginPage.enterEmail("       ");
     }
 
+    @When("^I enter a numerical values in email field$")
+    public void i_enter_a_numerical_values_in_email_field() throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        loginPage.enterEmail(PropertyReader.testDataOf("Numerical_Email"));
+    }
+
 }

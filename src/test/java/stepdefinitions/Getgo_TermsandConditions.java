@@ -23,7 +23,7 @@ public class Getgo_TermsandConditions {
     @When("^I choose More menu options from the GetGopay dashboard page$")
     public void i_choose_More_menu_options_from_the_GetGopay_dashboard_page() throws Throwable {
         // Write code here that turns the phrase above into concrete actions
-        dashboard.checkDashboardPageProfilePic();
+//        dashboard.checkDashboardPageProfilePic();
         dashboard.clickMenu();
         dashboard.navigateTo("More");
     }

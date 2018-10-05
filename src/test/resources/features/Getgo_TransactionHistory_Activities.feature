@@ -3,7 +3,7 @@
 # Functionality : As a User, I want to view the transaction history details of my account in the GetGopay so that i am aware of my transaction details
 # ========================================================================================================================================
 
-@TransactionHistory
+@TransactionHistory @RegressionPack1
 Feature: Transaction History/Activities
 
   Background: Login into account

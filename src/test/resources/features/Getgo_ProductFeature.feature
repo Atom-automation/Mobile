@@ -5,7 +5,7 @@
 # Functionality : As a tester, I want to launch the GetGo Pay application freshly so that I am able to see the product welcome feature details
 # ================================================================================================================
 
-@ProductFeature
+@ProductFeature @RegressionPack1
 Feature: Product Feature
 
   Scenario: As a tester, I want to launch the GetGo Pay application freshly so that I am able to see the product welcome feature details

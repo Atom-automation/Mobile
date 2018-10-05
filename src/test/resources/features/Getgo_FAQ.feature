@@ -4,12 +4,12 @@
 # Functionality : As a tester, I want to be see the Frequently Asked Question page of the GetoPay app so that i am able to see FAQ details
 # ========================================================================================================================================
 
-@FAQ
+@FAQ @RegressionPack1
 Feature: Frequently Asked Question
 
   Background: Login into account
     Given I'm on Getgo landing page
-@dummy
+
   Scenario: As a tester, I want to be see the Frequently Asked Question page of the GetoPay app so that i am able to see FAQ details
     Given I'm login into my "Peso" account with my "Peso_Username" and "Peso_Password"
     When I choose More menu options from the GetGopay dashboard page

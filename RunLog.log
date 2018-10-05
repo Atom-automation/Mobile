@@ -1,10 +1,6 @@
-2018-10-03 17:58:39,230  INFO [main] StepsBase:16 - Executing S C E N A R I O : Invalid login (Blank spaces in Email)
-2018-10-03 17:58:39,890  INFO [main] RunManager:23 - Hey! ubp, Logging everything from here ....
-2018-10-03 17:58:39,890  INFO [main] RunManager:24 - Run ID is --> Run-975
-2018-10-03 17:58:40,060 ERROR [main] PropertyReader:40 - exceptions.EnvironmentException: Property [Device.null.OS] value is null in file ProjectSettings.properties
-2018-10-03 17:58:40,117 ERROR [main] StepsBase:23 - S C E N A R I O    F A I L E D !!!!!
-2018-10-03 17:58:40,117  INFO [main] Keywords:51 - Application closed
-2018-10-03 17:58:40,119  INFO [main] StepsBase:16 - Executing S C E N A R I O : Invalid login (Blank spaces in password)
-2018-10-03 17:58:40,122 ERROR [main] PropertyReader:40 - exceptions.EnvironmentException: Property [Device.null.OS] value is null in file ProjectSettings.properties
-2018-10-03 17:58:40,133 ERROR [main] StepsBase:23 - S C E N A R I O    F A I L E D !!!!!
-2018-10-03 17:58:40,134  INFO [main] Keywords:51 - Application closed
+2018-10-05 14:30:37,314  INFO [main] StepsBase:16 - Executing S C E N A R I O : Invalid login (Numerical values in Email)
+2018-10-05 14:30:38,085  INFO [main] RunManager:23 - Hey! ubp, Logging everything from here ....
+2018-10-05 14:30:38,086  INFO [main] RunManager:24 - Run ID is --> Run-1021
+2018-10-05 14:30:38,099 ERROR [main] PropertyReader:40 - exceptions.EnvironmentException: Property [Device.null.OS] value is null in file ProjectSettings.properties
+2018-10-05 14:30:38,159 ERROR [main] StepsBase:23 - S C E N A R I O    F A I L E D !!!!!
+2018-10-05 14:30:38,159  INFO [main] Keywords:51 - Application closed
