@@ -2,6 +2,7 @@ package pages;
 
 import base.Keywords;
 import exceptions.ApplicationException;
+import helper.Device;
 
 public class PageSignUp extends Keywords {
 
@@ -47,10 +48,17 @@ public class PageSignUp extends Keywords {
         WAIT.forSeconds(2);
         verify.elementTextMatching(keyLblPageHeader,"Enter your email address to sign-up");
         verify.elementIsPresent(keyTxtEmailAddress);
-        verify.elementAttributeMatching(keyTxtEmailAddress,"text","Email Address");
         verify.elementIsPresent(keyBtnBack);
         verify.elementIsPresent(keyBtnNext);
         verify.elementIsPresent(keyLinkAlreadyHaveaPrepaidCard);
+        if(Device.isAndroid())
+        {
+            verify.elementAttributeMatching(keyTxtEmailAddress,"text","Email Address");
+        }
+        else
+        {
+            verify.elementAttributeMatching(keyTxtEmailAddress,"value","Email address");
+        }
 
     }
 

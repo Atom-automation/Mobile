@@ -64,7 +64,7 @@ public class Getgo_ProductFeature
     @Then("^GetGo pay login/signup page should be displayed$")
     public void getgo_pay_login_signup_page_should_be_displayed() throws Throwable {
         // Write code here that turns the phrase above into concrete actions
-        welcomePage.doesPageContains("LOG IN","SIGN UP","Now made easier. As simple as Ready, GetGo.");
+        welcomePage.doesPageContains("LOG IN","SIGN UP","Flying for free now made fast and easy.");
 
     }
 }

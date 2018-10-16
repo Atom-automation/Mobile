@@ -11,7 +11,7 @@ public class Type extends Keywords{
 
     private static Logger log=Logger.getLogger(Type.class);
 
-    public void data(String locatorKey,String value) throws ApplicationException {
+    public void         data(String locatorKey,String value) throws ApplicationException {
         log.info("Type the value ["+value+"] into element ["+locatorKey+"]");
         try{
             get.elementBy(locatorKey).clear();

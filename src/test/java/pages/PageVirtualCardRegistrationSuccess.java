@@ -21,7 +21,7 @@ public class PageVirtualCardRegistrationSuccess extends Keywords {
         verify.elementTextMatching(keyLblMessage1,"Almost there!");
         verify.elementTextMatching(keyLblSuccessPageNotes1,"A confirmation link has been sent to");
         verify.elementTextMatching(keyLblEmailAddress,iemailid);
-        verify.elementTextMatching(keyLblSuccessPageNotes2,"Please click on the link to activate your CEB GetGo Prepaid Virtual");
+        verify.elementTextMatching(keyLblSuccessPageNotes2,"Please click on the link to verify your email address.");
 
 
 

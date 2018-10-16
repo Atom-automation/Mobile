@@ -36,8 +36,9 @@ PageAccountDashboard extends Keywords {
     }
 
     public void isOk(String userName) throws ApplicationException {
-        verify.elementIsPresent(keyImgProfilePicture);
+//        verify.elementIsPresent(keyImgProfilePicture);
         verify.elementTextMatching(keyLblUserName,userName);
+        WAIT.forSeconds(2);
     }
 
     public void isVerifyYourEmailIsPresent() throws ApplicationException {
@@ -91,7 +92,7 @@ PageAccountDashboard extends Keywords {
     }
 
     public void clickMenu() throws ApplicationException {
-        WAIT.forSeconds(3);
+        WAIT.forSeconds(1);
         try {
             click.elementBy(keyBtnMenu1);
         }
@@ -99,7 +100,7 @@ PageAccountDashboard extends Keywords {
         {
             click.elementBy(keyBtnMenu2);
         }
-        WAIT.forSeconds(2);
+        WAIT.forSeconds(1);
     }
 
     public void navigateTo(String where) throws ApplicationException {
@@ -232,7 +233,8 @@ PageAccountDashboard extends Keywords {
     }
 
     public void checkDashboardPageProfilePic() throws ApplicationException {
-        verify.elementIsPresent(keyImgProfilePicture);
+        //verify.elementIsPresent(keyImgProfilePicture);
+        verify.elementIsPresent(keyLblUserName);
     }
 
     public void clicklogoutoptiononly() throws ApplicationException {

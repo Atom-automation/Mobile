@@ -92,7 +92,7 @@ public class PageFAQ extends Keywords {
         verify.elementIsPresent(keyLblquestion2fourteenlist);
         //verify.elementIsPresent(keyLblquestion2fifteenlist);
         verify.elementIsPresent(keyLblquestion2sixteenlist);
-        swipe.vertical(2,0.8,0.6,3);
+        swipe.vertical(2,0.8,0.4,3);
 
         verify.elementIsPresent(keyLblquestion2severteenlist);
         verify.elementIsPresent(keyLblquestion2eighteenlist);
@@ -101,7 +101,7 @@ public class PageFAQ extends Keywords {
         verify.elementIsPresent(keyLblquestion2twentyonelist);
         verify.elementIsPresent(keyLblquestion2twentytwolist);
         verify.elementIsPresent(keyLblquestion2twentythreelist);
-        swipe.vertical(2,0.6,0.8,3);
+        swipe.vertical(2,0.4,0.8,3);
         swipe.vertical(2,0.6,0.8,3);
         swipe.vertical(2,0.6,0.8,3);
 

@@ -22,7 +22,7 @@ public class Getgo_VirtualCardRegistration {
     private static PageLogin login=new PageLogin();
 
     private String mobileNumber=PropertyReader.testDataOf("RegistrationMobileNumber");
-    private String emailAddress="("+Test.faker.number().randomNumber(3,true)+")"+PropertyReader.testDataOf("RegistrationEmailAddress");
+    private String emailAddress="("+Test.faker.number().randomNumber(2,true)+")"+PropertyReader.testDataOf("RegistrationEmailAddress");
     private String password=PropertyReader.testDataOf("RegistrationPassword");
     private String firstName=Test.faker.name().firstName();
     private String middleName=Test.faker.name().firstName();
@@ -36,7 +36,7 @@ public class Getgo_VirtualCardRegistration {
     private String street="123 main street";
     private String state="Metro Manila (NCR)";
     private String city="Manila";
-    private String fulladdress=street+", "+city+", "+state+", "+nationality;
+    private String fulladdress=street+" "+city+" "+state+" "+nationality;
 
     @When("^I enter Mobile Number, Email Address, and Nominate and Confirm password$")
     public void iEnterMobileNumberEmailAddressAndNominateAndConfirmPassword() throws Throwable {

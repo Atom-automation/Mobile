@@ -57,7 +57,7 @@ public class Keyboard extends Keywords {
     public void hideIOS1(){
         if(Device.isIOS()) {
             try {
-                WAIT.forSeconds(1);
+                //WAIT.forSeconds(1);
                 click.elementBy(By.xpath("//XCUIElementTypeButton[@name=\"Toolbar Done Button\"]"));
                 WAIT.forSeconds(1);
 

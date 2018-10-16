@@ -83,7 +83,7 @@ public class PageActivities extends Keywords {
 
 
     public void verifyActivityPageTitle(String ititle) throws ApplicationException {
-        WAIT.forSeconds(30);
+        WAIT.forSeconds(55);
         verify.elementTextContains(keyLblPageTitle,ititle);
     }
 
@@ -95,7 +95,7 @@ public class PageActivities extends Keywords {
             verify.elementIsPresent(keyLblCurrencyType);
             verify.elementTextMatching(keyLblAvailabelBalance, "Available Balance");
             verify.elementIsPresent(keyLblAvailabelBalanceAmountValue);
-            verify.elementIsPresent(keyLblListTransactionDate);
+           // verify.elementIsPresent(keyLblListTransactionDate);
             verify.elementIsPresent(keyLblListTransactionDescription);
             verify.elementIsPresent(keyLblListTransactionAmount);
             verify.elementIsPresent(keyLblListTransactionReferenceNo);
@@ -106,22 +106,22 @@ public class PageActivities extends Keywords {
             description = get.elementText(keyLblListTransactionDescription);
             transactionamt = get.elementText(keyLblListTransactionAmount);
             referencenumber = get.elementText(keyLblListTransactionReferenceNo);
-            if (transactionamt.contains("-")) {
+          /*  if (transactionamt.contains("-")) {
                 endingBalance = Double.toString(Double.parseDouble(availabelBalance) + Double.parseDouble(transactionamt.substring(4)));
 
             } else {
                 endingBalance = Double.toString(Double.parseDouble(availabelBalance) - Double.parseDouble(transactionamt.substring(4)));
 
-            }
+            }*/
         }
         else
         {
             verify.elementIsPresent(keyBtnClose);
-            verify.elementIsPresent(keyImgCurrency);
-            verify.elementIsPresent(keyLblCurrencyType);
+           // verify.elementIsPresent(keyImgCurrency);
+//            verify.elementIsPresent(keyLblCurrencyType);
             verify.elementIsPresent(keyLblAvailabelBalance);
             verify.elementIsPresent(keyLblAvailabelBalanceAmountValue);
-            verify.elementIsPresent(keyLblListTransactionDate);
+            //verify.elementIsPresent(keyLblListTransactionDate);
             verify.elementIsPresent(keyLblListTransactionDescription);
             verify.elementIsPresent(keyLblListTransactionAmount);
             verify.elementIsPresent(keyLblListTransactionReferenceNo);
@@ -177,7 +177,7 @@ public class PageActivities extends Keywords {
 
         verify.elementTextMatching(keyLblTransactionReferenceNumber, referencenumber.substring(5));
         //verify.elementTextMatching(keyLblTransactionDate);
-        verify.elementTextContains(keyLblDescription, description.substring(26));
+       verify.elementTextContains(keyLblDescription, description);
         verify.elementTextMatching(keyLblTransactionAmount, transactionamt);
         verify.elementTextContains(keyLblEndingBalance, "PHP ₱ " + availabelBalance);
     }
@@ -198,7 +198,7 @@ public class PageActivities extends Keywords {
 
         verify.elementTextMatching(keyLblTransactionReferenceNumber,referencenumber.substring(5));
         //verify.elementTextMatching(keyLblTransactionDate);
-        verify.elementTextContains(keyLblDescription,description.substring(26));
+        verify.elementTextContains(keyLblDescription,description);
         verify.elementTextMatching(keyLblTransactionAmount,transactionamt);
         //
         verify.elementTextContains(keyLblEndingBalance,"PHP "+availabelBalance);

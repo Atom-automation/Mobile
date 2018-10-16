@@ -46,14 +46,14 @@ public class PageWelcome extends Keywords {
             //click.elementBy(xpathOf.button(Matching.youDecide("NEXT")));
             //click.elementBy(xpathOf.button(Matching.youDecide("NEXT")));
             //click.elementBy(xpathOf.button(Matching.youDecide("GET STARTED")));
-            verify.elementIsPresent("Getgo.Welcome.ImgLogo");
+            //verify.elementIsPresent("Getgo.Welcome.ImgLogo");
             verify.elementTextMatching("Getgo.Welcome.LblCaption", captionTxt);
             verify.elementTextMatching(keyBtnLogin, loginBtnTxt);
             verify.elementTextMatching(keyBtnSignUp, signUpBtnTxt);
         }
         else
         {
-            verify.elementIsPresent("Getgo.Welcome.ImgLogo");
+            //verify.elementIsPresent("Getgo.Welcome.ImgLogo");
             verify.elementTextMatching("Getgo.Welcome.LblCaption", captionTxt);
             verify.elementTextMatching(keyBtnLogin, loginBtnTxt);
             verify.elementTextMatching(keyBtnSignUp, signUpBtnTxt);
@@ -77,26 +77,28 @@ public class PageWelcome extends Keywords {
         }
         else
         {
-            try {
+            try
+            {
+                // boolean ivalue=driver.findElementByAccessibilityId("ic_profile_landing").isDisplayed();
+                try
+                {
+                    boolean ivalue1 = driver.findElementByAccessibilityId("USE PASSWORD").isDisplayed();
+                    if (driver.findElementByAccessibilityId("USE PASSWORD").isDisplayed()) {
+                        alreadyLoginEmail = get.elementText(By.xpath("(//XCUIElementTypeStaticText)[2]"));
+
+                        click.elementBy(xpathOf.button(Matching.name("USE PASSWORD")));
+                    }
+                }
+                catch(Exception ex)
+                {
+                    iosProductFeature();
+
+                    click.elementBy(keyBtnLogin);
+                }
+
+            } catch (Exception e)
+            {
                 click.elementBy(keyBtnLogin);
-            } catch (Exception e) {
-               // boolean ivalue=driver.findElementByAccessibilityId("ic_profile_landing").isDisplayed();
-                        try
-                        {
-                            boolean ivalue1 = driver.findElementByAccessibilityId("USE PASSWORD").isDisplayed();
-                            if (driver.findElementByAccessibilityId("USE PASSWORD").isDisplayed()) {
-                                alreadyLoginEmail = get.elementText(By.xpath("(//XCUIElementTypeStaticText)[2]"));
-
-                                click.elementBy(xpathOf.button(Matching.name("USE PASSWORD")));
-                            }
-                        }
-                        catch(Exception ex)
-                        {
-                            iosProductFeature();
-
-                            click.elementBy(keyBtnLogin);
-                        }
-
             }
         }
 
@@ -145,16 +147,16 @@ public class PageWelcome extends Keywords {
 
     public void welcomepageone() throws ApplicationException {
         if(Device.isAndroid()) {
-            verify.elementTextMatching(keyLblPageContent, "Nam porttitor blandit accumsan. Ut vel dictum sem, a pretium dui.");
+            verify.elementTextMatching(keyLblPageContent, "Welcome to GetGo! We're happy you're here.");
             verify.elementIsPresent(keyImgWelcome);
-        verify.elementIsPresent(keyLblToogleIndicator1);
+  verify.elementIsPresent(keyLblToogleIndicator1);
         verify.elementIsPresent(keyLblToogleIndicator2);
         verify.elementIsPresent(keyLblToogleIndicator3);
         verify.elementIsPresent(keyLblToogleIndicator4);
         verify.elementIsPresent(keyLblToogleIndicator5);
             verify.elementIsPresent(keyBtnNext);
             verify.elementTextMatching(keyBtnNext, "NEXT");
-        verify.elementAttributeMatching(keyLblToogleIndicator1,"selected","true");
+      verify.elementAttributeMatching(keyLblToogleIndicator1,"selected","true");
         verify.elementAttributeMatching(keyLblToogleIndicator2,"selected","false");
         verify.elementAttributeMatching(keyLblToogleIndicator3,"selected","false");
         verify.elementAttributeMatching(keyLblToogleIndicator4,"selected","false");
@@ -162,8 +164,7 @@ public class PageWelcome extends Keywords {
         }
         else
         {
-            verify.elementTextMatching(keyLblPageContent, "Nam porttitor blandit accumsan. Ut vel dictum sem, a pretium dui.");
-            verify.elementIsPresent(keyImgWelcome);
+            verify.elementTextMatching(keyLblPageContent, "Welcome to GetGo! We’re happy you’re here.");            verify.elementIsPresent(keyImgWelcome);
             verify.elementIsPresent(keyLblToogleIndicator1);
             verify.elementIsPresent(keyBtnNext);
             verify.elementTextMatching(keyBtnNext, "NEXT");
@@ -178,7 +179,7 @@ public class PageWelcome extends Keywords {
     public void welcomepagetwo() throws ApplicationException {
         if (Device.isAndroid())
         {
-            verify.elementTextMatching(keyLblPageContent, "Nam porttitor blandit accumsan. Ut vel dictum sem, a pretium dui.");
+            verify.elementTextMatching(keyLblPageContent, "View your recent activities and get closer to flying for free!");
         verify.elementIsPresent(keyImgWelcome);
         verify.elementIsPresent(keyLblToogleIndicator1);
         verify.elementIsPresent(keyLblToogleIndicator2);
@@ -197,7 +198,7 @@ public class PageWelcome extends Keywords {
     }
     else
         {
-            verify.elementTextMatching(keyLblPageContent, "Nam porttitor blandit accumsan. Ut vel dictum sem, a pretium dui.");
+            verify.elementTextMatching(keyLblPageContent, "View your recent activities and get closer to flying for free!");
             verify.elementIsPresent(keyImgWelcome);
             verify.elementIsPresent(keyLblToogleIndicator2);
             verify.elementIsPresent(keyBtnNext);
@@ -212,7 +213,7 @@ public class PageWelcome extends Keywords {
     public void welcomepagethree() throws ApplicationException {
 
         if(Device.isAndroid()) {
-            verify.elementTextMatching(keyLblPageContent, "Nam porttitor blandit accumsan. Ut vel dictum sem, a pretium dui.");
+            verify.elementTextMatching(keyLblPageContent, "Convert your money to other currencies in real time.");
             verify.elementIsPresent(keyImgWelcome);
         verify.elementIsPresent(keyLblToogleIndicator1);
         verify.elementIsPresent(keyLblToogleIndicator2);
@@ -229,7 +230,7 @@ public class PageWelcome extends Keywords {
         }
         else
         {
-            verify.elementTextMatching(keyLblPageContent, "Nam porttitor blandit accumsan. Ut vel dictum sem, a pretium dui.");
+            verify.elementTextMatching(keyLblPageContent, "Convert your money to other currencies in real time.");
             verify.elementIsPresent(keyImgWelcome);
             verify.elementIsPresent(keyLblToogleIndicator3);
             verify.elementIsPresent(keyBtnNext);
@@ -243,7 +244,7 @@ public class PageWelcome extends Keywords {
     public void welcomepagefour() throws ApplicationException {
 
         if(Device.isAndroid()) {
-            verify.elementTextMatching(keyLblPageContent, "Nam porttitor blandit accumsan. Ut vel dictum sem, a pretium dui.");
+            verify.elementTextMatching(keyLblPageContent, "Send money to other cards instantly, no sweat!");
             verify.elementIsPresent(keyImgWelcome);
        verify.elementIsPresent(keyLblToogleIndicator1);
         verify.elementIsPresent(keyLblToogleIndicator2);
@@ -260,7 +261,7 @@ public class PageWelcome extends Keywords {
         }
         else
         {
-            verify.elementTextMatching(keyLblPageContent, "Nam porttitor blandit accumsan. Ut vel dictum sem, a pretium dui.");
+            verify.elementTextMatching(keyLblPageContent, "Send money to other cards instantly, no sweat!");
             verify.elementIsPresent(keyImgWelcome);
             verify.elementIsPresent(keyLblToogleIndicator4);
             verify.elementIsPresent(keyBtnNext);
@@ -274,7 +275,7 @@ public class PageWelcome extends Keywords {
 
     public void welcomepagefive() throws ApplicationException {
         if(Device.isAndroid()) {
-            verify.elementTextMatching(keyLblPageContent, "Nam porttitor blandit accumsan. Ut vel dictum sem, a pretium dui.");
+            verify.elementTextMatching(keyLblPageContent, "Earn points from all Visa spend so you can fly for free faster.");
             verify.elementIsPresent(keyImgWelcome);
         verify.elementIsPresent(keyLblToogleIndicator1);
         verify.elementIsPresent(keyLblToogleIndicator2);
@@ -291,7 +292,7 @@ public class PageWelcome extends Keywords {
         }
         else
         {
-            verify.elementTextMatching(keyLblPageContent, "Nam porttitor blandit accumsan. Ut vel dictum sem, a pretium dui.");
+            verify.elementTextMatching(keyLblPageContent, "Earn points from all Visa spend so you can fly for free faster.");
             verify.elementIsPresent(keyImgWelcome);
             verify.elementIsPresent(keyLblToogleIndicator5);
             verify.elementIsPresent(keyBtnNext);

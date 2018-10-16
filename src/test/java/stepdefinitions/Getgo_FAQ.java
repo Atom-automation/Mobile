@@ -16,9 +16,9 @@ public class Getgo_FAQ {
         // Write code here that turns the phrase above into concrete actions
         faq.verifyPageTitle("Frequently Asked Question");
         faq.doespagecontainsquestions();
-        faq.verifyfirstquestion();
-        faq.verifysecondquestion();
-        faq.verifythirdquestion();
+        //faq.verifyfirstquestion();
+        //faq.verifysecondquestion();
+        //faq.verifythirdquestion();
     }
 
 }

@@ -22,11 +22,11 @@ public class PageSettings extends Keywords {
 
     public void verifyPageTitle(String ititle) throws ApplicationException {
         if(Device.isAndroid()) {
-            verify.elementTextMatching(xpathOf.textView(Matching.text("Settings")), ititle);
+            verify.elementTextMatching(xpathOf.textView(Matching.text("Manage my Settings")), ititle);
         }
         else
         {
-            verify.elementTextMatching(xpathOf.textView(Matching.name("Settings")), ititle);
+            verify.elementTextMatching(xpathOf.textView(Matching.name("Manage my Settings")), ititle);
         }
 
         WAIT.forSeconds(5);

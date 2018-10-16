@@ -28,7 +28,7 @@ public class PageCurrencyConversion extends Keywords {
 
     public void isPageLoaded() throws ApplicationException {
         WAIT.forSeconds(10);
-        verify.elementTextMatching(keyLblPageTitle,"Currency Converter");
+        verify.elementTextMatching(keyLblPageTitle,"Convert to Other Currencies");
         balanceBeforeConversion=Double.parseDouble(Test.tools.nbspRemove(get.elementText(keyLblAvailableBalance).replaceAll(",","")));
         keyboard.hideIfAndroid();
         Reporter.addStepLog("Balance before conversion is "+balanceBeforeConversion);

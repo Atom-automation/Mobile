@@ -11,6 +11,7 @@ Feature: New Customer Login Feature
   Background: Open Getgo mobile application
     Given I'm on Getgo landing page
 
+    @Logintest
   Scenario Outline: As a tester, I want to be able to login using my credentials so that I can see my account(Virtual Card or Peso+) details
     Given I'm on Getgo login page
     When  I enter a "<username>" & click next

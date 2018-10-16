@@ -41,10 +41,10 @@ public class PageVirtualCardRegistrationReview extends Keywords {
             verify.elementTextMatching(keyLblFullName,fullName);
             swipe.vertical(2,0.9,0.2);
             ////need to check the dob review
-            String idob=verify.verifyDOBinreviewpage(dob);
-            verify.elementTextMatching(keyLblDOB,idob);
+            //String idob=verify.verifyDOBinreviewpage(dob);
+            verify.elementTextMatching(keyLblDOB,dob);
 
-            verify.elementTextMatching(keyLblMobile,mobile);
+            verify.elementTextMatching(keyLblMobile,"+63 "+mobile);
             verify.elementTextMatching(keyLblNationality,nationality);
             //verify.elementTextMatching(keyLblGender,gender);
             verify.elementTextMatching(keyLblSourceofFunds, sourceoffunds);

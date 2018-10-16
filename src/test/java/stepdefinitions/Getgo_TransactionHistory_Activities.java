@@ -28,7 +28,7 @@ public class Getgo_TransactionHistory_Activities {
     public void transaction_History_Activities_for_the_logged_user_should_be_displayed() throws Throwable {
         // Write code here that turns the phrase above into concrete actions
         //Activities -*5506
-         activities.verifyActivityPageTitle("Activities");
+         activities.verifyActivityPageTitle("Account Activities");
     }
 
     @When("^I verify all the details present in the Transaction History/Activities page$")
@@ -47,7 +47,7 @@ public class Getgo_TransactionHistory_Activities {
     public void i_should_see_the_Transaction_History_Activities_details_page_with_Reference_No_Transaction_Date_Description_Transaction_Amount_Ending_Balance() throws Throwable {
         // Write code here that turns the phrase above into concrete actions
         //Activities -*5506
-        activities.verifyActivityDetailsPageTitle("Activities");
+        activities.verifyActivityDetailsPageTitle("Account Activities");
         activities.verifyDetailsActivityPageContents();
         activities.closeActivityDetailedPage();
         activities.closeActivityPage();
@@ -67,7 +67,7 @@ public class Getgo_TransactionHistory_Activities {
             login.clickLogin();
             dashboard.checkDashboardPageProfilePic();
             dashboard.clickMenu();
-            dashboard.navigateTo("Card transfer");
+            dashboard.navigateTo("Send Money");
             transfer.verifyPageTitle(arg1.trim());
         }
         else

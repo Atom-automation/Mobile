@@ -45,6 +45,7 @@ public class Keywords {
     }
 
     public static void closeApplication(){
+
         if(driver!=null){
             driver.closeApp();
         }

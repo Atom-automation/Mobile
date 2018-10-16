@@ -44,24 +44,36 @@ public class PageLogin extends Keywords {
 
 
     public void userisNotEnrolled() throws ApplicationException, InterruptedException {
-    	WAIT.forSeconds(10);
+    	WAIT.forSeconds(3);
         verify.elementTextMatching(errorMessage,"User is not enrolled to GetGo Pay yet.");
     }
 
     public void invalidLoginDetails() throws ApplicationException, InterruptedException {
-    	WAIT.forSeconds(10);
+    	WAIT.forSeconds(3);
        // verify.elementTextMatching(errorMessage,"Invalid login details. Please try again.");
         verify.elementTextMatching(errorMessage,"Incorrect user details provided.");
 
     }
 
     public void invalidEmailIdFormat() throws ApplicationException, InterruptedException {
-        WAIT.forSeconds(10);
-        verify.elementTextMatching(keyInvalidErrorMessage,"Invalid email format");
+        WAIT.forSeconds(3);
+        if(Device.isAndroid()) {
+            verify.elementTextMatching(keyInvalidErrorMessage, "Invalid email format");
+        }
+        else
+        {
+            verify.elementTextMatching(keyInvalidErrorMessage, "Invalid email address");
+        }
     }
     public void blankvalueEmailId() throws ApplicationException, InterruptedException {
-        WAIT.forSeconds(10);
-        verify.elementTextMatching(keyInvalidErrorMessage,"Username is required");
+        WAIT.forSeconds(3);
+        if(Device.isAndroid()) {
+            verify.elementTextMatching(keyInvalidErrorMessage, "Username is required");
+        }
+        else
+        {
+            verify.elementTextMatching(keyInvalidErrorMessage, "Invalid email address");
+        }
     }
 
     public void enterEmail(String emailID) throws ApplicationException {
@@ -75,6 +87,7 @@ public class PageLogin extends Keywords {
     public void clickNext() throws ApplicationException {
         WAIT.forSeconds(2);
         click.elementBy(keyBtnNext);
+        WAIT.forSeconds(3);
     }
 
     public void clickLogin() throws ApplicationException {
@@ -94,14 +107,22 @@ public class PageLogin extends Keywords {
                         }
 
                     }
-                else
-                    {
+                else {
+                            try {
 
-                        if (get.elementBy(MobileBy.AccessibilityId("Enable Face ID Authentication")).isDisplayed()) {
-                            click.elementBy(MobileBy.AccessibilityId("NOT NOW"));
+                                if (get.elementBy(MobileBy.AccessibilityId("Enable Face ID Authentication")).isDisplayed()) {
+                                    click.elementBy(MobileBy.AccessibilityId("NOT NOW"));
+                                    }
+                             } catch(Exception ex) {
+                                if (get.elementBy(MobileBy.AccessibilityId("Enable Touch ID Authentication")).isDisplayed())
+                                    {
+                                        click.elementBy(MobileBy.AccessibilityId("NOT NOW"));
+                                     }
 
-                        }
+                             }
+
                     }
+
         }
         catch(Exception ex)
             {

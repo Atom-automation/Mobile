@@ -29,7 +29,7 @@ public class Test {
         attributes.put(Keys.OS,PropertyReader.valueOf("Device."+mobile.trim()+".OS"));
         ExtentProperties extentProperties=ExtentProperties.INSTANCE;
         try{
-            extentProperties.setReportPath(Test.attributes.get(Keys.RunFolder)+"Automation-Dashboard.html");
+            extentProperties.setReportPath(Test.attributes.get(Keys.RunFolder)+"Automation-Dashboard_"+Test.attributes.get(Keys.OS)+".html");
         }catch (Exception ex){
             log.error("Failed to intialize report \n"+ex);
         }
@@ -42,7 +42,8 @@ public class Test {
             Reporter.loadXMLConfig(new File("src/test/resources/settings/ReportSettings.xml"));
             Reporter.setSystemInfo("User Name",System.getProperty("user.name"));
             Reporter.setSystemInfo("Time Zone",System.getProperty("user.timezone"));
-            Reporter.setSystemInfo("Machine",System.getProperty("os.name"));
+            //Reporter.setSystemInfo("Machine",System.getProperty("os.name"));
+            Reporter.setSystemInfo("Machine",Test.attributes.get(Keys.OS)+"_"+PropertyReader.valueOf("Device."+ Test.attributes.get(Keys.Device)+".Name")+"_"+PropertyReader.valueOf("Device."+Test.attributes.get(Keys.Device)+".Version"));
             Reporter.setSystemInfo("Appium Version", PropertyReader.valueOf("Tool.Appium.Version"));
             Reporter.setSystemInfo("Java Version",PropertyReader.valueOf("Tool.Java.Version"));
             Reporter.setSystemInfo("Selenium Version",PropertyReader.valueOf("Tool.Selenium.Version"));
