@@ -3,7 +3,7 @@
 # Functionality : As a tester, I want to be able to register my personal details so that I can be issued a virtual card.
 # ===============================================================================================================================
 
-@VirtualRegistration
+@VirtualRegistration @RegressionPack1
   Feature: New Virtual Card Registration
 
     Background: Open Getgo mobile application
