@@ -23,6 +23,10 @@ public class PageVirtualCardRegistrationReview extends Keywords {
 
     public void reviewDetails(String emailID,String fullName,String dob, String mobile, String nationality, String gender,String sourceoffunds,String fulladdressdetails) throws ApplicationException {
         if(Device.isAndroid()) {
+             String street="123 main street";
+             String state="Metro Manila (NCR)";
+             String city="Manila";
+             String fulladdress1=street+", "+city+", "+state+", "+nationality;
             verify.elementTextMatching(keyLblEmailAddress, emailID);
             verify.elementTextMatching(keyLblFullName, fullName);
             verify.elementTextMatching(keyLblDOB, dob);
@@ -31,8 +35,8 @@ public class PageVirtualCardRegistrationReview extends Keywords {
             verify.elementTextMatching(keyLblGender, gender);
             verify.elementTextMatching(keyLblSourceofFunds, sourceoffunds);
             swipe.vertical(2, 0.9, 0.2);
-            verify.elementTextMatching(keyLblPresentAddress,"Present Address: "+ fulladdressdetails);
-            verify.elementTextMatching(keyLblPremanentAddress, "Permanent Address: "+fulladdressdetails);
+            verify.elementTextMatching(keyLblPresentAddress,"Present Address: "+ fulladdress1);
+            verify.elementTextMatching(keyLblPremanentAddress, "Permanent Address: "+fulladdress1);
 
         }
         else

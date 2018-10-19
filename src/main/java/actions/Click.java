@@ -17,7 +17,7 @@ public class Click extends Keywords{
     private static Logger log=Logger.getLogger(Click.class);
 
     public void elementBy(String locatorKey) throws ApplicationException {
-        screenshot.attachScreenshot("Screenshot for the locator "+locatorKey);
+        screenshot.attachScreenshot("Screenshot for the locator "+locatorKey.replaceAll(" ","").replaceAll("//","_").replaceAll("/","-"));
         log.info("Click element ["+locatorKey+"]");
         try{
             get.elementBy(locatorKey).click();
@@ -28,7 +28,7 @@ public class Click extends Keywords{
     }
 
     public void elementBy(By locator) throws ApplicationException {
-        screenshot.attachScreenshot("Screenshot for the locator "+locator);
+        screenshot.attachScreenshot("Screenshot for the locator "+locator.toString().replaceAll(" ","").replaceAll("//","_").replaceAll("/","-"));
         log.info("Click element ["+locator+"]");
         try{
             get.elementBy(locator).click();
@@ -40,7 +40,7 @@ public class Click extends Keywords{
 
     public void elementsValuesBy(String locatorKey,String ivalue) throws ApplicationException {
         boolean blogic=false;
-        screenshot.attachScreenshot("Screenshot for the locator "+locatorKey);
+        screenshot.attachScreenshot("Screenshot for the locator "+locatorKey.replaceAll(" ","").replaceAll("[//]","_").replaceAll("[/]","-"));
         log.info("Click elementsByValues ["+locatorKey+"]");
         try{
             //get.elementBy(locatorKey).click();
