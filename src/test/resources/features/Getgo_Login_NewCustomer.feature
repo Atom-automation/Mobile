@@ -24,12 +24,12 @@ Feature: New Customer Login Feature
       | Virtual_Username | Virtual_Password | Virtual     |
       | Peso_Username    | Peso_Password    | Peso        |
 
-
+@invalid
   Scenario: Invalid login (Invalid Email)
     Given I'm on Getgo login page
     When  I enter a "Invalid_Email" & click next
     Then System should through an invalid email error message
-
+  @invalid1
   Scenario: Invalid login (Invalid Password)
     Given I'm on Getgo login page with "Valid_Email"
     When  I enter a "Invalid_Password" and click next  

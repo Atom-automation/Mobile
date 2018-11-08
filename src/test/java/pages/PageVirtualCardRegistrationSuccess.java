@@ -3,6 +3,7 @@ package pages;
 import base.Keywords;
 import base.Test;
 import exceptions.ApplicationException;
+import helper.Device;
 
 public class PageVirtualCardRegistrationSuccess extends Keywords {
 
@@ -19,9 +20,13 @@ public class PageVirtualCardRegistrationSuccess extends Keywords {
         verify.elementIsPresent(keyIMGGetGoPayLogo);
         verify.elementIsPresent(keyBtnGetStarted);
         verify.elementTextMatching(keyLblMessage1,"Almost there!");
-        verify.elementTextMatching(keyLblSuccessPageNotes1,"A confirmation link has been sent to");
-        verify.elementTextMatching(keyLblEmailAddress,iemailid);
-        verify.elementTextMatching(keyLblSuccessPageNotes2,"Please click on the link to verify your email address.");
+        verify.elementIsPresent(keyLblSuccessPageNotes2);
+
+        if(Device.isAndroid()) {
+            verify.elementTextMatching(keyLblSuccessPageNotes2,"Please click on the link to verify your email address.");
+            verify.elementTextMatching(keyLblSuccessPageNotes1, "A confirmation link has been sent to");
+            verify.elementTextMatching(keyLblEmailAddress, iemailid);
+        }
 
 
 

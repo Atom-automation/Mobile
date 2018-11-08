@@ -14,7 +14,7 @@
         <documentTitle>Automation Dashboard</documentTitle>
 
         <!-- report name - displayed at top-nav -->
-        <reportName>UnionBank-Philippines-Project-GetgoPeso</reportName>
+        <reportName>GetGo Peso+ Automation Report_Mobile</reportName>
 
         <!-- global date format override -->  <!-- defaults to yyyy-MM-dd -->
         <dateFormat>dd-MM-yyyy</dateFormat>
@@ -28,7 +28,8 @@
         <scripts>
             <![CDATA[
         $(document).ready(function() {
-
+        $('.brand-logo').css('display','none');
+		$('.report-name').css('padding-left','10px');
         });
       ]]>
         </scripts>

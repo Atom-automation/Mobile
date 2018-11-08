@@ -45,13 +45,40 @@ public class PageLogin extends Keywords {
 
     public void userisNotEnrolled() throws ApplicationException, InterruptedException {
     	WAIT.forSeconds(3);
-        verify.elementTextMatching(errorMessage,"User is not enrolled to GetGo Pay yet.");
+    	try {
+            verify.elementTextMatching(errorMessage, "User is not enrolled to GetGo Pay yet.");
+        }
+        catch (Exception ex)
+        {
+            if(Device.isAndroid())
+            {
+                ex.getMessage();
+            }
+        }
     }
 
     public void invalidLoginDetails() throws ApplicationException, InterruptedException {
-    	WAIT.forSeconds(3);
-       // verify.elementTextMatching(errorMessage,"Invalid login details. Please try again.");
-        verify.elementTextMatching(errorMessage,"Incorrect user details provided.");
+        if(Device.isAndroid()) {
+            WAIT.forSeconds(3);
+            verify.elementTextMatching(errorMessage, "Incorrect user details provided.");
+        }
+        else
+        {
+            verify.elementTextMatching(errorMessage, "Incorrect user details provided.");
+        }
+        //verify.elementTextMatching(errorMessage,"Invalid login details. Please try again.");
+       /* try {
+            verify.elementTextMatching(errorMessage, "Incorrect user details provided.");
+        }
+        catch(Exception ex)
+        {
+            {
+                if(Device.isAndroid())
+                {
+                    ex.getMessage();
+                }
+            }
+        }*/
 
     }
 
@@ -79,6 +106,9 @@ public class PageLogin extends Keywords {
     public void enterEmail(String emailID) throws ApplicationException {
         type.data(keyTxtEmailAddress,emailID);
     }
+    public void enterPasswordforErrorMsg(String password) throws ApplicationException {
+        type.data(keyTxtPassword,password);
+    }
 
     public void enterPassword(String password) throws ApplicationException {
         type.sensitiveData(keyTxtPassword,password);
@@ -88,6 +118,10 @@ public class PageLogin extends Keywords {
         WAIT.forSeconds(2);
         click.elementBy(keyBtnNext);
         WAIT.forSeconds(3);
+    }
+
+    public void clickLoginforErrorMsg() throws ApplicationException {
+        click.elementBy(keyBtnLogin);
     }
 
     public void clickLogin() throws ApplicationException {
@@ -139,7 +173,7 @@ public class PageLogin extends Keywords {
         {
             iOSLoginFlow(emailID,password);
         }
-        WAIT.forSeconds(8);
+        WAIT.forSeconds(5);
     }
 
     public void androidLoginFlow(String emailID, String password) throws ApplicationException {
@@ -222,7 +256,7 @@ public class PageLogin extends Keywords {
         pageAccountDashboard.isOk(username);
     }
 
-    public void doesUserNameScreenContains(String pageTitle, String pageCaption, String usernameBoxText, String passwordResetLinkText, String nextButtonText, String signUpLinkText) throws ApplicationException
+    public void doesUserNameScreenContains(String pageTitle, String pageCaption, String usernameBoxText, String nextButtonText, String signUpLinkText) throws ApplicationException
     {
         verify.elementIsPresent(keyBtnBack);
         keyboard.hideIfAndroid();
@@ -233,14 +267,14 @@ public class PageLogin extends Keywords {
         if(Test.attributes.get(Keys.OS).equalsIgnoreCase(OS.ANDROID))
         {
             verify.elementTextContains("Getgo.Login.LblTitle",pageTitle.trim());
-            verify.elementTextContains("Getgo.Login.LnkForgotPassword",passwordResetLinkText.trim());
+            //verify.elementTextContains("Getgo.Login.LnkForgotPassword",passwordResetLinkText.trim());
             verify.elementTextContains("Getgo.Login.LnkSignUp",signUpLinkText.trim());
 
         }
         else if(Test.attributes.get(Keys.OS).equalsIgnoreCase(OS.iOS))
         {
             verify.elementIsPresent(xpathOf.textView(Matching.name(pageTitle)));
-            verify.elementIsPresent(xpathOf.button(Matching.name(passwordResetLinkText)));
+            //verify.elementIsPresent(xpathOf.button(Matching.name(passwordResetLinkText)));
             verify.elementIsPresent(xpathOf.button(Matching.youDecide(signUpLinkText)));
         }
     }
@@ -257,7 +291,7 @@ public class PageLogin extends Keywords {
         if(Test.attributes.get(Keys.OS).equalsIgnoreCase(OS.ANDROID))
         {
             verify.elementTextContains("Getgo.Login.LblTitle",pageTitle.trim());
-            verify.elementTextContains("Getgo.Login.LnkHavingProblemsWithAccount",passwordResetLinkText.trim());
+            verify.elementTextContains("Getgo.Login.LnkForgotPassword",passwordResetLinkText.trim());
         }
         else if(Test.attributes.get(Keys.OS).equalsIgnoreCase(OS.iOS))
         {

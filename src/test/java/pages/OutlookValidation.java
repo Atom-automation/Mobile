@@ -2,6 +2,7 @@ package pages;
 
 import base.Test;
 import com.sun.jndi.toolkit.url.Uri;
+import constants.Device;
 import constants.Keys;
 import exceptions.ApplicationException;
 import helper.PropertyReader;
@@ -25,20 +26,21 @@ import java.util.concurrent.TimeUnit;
 public class OutlookValidation extends Test {
 
 
-    public static void main(String[] args) throws ApplicationException, MalformedURLException {
-        AppiumDriver browser;
+    public static void main(String[] args) throws ApplicationException, MalformedURLException, InterruptedException {
+       /* AppiumDriver browser;
 
-        /*DesiredCapabilities capabilities = new DesiredCapabilities();
+        DesiredCapabilities capabilities = new DesiredCapabilities();
 
         capabilities.setCapability("platformName", "ios");
         capabilities.setCapability("platformVersion", "11.4");
         capabilities.setCapability("deviceName", "iPhone X");
         capabilities.setCapability("automationName", "XCUITest");
-        capabilities.setCapability("udid", "164bca6ea436744750bc6425ccfdb37001775230");
+        capabilities.setCapability("udid", "45449e003b676357da0b5132ae580dea52fa590d");
        // capabilities.setCapability("bundleId", "com.apple.mobilemail");
-        capabilities.setCapability("bundleId", "com.unionbankph.getgopay-QAT");
+       // capabilities.setCapability("bundleId", "com.unionbankph.getgopay-QAT");
+       // capabilities.setCapability("bundleId", "com.unionbankph.getgopay-QAT");
         //capabilities.setCapability("app", "/Users/ubp/Documents/GetGopayCode/Mobile/src/test/resources/apps/Getgo.ipa");
-
+        capabilities.setCapability(MobileCapabilityType.BROWSER_NAME, "safari");
         //capabilities.setCapability("autoWebview", "true");
         //capabilities.setCapability("safariInitialUrl", "https://www.google.com/");
 
@@ -50,15 +52,30 @@ public class OutlookValidation extends Test {
         //capabilities.setCapability("webkitResponseTimeout", 150000);
 
         browser = new IOSDriver(new URL("http://0.0.0.0:4723/wd/hub"), capabilities);
-        //browser.findElement(By.xpath("(//XCUIElementTypeCell)[1]")).click();
+        browser.get("https://tms-jira.unionbankph.com/login.jsp?os_destination=%2Fsecure%2FRapidBoard.jspa%3FrapidView%3D58");
+        Thread.sleep(10000);
+        browser.findElement(By.id("login-form-username")).sendKeys("balabharathi.jayaraman");
+        Thread.sleep(10000);
+        browser.findElement(By.id("login-form-password")).sendKeys("NoisyBoy@23");
+        browser.findElement(By.id("login-form-submit")).click();
+        Thread.sleep(10000);
+        browser.quit();
 
 
-*/
+/*PropertyReader.dynamicWriteTestDataOf("forgotpassword_confirmpassword","testforgot1234");
 
-        PropertyReader.dynamicWriteTestDataOf("forgotpassword_confirmpassword","testforgot1234");
-
-        System.out.println(PropertyReader.dynamicReadTestDataOf("forgotpassword_confirmpassword"));
-
+        System.out.println(PropertyReader.dynamicReadTestDataOf("forgotpassword_confirmpassword"));*/
+       PageVerificationLink verifyAccount=new PageVerificationLink();
+        String deviceName=System.getProperty("Device");
+        if(deviceName==null){
+            deviceName=Device.TGSMOB2132;
+            //deviceName=Device.TGSMOB2128;
+        }
+        setup(deviceName);
+        String outlookUsername = PropertyReader.testDataOf("RegistrationEmailAddress");
+        String outlookPassword = PropertyReader.testDataOf("outlookpassword");
+        verifyAccount.openOutlook(outlookUsername, outlookPassword);
+        verifyAccount.openVerificationEmail("testtt");
     }
 
 

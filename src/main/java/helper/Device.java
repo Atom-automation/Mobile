@@ -8,6 +8,7 @@ public class Device {
 
     public static boolean isAndroid(){
         return Test.attributes.get(Keys.OS).equalsIgnoreCase(OS.ANDROID);
+
     }
 
     public static boolean isIOS(){

@@ -5,8 +5,11 @@ import base.Test;
 import constants.Keys;
 import constants.OS;
 import exceptions.ApplicationException;
+import helper.Device;
 import io.appium.java_client.MobileBy;
 import xpath.Matching;
+
+import java.text.DecimalFormat;
 
 public class PageCardTransfer extends Keywords
 {
@@ -23,7 +26,16 @@ public class PageCardTransfer extends Keywords
     private String keyLblPageTitle="Getgo.CardTransfer.LblPageTitle";
     private String keyBtnActivitiesBottom="Getgo.CardTransfer.BtnActivitiesBottom";
 
+    private String keyLblPageHeader="Getgo.CardTransfer.LblPageHeader";
+    private String keyLblPageDescriptionBottom="Getgo.CardTransfer.LblPageDescriptionBottom";
+    private String keyLblCurrencyTranferFrom="Getgo.CardTransfer.LblCurrencyTranferFrom";
+    private String keyLblCurrencyLogo="Getgo.CardTransfer.LblCurrencyLogo";
+    private String keyLblCurrencyverbiage="Getgo.CardTransfer.LblCurrencyverbiage";
+    private String keyLblAvailableBalanceText="Getgo.CardTransfer.LblAvailableBalanceText";
+
+    DecimalFormat df = new DecimalFormat("###.##");
     private double beforeBalance;
+
 
     public void enterCardNumber(String cardNumber) throws ApplicationException {
         type.data(keyTxtRecipientCard,cardNumber);
@@ -92,6 +104,7 @@ public class PageCardTransfer extends Keywords
 
     public double getBeforeBalance()
     {
+        df.format(beforeBalance);
         return beforeBalance;
     }
 
@@ -105,4 +118,28 @@ public class PageCardTransfer extends Keywords
         click.elementBy(keyBtnActivitiesBottom);
         WAIT.forSeconds(5);
     }
+    public void verifyPageContentDetails() throws ApplicationException {
+        verify.elementIsPresent(keyTxtRecipientCard);
+        verify.elementIsPresent(keyTxtRecipientName);
+        verify.elementIsPresent(keyTxtAmount);
+        verify.elementIsPresent(keyBtnCalendar);
+        verify.elementIsPresent(keyTxtMessage);
+        verify.elementIsPresent(keyBtnNext);
+        verify.elementIsPresent(keyLblAvailableBalance);
+        verify.elementTextMatching(keyLblPageHeader,"TRANSFER TO:");
+        verify.elementTextMatching(keyLblPageDescriptionBottom,"Don't forget to double-check the amount and card number you entered. Everything you do here is real time and money will be sent immediately.");
+        verify.elementTextMatching(keyLblCurrencyTranferFrom,"Transfer From:");
+        verify.elementIsPresent(keyLblCurrencyLogo);
+        verify.elementIsPresent(keyLblCurrencyverbiage);
+        if(Device.isAndroid()) {
+            verify.elementTextMatching(keyLblAvailableBalanceText, "Available Balance");
+        }
+        else
+        {
+            verify.elementIsPresent(keyLblAvailableBalanceText);
+        }
+
+    }
+
+
 }

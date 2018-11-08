@@ -2,1546 +2,6 @@
   {
     "comments": [
       {
-        "line": 2,
-        "value": "# \u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d"
-      },
-      {
-        "line": 3,
-        "value": "# Author: Gopinath Rajaram"
-      },
-      {
-        "line": 4,
-        "value": "# Functionality : As a tester, I want to be see the Frequently Asked Question page of the GetoPay app so that i am able to see FAQ details"
-      },
-      {
-        "line": 5,
-        "value": "# \u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d"
-      }
-    ],
-    "line": 8,
-    "elements": [
-      {
-        "line": 10,
-        "name": "Login into account",
-        "description": "",
-        "type": "background",
-        "keyword": "Background",
-        "steps": [
-          {
-            "result": {
-              "duration": 73155296012,
-              "status": "passed"
-            },
-            "line": 11,
-            "name": "I\u0027m on Getgo landing page",
-            "match": {
-              "location": "Getgo_PageValidation.i_m_on_Getgo_landing_page()"
-            },
-            "keyword": "Given "
-          }
-        ]
-      },
-      {
-        "before": [
-          {
-            "result": {
-              "duration": 466998,
-              "status": "passed"
-            },
-            "match": {
-              "location": "StepsBase.beforeScenario(Scenario)"
-            }
-          }
-        ],
-        "line": 13,
-        "name": "As a tester, I want to be see the Frequently Asked Question page of the GetoPay app so that i am able to see FAQ details",
-        "description": "",
-        "id": "frequently-asked-question;as-a-tester,-i-want-to-be-see-the-frequently-asked-question-page-of-the-getopay-app-so-that-i-am-able-to-see-faq-details",
-        "after": [
-          {
-            "result": {
-              "duration": 80008,
-              "status": "passed"
-            },
-            "match": {
-              "location": "StepsBase.ifScenarioFailed(Scenario)"
-            }
-          },
-          {
-            "result": {
-              "duration": 162648412,
-              "status": "passed"
-            },
-            "match": {
-              "location": "StepsBase.afterScenario()"
-            }
-          }
-        ],
-        "type": "scenario",
-        "keyword": "Scenario",
-        "steps": [
-          {
-            "result": {
-              "duration": 41994676297,
-              "status": "passed"
-            },
-            "line": 14,
-            "name": "I\u0027m login into my \"Peso\" account with my \"Peso_Username\" and \"Peso_Password\"",
-            "match": {
-              "arguments": [
-                {
-                  "val": "Peso",
-                  "offset": 19
-                },
-                {
-                  "val": "Peso_Username",
-                  "offset": 42
-                },
-                {
-                  "val": "Peso_Password",
-                  "offset": 62
-                }
-              ],
-              "location": "Getgo_Login_NewCustomer.iMLoginIntoMyAccountWithMyAnd(String,String,String)"
-            },
-            "keyword": "Given "
-          },
-          {
-            "result": {
-              "duration": 4303293474,
-              "status": "passed"
-            },
-            "line": 15,
-            "name": "I choose More menu options from the GetGopay dashboard page",
-            "match": {
-              "location": "Getgo_TermsandConditions.i_choose_More_menu_options_from_the_GetGopay_dashboard_page()"
-            },
-            "keyword": "When "
-          },
-          {
-            "result": {
-              "duration": 2525641999,
-              "status": "passed"
-            },
-            "line": 16,
-            "name": "More page should be displayed with the options \"About the Cards\", \"Contact Us\",\"Frequently Asked Questions\" \u0026 \"Terms \u0026 Conditions\"",
-            "match": {
-              "arguments": [
-                {
-                  "val": "About the Cards",
-                  "offset": 48
-                },
-                {
-                  "val": "Contact Us",
-                  "offset": 67
-                },
-                {
-                  "val": "Frequently Asked Questions",
-                  "offset": 80
-                },
-                {
-                  "val": "Terms \u0026 Conditions",
-                  "offset": 111
-                }
-              ],
-              "location": "Getgo_TermsandConditions.more_page_should_be_displayed_with_the_options(String,String,String,String)"
-            },
-            "keyword": "Then "
-          },
-          {
-            "result": {
-              "duration": 649739020,
-              "status": "passed"
-            },
-            "line": 17,
-            "name": "I click on \"Frequently Asked Questions\" option",
-            "match": {
-              "arguments": [
-                {
-                  "val": "Frequently Asked Questions",
-                  "offset": 12
-                }
-              ],
-              "location": "Getgo_TermsandConditions.i_click_on_option(String)"
-            },
-            "keyword": "When "
-          },
-          {
-            "result": {
-              "duration": 22365109954,
-              "status": "passed"
-            },
-            "line": 18,
-            "name": "Frequently Asked Questions page should be displayed with three frequently asked questions \"What\u0027s the main difference of the GetGo Virtual Prepaid vs GetGo Peso+ Card? What is best for me?\",\"What are the requirements to get the GetGo Virtual Prepaid?\" \u0026 \"How much is the GetGo Virtual Prepaid?\"",
-            "match": {
-              "arguments": [
-                {
-                  "val": "What\u0027s the main difference of the GetGo Virtual Prepaid vs GetGo Peso+ Card? What is best for me?",
-                  "offset": 91
-                },
-                {
-                  "val": "What are the requirements to get the GetGo Virtual Prepaid?",
-                  "offset": 191
-                },
-                {
-                  "val": "How much is the GetGo Virtual Prepaid?",
-                  "offset": 255
-                }
-              ],
-              "location": "Getgo_FAQ.frequently_Asked_Questions_page_should_be_displayed_with_three_frequently_asked_questions(String,String,String)"
-            },
-            "keyword": "Then "
-          }
-        ]
-      }
-    ],
-    "name": "Frequently Asked Question",
-    "description": "",
-    "id": "frequently-asked-question",
-    "keyword": "Feature",
-    "uri": "Getgo_FAQ.feature",
-    "tags": [
-      {
-        "line": 7,
-        "name": "@FAQ"
-      },
-      {
-        "line": 7,
-        "name": "@RegressionPack1"
-      }
-    ]
-  },
-  {
-    "comments": [
-      {
-        "line": 3,
-        "value": "# \u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d"
-      },
-      {
-        "line": 4,
-        "value": "# Author: Balabharathi Jayaraman"
-      },
-      {
-        "line": 5,
-        "value": "# Functionality : As a tester, I want to be able to login using my credentials so that I can see my card details."
-      },
-      {
-        "line": 6,
-        "value": "# \u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d"
-      }
-    ],
-    "line": 9,
-    "elements": [
-      {
-        "line": 11,
-        "name": "Open Getgo mobile application",
-        "description": "",
-        "type": "background",
-        "keyword": "Background",
-        "steps": [
-          {
-            "result": {
-              "duration": 3484245607,
-              "status": "passed"
-            },
-            "line": 12,
-            "name": "I\u0027m on Getgo landing page",
-            "match": {
-              "location": "Getgo_PageValidation.i_m_on_Getgo_landing_page()"
-            },
-            "keyword": "Given "
-          }
-        ]
-      },
-      {
-        "before": [
-          {
-            "result": {
-              "duration": 241301,
-              "status": "passed"
-            },
-            "match": {
-              "location": "StepsBase.beforeScenario(Scenario)"
-            }
-          }
-        ],
-        "line": 24,
-        "name": "As a tester, I want to be able to login using my credentials so that I can see my account(Virtual Card or Peso+) details",
-        "description": "",
-        "id": "new-customer-login-feature;as-a-tester,-i-want-to-be-able-to-login-using-my-credentials-so-that-i-can-see-my-account(virtual-card-or-peso+)-details;;2",
-        "after": [
-          {
-            "result": {
-              "duration": 26616,
-              "status": "passed"
-            },
-            "match": {
-              "location": "StepsBase.ifScenarioFailed(Scenario)"
-            }
-          },
-          {
-            "result": {
-              "duration": 335397373,
-              "status": "passed"
-            },
-            "match": {
-              "location": "StepsBase.afterScenario()"
-            }
-          }
-        ],
-        "type": "scenario",
-        "keyword": "Scenario Outline",
-        "steps": [
-          {
-            "result": {
-              "duration": 5713224864,
-              "status": "passed"
-            },
-            "line": 16,
-            "name": "I\u0027m on Getgo login page",
-            "match": {
-              "location": "Getgo_PageValidation.i_m_on_Getgo_login_page()"
-            },
-            "keyword": "Given "
-          },
-          {
-            "result": {
-              "duration": 7701286211,
-              "status": "passed"
-            },
-            "line": 17,
-            "name": "I enter a \"Virtual_Username\" \u0026 click next",
-            "match": {
-              "arguments": [
-                {
-                  "val": "Virtual_Username",
-                  "offset": 11
-                }
-              ],
-              "location": "Getgo_PageValidation.i_enter_a_click_next(String)"
-            },
-            "matchedColumns": [
-              0
-            ],
-            "keyword": "When "
-          },
-          {
-            "result": {
-              "duration": 625438496,
-              "status": "passed"
-            },
-            "line": 18,
-            "name": "I enter password \"Virtual_Password\"",
-            "match": {
-              "arguments": [
-                {
-                  "val": "Virtual_Password",
-                  "offset": 18
-                }
-              ],
-              "location": "Getgo_Login_NewCustomer.i_enter_password(String)"
-            },
-            "matchedColumns": [
-              1
-            ],
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 16076027538,
-              "status": "passed"
-            },
-            "line": 19,
-            "name": "I click login",
-            "match": {
-              "location": "Getgo_Login_NewCustomer.i_click_login()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 3130258587,
-              "status": "passed"
-            },
-            "line": 20,
-            "name": "I should see my \"Virtual\" account dashboard with my profile picture \u0026 my full name",
-            "match": {
-              "arguments": [
-                {
-                  "val": "Virtual",
-                  "offset": 17
-                }
-              ],
-              "location": "Getgo_Login_NewCustomer.i_should_see_my_account_dashboard_with_my_profile_picture_my_full_name(String)"
-            },
-            "matchedColumns": [
-              2
-            ],
-            "keyword": "Then "
-          }
-        ],
-        "tags": [
-          {
-            "line": 8,
-            "name": "@Login"
-          },
-          {
-            "line": 8,
-            "name": "@RegressionPack1"
-          },
-          {
-            "line": 14,
-            "name": "@Logintest"
-          }
-        ]
-      },
-      {
-        "line": 11,
-        "name": "Open Getgo mobile application",
-        "description": "",
-        "type": "background",
-        "keyword": "Background",
-        "steps": [
-          {
-            "result": {
-              "duration": 3343115908,
-              "status": "passed"
-            },
-            "line": 12,
-            "name": "I\u0027m on Getgo landing page",
-            "match": {
-              "location": "Getgo_PageValidation.i_m_on_Getgo_landing_page()"
-            },
-            "keyword": "Given "
-          }
-        ]
-      },
-      {
-        "before": [
-          {
-            "result": {
-              "duration": 160906,
-              "status": "passed"
-            },
-            "match": {
-              "location": "StepsBase.beforeScenario(Scenario)"
-            }
-          }
-        ],
-        "line": 25,
-        "name": "As a tester, I want to be able to login using my credentials so that I can see my account(Virtual Card or Peso+) details",
-        "description": "",
-        "id": "new-customer-login-feature;as-a-tester,-i-want-to-be-able-to-login-using-my-credentials-so-that-i-can-see-my-account(virtual-card-or-peso+)-details;;3",
-        "after": [
-          {
-            "result": {
-              "duration": 16901,
-              "status": "passed"
-            },
-            "match": {
-              "location": "StepsBase.ifScenarioFailed(Scenario)"
-            }
-          },
-          {
-            "result": {
-              "duration": 395172169,
-              "status": "passed"
-            },
-            "match": {
-              "location": "StepsBase.afterScenario()"
-            }
-          }
-        ],
-        "type": "scenario",
-        "keyword": "Scenario Outline",
-        "steps": [
-          {
-            "result": {
-              "duration": 5657769293,
-              "status": "passed"
-            },
-            "line": 16,
-            "name": "I\u0027m on Getgo login page",
-            "match": {
-              "location": "Getgo_PageValidation.i_m_on_Getgo_login_page()"
-            },
-            "keyword": "Given "
-          },
-          {
-            "result": {
-              "duration": 7640151595,
-              "status": "passed"
-            },
-            "line": 17,
-            "name": "I enter a \"Peso_Username\" \u0026 click next",
-            "match": {
-              "arguments": [
-                {
-                  "val": "Peso_Username",
-                  "offset": 11
-                }
-              ],
-              "location": "Getgo_PageValidation.i_enter_a_click_next(String)"
-            },
-            "matchedColumns": [
-              0
-            ],
-            "keyword": "When "
-          },
-          {
-            "result": {
-              "duration": 656764374,
-              "status": "passed"
-            },
-            "line": 18,
-            "name": "I enter password \"Peso_Password\"",
-            "match": {
-              "arguments": [
-                {
-                  "val": "Peso_Password",
-                  "offset": 18
-                }
-              ],
-              "location": "Getgo_Login_NewCustomer.i_enter_password(String)"
-            },
-            "matchedColumns": [
-              1
-            ],
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 11844262715,
-              "status": "passed"
-            },
-            "line": 19,
-            "name": "I click login",
-            "match": {
-              "location": "Getgo_Login_NewCustomer.i_click_login()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 3145979151,
-              "status": "passed"
-            },
-            "line": 20,
-            "name": "I should see my \"Peso\" account dashboard with my profile picture \u0026 my full name",
-            "match": {
-              "arguments": [
-                {
-                  "val": "Peso",
-                  "offset": 17
-                }
-              ],
-              "location": "Getgo_Login_NewCustomer.i_should_see_my_account_dashboard_with_my_profile_picture_my_full_name(String)"
-            },
-            "matchedColumns": [
-              2
-            ],
-            "keyword": "Then "
-          }
-        ],
-        "tags": [
-          {
-            "line": 8,
-            "name": "@Login"
-          },
-          {
-            "line": 8,
-            "name": "@RegressionPack1"
-          },
-          {
-            "line": 14,
-            "name": "@Logintest"
-          }
-        ]
-      },
-      {
-        "line": 11,
-        "name": "Open Getgo mobile application",
-        "description": "",
-        "type": "background",
-        "keyword": "Background",
-        "steps": [
-          {
-            "result": {
-              "duration": 3407969312,
-              "status": "passed"
-            },
-            "line": 12,
-            "name": "I\u0027m on Getgo landing page",
-            "match": {
-              "location": "Getgo_PageValidation.i_m_on_Getgo_landing_page()"
-            },
-            "keyword": "Given "
-          }
-        ]
-      },
-      {
-        "before": [
-          {
-            "result": {
-              "duration": 200181,
-              "status": "passed"
-            },
-            "match": {
-              "location": "StepsBase.beforeScenario(Scenario)"
-            }
-          }
-        ],
-        "line": 28,
-        "name": "Invalid login (Invalid Email)",
-        "description": "",
-        "id": "new-customer-login-feature;invalid-login-(invalid-email)",
-        "after": [
-          {
-            "result": {
-              "duration": 13155,
-              "status": "passed"
-            },
-            "match": {
-              "location": "StepsBase.ifScenarioFailed(Scenario)"
-            }
-          },
-          {
-            "result": {
-              "duration": 286391866,
-              "status": "passed"
-            },
-            "match": {
-              "location": "StepsBase.afterScenario()"
-            }
-          }
-        ],
-        "type": "scenario",
-        "keyword": "Scenario",
-        "steps": [
-          {
-            "result": {
-              "duration": 5681602312,
-              "status": "passed"
-            },
-            "line": 29,
-            "name": "I\u0027m on Getgo login page",
-            "match": {
-              "location": "Getgo_PageValidation.i_m_on_Getgo_login_page()"
-            },
-            "keyword": "Given "
-          },
-          {
-            "result": {
-              "duration": 7588677859,
-              "status": "passed"
-            },
-            "line": 30,
-            "name": "I enter a \"Invalid_Email\" \u0026 click next",
-            "match": {
-              "arguments": [
-                {
-                  "val": "Invalid_Email",
-                  "offset": 11
-                }
-              ],
-              "location": "Getgo_PageValidation.i_enter_a_click_next(String)"
-            },
-            "keyword": "When "
-          },
-          {
-            "result": {
-              "duration": 3268786510,
-              "status": "passed"
-            },
-            "line": 31,
-            "name": "System should through an invalid email error message",
-            "match": {
-              "location": "Getgo_Login_NewCustomer.systemShouldThroughAnInvalidEmailErrorMessage()"
-            },
-            "keyword": "Then "
-          }
-        ]
-      },
-      {
-        "line": 11,
-        "name": "Open Getgo mobile application",
-        "description": "",
-        "type": "background",
-        "keyword": "Background",
-        "steps": [
-          {
-            "result": {
-              "duration": 3352545729,
-              "status": "passed"
-            },
-            "line": 12,
-            "name": "I\u0027m on Getgo landing page",
-            "match": {
-              "location": "Getgo_PageValidation.i_m_on_Getgo_landing_page()"
-            },
-            "keyword": "Given "
-          }
-        ]
-      },
-      {
-        "before": [
-          {
-            "result": {
-              "duration": 168073,
-              "status": "passed"
-            },
-            "match": {
-              "location": "StepsBase.beforeScenario(Scenario)"
-            }
-          }
-        ],
-        "line": 33,
-        "name": "Invalid login (Invalid Password)",
-        "description": "",
-        "id": "new-customer-login-feature;invalid-login-(invalid-password)",
-        "after": [
-          {
-            "result": {
-              "duration": 18293,
-              "status": "passed"
-            },
-            "match": {
-              "location": "StepsBase.ifScenarioFailed(Scenario)"
-            }
-          },
-          {
-            "result": {
-              "duration": 243609173,
-              "status": "passed"
-            },
-            "match": {
-              "location": "StepsBase.afterScenario()"
-            }
-          }
-        ],
-        "type": "scenario",
-        "keyword": "Scenario",
-        "steps": [
-          {
-            "result": {
-              "duration": 13233505033,
-              "status": "passed"
-            },
-            "line": 34,
-            "name": "I\u0027m on Getgo login page with \"Valid_Email\"",
-            "match": {
-              "arguments": [
-                {
-                  "val": "Valid_Email",
-                  "offset": 30
-                }
-              ],
-              "location": "Getgo_Login_NewCustomer.i_m_on_Getgo_login_page_with(String)"
-            },
-            "keyword": "Given "
-          },
-          {
-            "result": {
-              "duration": 33019632908,
-              "status": "passed"
-            },
-            "line": 35,
-            "name": "I enter a \"Invalid_Password\" and click next",
-            "match": {
-              "arguments": [
-                {
-                  "val": "Invalid_Password",
-                  "offset": 11
-                }
-              ],
-              "location": "Getgo_Login_NewCustomer.i_enter_a_and_click_next(String)"
-            },
-            "keyword": "When "
-          },
-          {
-            "result": {
-              "duration": 3085602170,
-              "status": "passed"
-            },
-            "line": 36,
-            "name": "System should through an invalid password message",
-            "match": {
-              "location": "Getgo_Login_NewCustomer.systemShouldThroughAnInvalidPasswordMessage()"
-            },
-            "keyword": "Then "
-          }
-        ]
-      },
-      {
-        "line": 11,
-        "name": "Open Getgo mobile application",
-        "description": "",
-        "type": "background",
-        "keyword": "Background",
-        "steps": [
-          {
-            "result": {
-              "duration": 3223910124,
-              "status": "passed"
-            },
-            "line": 12,
-            "name": "I\u0027m on Getgo landing page",
-            "match": {
-              "location": "Getgo_PageValidation.i_m_on_Getgo_landing_page()"
-            },
-            "keyword": "Given "
-          }
-        ]
-      },
-      {
-        "before": [
-          {
-            "result": {
-              "duration": 215846,
-              "status": "passed"
-            },
-            "match": {
-              "location": "StepsBase.beforeScenario(Scenario)"
-            }
-          }
-        ],
-        "line": 39,
-        "name": "Invalid login (Blank spaces in Email)",
-        "description": "",
-        "id": "new-customer-login-feature;invalid-login-(blank-spaces-in-email)",
-        "after": [
-          {
-            "result": {
-              "duration": 11948,
-              "status": "passed"
-            },
-            "match": {
-              "location": "StepsBase.ifScenarioFailed(Scenario)"
-            }
-          },
-          {
-            "result": {
-              "duration": 201774826,
-              "status": "passed"
-            },
-            "match": {
-              "location": "StepsBase.afterScenario()"
-            }
-          }
-        ],
-        "type": "scenario",
-        "keyword": "Scenario",
-        "steps": [
-          {
-            "result": {
-              "duration": 5699876094,
-              "status": "passed"
-            },
-            "line": 40,
-            "name": "I\u0027m on Getgo login page",
-            "match": {
-              "location": "Getgo_PageValidation.i_m_on_Getgo_login_page()"
-            },
-            "keyword": "Given "
-          },
-          {
-            "result": {
-              "duration": 1938926190,
-              "status": "passed"
-            },
-            "line": 41,
-            "name": "I enter a blank spaces in email field",
-            "match": {
-              "location": "Getgo_PageValidation.i_enter_a_blank_spaces_in_email_field()"
-            },
-            "keyword": "When "
-          },
-          {
-            "result": {
-              "duration": 3087319506,
-              "status": "passed"
-            },
-            "line": 42,
-            "name": "System should through an email error message as \"Invalid email format\"",
-            "match": {
-              "arguments": [
-                {
-                  "val": "Invalid email format",
-                  "offset": 49
-                }
-              ],
-              "location": "Getgo_Login_NewCustomer.system_should_through_an_email_error_message_as(String)"
-            },
-            "keyword": "Then "
-          }
-        ],
-        "tags": [
-          {
-            "line": 38,
-            "name": "@blank"
-          }
-        ]
-      },
-      {
-        "line": 11,
-        "name": "Open Getgo mobile application",
-        "description": "",
-        "type": "background",
-        "keyword": "Background",
-        "steps": [
-          {
-            "result": {
-              "duration": 3207449819,
-              "status": "passed"
-            },
-            "line": 12,
-            "name": "I\u0027m on Getgo landing page",
-            "match": {
-              "location": "Getgo_PageValidation.i_m_on_Getgo_landing_page()"
-            },
-            "keyword": "Given "
-          }
-        ]
-      },
-      {
-        "before": [
-          {
-            "result": {
-              "duration": 146225,
-              "status": "passed"
-            },
-            "match": {
-              "location": "StepsBase.beforeScenario(Scenario)"
-            }
-          }
-        ],
-        "line": 45,
-        "name": "Invalid login (Blank spaces in password)",
-        "description": "",
-        "id": "new-customer-login-feature;invalid-login-(blank-spaces-in-password)",
-        "after": [
-          {
-            "result": {
-              "duration": 20341,
-              "status": "passed"
-            },
-            "match": {
-              "location": "StepsBase.ifScenarioFailed(Scenario)"
-            }
-          },
-          {
-            "result": {
-              "duration": 265652250,
-              "status": "passed"
-            },
-            "match": {
-              "location": "StepsBase.afterScenario()"
-            }
-          }
-        ],
-        "type": "scenario",
-        "keyword": "Scenario",
-        "steps": [
-          {
-            "result": {
-              "duration": 13223942417,
-              "status": "passed"
-            },
-            "line": 46,
-            "name": "I\u0027m on Getgo login page with \"Valid_Email\"",
-            "match": {
-              "arguments": [
-                {
-                  "val": "Valid_Email",
-                  "offset": 30
-                }
-              ],
-              "location": "Getgo_Login_NewCustomer.i_m_on_Getgo_login_page_with(String)"
-            },
-            "keyword": "Given "
-          },
-          {
-            "result": {
-              "duration": 31778787319,
-              "status": "passed"
-            },
-            "line": 47,
-            "name": "I enter a blank spaces in password field and click next",
-            "match": {
-              "location": "Getgo_Login_NewCustomer.i_enter_a_blank_spaces_in_password_field_and_click_next()"
-            },
-            "keyword": "When "
-          },
-          {
-            "result": {
-              "duration": 3085307223,
-              "status": "passed"
-            },
-            "line": 48,
-            "name": "System should through an invalid password message",
-            "match": {
-              "location": "Getgo_Login_NewCustomer.systemShouldThroughAnInvalidPasswordMessage()"
-            },
-            "keyword": "Then "
-          }
-        ],
-        "tags": [
-          {
-            "line": 44,
-            "name": "@blank"
-          }
-        ]
-      },
-      {
-        "line": 11,
-        "name": "Open Getgo mobile application",
-        "description": "",
-        "type": "background",
-        "keyword": "Background",
-        "steps": [
-          {
-            "result": {
-              "duration": 3405978330,
-              "status": "passed"
-            },
-            "line": 12,
-            "name": "I\u0027m on Getgo landing page",
-            "match": {
-              "location": "Getgo_PageValidation.i_m_on_Getgo_landing_page()"
-            },
-            "keyword": "Given "
-          }
-        ]
-      },
-      {
-        "before": [
-          {
-            "result": {
-              "duration": 319251,
-              "status": "passed"
-            },
-            "match": {
-              "location": "StepsBase.beforeScenario(Scenario)"
-            }
-          }
-        ],
-        "line": 51,
-        "name": "Invalid login (Numerical values in Email)",
-        "description": "",
-        "id": "new-customer-login-feature;invalid-login-(numerical-values-in-email)",
-        "after": [
-          {
-            "result": {
-              "duration": 12317,
-              "status": "passed"
-            },
-            "match": {
-              "location": "StepsBase.ifScenarioFailed(Scenario)"
-            }
-          },
-          {
-            "result": {
-              "duration": 176158586,
-              "status": "passed"
-            },
-            "match": {
-              "location": "StepsBase.afterScenario()"
-            }
-          }
-        ],
-        "type": "scenario",
-        "keyword": "Scenario",
-        "steps": [
-          {
-            "result": {
-              "duration": 5737437847,
-              "status": "passed"
-            },
-            "line": 52,
-            "name": "I\u0027m on Getgo login page",
-            "match": {
-              "location": "Getgo_PageValidation.i_m_on_Getgo_login_page()"
-            },
-            "keyword": "Given "
-          },
-          {
-            "result": {
-              "duration": 1928621391,
-              "status": "passed"
-            },
-            "line": 53,
-            "name": "I enter a numerical values in email field",
-            "match": {
-              "location": "Getgo_PageValidation.i_enter_a_numerical_values_in_email_field()"
-            },
-            "keyword": "When "
-          },
-          {
-            "result": {
-              "duration": 3089234140,
-              "status": "passed"
-            },
-            "line": 54,
-            "name": "System should through an email error message as \"Invalid email format\"",
-            "match": {
-              "arguments": [
-                {
-                  "val": "Invalid email format",
-                  "offset": 49
-                }
-              ],
-              "location": "Getgo_Login_NewCustomer.system_should_through_an_email_error_message_as(String)"
-            },
-            "keyword": "Then "
-          }
-        ],
-        "tags": [
-          {
-            "line": 50,
-            "name": "@numerical"
-          }
-        ]
-      }
-    ],
-    "name": "New Customer Login Feature",
-    "description": "",
-    "id": "new-customer-login-feature",
-    "keyword": "Feature",
-    "uri": "Getgo_Login_NewCustomer.feature",
-    "tags": [
-      {
-        "line": 8,
-        "name": "@Login"
-      },
-      {
-        "line": 8,
-        "name": "@RegressionPack1"
-      }
-    ]
-  },
-  {
-    "comments": [
-      {
-        "line": 3,
-        "value": "# \u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d"
-      },
-      {
-        "line": 4,
-        "value": "# Author: Gopinath Rajaram"
-      },
-      {
-        "line": 5,
-        "value": "# Functionality : As a tester, I want to launch the GetGo Pay application freshly so that I am able to see the product welcome feature details"
-      },
-      {
-        "line": 6,
-        "value": "# \u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d"
-      }
-    ],
-    "line": 9,
-    "elements": [
-      {
-        "before": [
-          {
-            "result": {
-              "duration": 162347,
-              "status": "passed"
-            },
-            "match": {
-              "location": "StepsBase.beforeScenario(Scenario)"
-            }
-          }
-        ],
-        "line": 11,
-        "name": "As a tester, I want to launch the GetGo Pay application freshly so that I am able to see the product welcome feature details",
-        "description": "",
-        "id": "product-feature;as-a-tester,-i-want-to-launch-the-getgo-pay-application-freshly-so-that-i-am-able-to-see-the-product-welcome-feature-details",
-        "after": [
-          {
-            "result": {
-              "duration": 29788,
-              "status": "passed"
-            },
-            "match": {
-              "location": "StepsBase.ifScenarioFailed(Scenario)"
-            }
-          },
-          {
-            "result": {
-              "duration": 202488316,
-              "status": "passed"
-            },
-            "match": {
-              "location": "StepsBase.afterScenario()"
-            }
-          }
-        ],
-        "type": "scenario",
-        "keyword": "Scenario",
-        "steps": [
-          {
-            "result": {
-              "duration": 6922193823,
-              "status": "passed"
-            },
-            "line": 12,
-            "name": "I\u0027m on Getgo application with welcome page one content details,greeting image \u0026 next button",
-            "match": {
-              "location": "Getgo_ProductFeature.i_m_on_Getgo_application_with_welcome_page_one_content_details_greeting_image_next_button()"
-            },
-            "keyword": "Given "
-          },
-          {
-            "result": {
-              "duration": 4919307336,
-              "status": "passed"
-            },
-            "line": 13,
-            "name": "I click on next button",
-            "match": {
-              "location": "Getgo_ProductFeature.i_click_on_next_button()"
-            },
-            "keyword": "When "
-          },
-          {
-            "result": {
-              "duration": 2860077004,
-              "status": "passed"
-            },
-            "line": 14,
-            "name": "welcome page two should be displayed with contents,greeting image \u0026 next button",
-            "match": {
-              "location": "Getgo_ProductFeature.welcome_page_two_should_be_displayed_with_contents_greeting_image_next_button()"
-            },
-            "keyword": "Then "
-          },
-          {
-            "result": {
-              "duration": 4702851061,
-              "status": "passed"
-            },
-            "line": 15,
-            "name": "I click on next button",
-            "match": {
-              "location": "Getgo_ProductFeature.i_click_on_next_button()"
-            },
-            "keyword": "When "
-          },
-          {
-            "result": {
-              "duration": 2800475866,
-              "status": "passed"
-            },
-            "line": 16,
-            "name": "welcome page three should be displayed with contents,greeting image \u0026 next button",
-            "match": {
-              "location": "Getgo_ProductFeature.welcome_page_three_should_be_displayed_with_contents_greeting_image_next_button()"
-            },
-            "keyword": "Then "
-          },
-          {
-            "result": {
-              "duration": 4515914687,
-              "status": "passed"
-            },
-            "line": 17,
-            "name": "I click on next button",
-            "match": {
-              "location": "Getgo_ProductFeature.i_click_on_next_button()"
-            },
-            "keyword": "When "
-          },
-          {
-            "result": {
-              "duration": 3757644782,
-              "status": "passed"
-            },
-            "line": 18,
-            "name": "welcome page four should be displayed with contents,greeting image \u0026 next button",
-            "match": {
-              "location": "Getgo_ProductFeature.welcome_page_four_should_be_displayed_with_contents_greeting_image_next_button()"
-            },
-            "keyword": "Then "
-          },
-          {
-            "result": {
-              "duration": 4541040570,
-              "status": "passed"
-            },
-            "line": 19,
-            "name": "I click on next button",
-            "match": {
-              "location": "Getgo_ProductFeature.i_click_on_next_button()"
-            },
-            "keyword": "When "
-          },
-          {
-            "result": {
-              "duration": 2914554894,
-              "status": "passed"
-            },
-            "line": 20,
-            "name": "welcome page five should be displayed with contents,greeting image \u0026 get Started button",
-            "match": {
-              "location": "Getgo_ProductFeature.welcome_page_five_should_be_displayed_with_contents_greeting_image_get_Started_button()"
-            },
-            "keyword": "Then "
-          },
-          {
-            "result": {
-              "duration": 4931352210,
-              "status": "passed"
-            },
-            "line": 21,
-            "name": "I click on Get Started button",
-            "match": {
-              "location": "Getgo_ProductFeature.i_click_on_Get_Started_button()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 246874710,
-              "status": "passed"
-            },
-            "line": 22,
-            "name": "GetGo pay login/signup page should be displayed",
-            "match": {
-              "location": "Getgo_ProductFeature.getgo_pay_login_signup_page_should_be_displayed()"
-            },
-            "keyword": "Then "
-          }
-        ]
-      }
-    ],
-    "name": "Product Feature",
-    "description": "",
-    "id": "product-feature",
-    "keyword": "Feature",
-    "uri": "Getgo_ProductFeature.feature",
-    "tags": [
-      {
-        "line": 8,
-        "name": "@ProductFeature"
-      },
-      {
-        "line": 8,
-        "name": "@RegressionPack1"
-      }
-    ]
-  },
-  {
-    "comments": [
-      {
-        "line": 2,
-        "value": "# \u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d"
-      },
-      {
-        "line": 3,
-        "value": "# Author: Gopinath Rajaram"
-      },
-      {
-        "line": 4,
-        "value": "# Functionality : As a tester, I want to be see the Terms and Conditions page of the GetoPay app so that i am aware about the TERMS \u0026 CONDITIONS and PRIVACY POLICY details"
-      },
-      {
-        "line": 5,
-        "value": "# \u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d"
-      }
-    ],
-    "line": 8,
-    "elements": [
-      {
-        "line": 10,
-        "name": "Login into account",
-        "description": "",
-        "type": "background",
-        "keyword": "Background",
-        "steps": [
-          {
-            "result": {
-              "duration": 3306127767,
-              "status": "passed"
-            },
-            "line": 11,
-            "name": "I\u0027m on Getgo landing page",
-            "match": {
-              "location": "Getgo_PageValidation.i_m_on_Getgo_landing_page()"
-            },
-            "keyword": "Given "
-          }
-        ]
-      },
-      {
-        "before": [
-          {
-            "result": {
-              "duration": 162858,
-              "status": "passed"
-            },
-            "match": {
-              "location": "StepsBase.beforeScenario(Scenario)"
-            }
-          }
-        ],
-        "line": 13,
-        "name": "As a tester, I want to be see the Terms and Conditions page of the GetoPay app so that i am aware about the TERMS \u0026 CONDITIONS and PRIVACY POLICY details",
-        "description": "",
-        "id": "termsandconditions;as-a-tester,-i-want-to-be-see-the-terms-and-conditions-page-of-the-getopay-app-so-that-i-am-aware-about-the-terms-\u0026-conditions-and-privacy-policy-details",
-        "after": [
-          {
-            "result": {
-              "duration": 670126910,
-              "status": "passed"
-            },
-            "match": {
-              "location": "StepsBase.ifScenarioFailed(Scenario)"
-            }
-          },
-          {
-            "result": {
-              "duration": 193342940,
-              "status": "passed"
-            },
-            "match": {
-              "location": "StepsBase.afterScenario()"
-            }
-          }
-        ],
-        "type": "scenario",
-        "keyword": "Scenario",
-        "steps": [
-          {
-            "result": {
-              "duration": 38532073312,
-              "status": "passed"
-            },
-            "line": 14,
-            "name": "I\u0027m login into my \"Peso\" account with my \"Peso_Username\" and \"Peso_Password\"",
-            "match": {
-              "arguments": [
-                {
-                  "val": "Peso",
-                  "offset": 19
-                },
-                {
-                  "val": "Peso_Username",
-                  "offset": 42
-                },
-                {
-                  "val": "Peso_Password",
-                  "offset": 62
-                }
-              ],
-              "location": "Getgo_Login_NewCustomer.iMLoginIntoMyAccountWithMyAnd(String,String,String)"
-            },
-            "keyword": "Given "
-          },
-          {
-            "result": {
-              "duration": 3898425613,
-              "status": "passed"
-            },
-            "line": 15,
-            "name": "I choose More menu options from the GetGopay dashboard page",
-            "match": {
-              "location": "Getgo_TermsandConditions.i_choose_More_menu_options_from_the_GetGopay_dashboard_page()"
-            },
-            "keyword": "When "
-          },
-          {
-            "result": {
-              "duration": 2322886231,
-              "status": "passed"
-            },
-            "line": 16,
-            "name": "More page should be displayed with the options \"About the Cards\", \"Contact Us\",\"Frequently Asked Questions\" \u0026 \"Terms \u0026 Conditions\"",
-            "match": {
-              "arguments": [
-                {
-                  "val": "About the Cards",
-                  "offset": 48
-                },
-                {
-                  "val": "Contact Us",
-                  "offset": 67
-                },
-                {
-                  "val": "Frequently Asked Questions",
-                  "offset": 80
-                },
-                {
-                  "val": "Terms \u0026 Conditions",
-                  "offset": 111
-                }
-              ],
-              "location": "Getgo_TermsandConditions.more_page_should_be_displayed_with_the_options(String,String,String,String)"
-            },
-            "keyword": "Then "
-          },
-          {
-            "result": {
-              "duration": 610489873,
-              "status": "passed"
-            },
-            "line": 17,
-            "name": "I click on \"Terms \u0026 Conditions\" option",
-            "match": {
-              "arguments": [
-                {
-                  "val": "Terms \u0026 Conditions",
-                  "offset": 12
-                }
-              ],
-              "location": "Getgo_TermsandConditions.i_click_on_option(String)"
-            },
-            "keyword": "When "
-          },
-          {
-            "result": {
-              "duration": 93121030526,
-              "error_message": "exceptions.ApplicationException: Element [Getgo.TAC.Lbllastelement] not found!\n\tat actions.Get.elementBy(Get.java:27)\n\tat actions.Verify.elementTextMatching(Verify.java:32)\n\tat pages.PageTermsandConditions.verifyPageTermsandConditionsLastelement(PageTermsandConditions.java:66)\n\tat stepdefinitions.Getgo_TermsandConditions.terms_Conditions_page_should_be_displayed_with_two_sections_and_verify_the_contents(Getgo_TermsandConditions.java:50)\n\tat ✽.Then Terms \u0026 Conditions page should be displayed with two sections \"TERMS \u0026 CONDITIONS\" and \"PRIVACY POLICY\" \u0026 verify the contents(Getgo_TermsandConditions.feature:18)\n",
-              "status": "failed"
-            },
-            "line": 18,
-            "name": "Terms \u0026 Conditions page should be displayed with two sections \"TERMS \u0026 CONDITIONS\" and \"PRIVACY POLICY\" \u0026 verify the contents",
-            "match": {
-              "arguments": [
-                {
-                  "val": "TERMS \u0026 CONDITIONS",
-                  "offset": 63
-                },
-                {
-                  "val": "PRIVACY POLICY",
-                  "offset": 88
-                }
-              ],
-              "location": "Getgo_TermsandConditions.terms_Conditions_page_should_be_displayed_with_two_sections_and_verify_the_contents(String,String)"
-            },
-            "keyword": "Then "
-          }
-        ]
-      }
-    ],
-    "name": "TermsandConditions",
-    "description": "",
-    "id": "termsandconditions",
-    "keyword": "Feature",
-    "uri": "Getgo_TermsandConditions.feature",
-    "tags": [
-      {
-        "line": 7,
-        "name": "@TermsandConditions"
-      },
-      {
-        "line": 7,
-        "name": "@RegressionPack1"
-      }
-    ]
-  },
-  {
-    "comments": [
-      {
         "line": 1,
         "value": "# \u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d"
       },
@@ -1551,7 +11,7 @@
       },
       {
         "line": 3,
-        "value": "# Functionality : As a User, I want to view the transaction history details of my account in the GetGopay so that i am aware of my transaction details"
+        "value": "# Functionality : As a tester, I want to be able to change my personal profile so that my details are updated."
       },
       {
         "line": 4,
@@ -1569,7 +29,7 @@
         "steps": [
           {
             "result": {
-              "duration": 3384921266,
+              "duration": 35048296151,
               "status": "passed"
             },
             "line": 10,
@@ -1585,7 +45,7 @@
         "before": [
           {
             "result": {
-              "duration": 219277,
+              "duration": 448896,
               "status": "passed"
             },
             "match": {
@@ -1593,14 +53,14 @@
             }
           }
         ],
-        "line": 12,
-        "name": "As a User, I want to view the transaction history details of my account in the GetGopay so that i am aware of my transaction details - Activities from Dashboard page",
+        "line": 48,
+        "name": "As a tester, I want to see the Verify Account page on clicking Profile option from Manage My settings",
         "description": "",
-        "id": "transaction-history/activities;as-a-user,-i-want-to-view-the-transaction-history-details-of-my-account-in-the-getgopay-so-that-i-am-aware-of-my-transaction-details---activities-from-dashboard-page",
+        "id": "edit-profile;as-a-tester,-i-want-to-see-the-verify-account-page-on-clicking-profile-option-from-manage-my-settings",
         "after": [
           {
             "result": {
-              "duration": 503598419,
+              "duration": 83634,
               "status": "passed"
             },
             "match": {
@@ -1609,7 +69,7 @@
           },
           {
             "result": {
-              "duration": 180011055,
+              "duration": 346852223,
               "status": "passed"
             },
             "match": {
@@ -1622,12 +82,11 @@
         "steps": [
           {
             "result": {
-              "duration": 43610797614,
-              "error_message": "exceptions.ApplicationException: Element [Getgo.Login.TxtPassword] not found!\n\tat actions.Get.elementBy(Get.java:27)\n\tat actions.Type.sensitiveData(Type.java:29)\n\tat pages.PageLogin.enterPassword(PageLogin.java:84)\n\tat stepdefinitions.Getgo_ChangePassword.i_m_on_page_of_GetGo_pay_with_valid_and(Getgo_ChangePassword.java:39)\n\tat ✽.Given I\u0027m on \"Dashboard\" page of GetGo pay with valid \"Peso_Username\" and \"Peso_Password\"(Getgo_TransactionHistory_Activities.feature:13)\n",
-              "status": "failed"
+              "duration": 30330952181,
+              "status": "passed"
             },
-            "line": 13,
-            "name": "I\u0027m on \"Dashboard\" page of GetGo pay with valid \"Peso_Username\" and \"Peso_Password\"",
+            "line": 49,
+            "name": "I\u0027m on \"Dashboard\" page of GetGo pay with valid \"edit_username\" and \"edit_password\"",
             "match": {
               "arguments": [
                 {
@@ -1635,11 +94,11 @@
                   "offset": 8
                 },
                 {
-                  "val": "Peso_Username",
+                  "val": "edit_username",
                   "offset": 49
                 },
                 {
-                  "val": "Peso_Password",
+                  "val": "edit_password",
                   "offset": 69
                 }
               ],
@@ -1649,58 +108,75 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 4400266431,
+              "status": "passed"
             },
-            "line": 14,
-            "name": "I click on the Availabel Balance Amount field in the Dasboard page",
+            "line": 50,
+            "name": "I choose Settings option from the menu",
             "match": {
-              "location": "Getgo_TransactionHistory_Activities.i_click_on_the_Availabel_Balance_Amount_field_in_the_Dasboard_page()"
+              "location": "Getgo_ChangePassword.i_choose_Settings_option_from_the_menu()"
             },
             "keyword": "When "
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 4156874918,
+              "status": "passed"
             },
-            "line": 15,
-            "name": "Transaction History/Activities for the logged user should be displayed",
+            "line": 51,
+            "name": "I should see \"Manage My Settings\" page",
             "match": {
-              "location": "Getgo_TransactionHistory_Activities.transaction_History_Activities_for_the_logged_user_should_be_displayed()"
+              "arguments": [
+                {
+                  "val": "Manage My Settings",
+                  "offset": 14
+                }
+              ],
+              "location": "Getgo_ChangePassword.i_should_see_page(String)"
             },
             "keyword": "Then "
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 886873696,
+              "status": "passed"
             },
-            "line": 16,
-            "name": "I verify all the details present in the Transaction History/Activities page",
+            "line": 52,
+            "name": "I choose \"Profile\" option from settings page",
             "match": {
-              "location": "Getgo_TransactionHistory_Activities.i_verify_all_the_details_present_in_the_Transaction_History_Activities_page()"
+              "arguments": [
+                {
+                  "val": "Profile",
+                  "offset": 10
+                }
+              ],
+              "location": "Getgo_ChangePassword.i_choose_option_from_settings_page(String)"
             },
             "keyword": "When "
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 2732320374,
+              "status": "passed"
             },
-            "line": 17,
-            "name": "Click any one transaction list",
+            "line": 53,
+            "name": "I should see \"Verify Account\" page \u0026 prompting to enter password",
             "match": {
-              "location": "Getgo_TransactionHistory_Activities.click_any_one_transaction_list()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "status": "skipped"
-            },
-            "line": 18,
-            "name": "I should see the Transaction History/Activities details page with Reference No,Transaction Date,Description,Transaction Amount \u0026 Ending Balance",
-            "match": {
-              "location": "Getgo_TransactionHistory_Activities.i_should_see_the_Transaction_History_Activities_details_page_with_Reference_No_Transaction_Date_Description_Transaction_Amount_Ending_Balance()"
+              "arguments": [
+                {
+                  "val": "Verify Account",
+                  "offset": 14
+                }
+              ],
+              "location": "Getgo_EditProfile.i_should_see_page_prompting_to_enter_password(String)"
             },
             "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "line": 47,
+            "name": "@run2"
           }
         ]
       },
@@ -1713,7 +189,7 @@
         "steps": [
           {
             "result": {
-              "duration": 3329738648,
+              "duration": 6689227759,
               "status": "passed"
             },
             "line": 10,
@@ -1729,7 +205,7 @@
         "before": [
           {
             "result": {
-              "duration": 194279,
+              "duration": 143886,
               "status": "passed"
             },
             "match": {
@@ -1737,14 +213,14 @@
             }
           }
         ],
-        "line": 20,
-        "name": "As a User, I want to view the transaction history details of my account in the GetGopay so that i am aware of my transaction details - Activities from Fund Transfer page",
+        "line": 55,
+        "name": "As a tester, I want to see an error message on entering invalid password in the Verify Account page",
         "description": "",
-        "id": "transaction-history/activities;as-a-user,-i-want-to-view-the-transaction-history-details-of-my-account-in-the-getgopay-so-that-i-am-aware-of-my-transaction-details---activities-from-fund-transfer-page",
+        "id": "edit-profile;as-a-tester,-i-want-to-see-an-error-message-on-entering-invalid-password-in-the-verify-account-page",
         "after": [
           {
             "result": {
-              "duration": 462071800,
+              "duration": 33583,
               "status": "passed"
             },
             "match": {
@@ -1753,7 +229,7 @@
           },
           {
             "result": {
-              "duration": 196593317,
+              "duration": 252772817,
               "status": "passed"
             },
             "match": {
@@ -1766,334 +242,346 @@
         "steps": [
           {
             "result": {
-              "duration": 43905288672,
-              "error_message": "exceptions.ApplicationException: Element [Getgo.Login.TxtPassword] not found!\n\tat actions.Get.elementBy(Get.java:27)\n\tat actions.Type.sensitiveData(Type.java:29)\n\tat pages.PageLogin.enterPassword(PageLogin.java:84)\n\tat stepdefinitions.Getgo_TransactionHistory_Activities.i_m_on_page_of_GetGo_pay_with_valid_and_details(Getgo_TransactionHistory_Activities.java:66)\n\tat ✽.Given I\u0027m on \"Send Money\" page of GetGo pay with valid \"Peso_Username\" and \"Peso_Password\" details(Getgo_TransactionHistory_Activities.feature:21)\n",
-              "status": "failed"
+              "duration": 30727435825,
+              "status": "passed"
             },
-            "line": 21,
-            "name": "I\u0027m on \"Send Money\" page of GetGo pay with valid \"Peso_Username\" and \"Peso_Password\" details",
+            "line": 56,
+            "name": "I\u0027m on \"Dashboard\" page of GetGo pay with valid \"edit_username\" and \"edit_password\"",
             "match": {
               "arguments": [
                 {
-                  "val": "Send Money",
+                  "val": "Dashboard",
                   "offset": 8
                 },
                 {
-                  "val": "Peso_Username",
-                  "offset": 50
+                  "val": "edit_username",
+                  "offset": 49
                 },
                 {
-                  "val": "Peso_Password",
-                  "offset": 70
+                  "val": "edit_password",
+                  "offset": 69
                 }
               ],
-              "location": "Getgo_TransactionHistory_Activities.i_m_on_page_of_GetGo_pay_with_valid_and_details(String,String,String)"
+              "location": "Getgo_ChangePassword.i_m_on_page_of_GetGo_pay_with_valid_and(String,String,String)"
             },
             "keyword": "Given "
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 4252612707,
+              "status": "passed"
             },
-            "line": 22,
-            "name": "I click on the Activities option from the bottom of the fund transfer page",
+            "line": 57,
+            "name": "I choose Settings option from the menu",
             "match": {
-              "location": "Getgo_TransactionHistory_Activities.i_click_on_the_Activities_option_from_the_bottom_of_the_fund_transfer_page()"
+              "location": "Getgo_ChangePassword.i_choose_Settings_option_from_the_menu()"
             },
             "keyword": "When "
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 4147496277,
+              "status": "passed"
             },
-            "line": 23,
-            "name": "Transaction History/Activities for the logged user should be displayed",
+            "line": 58,
+            "name": "I should see \"Manage My Settings\" page",
             "match": {
-              "location": "Getgo_TransactionHistory_Activities.transaction_History_Activities_for_the_logged_user_should_be_displayed()"
+              "arguments": [
+                {
+                  "val": "Manage My Settings",
+                  "offset": 14
+                }
+              ],
+              "location": "Getgo_ChangePassword.i_should_see_page(String)"
             },
             "keyword": "Then "
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 749781462,
+              "status": "passed"
             },
-            "line": 24,
-            "name": "I verify all the details present in the Transaction History/Activities page",
+            "line": 59,
+            "name": "I choose \"Profile\" option from settings page",
             "match": {
-              "location": "Getgo_TransactionHistory_Activities.i_verify_all_the_details_present_in_the_Transaction_History_Activities_page()"
+              "arguments": [
+                {
+                  "val": "Profile",
+                  "offset": 10
+                }
+              ],
+              "location": "Getgo_ChangePassword.i_choose_option_from_settings_page(String)"
             },
             "keyword": "When "
           },
           {
             "result": {
-              "status": "skipped"
-            },
-            "line": 25,
-            "name": "Click any one transaction list",
-            "match": {
-              "location": "Getgo_TransactionHistory_Activities.click_any_one_transaction_list()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "status": "skipped"
-            },
-            "line": 26,
-            "name": "I should see the Transaction History/Activities details page with Reference No,Transaction Date,Description,Transaction Amount and Ending Balance",
-            "match": {
-              "location": "Getgo_TransactionHistory_Activities.i_should_see_the_Transaction_History_Activities_details_page_with_Reference_No_Transaction_Date_Description_Transaction_Amount_and_Ending_Balance()"
-            },
-            "keyword": "Then "
-          }
-        ]
-      }
-    ],
-    "name": "Transaction History/Activities",
-    "description": "",
-    "id": "transaction-history/activities",
-    "keyword": "Feature",
-    "uri": "Getgo_TransactionHistory_Activities.feature",
-    "tags": [
-      {
-        "line": 6,
-        "name": "@TransactionHistory"
-      },
-      {
-        "line": 6,
-        "name": "@RegressionPack1"
-      }
-    ]
-  },
-  {
-    "comments": [
-      {
-        "line": 1,
-        "value": "# \u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d"
-      },
-      {
-        "line": 2,
-        "value": "# Author: Balabharathi Jayaraman"
-      },
-      {
-        "line": 3,
-        "value": "# Functionality : As a tester, I want to be able to register my personal details so that I can be issued a virtual card."
-      },
-      {
-        "line": 4,
-        "value": "# \u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d"
-      }
-    ],
-    "line": 7,
-    "elements": [
-      {
-        "line": 9,
-        "name": "Open Getgo mobile application",
-        "description": "",
-        "type": "background",
-        "keyword": "Background",
-        "steps": [
-          {
-            "result": {
-              "duration": 3360136788,
+              "duration": 2568743105,
               "status": "passed"
             },
-            "line": 10,
-            "name": "I\u0027m on Getgo landing page",
+            "line": 60,
+            "name": "I should see \"Verify Account\" page \u0026 prompting to enter password",
             "match": {
-              "location": "Getgo_PageValidation.i_m_on_Getgo_landing_page()"
-            },
-            "keyword": "Given "
-          }
-        ]
-      },
-      {
-        "before": [
-          {
-            "result": {
-              "duration": 231051,
-              "status": "passed"
-            },
-            "match": {
-              "location": "StepsBase.beforeScenario(Scenario)"
-            }
-          }
-        ],
-        "line": 13,
-        "name": "Register a new virtual card",
-        "description": "",
-        "id": "new-virtual-card-registration;register-a-new-virtual-card",
-        "after": [
-          {
-            "result": {
-              "duration": 575579237,
-              "status": "passed"
-            },
-            "match": {
-              "location": "StepsBase.ifScenarioFailed(Scenario)"
-            }
-          },
-          {
-            "result": {
-              "duration": 276042165,
-              "status": "passed"
-            },
-            "match": {
-              "location": "StepsBase.afterScenario()"
-            }
-          }
-        ],
-        "type": "scenario",
-        "keyword": "Scenario",
-        "steps": [
-          {
-            "result": {
-              "duration": 30671054723,
-              "status": "passed"
-            },
-            "line": 14,
-            "name": "I\u0027m on Getgo virtual card registration screen",
-            "match": {
-              "location": "Getgo_VirtualCardRegistration.iMOnGetgoVirtualCardRegistrationScreen()"
-            },
-            "keyword": "Given "
-          },
-          {
-            "result": {
-              "duration": 6502818560,
-              "status": "passed"
-            },
-            "line": 15,
-            "name": "I enter Mobile Number, Email Address, and Nominate and Confirm password",
-            "match": {
-              "location": "Getgo_VirtualCardRegistration.iEnterMobileNumberEmailAddressAndNominateAndConfirmPassword()"
-            },
-            "keyword": "When "
-          },
-          {
-            "result": {
-              "duration": 11568109905,
-              "status": "passed"
-            },
-            "line": 16,
-            "name": "I enter one time password",
-            "match": {
-              "location": "Getgo_VirtualCardRegistration.iEnterOneTimePassword()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 66488195075,
-              "error_message": "exceptions.ApplicationException: Element [Getgo.CreateVirtualCard.TxtPresentCountry] not found!\n\tat actions.Get.elementBy(Get.java:27)\n\tat actions.Verify.elementTextMatching(Verify.java:32)\n\tat pages.PageVirtualCardRegistration.enterPresentAddressDetails(PageVirtualCardRegistration.java:207)\n\tat stepdefinitions.Getgo_VirtualCardRegistration.iFillMyPersonalDetails(Getgo_VirtualCardRegistration.java:59)\n\tat ✽.And I fill my personal details(Z_Getgo_CardRegistration_Virtual.feature:17)\n",
-              "status": "failed"
-            },
-            "line": 17,
-            "name": "I fill my personal details",
-            "match": {
-              "location": "Getgo_VirtualCardRegistration.iFillMyPersonalDetails()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "status": "skipped"
-            },
-            "line": 18,
-            "name": "I review \u0026 submit",
-            "match": {
-              "location": "Getgo_VirtualCardRegistration.iReviewSubmit()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "status": "skipped"
-            },
-            "line": 19,
-            "name": "I click verify now",
-            "match": {
-              "location": "Getgo_VirtualCardRegistration.iClickVerifyNow()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "status": "skipped"
-            },
-            "line": 20,
-            "name": "I should see the dashboard",
-            "match": {
-              "location": "Getgo_VirtualCardRegistration.iShouldSeeTheDashboard()"
+              "arguments": [
+                {
+                  "val": "Verify Account",
+                  "offset": 14
+                }
+              ],
+              "location": "Getgo_EditProfile.i_should_see_page_prompting_to_enter_password(String)"
             },
             "keyword": "Then "
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 4701060324,
+              "status": "passed"
             },
-            "line": 21,
-            "name": "I click the verification email link from my inbox",
+            "line": 61,
+            "name": "I enter Invalid password",
             "match": {
-              "location": "Getgo_VirtualCardRegistration.iClickTheVerificationEmailLinkFromMyInbox()"
+              "location": "Getgo_EditProfile.i_enter_Invalid_password()"
             },
             "keyword": "When "
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 3836574174,
+              "status": "passed"
             },
-            "line": 22,
-            "name": "I should see a message account is verified",
+            "line": 62,
+            "name": "An error message should be displayed as \"Password is incorrect.\"",
             "match": {
-              "location": "Getgo_VirtualCardRegistration.iShouldSeeAMessageAccountIsVerified()"
-            },
-            "keyword": "Then "
-          },
-          {
-            "result": {
-              "status": "skipped"
-            },
-            "line": 23,
-            "name": "I login with the My Email next time",
-            "match": {
-              "location": "Getgo_VirtualCardRegistration.iLoginWithTheMyEmailNextTime()"
-            },
-            "keyword": "When "
-          },
-          {
-            "result": {
-              "status": "skipped"
-            },
-            "line": 24,
-            "name": "I should see my virtual card in the dashboard",
-            "match": {
-              "location": "Getgo_VirtualCardRegistration.iShouldSeeMyVirtualCardInTheDashboard()"
+              "arguments": [
+                {
+                  "val": "Password is incorrect.",
+                  "offset": 41
+                }
+              ],
+              "location": "Getgo_EditProfile.an_error_message_should_be_displayed_as(String)"
             },
             "keyword": "Then "
           }
         ],
         "tags": [
           {
-            "line": 12,
-            "name": "@AndroidOnly"
+            "line": 54,
+            "name": "@run2"
+          }
+        ]
+      },
+      {
+        "line": 9,
+        "name": "Login into account",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "duration": 6542109262,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "I\u0027m on Getgo landing page",
+            "match": {
+              "location": "Getgo_PageValidation.i_m_on_Getgo_landing_page()"
+            },
+            "keyword": "Given "
+          }
+        ]
+      },
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 218663,
+              "status": "passed"
+            },
+            "match": {
+              "location": "StepsBase.beforeScenario(Scenario)"
+            }
+          }
+        ],
+        "line": 64,
+        "name": "As a tester, I want to see Profile page on entering valid password in the Verify Account page",
+        "description": "",
+        "id": "edit-profile;as-a-tester,-i-want-to-see-profile-page-on-entering-valid-password-in-the-verify-account-page",
+        "after": [
+          {
+            "result": {
+              "duration": 12604,
+              "status": "passed"
+            },
+            "match": {
+              "location": "StepsBase.ifScenarioFailed(Scenario)"
+            }
+          },
+          {
+            "result": {
+              "duration": 238720038,
+              "status": "passed"
+            },
+            "match": {
+              "location": "StepsBase.afterScenario()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 32625591624,
+              "status": "passed"
+            },
+            "line": 65,
+            "name": "I\u0027m on \"Dashboard\" page of GetGo pay with valid \"edit_username\" and \"edit_password\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Dashboard",
+                  "offset": 8
+                },
+                {
+                  "val": "edit_username",
+                  "offset": 49
+                },
+                {
+                  "val": "edit_password",
+                  "offset": 69
+                }
+              ],
+              "location": "Getgo_ChangePassword.i_m_on_page_of_GetGo_pay_with_valid_and(String,String,String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 4464252789,
+              "status": "passed"
+            },
+            "line": 66,
+            "name": "I choose Settings option from the menu",
+            "match": {
+              "location": "Getgo_ChangePassword.i_choose_Settings_option_from_the_menu()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 4143211356,
+              "status": "passed"
+            },
+            "line": 67,
+            "name": "I should see \"Manage My Settings\" page",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Manage My Settings",
+                  "offset": 14
+                }
+              ],
+              "location": "Getgo_ChangePassword.i_should_see_page(String)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 731101526,
+              "status": "passed"
+            },
+            "line": 68,
+            "name": "I choose \"Profile\" option from settings page",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Profile",
+                  "offset": 10
+                }
+              ],
+              "location": "Getgo_ChangePassword.i_choose_option_from_settings_page(String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 2528813496,
+              "status": "passed"
+            },
+            "line": 69,
+            "name": "I should see \"Verify Account\" page \u0026 prompting to enter password",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Verify Account",
+                  "offset": 14
+                }
+              ],
+              "location": "Getgo_EditProfile.i_should_see_page_prompting_to_enter_password(String)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 4723732681,
+              "status": "passed"
+            },
+            "line": 70,
+            "name": "I enter valid password",
+            "match": {
+              "location": "Getgo_EditProfile.i_enter_valid_password()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 5410387847,
+              "status": "passed"
+            },
+            "line": 71,
+            "name": "I should see \"Manage Profile\" page with \"PERSONAL DETAILS\" , \"ADDRESS\" \u0026 \"OTHER DETAILS\" sections",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Manage Profile",
+                  "offset": 14
+                },
+                {
+                  "val": "PERSONAL DETAILS",
+                  "offset": 41
+                },
+                {
+                  "val": "ADDRESS",
+                  "offset": 62
+                },
+                {
+                  "val": "OTHER DETAILS",
+                  "offset": 74
+                }
+              ],
+              "location": "Getgo_EditProfile.i_should_see_page_with_sections(String,String,String,String)"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "line": 63,
+            "name": "@run2"
           }
         ]
       }
     ],
-    "name": "New Virtual Card Registration",
+    "name": "Edit Profile",
     "description": "",
-    "id": "new-virtual-card-registration",
+    "id": "edit-profile",
     "keyword": "Feature",
-    "uri": "Z_Getgo_CardRegistration_Virtual.feature",
+    "uri": "Getgo_EditProfile.feature",
     "tags": [
       {
         "line": 6,
-        "name": "@VirtualRegistration"
-      },
-      {
-        "line": 6,
-        "name": "@RegressionPack1"
+        "name": "@EditProfile"
       }
     ]
   }

@@ -77,6 +77,7 @@ public class PageSignUp extends Keywords {
 
     public void clickNext() throws ApplicationException
     {
+        WAIT.forSeconds(3);
         click.elementBy(keyBtnNext);
     }
 

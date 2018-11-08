@@ -158,7 +158,7 @@ PageAccountDashboard extends Keywords {
     private double getBalanceOfCurrency_Android(String currencyName) throws ApplicationException {
         double balance;
         WebElement parentElement=get.elementBy(By.xpath("//android.widget.TextView[@text='"+currencyName+"']/parent::*"));
-        balance=Double.parseDouble(parentElement.findElements(By.xpath("//"+ ObjectClass.AndroidTextView)).get(1).getText().trim().split(" ")[1].trim());
+        balance=Double.parseDouble(parentElement.findElements(By.xpath("//"+ ObjectClass.AndroidTextView)).get(1).getText().trim());
         return balance;
     }
 

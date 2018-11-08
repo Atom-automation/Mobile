@@ -10,6 +10,8 @@ import helper.Device;
 import org.junit.Assert;
 import xpath.Matching;
 
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
 import java.text.ParseException;
 
 public class PageActivities extends Keywords {
@@ -61,7 +63,8 @@ public class PageActivities extends Keywords {
         {
             transferDate = Test.tools.getDateInFormat(day,month,year,"MMM dd, YYYY");
         }
-        verify.elementTextContains(keyLblTransactionDate,Test.tools.DisplayMonthFully(transferDate));
+        //verify.elementTextContains(keyLblTransactionDate,Test.tools.DisplayMonthFully(transferDate));
+        verify.elementTextContains(keyLblTransactionDate,transferDate);
         return transactiondate = get.elementText(keyLblTransactionDate);
     }
 
@@ -76,8 +79,9 @@ public class PageActivities extends Keywords {
     }
 
     public String verifyEndingBalance(double amount,double beforeBalance) throws ApplicationException {
+
         double expectedBalance= beforeBalance-amount;
-        Assert.assertEquals(Test.tools.REMOVE_MULTIPLE_SPACES_AND_NEW_LINES("PHP "+Double.toString(expectedBalance)),Test.tools.REMOVE_MULTIPLE_SPACES_AND_NEW_LINES(Test.tools.fixAmountIssue(get.elementBy(keyLblEndingBalance).getText())));
+        Assert.assertEquals(Test.tools.REMOVE_MULTIPLE_SPACES_AND_NEW_LINES("PHP "+Double.toString(expectedBalance)),Test.tools.REMOVE_MULTIPLE_SPACES_AND_NEW_LINES(Test.tools.fixAmountIssue(get.elementBy(keyLblEndingBalance).getText().replaceAll(",",""))));
         return endingBalance = get.elementText(keyLblEndingBalance);
     }
 
@@ -179,7 +183,7 @@ public class PageActivities extends Keywords {
         //verify.elementTextMatching(keyLblTransactionDate);
        verify.elementTextContains(keyLblDescription, description);
         verify.elementTextMatching(keyLblTransactionAmount, transactionamt);
-        verify.elementTextContains(keyLblEndingBalance, "PHP ₱ " + availabelBalance);
+        verify.elementTextContains(keyLblEndingBalance, "PHP " + availabelBalance);
     }
     else
     {
@@ -217,9 +221,11 @@ public class PageActivities extends Keywords {
     }
 
     public void selectActivityByReferneceNo(String data) throws ApplicationException {
+
         if(Device.isAndroid())
         {
     // need logiccc
+            click.elementBy(xpathOf.textView(Matching.youDecide("Ref: "+data)));
         }
         else
             {
@@ -241,10 +247,13 @@ public class PageActivities extends Keywords {
 
 
             verify.elementTextMatching(keyLblTransactionReferenceNumber, refno);
-            verify.elementTextContains(keyLblTransactionDate,date);
+            verify.elementIsPresent(keyLblTransactionDate);
             verify.elementTextMatching(keyLblDescription,desc);
-            verify.elementTextMatching(keyLblTransactionAmount, tranamt);
-            verify.elementTextContains(keyLblEndingBalance, "PHP ₱ " + endingbalance.substring(4));
+            verify.elementIsPresent(keyLblTransactionAmount);
+            verify.elementIsPresent(keyLblEndingBalance);
+
+            //verify.elementTextMatching(keyLblTransactionAmount, tranamt);
+          //  verify.elementTextContains(keyLblEndingBalance, "PHP ₱ " + endingbalance.substring(4));
         }
         else
         {

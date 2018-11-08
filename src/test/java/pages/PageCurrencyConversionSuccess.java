@@ -11,8 +11,10 @@ public class PageCurrencyConversionSuccess extends Keywords {
     private String keyBtnDashboard="Getgo.CurrencyConversionSuccess.BtnDashboard";
     private String keyBtnViewDetails="Getgo.CurrencyConversionSuccess.BtnViewDetails";
 
-    private String congrats="Congratulations!";
-    private String message="You have successfully converted currency";
+    //private String congrats="Congratulations!";
+   // private String message="You have successfully converted currency";
+    private String congrats="You did it!";
+    private String message="You successfully converted currency.";
 
     private void doesPageContains() throws ApplicationException {
         verify.elementIsPresent(keyImgGetgoLogo);

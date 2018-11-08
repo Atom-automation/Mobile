@@ -36,6 +36,10 @@ public class Getgo_PageValidation
     @Then("^I should see two button \"([^\"]*)\" \"([^\"]*)\", Getgo card image, two messages \"([^\"]*)\" & \"([^\"]*)\"$")
     public void i_should_see_two_button_Getgo_card_image_two_messages(String register, String create, String caption1, String caption2) throws Throwable
     {
+        signUpPage.verifyPageTitle("Sign-up");
+        signUpPage.verifySignUpPageContents();
+        signUpPage.enterEmailAddress("test123@sqss.com");
+        signUpPage.clickNext();
         signUpPage.doesPageContains(caption1,caption2,create,register);
     }
 
@@ -45,11 +49,12 @@ public class Getgo_PageValidation
         welcomePage.clickLogin();
     }
 
-    @Then("^I should see back arrow, page title as \"([^\"]*)\", a caption \"([^\"]*)\", a text box with inner text \"([^\"]*)\", a link \"([^\"]*)\", a \"([^\"]*)\" button & a sign up link \"([^\"]*)\"$")
-    public void i_should_see_back_arrow_page_title_as_a_caption_a_text_box_with_inner_text_a_link_a_button_a_sign_up_link(String pageTitle, String caption, String emailBoxInnerTxt, String havingProblemsLinkTxt, String nextBtnTxt, String signUpLinkTxt) throws Throwable
+    @Then("^I should see back arrow, page title as \"([^\"]*)\", a caption \"([^\"]*)\", a text box with inner text \"([^\"]*)\", a \"([^\"]*)\" button & a sign up link \"([^\"]*)\"$")
+    public void i_should_see_back_arrow_page_title_as_a_caption_a_text_box_with_inner_text_a_link_a_button_a_sign_up_link(String pageTitle, String caption, String emailBoxInnerTxt, String nextBtnTxt, String signUpLinkTxt) throws Throwable
     {
-        loginPage.doesUserNameScreenContains(pageTitle, caption, emailBoxInnerTxt, havingProblemsLinkTxt, nextBtnTxt, signUpLinkTxt);
+        loginPage.doesUserNameScreenContains(pageTitle, caption, emailBoxInnerTxt, nextBtnTxt, signUpLinkTxt);
     }
+
 
     @When("^I enter a \"([^\"]*)\" & click next$")
     public void i_enter_a_click_next(String emailID) throws Throwable

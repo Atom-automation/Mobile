@@ -14,7 +14,7 @@ Feature: TermsandConditions
     Given I'm login into my "Peso" account with my "Peso_Username" and "Peso_Password"
     When I choose More menu options from the GetGopay dashboard page
     Then More page should be displayed with the options "About the Cards", "Contact Us","Frequently Asked Questions" & "Terms & Conditions"
-    When I click on "Terms & Conditions" option
+    When I click on "Terms and Conditions" option
     Then Terms & Conditions page should be displayed with two sections "TERMS & CONDITIONS" and "PRIVACY POLICY" & verify the contents
 
 

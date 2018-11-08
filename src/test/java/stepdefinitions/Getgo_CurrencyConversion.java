@@ -54,10 +54,12 @@ public class Getgo_CurrencyConversion {
     @When("^I review conversion details and submit$")
     public void iReviewConversionDetailsAndSubmit() throws Throwable {
         //need to check
-        review.transferFrom(PropertyReader.testDataOf("Peso_FullName"),PropertyReader.testDataOf("Peso_CardNumber"));
+        review.verifyPageTitle("Review and Convert");
+        review.verifyCurrencyReviewPageContents();
+        //review.transferFrom(PropertyReader.testDataOf("Peso_FullName"),PropertyReader.testDataOf("Peso_CardNumber"));
         review.transferAmount(fromCurrency + " " + String.valueOf(cc.getAmount()));
         review.convertedAmount(toCurrency + " " + String.valueOf(cc.getToAmount()));
-        review.conversionRate("1 Philippine Peso = "+cc.getExchangeRate());
+        review.conversionRate("1 Philippine Peso equals "+cc.getExchangeRate());
         review.clickConvert();
         otp.enterOTP();
     }

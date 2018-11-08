@@ -65,7 +65,8 @@ public class PageEditProfile extends Keywords {
     private String keyBTNProceed="Getgo.EditProfile.BTNProceed";
     private String keyLINKForgotPassword="Getgo.EditProfile.LINKForgotPassword";
     private String keyBTNBackfromVerifyAccount="Getgo.EditProfile.BTNBackfromVerifyAccount";
-
+    private String keyLblVerifyAccountPageContent="Getgo.EditProfile.LblVerifyAccountPageContent";
+    private String keyVerifyAccountTogglePasswordVisibility="Getgo.EditProfile.VerifyAccountTogglePasswordVisibility";
 
 
     public void verifyManageProfilePageTitle(String ititle) throws ApplicationException {
@@ -459,7 +460,7 @@ public class PageEditProfile extends Keywords {
     }
 
     public void verifyAccountLogicToConfirmtheUser(String password) throws ApplicationException {
-        WAIT.forSeconds(3);
+        WAIT.forSeconds(2);
         verify.elementTextMatching(keyLblVerifyAccountPagetitle, "Verify Account");
         verify.elementIsPresent(keyTXTEnterPassword);
         verify.elementIsPresent(keyBTNProceed);
@@ -468,7 +469,21 @@ public class PageEditProfile extends Keywords {
 
         type.sensitiveData(keyTXTEnterPassword,password);
         click.elementBy(keyBTNProceed);
-        WAIT.forSeconds(3);
+        WAIT.forSeconds(1);
+
+    }
+
+    public void verifyAccountPageContents() throws ApplicationException {
+        WAIT.forSeconds(2);
+        verify.elementTextMatching(keyLblVerifyAccountPagetitle, "Verify Account");
+        verify.elementIsPresent(keyTXTEnterPassword);
+        verify.elementIsPresent(keyBTNProceed);
+        verify.elementIsPresent(keyLINKForgotPassword);
+        verify.elementIsPresent(keyBTNBackfromVerifyAccount);
+        verify.elementIsPresent(keyVerifyAccountTogglePasswordVisibility);
+        verify.elementTextMatching(keyLblVerifyAccountPageContent, "Verify your account by entering your password.");
+        verify.elementTextMatching(keyLINKForgotPassword, "Forgot Password?");
+        verify.elementAttributeMatching(keyTXTEnterPassword,"text","Password");
 
     }
 }

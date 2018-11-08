@@ -24,7 +24,7 @@ public class Getgo_ForgotPassword
         emailaddress=arg1;
         if(Device.isAndroid())
         {
-            loginPage.doesUserNameScreenContains(    "Login", "Enter your registered email address",  "Email address",  "Forgot your password?", "NEXT", "Don’t have an account? SIGN UP NOW!");
+            loginPage.doesUserNameScreenContains(    "Login", "Enter your registered email address",  "Email address", "NEXT", "Don’t have an account? SIGN UP NOW!");
             loginPage.clickForgotPasswordLink();
         }
 

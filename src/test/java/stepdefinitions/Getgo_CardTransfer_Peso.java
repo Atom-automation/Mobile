@@ -12,6 +12,8 @@ import helper.PropertyReader;
 import pages.*;
 import projectconstants.MenuItem;
 
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
 import java.util.ArrayList;
 
 public class Getgo_CardTransfer_Peso
@@ -55,6 +57,7 @@ public class Getgo_CardTransfer_Peso
         {
             dashboard.navigateTo("Send Money");
         }
+        transfer.verifyPageTitle("Send Money");
     }
 
     @Given("^I'm on Getgo Fund transfer page$")
@@ -68,16 +71,18 @@ public class Getgo_CardTransfer_Peso
         {
             dashboard.navigateTo("Send Money");
         }
+        transfer.verifyPageTitle("Send Money");
     }
 
     @When("^I Enter card number, recipient name, amount, system date, frequency, and message - Add recipient from saved list by clicking on add button$")
     public void iEnterCardNumberRecipientNameAmountSystemDateFrequencyAndMessageAddRecipientFromSavedListByClickingOnAddButton() throws Throwable
     {
         date= Test.tools.getDate("today");
+        transfer.verifyPageContentDetails();
         transfer.selectRecipientFromSavedList(toUser);
         transfer.enterAmount(transferAmount);
-        transfer.selectDate(date.get(0),date.get(1),date.get(2));
-        transfer.selectFrequency(frequency);
+       // transfer.selectDate(date.get(0),date.get(1),date.get(2));
+        //transfer.selectFrequency(frequency);
         transfer.enterMessage(message);
         transfer.clickNext();
     }
@@ -85,13 +90,17 @@ public class Getgo_CardTransfer_Peso
     @And("^I review transfer instruction and click submit$")
     public void iReviewTransferInstructionAndClickSubmit() throws Throwable
     {
+        review.verifyTitle("Review and Send Money");
+        review.verifyPageContents();
         review.fromDetails(PropertyReader.testDataOf(accountType+"_CardNumber"),PropertyReader.testDataOf(accountType+"_FullName"));
         review.toDetails(toCard,toUser);
         review.transferAmount(transferAmount);
 //        review.transferFees(transferFees);
 //        review.transferDate(date.get(0),date.get(1),date.get(2));
+        review.verifyTransactionMessage(message);
+        review.verifyTransactionDate();
         review.clickTransfer();
-
+        otp.enterOTP();
     }
 
     @Then("^I should see the confirmation page$")
@@ -101,8 +110,16 @@ public class Getgo_CardTransfer_Peso
         success.viewDetails();
 
         String irefno=activities.getTransactionReferenceNumber();
-        String idescription=activities.reviewDescription("Funds Transfer to");
-        String iendingbalanceamt=activities.verifyEndingBalance(transferAmount,transfer.getBeforeBalance());
+        String idescription=activities.reviewDescription("Send Money");
+        String iendingbalanceamt;
+        if(Device.isAndroid()) {
+             iendingbalanceamt = activities.verifyEndingBalance(transferAmount+transferFees, transfer.getBeforeBalance());
+        }
+        else
+        {
+             iendingbalanceamt = activities.verifyEndingBalance(transferAmount, transfer.getBeforeBalance());
+
+        }
         String idate=activities.reviewTransactionDate(date.get(0),date.get(1),date.get(2));
         String itransferamt=activities.verifyTransactionAmount(transferAmount);
 
@@ -125,8 +142,8 @@ public class Getgo_CardTransfer_Peso
         transfer.enterCardNumber(toCard);
         transfer.enterRecipient(toUser);
         transfer.enterAmount(transferAmount);
-        transfer.selectDate(date.get(0),date.get(1),date.get(2));
-        transfer.selectFrequency(frequency);
+//        transfer.selectDate(date.get(0),date.get(1),date.get(2));
+     //   transfer.selectFrequency(frequency);
         transfer.enterMessage(message);
         transfer.clickNext();
     }

@@ -13,12 +13,14 @@ public class Dummy {
 
     private static PageAccountDashboard dashboard=new PageAccountDashboard();
     private static PageLoadingPartners loadpartners=new PageLoadingPartners();
+    private static PageVerificationLink link=new PageVerificationLink();
 
     @When("^I choose Loading partners option from the menu$")
     public void i_choose_Loading_partners_option_from_the_menu() throws Throwable {
         // Write code here that turns the phrase above into concrete actions
-        dashboard.clickMenu();
-        dashboard.navigateTo("Load Partners");
+        link.openOutlook("gopinath.rajaram@unionbankph.com","July@123");
+        link.openResetPasswordVerificationEmail();
+        link.closebrowser();
 
     }
 

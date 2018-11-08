@@ -85,35 +85,35 @@ public class Getgo_VirtualCardRegistration {
 
     @When("^I click the verification email link from my inbox$")
     public void iClickTheVerificationEmailLinkFromMyInbox() throws Throwable {
-        if (Device.isAndroid()) {
+        ///if (Device.isAndroid()) {
             String outlookUsername = PropertyReader.testDataOf("RegistrationEmailAddress");
             String outlookPassword = PropertyReader.testDataOf("outlookpassword");
             verifyAccount.openOutlook(outlookUsername, outlookPassword);
             verifyAccount.openVerificationEmail(firstName + " " + lastName);
-        }
+       /// }
     }
 
     @Then("^I should see a message account is verified$")
     public void iShouldSeeAMessageAccountIsVerified() throws Throwable {
-        if (Device.isAndroid()) {
+       /// if (Device.isAndroid()) {
             verifyAccount.isVerificationSuccess();
-        }
+        ///}
     }
 
     @When("^I login with the My Email next time$")
     public void iLoginWithTheMyEmailNextTime() throws Throwable {
-        if (Device.isAndroid()) {
+       /// if (Device.isAndroid()) {
             welcome.launchGetgoFresh();
             //welcome.clickLogin();
             login.androidLoginFlow(emailAddress, password);
-        }
+       /// }
     }
 
     @Then("^I should see my virtual card in the dashboard$")
     public void iShouldSeeMyVirtualCardInTheDashboard() throws Throwable {
-        if (Device.isAndroid()) {
+       /// if (Device.isAndroid()) {
             dashboard.isVirtualCardDisplayed();
-        }
+      ///  }
     }
 
     @And("^I review & submit$")

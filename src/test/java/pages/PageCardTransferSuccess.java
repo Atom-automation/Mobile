@@ -14,16 +14,14 @@ public class PageCardTransferSuccess extends Keywords {
     private String keyBtnViewDetails="Getgo.CardTransferSuccess.BtnViewDetails";
     private String keyBtnDashboard="Getgo.CardTransferSuccess.BtnDashboard";
 
-    public void doesPageContains() throws ApplicationException {
-        verify.elementIsPresent(keyImgGetgoLogo);
-    }
 
     public void isTransferSuccess() throws ApplicationException {
+        verify.elementIsPresent(keyImgGetgoLogo);
         if(Test.attributes.get(Keys.OS).equalsIgnoreCase(OS.ANDROID))
         {
             WAIT.forSeconds(6);
-            verify.elementTextContains(keyLblCongrats,"Congratulations!");
-            verify.elementTextContains(keyLblMessage,"You have successfully transfer fund.");
+            verify.elementTextContains(keyLblCongrats,"You did it!");
+            verify.elementTextContains(keyLblMessage,"You just sent money!");
         }else if(Test.attributes.get(Keys.OS).equalsIgnoreCase(OS.iOS))
         {
             WAIT.forSeconds(5);
@@ -35,7 +33,7 @@ public class PageCardTransferSuccess extends Keywords {
 
     public void viewDetails() throws ApplicationException {
         click.elementBy(keyBtnViewDetails);
-        WAIT.forSeconds(35);
+        WAIT.forSeconds(10);
     }
 
     public void gotoDashboard() throws ApplicationException {

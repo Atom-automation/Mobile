@@ -23,7 +23,7 @@ public class StepsBase{
 	    	log.error("S C E N A R I O    F A I L E D !!!!!");
 	    	if(Keywords.driver!=null)
 	    	{
-
+				Keywords.WAIT.forSeconds(2);
 				Keywords.screenshot.attachScreenshot("ScenarioFailed");
 	    	}
 	    }

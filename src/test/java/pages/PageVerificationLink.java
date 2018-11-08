@@ -4,8 +4,11 @@ import base.Keywords;
 import base.Test;
 import constants.Keys;
 import exceptions.ApplicationException;
+import helper.Device;
 import helper.PropertyReader;
 import io.appium.java_client.AppiumDriver;
+import io.appium.java_client.ios.IOSDriver;
+import io.appium.java_client.remote.MobileCapabilityType;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriverException;
@@ -22,36 +25,82 @@ public class PageVerificationLink extends Keywords {
     WebDriverWait browserWait;
 
     public void openOutlook(String username, String password) throws ApplicationException{
-        driver.quit();
+      //  driver.quit();
         DesiredCapabilities cap=new DesiredCapabilities();
-        cap.setCapability("platformName","Android");
-        cap.setCapability("platformVersion",PropertyReader.valueOf("Device."+Test.attributes.get(Keys.Device)+".Version"));
-        cap.setCapability("deviceName", PropertyReader.valueOf("Device."+ Test.attributes.get(Keys.Device)+".Name"));
-        cap.setCapability("udid", PropertyReader.valueOf("Device."+ Test.attributes.get(Keys.Device)+".ID"));
-        cap.setCapability("newCommandTimeout",Integer.parseInt(PropertyReader.valueOf("Driver.Appium.CommandTimeout")));
-        cap.setCapability("browserName",BrowserType.CHROME);
-        try{
-            browser=new AppiumDriver<>(new URL(PropertyReader.valueOf("Driver.ServerAddress")),cap);
-        }catch (Throwable ex){
-            throw new ApplicationException("Failed to open chrome browser on the device");
+        if(Device.isAndroid()) {
+            cap.setCapability("platformName", "Android");
+            cap.setCapability("platformVersion", PropertyReader.valueOf("Device." + Test.attributes.get(Keys.Device) + ".Version"));
+            cap.setCapability("deviceName", PropertyReader.valueOf("Device." + Test.attributes.get(Keys.Device) + ".Name"));
+            cap.setCapability("udid", PropertyReader.valueOf("Device." + Test.attributes.get(Keys.Device) + ".ID"));
+            cap.setCapability("newCommandTimeout", Integer.parseInt(PropertyReader.valueOf("Driver.Appium.CommandTimeout")));
+            cap.setCapability("browserName", BrowserType.CHROME);
+            try {
+                browser = new AppiumDriver<>(new URL(PropertyReader.valueOf("Driver.ServerAddress")), cap);
+            } catch (Throwable ex) {
+                throw new ApplicationException("Failed to open chrome browser on the device");
+            }
+            browser.get("https://outlook.office.com");
+            browserWait = new WebDriverWait(browser, 30);
+            getWebElement(By.id("i0116")).sendKeys(username);
+            keyboard.hideIfAndroid();
+            getWebElement(By.id("idSIButton9")).click();
+            WAIT.forSeconds(2);
+            getWebElement(By.id("i0118")).sendKeys(password);
+            keyboard.hideIfAndroid();
+            getWebElement(By.id("idSIButton9")).click();
+            WAIT.forSeconds(2);
+            getWebElement(By.id("idBtn_Back")).click();
         }
-        browser.get("https://outlook.office.com");
-        browserWait=new WebDriverWait(browser,30);
-        getWebElement(By.id("i0116")).sendKeys(username);
-        keyboard.hideIfAndroid();
-        getWebElement(By.id("idSIButton9")).click();
-        WAIT.forSeconds(2);
-        getWebElement(By.id("i0118")).sendKeys(password);
-        keyboard.hideIfAndroid();
-        getWebElement(By.id("idSIButton9")).click();
-        WAIT.forSeconds(2);
-        getWebElement(By.id("idBtn_Back")).click();
+        else
+        {
+            cap.setCapability("platformName", "ios");
+            cap.setCapability("automationName", "XCUITest");
+            cap.setCapability("platformVersion", PropertyReader.valueOf("Device." + Test.attributes.get(Keys.Device) + ".Version"));
+            cap.setCapability("deviceName", PropertyReader.valueOf("Device." + Test.attributes.get(Keys.Device) + ".Name"));
+            cap.setCapability("udid", PropertyReader.valueOf("Device." + Test.attributes.get(Keys.Device) + ".ID"));
+            cap.setCapability("newCommandTimeout", Integer.parseInt(PropertyReader.valueOf("Driver.Appium.CommandTimeout")));
+            cap.setCapability(MobileCapabilityType.BROWSER_NAME, "safari");
+            cap.setCapability("safariAllowPopups", "true");
+            //cap.setCapability("safariOpenLinksInBackground", "true");
+            try {
+                browser = new IOSDriver<WebElement>(new URL(PropertyReader.valueOf("Driver.ServerAddress")), cap);
+            } catch (Throwable ex) {
+                throw new ApplicationException("Failed to open safari browser on the device");
+            }
+            browser.get("https://outlook.office.com");
+            browserWait = new WebDriverWait(browser, 30);
+            try {
+                getWebElement(By.id("i0116")).sendKeys(username);
+                keyboard.hideIfIOS();
+                getWebElement(By.id("idSIButton9")).click();
+                WAIT.forSeconds(2);
+                getWebElement(By.id("i0118")).sendKeys(password);
+                keyboard.hideIfIOS();
+                getWebElement(By.id("idSIButton9")).click();
+                WAIT.forSeconds(2);
+                // getWebElement(By.id("idBtn_Back")).click();
+            }
+            catch(Exception ex)
+            {
+                getWebElement(By.xpath("(//div[@class='row tile'])[1]/div")).click();
+                WAIT.forSeconds(2);
+                getWebElement(By.id("i0118")).sendKeys(password);
+                keyboard.hideIfIOS();
+                getWebElement(By.id("idSIButton9")).click();
+                WAIT.forSeconds(2);
+            }
+        }
     }
 
-    public void openVerificationEmail(String fullName) throws ApplicationException {
-        getWebElement(By.xpath("//span[contains(text(),'"+fullName+"')]")).click();
-        String verificationLink=getWebElement(By.xpath("//a[contains(text(),'https://')]")).getText();
-        browser.get(verificationLink);
+    public void openVerificationEmail(String fullName) throws ApplicationException, InterruptedException {
+        //getWebElement(By.xpath("//span[contains(text(),'"+fullName+"')]")).click();
+        Thread.sleep(2000);
+        getWebElement(By.xpath("(//span[text()='Get started today: Verify your email now.'])[1]/parent::*/parent::*/parent::*/parent::*")).click();
+        //String verificationLink=getWebElement(By.xpath("//a[contains(text(),'https://')]")).getText();
+        //browser.get(verificationLink);
+        Thread.sleep(2000);
+        getWebElement(By.xpath("//a[text()='Verify Now ']")).click();
+
     }
 
     public void isVerificationSuccess() throws ApplicationException {

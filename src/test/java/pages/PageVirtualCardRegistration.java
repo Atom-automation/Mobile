@@ -96,7 +96,7 @@ public class PageVirtualCardRegistration extends Keywords {
             type.data(keyTxtLastName, lastName);
 
             click.elementBy(keyBtnCalendar);
-            WAIT.forSeconds(4);
+            WAIT.forSeconds(5);
             ios.selectPickerByIndex("12",1);
             ios.selectPickerByIndex("July",2);
            ios.selectPickerByIndex("1992",3);
@@ -181,7 +181,13 @@ public class PageVirtualCardRegistration extends Keywords {
         return dob;
     }
     public String getDobvalue() throws ApplicationException {
-        dob=get.elementText(keyBtnCalendar);
+        if(Device.isAndroid()) {
+            dob = get.elementText(keyBtnCalendar);
+        }
+        else
+        {
+            dob = get.elementText(keyTxtDOB);
+        }
         return dob;
     }
 
@@ -214,7 +220,7 @@ public class PageVirtualCardRegistration extends Keywords {
 
             else
             {
-                WAIT.forSeconds(1);
+                WAIT.forSeconds(3);
                 verify.elementTextMatching(keyTxtPresentCountry,country);
                 click.elementBy(keyBtnPresentState);
                 WAIT.forSeconds(2);

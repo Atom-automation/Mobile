@@ -13,6 +13,7 @@ public class Getgo_EditProfile {
 
     private static PageOTP otp=new PageOTP();
     private static PageEditProfile editprofile=new PageEditProfile();
+    private static PageCommonErrorPopUp errorPOPUP=new PageCommonErrorPopUp();
 
 
     @Then("^I should see \"([^\"]*)\" page with \"([^\"]*)\" , \"([^\"]*)\" and \"([^\"]*)\" sections$")
@@ -120,5 +121,43 @@ public class Getgo_EditProfile {
                 PropertyReader.testDataOf("edit_employername")
                 );
     }
+
+    @Then("^I should see \"([^\"]*)\" page & prompting to enter password$")
+    public void i_should_see_page_prompting_to_enter_password(String arg1) throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        editprofile.verifyAccountPageContents();
+    }
+
+    @When("^I enter Invalid password$")
+    public void i_enter_Invalid_password() throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        editprofile.verifyAccountLogicToConfirmtheUser(PropertyReader.testDataOf("Invalid_Password"));
+
+    }
+
+    @Then("^An error message should be displayed as \"([^\"]*)\"$")
+    public void an_error_message_should_be_displayed_as(String arg1) throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        errorPOPUP.CheckErrorMessageDetails("Error","Password is incorrect.");
+        errorPOPUP.ClickOk();
+    }
+
+    @When("^I enter valid password$")
+    public void i_enter_valid_password() throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        editprofile.verifyAccountLogicToConfirmtheUser(PropertyReader.testDataOf(Getgo_ChangePassword.passworddetails));
+    }
+
+    @Then("^I should see \"([^\"]*)\" page with \"([^\"]*)\" , \"([^\"]*)\" & \"([^\"]*)\" sections$")
+    public void i_should_see_page_with_sections(String arg1, String arg2, String arg3, String arg4) throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        editprofile.verifyManageProfilePageTitle(arg1);
+        editprofile.verifyPagefields(arg2,arg3,arg4);
+
+    }
+
+
+
+
 
 }

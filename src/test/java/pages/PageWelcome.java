@@ -41,12 +41,13 @@ public class PageWelcome extends Keywords {
     public void doesPageContains(String loginBtnTxt,String signUpBtnTxt,String captionTxt) throws ApplicationException
     {
         if(Device.isAndroid()) {
+            //commneted due to poedyct feature and pls check again
+            //click.elementBy(xpathOf.button(Matching.youDecide("NEXT")));
+           // click.elementBy(xpathOf.button(Matching.youDecide("NEXT")));
             //click.elementBy(xpathOf.button(Matching.youDecide("NEXT")));
             //click.elementBy(xpathOf.button(Matching.youDecide("NEXT")));
-            //click.elementBy(xpathOf.button(Matching.youDecide("NEXT")));
-            //click.elementBy(xpathOf.button(Matching.youDecide("NEXT")));
-            //click.elementBy(xpathOf.button(Matching.youDecide("GET STARTED")));
-            //verify.elementIsPresent("Getgo.Welcome.ImgLogo");
+           // click.elementBy(xpathOf.button(Matching.youDecide("GET STARTED")));
+            verify.elementIsPresent("Getgo.Welcome.ImgLogo");
             verify.elementTextMatching("Getgo.Welcome.LblCaption", captionTxt);
             verify.elementTextMatching(keyBtnLogin, loginBtnTxt);
             verify.elementTextMatching(keyBtnSignUp, signUpBtnTxt);
@@ -122,6 +123,7 @@ public class PageWelcome extends Keywords {
             else
             {
                 try {
+                    iosProductFeature();
                     click.elementBy(keyBtnSignUp);
                 } catch (Exception e) {
                 /*click.elementBy(xpathOf.button(Matching.youDecide("NEXT")));
@@ -129,7 +131,7 @@ public class PageWelcome extends Keywords {
                 click.elementBy(xpathOf.button(Matching.youDecide("NEXT")));
                 click.elementBy(xpathOf.button(Matching.youDecide("NEXT")));
                 click.elementBy(xpathOf.button(Matching.youDecide("GET STARTED")));*/
-                    iosProductFeature();
+                    //iosProductFeature();
                     click.elementBy(keyBtnSignUp);
                 }
             }

@@ -12,7 +12,7 @@ Feature: Edit Profile
   Scenario: As a tester, I want to be able to change my personal profile so that my details are updated - Edit Mobile number
     Given I'm on "Dashboard" page of GetGo pay with valid "edit_username" and "edit_password"
     When  I choose Settings option from the menu
-    Then  I should see "Settings" page
+    Then  I should see "Manage My Settings" page
     When  I choose "Profile" option from settings page
     Then  I should see "Manage Profile" page with "PERSONAL DETAILS" , "ADDRESS" and "OTHER DETAILS" sections
     When  I click on edit link in the "Mobile Number" section
@@ -25,7 +25,7 @@ Feature: Edit Profile
   Scenario: As a tester, I want to be able to change my personal profile so that my details are updated - Edit Address
     Given I'm on "Dashboard" page of GetGo pay with valid "edit_username" and "edit_password"
     When  I choose Settings option from the menu
-    Then  I should see "Settings" page
+    Then  I should see "Manage My Settings" page
     When  I choose "Profile" option from settings page
     Then  I should see "Manage Profile" page with "PERSONAL DETAILS" , "ADDRESS" and "OTHER DETAILS" sections
     When  I click on edit link in the "Address" section
@@ -37,10 +37,35 @@ Feature: Edit Profile
   Scenario: As a tester, I want to be able to change my personal profile so that my details are updated - Edit Other details
     Given I'm on "Dashboard" page of GetGo pay with valid "edit_username" and "edit_password"
     When  I choose Settings option from the menu
-    Then  I should see "Settings" page
+    Then  I should see "Manage My Settings" page
     When  I choose "Profile" option from settings page
     Then  I should see "Manage Profile" page with "PERSONAL DETAILS" , "ADDRESS" and "OTHER DETAILS" sections
     When  I click on edit link in the "Other details" section
     Then  "Update Other Details" page should be displayed
     When  I click on SAVE button with updated other details
     Then  Other details should be updated and verified in "Manage Profile" page
+@run2
+  Scenario: As a tester, I want to see the Verify Account page on clicking Profile option from Manage My settings
+    Given I'm on "Dashboard" page of GetGo pay with valid "edit_username" and "edit_password"
+    When  I choose Settings option from the menu
+    Then  I should see "Manage My Settings" page
+    When  I choose "Profile" option from settings page
+    Then I should see "Verify Account" page & prompting to enter password
+  @run2
+  Scenario: As a tester, I want to see an error message on entering invalid password in the Verify Account page
+    Given I'm on "Dashboard" page of GetGo pay with valid "edit_username" and "edit_password"
+    When  I choose Settings option from the menu
+    Then  I should see "Manage My Settings" page
+    When  I choose "Profile" option from settings page
+    Then I should see "Verify Account" page & prompting to enter password
+    When I enter Invalid password
+    Then An error message should be displayed as "Password is incorrect."
+  @run2
+  Scenario: As a tester, I want to see Profile page on entering valid password in the Verify Account page
+    Given I'm on "Dashboard" page of GetGo pay with valid "edit_username" and "edit_password"
+    When  I choose Settings option from the menu
+    Then  I should see "Manage My Settings" page
+    When  I choose "Profile" option from settings page
+    Then I should see "Verify Account" page & prompting to enter password
+    When I enter valid password
+    Then I should see "Manage Profile" page with "PERSONAL DETAILS" , "ADDRESS" & "OTHER DETAILS" sections

@@ -13,7 +13,7 @@ public class Getgo_TermsandConditions {
     private static PageTermsandConditions tc=new PageTermsandConditions();
 
 
-    String lastlevel="THE TERMS AND CONDITIONS IN THIS AGREEMENT ARE ACCEPTED AND BINDING ON ME.";
+    String lastlevel="THE TERMS AND CONDITIONS IN THIS AGREEMENT ARE ACCEPTED AND BINDING ON THE CARDHOLDER.";
 
     String content1="Your privacy is of great concern to us at UnionBank. The information we collect on this site is only used for its stated purpose. We do not sell or share any of the confidential information we collect with any third parties.";
     String content2="We collect information from our existing customers when they transact through our on-line banking facility. This is done so we can confirm they are an existing customer. We collect information from potential new customers who choose to apply for our various products and services through our on-line application forms. We need this information to see if you meet our customer requirements.";

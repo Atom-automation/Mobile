@@ -59,8 +59,8 @@ public class Getgo_Login_NewCustomer
     @When("^I enter a \"([^\"]*)\" and click next$")
     public void i_enter_a_and_click_next(String arg1) throws Throwable {
         // Write code here that turns the phrase above into concrete actions
-    	loginPage.enterPassword(PropertyReader.testDataOf(arg1));
-    	loginPage.clickLogin();
+    	loginPage.enterPasswordforErrorMsg(PropertyReader.testDataOf(arg1));
+    	loginPage.clickLoginforErrorMsg();
     }
 
     @When("^I enter a blank spaces in password field and click next$")

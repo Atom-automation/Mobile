@@ -34,7 +34,7 @@ public class PageVirtualCardRegistrationReview extends Keywords {
             verify.elementTextMatching(keyLblNationality, nationality);
             verify.elementTextMatching(keyLblGender, gender);
             verify.elementTextMatching(keyLblSourceofFunds, sourceoffunds);
-            swipe.vertical(2, 0.9, 0.2);
+            swipe.vertical(2, 0.9, 0.2,3);
             verify.elementTextMatching(keyLblPresentAddress,"Present Address: "+ fulladdress1);
             verify.elementTextMatching(keyLblPremanentAddress, "Permanent Address: "+fulladdress1);
 
@@ -43,7 +43,7 @@ public class PageVirtualCardRegistrationReview extends Keywords {
         {
             verify.elementTextMatching(keyLblEmailAddress,emailID);
             verify.elementTextMatching(keyLblFullName,fullName);
-            swipe.vertical(2,0.9,0.2);
+            swipe.vertical(2,0.9,0.2,3);
             ////need to check the dob review
             //String idob=verify.verifyDOBinreviewpage(dob);
             verify.elementTextMatching(keyLblDOB,dob);
@@ -58,9 +58,9 @@ public class PageVirtualCardRegistrationReview extends Keywords {
     }
 
     public void clickSubmit() throws ApplicationException {
-        swipe.vertical(2, 0.9, 0.2);
+        swipe.vertical(2, 0.9, 0.2,3);
         click.elementBy(keyBtnSubmit);
-        WAIT.forSeconds(2);
+        WAIT.forSeconds(6);
     }
 
     public void clickTermsandConditionCheckBox() throws ApplicationException {
