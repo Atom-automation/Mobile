@@ -263,4 +263,12 @@ PageAccountDashboard extends Keywords {
 
     }
 
+    public void verifyMenuOption(String imenuoption) throws ApplicationException {
+        if(Device.isAndroid()) {
+            verify.elementIsPresent(xpathOf.checkedTextView(Matching.text(imenuoption)));
+        }else if(Device.isIOS()){
+            verify.elementIsPresent(MobileBy.AccessibilityId(imenuoption));
+        }
+    }
+
 }

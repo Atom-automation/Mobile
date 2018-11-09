@@ -23,7 +23,7 @@ public class PageTermsandConditions extends Keywords {
     }
 
     public void verifyPageContents() throws ApplicationException {
-        WAIT.forSeconds(10);
+        WAIT.forSeconds(5);
         if(Device.isAndroid()) {
 
             verify.elementIsPresent(xpathOf.textView(Matching.youDecide("TERMS & CONDITIONS")));
@@ -60,7 +60,7 @@ public class PageTermsandConditions extends Keywords {
     public void verifyPageTermsandConditionsLastelement(String icontent) throws ApplicationException {
         WAIT.forSeconds(3);
         if (Device.isAndroid()) {
-            for (int i = 0; i < 37; i++) {
+            for (int i = 0; i < 39; i++) {
                 swipe.vertical(2, 0.9, 0.3, 1);
             }
             verify.elementTextMatching(keyLbllastelement, icontent);

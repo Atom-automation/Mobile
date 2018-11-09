@@ -138,7 +138,7 @@ public class Getgo_EditProfile {
     @Then("^An error message should be displayed as \"([^\"]*)\"$")
     public void an_error_message_should_be_displayed_as(String arg1) throws Throwable {
         // Write code here that turns the phrase above into concrete actions
-        errorPOPUP.CheckErrorMessageDetails("Error","Password is incorrect.");
+        errorPOPUP.CheckErrorMessageDetails("Error",arg1);
         errorPOPUP.ClickOk();
     }
 
@@ -151,12 +151,36 @@ public class Getgo_EditProfile {
     @Then("^I should see \"([^\"]*)\" page with \"([^\"]*)\" , \"([^\"]*)\" & \"([^\"]*)\" sections$")
     public void i_should_see_page_with_sections(String arg1, String arg2, String arg3, String arg4) throws Throwable {
         // Write code here that turns the phrase above into concrete actions
+        editprofile.verifyAccountLogicToConfirmtheUser(PropertyReader.testDataOf(Getgo_ChangePassword.passworddetails));
         editprofile.verifyManageProfilePageTitle(arg1);
         editprofile.verifyPagefields(arg2,arg3,arg4);
 
     }
 
 
+    @When("^I enter invalid data in the  mobile number field$")
+    public void i_enter_invalid_data_in_the_mobile_number_field() throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        editprofile.enterUpdateMobilenumber(PropertyReader.testDataOf("edit_Invalidmobilenumber"));
+    }
+
+    @Then("^An error message should be displayed$")
+    public void an_error_message_should_be_displayed() throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        throw new PendingException();
+    }
+
+    @Then("^Enter OTP Page should be displayed$")
+    public void enter_OTP_Page_should_be_displayed() throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        otp.verifyOTPPageContents();
+    }
+
+    @When("^I enter Invalid OTP$")
+    public void i_enter_Invalid_OTP() throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        otp.enterInvalidOTP();
+    }
 
 
 

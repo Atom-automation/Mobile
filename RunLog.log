@@ -1,26 +1,6 @@
-2018-11-08 18:06:35,877  INFO [main] StepsBase:16 - Executing S C E N A R I O : As a tester, I want to be able to change my personal profile so that my details are updated - Edit Mobile number
-2018-11-08 18:06:36,777  INFO [main] RunManager:23 - Hey! ubp, Logging everything from here ....
-2018-11-08 18:06:36,777  INFO [main] RunManager:24 - Run ID is --> Run-1382
-2018-11-08 18:06:37,060 ERROR [main] PropertyReader:40 - exceptions.EnvironmentException: Property [Device.null.OS] value is null in file ProjectSettings.properties
-2018-11-08 18:06:37,158 ERROR [main] StepsBase:23 - S C E N A R I O    F A I L E D !!!!!
-2018-11-08 18:06:37,166  INFO [main] Keywords:52 - Application closed
-2018-11-08 18:06:37,169  INFO [main] StepsBase:16 - Executing S C E N A R I O : As a tester, I want to be able to change my personal profile so that my details are updated - Edit Address
-2018-11-08 18:06:37,171 ERROR [main] PropertyReader:40 - exceptions.EnvironmentException: Property [Device.null.OS] value is null in file ProjectSettings.properties
-2018-11-08 18:06:37,198 ERROR [main] StepsBase:23 - S C E N A R I O    F A I L E D !!!!!
-2018-11-08 18:06:37,198  INFO [main] Keywords:52 - Application closed
-2018-11-08 18:06:37,199  INFO [main] StepsBase:16 - Executing S C E N A R I O : As a tester, I want to be able to change my personal profile so that my details are updated - Edit Other details
-2018-11-08 18:06:37,205 ERROR [main] PropertyReader:40 - exceptions.EnvironmentException: Property [Device.null.OS] value is null in file ProjectSettings.properties
-2018-11-08 18:06:37,234 ERROR [main] StepsBase:23 - S C E N A R I O    F A I L E D !!!!!
-2018-11-08 18:06:37,234  INFO [main] Keywords:52 - Application closed
-2018-11-08 18:06:37,240  INFO [main] StepsBase:16 - Executing S C E N A R I O : As a tester, I want to see the Verify Account page on clicking Profile option from Manage My settings
-2018-11-08 18:06:37,243 ERROR [main] PropertyReader:40 - exceptions.EnvironmentException: Property [Device.null.OS] value is null in file ProjectSettings.properties
-2018-11-08 18:06:37,261 ERROR [main] StepsBase:23 - S C E N A R I O    F A I L E D !!!!!
-2018-11-08 18:06:37,261  INFO [main] Keywords:52 - Application closed
-2018-11-08 18:06:37,262  INFO [main] StepsBase:16 - Executing S C E N A R I O : As a tester, I want to see an error message on entering invalid password in the Verify Account page
-2018-11-08 18:06:37,263 ERROR [main] PropertyReader:40 - exceptions.EnvironmentException: Property [Device.null.OS] value is null in file ProjectSettings.properties
-2018-11-08 18:06:37,278 ERROR [main] StepsBase:23 - S C E N A R I O    F A I L E D !!!!!
-2018-11-08 18:06:37,278  INFO [main] Keywords:52 - Application closed
-2018-11-08 18:06:37,280  INFO [main] StepsBase:16 - Executing S C E N A R I O : As a tester, I want to see Profile page on entering valid password in the Verify Account page
-2018-11-08 18:06:37,282 ERROR [main] PropertyReader:40 - exceptions.EnvironmentException: Property [Device.null.OS] value is null in file ProjectSettings.properties
-2018-11-08 18:06:37,323 ERROR [main] StepsBase:23 - S C E N A R I O    F A I L E D !!!!!
-2018-11-08 18:06:37,323  INFO [main] Keywords:52 - Application closed
+2018-11-09 17:33:42,300  INFO [main] StepsBase:16 - Executing S C E N A R I O : As a tester, I want see Manage My settings page on choosing Settings option from the Left Hand Menu
+2018-11-09 17:33:42,814  INFO [main] RunManager:23 - Hey! ubp, Logging everything from here ....
+2018-11-09 17:33:42,815  INFO [main] RunManager:24 - Run ID is --> Run-1408
+2018-11-09 17:33:42,974 ERROR [main] PropertyReader:40 - exceptions.EnvironmentException: Property [Device.null.OS] value is null in file ProjectSettings.properties
+2018-11-09 17:33:43,012 ERROR [main] StepsBase:23 - S C E N A R I O    F A I L E D !!!!!
+2018-11-09 17:33:43,013  INFO [main] Keywords:52 - Application closed

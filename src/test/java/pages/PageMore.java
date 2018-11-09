@@ -26,12 +26,13 @@ public class PageMore extends Keywords {
 
     public void verifyMorePageContents() throws ApplicationException {
 
-        verify.elementIsPresent(keyBtnMenu);
+           //
             verify.elementIsPresent(xpathOf.textView(Matching.youDecide("About the Cards")));
             verify.elementIsPresent(xpathOf.textView(Matching.youDecide("Contact Us")));
             verify.elementIsPresent(xpathOf.textView(Matching.youDecide("Frequently Asked Questions")));
             //need to check and its a issue
         if(Device.isAndroid()) {
+            verify.elementIsPresent(keyBtnMenu);
             verify.elementIsPresent(xpathOf.textView(Matching.youDecide("Terms & Conditions")));
         }
         else

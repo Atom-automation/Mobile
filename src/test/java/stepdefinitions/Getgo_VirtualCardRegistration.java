@@ -22,7 +22,7 @@ public class Getgo_VirtualCardRegistration {
     private static PageLogin login=new PageLogin();
 
     private String mobileNumber=PropertyReader.testDataOf("RegistrationMobileNumber");
-    private String emailAddress="("+Test.faker.number().randomNumber(2,true)+")"+PropertyReader.testDataOf("RegistrationEmailAddress");
+    private String emailAddress="(2"+Test.faker.number().randomNumber(3,true)+")"+PropertyReader.testDataOf("RegistrationEmailAddress");
     private String password=PropertyReader.testDataOf("RegistrationPassword");
     private String firstName=Test.faker.name().firstName();
     private String middleName=Test.faker.name().firstName();

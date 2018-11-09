@@ -21,6 +21,17 @@ public class PageCurrencyConversion extends Keywords {
     private String keyLblExchangeRate="Getgo.CurrencyConverter.LblExchangeRate";
     private String keyBtnNext="Getgo.CurrencyConverter.BtnNext";
 
+    private String keyBtnMenu="Getgo.CurrencyConverter.BtnMenu";
+    private String keyLblTransferFrom="Getgo.CurrencyConverter.LblTransferFrom";
+    private String keyIMGCurrencyFlag=" Getgo.CurrencyConverter.IMGCurrencyFlag";
+    private String keyLblCurrencyIndicator="Getgo.CurrencyConverter.LblCurrencyIndicator";
+    private String keyLblAvailabelBalanceVerbiage="Getgo.CurrencyConverter.LblAvailabelBalanceVerbiage";
+    private String keyLblConverFrom="Getgo.CurrencyConverter.LblConverFrom";
+    private String keyLblConverTo="Getgo.CurrencyConverter.LblConverTo";
+    private String keyLblFirstCurrencyexchangerate="Getgo.CurrencyConverter.LblFirstCurrencyexchangerate";
+    private String keyLblCurrencyNotes="Getgo.CurrencyConverter.LblCurrencyNotes";
+
+
     private double balanceBeforeConversion=0.00;
     private String exchangeRate=null;
     private double amount=0.00;
@@ -108,5 +119,29 @@ public class PageCurrencyConversion extends Keywords {
 
     public String getToAmount() {
         return new DecimalFormat("#0.00").format(toAmount);
+    }
+
+    public void verifyPageContents() throws ApplicationException {
+
+
+        verify.elementIsPresent(keyLblAvailableBalance);
+        verify.elementIsPresent(keyBtnFromCurrencyDropdown);
+        verify.elementIsPresent(keyBtnToCurrencyDropdown);
+        verify.elementIsPresent(keyTxtFromCurrency);
+        verify.elementIsPresent(keyTxtToCurrency);
+        verify.elementIsPresent(keyLblExchangeRate);
+        verify.elementIsPresent(keyBtnNext);
+
+        verify.elementIsPresent(keyBtnMenu);
+        verify.elementTextMatching(keyLblTransferFrom,"Transfer From:");
+        verify.elementIsPresent(keyIMGCurrencyFlag);
+        verify.elementIsPresent(keyLblCurrencyIndicator);
+        verify.elementTextMatching(keyLblAvailabelBalanceVerbiage,"Available Balance");
+        verify.elementTextMatching(keyLblConverFrom,"CONVERT FROM:");
+        verify.elementTextMatching(keyLblConverTo,"CONVERT TO:");
+        verify.elementIsPresent(keyLblFirstCurrencyexchangerate);
+        verify.elementTextMatching(keyLblCurrencyNotes,"Conveniently lock in your exchange rates and easily convert to other currencies so you're travel-ready anytime.");
+
+
     }
 }

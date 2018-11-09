@@ -281,5 +281,35 @@ public class PageActivities extends Keywords {
     }
 
 
+    public String getTransactionDateDirectlyfromActivityPage() throws ApplicationException {
+        String data = get.elementText(keyLblTransactionDate);
+
+        Reporter.addStepLog("Transaction Date is --> "+data);
+
+        return data;
+    }
+
+    public String getTransactionDescriptionDirectlyfromActivityPage() throws ApplicationException {
+        String data = get.elementText(keyLblDescription);
+
+        Reporter.addStepLog("Transaction Description is --> "+data);
+
+        return data;
+    }
+    public String getTransactionAmountDirectlyfromActivityPage() throws ApplicationException {
+        String data = get.elementText(keyLblTransactionAmount);
+
+        Reporter.addStepLog("Transaction Amount is --> "+data);
+
+        return data;
+    }
+    public String getTransactionEndingBalanceDirectlyfromActivityPage() throws ApplicationException {
+        String data = get.elementText(keyLblEndingBalance);
+
+        Reporter.addStepLog("Transaction Ending Balance is --> "+data);
+
+        return data;
+    }
+
 
 }

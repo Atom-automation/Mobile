@@ -18,6 +18,8 @@ public class PageEditProfile extends Keywords {
     private String keybtnupdatemobilenext ="Getgo.EditProfile.BtnNext";
     private String keybtnboxupdatemobilesave ="Getgo.EditProfile.BtnSave";
     private String keylblboxupdatemobileverbiage="Getgo.EditProfile.Lblverbiagetext";
+    private String keyTXTPrefixMobileNumber="Getgo.EditProfile.TXTPrefixMobileNumber";
+
 
     private String keyLblmobilenumberValue ="Getgo.EditProfile.LblmobilenumberValue";
     private String keyLblAddressValue ="Getgo.EditProfile.LblAddressValue";
@@ -99,6 +101,8 @@ public class PageEditProfile extends Keywords {
             verify.elementIsPresent(xpathOf.textView(Contains.youDecide("Name of Employer")));
 
             verify.elementIsPresent(keyEditLinkOtherdetails);
+            swipe.vertical(2,0.2,0.9,5);
+
         }
         else {
             verify.elementTextContains(xpathOf.textView(Matching.youDecide("PERSONAL DETAILS")), personaldetailslbl);
@@ -120,6 +124,8 @@ public class PageEditProfile extends Keywords {
             verify.elementIsPresent(xpathOf.textView(Matching.youDecide("Name of Employer/Business")));
 
             verify.elementIsPresent(keyEditLinkOtherdetails);
+            swipe.vertical(2,0.2,0.9,5);
+
         }
 
     }
@@ -176,8 +182,8 @@ public class PageEditProfile extends Keywords {
         if(Device.isAndroid()) {
             verify.elementIsPresent(keytxtboxupdatemobileno);
             verify.elementIsPresent(keybtnboxupdateclose);
-            verify.elementIsPresent(keybtnupdatemobilenext);
-            //verify.elementIsPresent(keybtnboxupdatemobilesave);
+            verify.elementIsPresent(keybtnboxupdatemobilesave);
+            verify.elementIsPresent(keyTXTPrefixMobileNumber);
             verify.elementIsPresent(keylblboxupdatemobileverbiage);
         }
 
@@ -192,7 +198,14 @@ public class PageEditProfile extends Keywords {
     }
     public void enterUpdateMobilenumber(String ivalue) throws ApplicationException {
         //click.elementBy(keytxtboxupdatemobileno);
-        type.data(keytxtboxupdatemobileno,ivalue);
+       String mobilenocheck= get.elementText(keytxtboxupdatemobileno);
+       if(mobilenocheck.contentEquals("0000000000"))
+       {
+           type.data(keytxtboxupdatemobileno, "9999999999");
+       }
+       else {
+           type.data(keytxtboxupdatemobileno, "0000000000");
+       }
     }
 
     public void clickNextBtn() throws ApplicationException {

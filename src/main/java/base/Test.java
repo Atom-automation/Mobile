@@ -4,6 +4,7 @@ import com.cucumber.listener.ExtentProperties;
 import com.cucumber.listener.Reporter;
 import com.github.javafaker.Faker;
 import constants.Keys;
+import helper.Device;
 import helper.PropertyReader;
 import helper.Tools;
 import org.apache.log4j.Logger;
@@ -39,7 +40,14 @@ public class Test {
     {
         try{
             Keywords.quitDriver();
-            Reporter.loadXMLConfig(new File("src/test/resources/settings/ReportSettings.xml"));
+            if(Device.isAndroid()) {
+                Reporter.loadXMLConfig(new File("src/test/resources/settings/ReportSettingsAndroid.xml"));
+            }
+            else if(Device.isIOS())
+            {
+                Reporter.loadXMLConfig(new File("src/test/resources/settings/ReportSettingsIOS.xml"));
+
+            }
             Reporter.setSystemInfo("User Name",System.getProperty("user.name"));
             Reporter.setSystemInfo("Time Zone",System.getProperty("user.timezone"));
             //Reporter.setSystemInfo("Machine",System.getProperty("os.name"));

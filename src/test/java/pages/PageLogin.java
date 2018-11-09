@@ -64,7 +64,8 @@ public class PageLogin extends Keywords {
         }
         else
         {
-            verify.elementTextMatching(errorMessage, "Incorrect user details provided.");
+            WAIT.forSeconds(1);
+         verify.elementTextMatching(errorMessage, "Incorrect user details provided.");
         }
         //verify.elementTextMatching(errorMessage,"Invalid login details. Please try again.");
        /* try {

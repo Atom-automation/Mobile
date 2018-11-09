@@ -55,6 +55,7 @@ public class PageCurrencyConversionReview extends Keywords {
 
     }
     public void verifyPageTitle(String ititle) throws ApplicationException {
+        WAIT.forSeconds(3);
         verify.elementTextMatching(keyLblPageTitle,ititle);
     }
 

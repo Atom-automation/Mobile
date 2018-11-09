@@ -14,7 +14,7 @@
         <documentTitle>Automation Dashboard</documentTitle>
 
         <!-- report name - displayed at top-nav -->
-        <reportName>GetGo Peso+ Automation Report_Mobile</reportName>
+        <reportName>GetGo Peso+ Automation Report_Mobile_IOS Device</reportName>
 
         <!-- global date format override -->  <!-- defaults to yyyy-MM-dd -->
         <dateFormat>dd-MM-yyyy</dateFormat>

@@ -25,7 +25,7 @@ public class PageVerificationLink extends Keywords {
     WebDriverWait browserWait;
 
     public void openOutlook(String username, String password) throws ApplicationException{
-      //  driver.quit();
+       driver.quit();
         DesiredCapabilities cap=new DesiredCapabilities();
         if(Device.isAndroid()) {
             cap.setCapability("platformName", "Android");
