@@ -85,7 +85,7 @@ public class PageVerificationLink extends Keywords {
                 getWebElement(By.xpath("(//div[@class='row tile'])[1]/div")).click();
                 WAIT.forSeconds(2);
                 getWebElement(By.id("i0118")).sendKeys(password);
-                keyboard.hideIfIOS();
+               //keyboard.hideIfIOS();
                 getWebElement(By.id("idSIButton9")).click();
                 WAIT.forSeconds(2);
             }
@@ -94,12 +94,25 @@ public class PageVerificationLink extends Keywords {
 
     public void openVerificationEmail(String fullName) throws ApplicationException, InterruptedException {
         //getWebElement(By.xpath("//span[contains(text(),'"+fullName+"')]")).click();
-        Thread.sleep(2000);
-        getWebElement(By.xpath("(//span[text()='Get started today: Verify your email now.'])[1]/parent::*/parent::*/parent::*/parent::*")).click();
-        //String verificationLink=getWebElement(By.xpath("//a[contains(text(),'https://')]")).getText();
-        //browser.get(verificationLink);
-        Thread.sleep(2000);
-        getWebElement(By.xpath("//a[text()='Verify Now ']")).click();
+        if(Device.isAndroid()) {
+            Thread.sleep(2000);
+            getWebElement(By.xpath("(//span[text()='Get started today: Verify your email now.'])[1]")).click();
+            // getWebElement(By.xpath("(//span[text()='Get started today: Verify your email now.'])[1]/parent::*/parent::*/parent::*/parent::*")).click();
+            //String verificationLink=getWebElement(By.xpath("//a[contains(text(),'https://')]")).getText();
+            //browser.get(verificationLink);
+            Thread.sleep(2000);
+            getWebElement(By.xpath("//a[text()='Verify Now ']")).click();
+        }
+        else
+        {
+            Thread.sleep(2000);
+            getWebElement(By.xpath("(//span[text()='Get started today: Verify your email now.'])[1]")).click();
+            // getWebElement(By.xpath("(//span[text()='Get started today: Verify your email now.'])[1]/parent::*/parent::*/parent::*/parent::*")).click();
+            //String verificationLink=getWebElement(By.xpath("//a[contains(text(),'https://')]")).getText();
+            //browser.get(verificationLink);
+            Thread.sleep(2000);
+            getWebElement(By.xpath("//a[text()='Verify Now ']")).click();
+        }
 
     }
 

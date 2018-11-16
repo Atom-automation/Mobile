@@ -1,6 +1,6 @@
-2018-11-09 17:33:42,300  INFO [main] StepsBase:16 - Executing S C E N A R I O : As a tester, I want see Manage My settings page on choosing Settings option from the Left Hand Menu
-2018-11-09 17:33:42,814  INFO [main] RunManager:23 - Hey! ubp, Logging everything from here ....
-2018-11-09 17:33:42,815  INFO [main] RunManager:24 - Run ID is --> Run-1408
-2018-11-09 17:33:42,974 ERROR [main] PropertyReader:40 - exceptions.EnvironmentException: Property [Device.null.OS] value is null in file ProjectSettings.properties
-2018-11-09 17:33:43,012 ERROR [main] StepsBase:23 - S C E N A R I O    F A I L E D !!!!!
-2018-11-09 17:33:43,013  INFO [main] Keywords:52 - Application closed
+2018-11-14 11:17:12,700  INFO [main] StepsBase:16 - Executing S C E N A R I O : As a tester, I want to be able to change my personal profile so that my details are updated - Edit Present Address and Permanent Address
+2018-11-14 11:17:13,779  INFO [main] RunManager:23 - Hey! ubp, Logging everything from here ....
+2018-11-14 11:17:13,780  INFO [main] RunManager:24 - Run ID is --> Run-1477
+2018-11-14 11:17:13,998 ERROR [main] PropertyReader:40 - exceptions.EnvironmentException: Property [Device.null.OS] value is null in file ProjectSettings.properties
+2018-11-14 11:17:14,069 ERROR [main] StepsBase:23 - S C E N A R I O    F A I L E D !!!!!
+2018-11-14 11:17:14,072  INFO [main] Keywords:52 - Application closed

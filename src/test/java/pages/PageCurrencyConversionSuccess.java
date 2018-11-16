@@ -16,12 +16,14 @@ public class PageCurrencyConversionSuccess extends Keywords {
     private String congrats="You did it!";
     private String message="You successfully converted currency.";
 
-    private void doesPageContains() throws ApplicationException {
+    public void doesPageContains() throws ApplicationException {
         verify.elementIsPresent(keyImgGetgoLogo);
+        verify.elementIsPresent(keyBtnDashboard);
+        verify.elementIsPresent(keyBtnViewDetails);
     }
 
     public void isConversionSuccess() throws ApplicationException {
-        WAIT.forSeconds(5);
+        WAIT.forSeconds(3);
         verify.elementTextMatching(keyLblCongrats,congrats);
         verify.elementTextMatching(keyLblMessage,message);
     }

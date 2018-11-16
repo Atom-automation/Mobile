@@ -5,7 +5,7 @@
 # Functionality : As a tester, I want to be able to login using my credentials so that I can see my card details.
 # ================================================================================================================
 
-@Login @RegressionPack1
+@Login @RegressionPack1 @RegressionPack
 Feature: New Customer Login Feature
 
   Background: Open Getgo mobile application

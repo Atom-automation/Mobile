@@ -55,17 +55,30 @@ public class PageCurrencyConversionReview extends Keywords {
 
     }
     public void verifyPageTitle(String ititle) throws ApplicationException {
-        WAIT.forSeconds(3);
+        WAIT.forSeconds(5);
         verify.elementTextMatching(keyLblPageTitle,ititle);
     }
 
     public void verifyCurrencyReviewPageContents() throws ApplicationException {
-        verify.elementTextMatching(keyLblPageHeaderContent,"Always check and review your details to ensure that information is correct.");
-        verify.elementIsPresent(keyBtnClose);
-        verify.elementIsPresent(keyBtnEdit);
-        verify.elementTextMatching(keyLblConvertCurrencyFromVerbiage,"Convert from:");
-        verify.elementTextMatching(keyLblConvertCurrencyToVerbiage,"Convert to:");
-        verify.elementTextMatching(keyLblConversionExchangeRateVerbiage,"Conversion:");
+        if(Device.isAndroid()) {
+            verify.elementTextMatching(keyLblPageHeaderContent, "Always check and review your details to ensure that information is correct.");
+            verify.elementIsPresent(keyBtnClose);
+            verify.elementIsPresent(keyBtnEdit);
+            verify.elementTextMatching(keyLblConvertCurrencyFromVerbiage, "Convert from:");
+            verify.elementTextMatching(keyLblConvertCurrencyToVerbiage, "Convert to:");
+            verify.elementTextMatching(keyLblConversionExchangeRateVerbiage, "Conversion:");
+        }
+        else
+        {
+            verify.elementTextMatching(keyLblPageHeaderContent, "Always check and review your details to ensure that the information is correct.");
+            verify.elementIsPresent(keyBtnClose);
+            verify.elementIsPresent(keyBtnEdit);
+            verify.elementTextMatching(keyLblConvertCurrencyFromVerbiage, "Convert from:");
+            verify.elementTextMatching(keyLblConvertCurrencyToVerbiage, "Convert to:");
+            verify.elementTextMatching(keyLblConversionExchangeRateVerbiage, "Convertion:");
+        }
+
+        /////////////////
     }
 
 }

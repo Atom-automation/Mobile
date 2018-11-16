@@ -38,7 +38,7 @@ public class PageCurrencyConversion extends Keywords {
     private double toAmount=0.00;
 
     public void isPageLoaded() throws ApplicationException {
-        WAIT.forSeconds(10);
+        WAIT.forSeconds(15);
         verify.elementTextMatching(keyLblPageTitle,"Convert to Other Currencies");
         balanceBeforeConversion=Double.parseDouble(Test.tools.nbspRemove(get.elementText(keyLblAvailableBalance).replaceAll(",","")));
         keyboard.hideIfAndroid();
@@ -54,10 +54,12 @@ public class PageCurrencyConversion extends Keywords {
         else
         {
             click.elementBy(keyBtnFromCurrencyDropdown);
+            WAIT.forSeconds(2);
             ios.selectPicker(fromCurrency.trim());
             //swipe.scrollDownToText(fromCurrency.trim());
             //click.elementBy(xpathOf.textView(Matching.youDecide(fromCurrency.trim())));
         }
+        WAIT.forSeconds(1);
     }
 
     public void selectToCurrency(String toCurrency) throws ApplicationException {
@@ -74,15 +76,17 @@ public class PageCurrencyConversion extends Keywords {
         else
         {
             click.elementBy(keyBtnToCurrencyDropdown);
-            WAIT.forSeconds(1);
+            WAIT.forSeconds(2);
             ios.selectPicker(toCurrency.trim());
             //swipe.scrollDownToText(toCurrency.trim());
         }
+        WAIT.forSeconds(1);
     }
 
     public void enterAmount(String amount) throws ApplicationException {
         this.amount=Double.parseDouble(amount);
         type.data(keyTxtFromCurrency,amount);
+        WAIT.forSeconds(2);
     }
 
     public void verifyIfToAmountIsAutoPopulatedBasedonExchangeRate() throws ApplicationException {
@@ -103,6 +107,7 @@ public class PageCurrencyConversion extends Keywords {
 
     public void clickNext() throws ApplicationException {
         click.elementBy(keyBtnNext);
+        WAIT.forSeconds(1);
     }
 
     public double getBalanceBeforeConversion() {
@@ -123,25 +128,46 @@ public class PageCurrencyConversion extends Keywords {
 
     public void verifyPageContents() throws ApplicationException {
 
+        if(Device.isAndroid()) {
+            verify.elementIsPresent(keyLblAvailableBalance);
+            verify.elementIsPresent(keyBtnFromCurrencyDropdown);
+            verify.elementIsPresent(keyBtnToCurrencyDropdown);
+            verify.elementIsPresent(keyTxtFromCurrency);
+            verify.elementIsPresent(keyTxtToCurrency);
+            verify.elementIsPresent(keyLblExchangeRate);
+            verify.elementIsPresent(keyBtnNext);
 
-        verify.elementIsPresent(keyLblAvailableBalance);
-        verify.elementIsPresent(keyBtnFromCurrencyDropdown);
-        verify.elementIsPresent(keyBtnToCurrencyDropdown);
-        verify.elementIsPresent(keyTxtFromCurrency);
-        verify.elementIsPresent(keyTxtToCurrency);
-        verify.elementIsPresent(keyLblExchangeRate);
-        verify.elementIsPresent(keyBtnNext);
+            verify.elementIsPresent(keyBtnMenu);
+            verify.elementTextMatching(keyLblTransferFrom, "Transfer From:");
+            verify.elementIsPresent(keyIMGCurrencyFlag);
+            verify.elementIsPresent(keyLblCurrencyIndicator);
+            verify.elementTextMatching(keyLblAvailabelBalanceVerbiage, "Available Balance");
+            verify.elementTextMatching(keyLblConverFrom, "CONVERT FROM:");
+            verify.elementTextMatching(keyLblConverTo, "CONVERT TO:");
+            verify.elementIsPresent(keyLblFirstCurrencyexchangerate);
+            verify.elementTextMatching(keyLblCurrencyNotes, "Conveniently lock in your exchange rates and easily convert to other currencies so you're travel-ready anytime.");
+        }
+        else
+        {
+            verify.elementIsPresent(keyLblAvailableBalance);
+            verify.elementIsPresent(keyBtnFromCurrencyDropdown);
+            verify.elementIsPresent(keyBtnToCurrencyDropdown);
+            verify.elementIsPresent(keyTxtFromCurrency);
+            verify.elementIsPresent(keyTxtToCurrency);
+            verify.elementIsPresent(keyLblExchangeRate);
+            verify.elementIsPresent(keyBtnNext);
 
-        verify.elementIsPresent(keyBtnMenu);
-        verify.elementTextMatching(keyLblTransferFrom,"Transfer From:");
-        verify.elementIsPresent(keyIMGCurrencyFlag);
-        verify.elementIsPresent(keyLblCurrencyIndicator);
-        verify.elementTextMatching(keyLblAvailabelBalanceVerbiage,"Available Balance");
-        verify.elementTextMatching(keyLblConverFrom,"CONVERT FROM:");
-        verify.elementTextMatching(keyLblConverTo,"CONVERT TO:");
-        verify.elementIsPresent(keyLblFirstCurrencyexchangerate);
-        verify.elementTextMatching(keyLblCurrencyNotes,"Conveniently lock in your exchange rates and easily convert to other currencies so you're travel-ready anytime.");
-
+            verify.elementIsPresent(keyBtnMenu);
+           // verify.elementTextMatching(keyLblTransferFrom, "Transfer From:");
+            verify.elementIsPresent(keyIMGCurrencyFlag);
+            verify.elementIsPresent(keyLblCurrencyIndicator);
+            verify.elementIsPresent(keyLblAvailabelBalanceVerbiage);
+            verify.elementTextMatching(keyLblConverFrom, "CONVERT FROM:");
+            verify.elementTextMatching(keyLblConverTo, "CONVERT TO:");
+            verify.elementIsPresent(keyLblFirstCurrencyexchangerate);
+           // verify.elementIsPresent(keyLblCurrencyNotes, "Conveniently lock in your exchange rates and easily convert to other currencies so you're travel-ready anytime.");
+            verify.elementIsPresent(keyLblCurrencyNotes);
+        }
 
     }
 }

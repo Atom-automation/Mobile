@@ -22,11 +22,20 @@ public class PageCommonErrorPopUp extends Keywords {
 
 
     public void CheckErrorMessageDetails(String PopUpHeading, String ErrorMessage) throws ApplicationException, InterruptedException {
-        WAIT.forSeconds(2);
-        verify.elementTextMatching(keyLblPageTitle, PopUpHeading);
-        verify.elementIsPresent(keyBtnOk);
-        verify.elementTextMatching(keyLblErrorDescription, ErrorMessage);
-        verify.elementAttributeMatching(keyBtnOk, "text", "OK");
+        if(Device.isAndroid()) {
+            WAIT.forSeconds(4);
+            verify.elementTextMatching(keyLblPageTitle, PopUpHeading);
+            verify.elementIsPresent(keyBtnOk);
+            verify.elementTextMatching(keyLblErrorDescription, ErrorMessage);
+            verify.elementAttributeMatching(keyBtnOk, "text", "OK");
+        }
+        else
+        {
+            verify.elementTextMatching(keyLblPageTitle, PopUpHeading);
+            verify.elementIsPresent(keyBtnOk);
+            verify.elementTextMatching(keyLblErrorDescription, ErrorMessage);
+            verify.elementAttributeMatching(keyBtnOk, "name", "OK");
+        }
     }
 
     public void ClickOk() throws ApplicationException {

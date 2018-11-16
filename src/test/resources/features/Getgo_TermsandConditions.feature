@@ -4,12 +4,12 @@
 # Functionality : As a tester, I want to be see the Terms and Conditions page of the GetoPay app so that i am aware about the TERMS & CONDITIONS and PRIVACY POLICY details
 # ========================================================================================================================================
 
-@TermsandConditions @RegressionPack1
+@TermsandConditions @RegressionPack1 @RegressionPack
 Feature: TermsandConditions
 
   Background: Login into account
     Given I'm on Getgo landing page
-
+@todayrun
   Scenario: As a tester, I want to be see the Terms and Conditions page of the GetoPay app so that i am aware about the TERMS & CONDITIONS and PRIVACY POLICY details
     Given I'm login into my "Peso" account with my "Peso_Username" and "Peso_Password"
     When I choose More menu options from the GetGopay dashboard page

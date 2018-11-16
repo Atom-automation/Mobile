@@ -60,7 +60,14 @@ public class Getgo_CurrencyConversion {
         //review.transferFrom(PropertyReader.testDataOf("Peso_FullName"),PropertyReader.testDataOf("Peso_CardNumber"));
         review.transferAmount(fromCurrency + " " + String.valueOf(cc.getAmount()));
         review.convertedAmount(toCurrency + " " + String.valueOf(cc.getToAmount()));
-        review.conversionRate("1 Philippine Peso equals "+cc.getExchangeRate());
+        if(Device.isAndroid()) {
+            review.conversionRate("1 Philippine Peso equals " + cc.getExchangeRate());
+        }
+        else
+        {
+            review.conversionRate("1 Philippine Peso = " + cc.getExchangeRate());
+
+        }
         review.clickConvert();
         otp.enterOTP();
     }
@@ -91,6 +98,7 @@ public class Getgo_CurrencyConversion {
     public void i_enter_the_conversion_amount_and_click_Next(String arg1) throws Throwable {
         // Write code here that turns the phrase above into concrete actions
         cc.enterAmount(arg1.trim());
+        cc.clickNext();
     }
 
     @Then("^\"([^\"]*)\" currency conversion page should be displayed$")
@@ -106,7 +114,14 @@ public class Getgo_CurrencyConversion {
         review.verifyCurrencyReviewPageContents();
         review.transferAmount(fromCurrency + " " + String.valueOf(cc.getAmount()));
         review.convertedAmount(toCurrency + " " + String.valueOf(cc.getToAmount()));
-        review.conversionRate("1 Philippine Peso equals "+cc.getExchangeRate());
+        if(Device.isAndroid()) {
+            review.conversionRate("1 Philippine Peso equals " + cc.getExchangeRate());
+        }
+        else
+        {
+            review.conversionRate("1 Philippine Peso = " + cc.getExchangeRate());
+
+        }
         review.clickConvert();
 
     }
@@ -117,8 +132,8 @@ public class Getgo_CurrencyConversion {
        dashboard.clickMenu();
     }
 
-    @Then("^I shouls not see the \"([^\"]*)\" Menu option$")
-    public void i_shouls_not_see_the_Menu_option(String arg1) throws Throwable {
+    @Then("^I should not see the \"([^\"]*)\" Menu option$")
+    public void i_should_not_see_the_Menu_option(String arg1) throws Throwable {
         // Write code here that turns the phrase above into concrete actions
         dashboard.verifyMenuOption(arg1);
     }
@@ -137,11 +152,23 @@ public class Getgo_CurrencyConversion {
         String itransferamt=activities.getTransactionAmountDirectlyfromActivityPage();
 
         activities.closeActivityDetailedPage();
+        //issueeeeeeeee
+        if(Device.isIOS()) {
+            success.gotoDashboard();
+        }
         dashboard.clickAvailableBalance();
         activities.verifyActivityPageTitle("Activities");
         activities.selectActivityByReferneceNo(irefno);
         activities.verifyFundTransferDetailsActivityPage(irefno,idate,idescription,itransferamt,iendingbalanceamt);
         activities.closeActivityDetailedPage();
         activities.closeActivityPage();
+    }
+
+    @When("^Amount should be converted sucessfully$")
+    public void Amountshouldbeconvertedsucessfully() throws Throwable {
+        //need to check
+        success.isConversionSuccess();
+        success.doesPageContains();
+
     }
 }

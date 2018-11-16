@@ -4,7 +4,7 @@
 # Functionality : As a tester, I want to be see the Frequently Asked Question page of the GetoPay app so that i am able to see FAQ details
 # ========================================================================================================================================
 
-@FAQ @RegressionPack1
+@FAQ @RegressionPack1 @RegressionPack
 Feature: Frequently Asked Question
 
   Background: Login into account

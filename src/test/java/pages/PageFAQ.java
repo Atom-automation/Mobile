@@ -45,7 +45,7 @@ public class PageFAQ extends Keywords {
     private String keyLblquestion3content ="Getgo.TAC.Lblquestion3content";
 
     public void verifyPageTitle(String ititle) throws ApplicationException {
-        WAIT.forSeconds(5);
+        WAIT.forSeconds(12);
             verify.elementTextContains(keyLblPageTitle, ititle);
 
     }

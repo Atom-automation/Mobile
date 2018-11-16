@@ -4,6 +4,8 @@ import base.Keywords;
 import exceptions.ApplicationException;
 import gherkin.lexer.De;
 import helper.Device;
+import org.openqa.selenium.ElementNotVisibleException;
+import org.openqa.selenium.NoSuchElementException;
 import xpath.Matching;
 
 public class PageTermsandConditions extends Keywords {
@@ -60,10 +62,20 @@ public class PageTermsandConditions extends Keywords {
     public void verifyPageTermsandConditionsLastelement(String icontent) throws ApplicationException {
         WAIT.forSeconds(3);
         if (Device.isAndroid()) {
-            for (int i = 0; i < 39; i++) {
-                swipe.vertical(2, 0.9, 0.3, 1);
+            try {
+                for (int i = 0; i < 40; i++) {
+                    swipe.vertical(2, 0.9, 0.3, 1);
+                }
+                verify.elementTextMatching(keyLbllastelement, icontent);
             }
-            verify.elementTextMatching(keyLbllastelement, icontent);
+            catch(Exception ex)
+            {
+                for (int i = 0; i < 10; i++) {
+                    swipe.vertical(2, 0.9, 0.3, 1);
+                }
+                verify.elementTextMatching(keyLbllastelement, icontent);
+            }
+
         }
 
         else

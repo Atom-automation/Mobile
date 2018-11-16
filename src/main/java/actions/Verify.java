@@ -6,6 +6,8 @@ import exceptions.ApplicationException;
 import org.apache.log4j.Logger;
 import org.junit.Assert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.ElementNotVisibleException;
+import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import java.util.HashMap;
@@ -27,13 +29,31 @@ public class Verify extends Keywords{
         log.info("Element is present!");
     }
 
+    public void elementIsPresent(By locator,boolean ilogic) throws ApplicationException {
+        log.info("Verify element ["+locator+"] is present");
+        if(ilogic)
+        {
+            get.elementBy(locator);
+            log.info("Element is present!");
+        }
+        else {
+            try {
+                get.elementBy(locator);
+                log.info("Element is present!");
+            } catch (Exception ex) {
+                log.info("Element is not present!");
+        }
+        }
+
+    }
+
     public void elementTextMatching(String locatorKey,String expectedValue) throws ApplicationException {
         log.info("Verify element ["+locatorKey+"] text is matching with ["+expectedValue+"]");
         String actualValue=Test.tools.REMOVE_MULTIPLE_SPACES_AND_NEW_LINES(get.elementBy(locatorKey).getText().trim());
         try{
             isMatching(expectedValue,actualValue);
         }catch (Exception ex){
-            log.error(ex);
+            log.error(ex.getMessage());
             throw new ApplicationException(ex.getMessage());
         }
         log.info("Condition verified!");

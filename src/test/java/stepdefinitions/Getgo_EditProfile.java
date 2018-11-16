@@ -87,7 +87,7 @@ public class Getgo_EditProfile {
         editprofile.verifySuccessfullProfileUpdate();
         ///logic for verification
         editprofile.clickGoToProfileBtn();
-        editprofile.verifyUpdatedValuesforEditAddress(PropertyReader.testDataOf("edit_addresss"));
+        editprofile.verifyUpdatedValuesforEditPresentAddress(PropertyReader.testDataOf("edit_addresss"));
     }
 
     @Then("^\"([^\"]*)\" page should be displayed$")
@@ -151,7 +151,7 @@ public class Getgo_EditProfile {
     @Then("^I should see \"([^\"]*)\" page with \"([^\"]*)\" , \"([^\"]*)\" & \"([^\"]*)\" sections$")
     public void i_should_see_page_with_sections(String arg1, String arg2, String arg3, String arg4) throws Throwable {
         // Write code here that turns the phrase above into concrete actions
-        editprofile.verifyAccountLogicToConfirmtheUser(PropertyReader.testDataOf(Getgo_ChangePassword.passworddetails));
+     //   editprofile.verifyAccountLogicToConfirmtheUser(PropertyReader.testDataOf(Getgo_ChangePassword.passworddetails));
         editprofile.verifyManageProfilePageTitle(arg1);
         editprofile.verifyPagefields(arg2,arg3,arg4);
 
@@ -167,7 +167,8 @@ public class Getgo_EditProfile {
     @Then("^An error message should be displayed$")
     public void an_error_message_should_be_displayed() throws Throwable {
         // Write code here that turns the phrase above into concrete actions
-        throw new PendingException();
+        errorPOPUP.CheckErrorMessageDetails("Error","Something went wrong. Please try again later. Ref: OTP002");
+        errorPOPUP.ClickOk();
     }
 
     @Then("^Enter OTP Page should be displayed$")
@@ -180,6 +181,33 @@ public class Getgo_EditProfile {
     public void i_enter_Invalid_OTP() throws Throwable {
         // Write code here that turns the phrase above into concrete actions
         otp.enterInvalidOTP();
+    }
+
+    @When("^I click on SAVE button with updated present and permanent address details$")
+    public void i_click_on_SAVE_button_with_updated_present_and_permanent_address_details() throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        editprofile.chooseNewCountry(PropertyReader.testDataOf("edit_country"));
+        editprofile.chooseNewState(PropertyReader.testDataOf("edit_state"));
+        editprofile.chooseNewCity(PropertyReader.testDataOf("edit_city"));
+        editprofile.enterStreetDetails(PropertyReader.testDataOf("edit_addresss"));
+
+        editprofile.chooseNewPermanentCountry(PropertyReader.testDataOf("edit_Permanentcountry"));
+        editprofile.chooseNewPermanentState(PropertyReader.testDataOf("edit_Permanentstate"));
+        editprofile.chooseNewPermanentCity(PropertyReader.testDataOf("edit_Permanentcity"));
+        editprofile.enterPermanentStreetDetails(PropertyReader.testDataOf("edit_Permanentaddresss"));
+        editprofile.clickSavebtnUpdateAddress();
+    }
+
+    @Then("^Present and Permanent Address details should be updated and verified in \"([^\"]*)\" page$")
+    public void present_and_Permanent_Address_details_should_be_updated_and_verified_in_page(String arg1) throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+
+        editprofile.verifySuccessfullProfileUpdate();
+        ///logic for verification
+        editprofile.clickGoToProfileBtn();
+        editprofile.verifyUpdatedValuesforEditPresentAddress(PropertyReader.testDataOf("edit_addresss"));
+        editprofile.verifyUpdatedValuesforEditPermanentAddress(PropertyReader.testDataOf("edit_Permanentaddresss"));
+
     }
 
 

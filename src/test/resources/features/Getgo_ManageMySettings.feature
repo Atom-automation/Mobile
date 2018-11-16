@@ -3,12 +3,12 @@
 # Functionality : As a tester, I want see Manage My settings page on choosing Settings option from the Left Hand Menu
 # ========================================================================================================================================
 
-@Settings @RegressionPack2
+@Settings @RegressionPack2 @RegressionPack
 Feature: Manage My Settings
 
   Background: Login into account
     Given I'm on Getgo landing page
-
+@iosfailedeve1
   Scenario: As a tester, I want see Manage My settings page on choosing Settings option from the Left Hand Menu
     Given I'm on "Dashboard" page of GetGo pay with valid "edit_username" and "edit_password"
     When  I choose Settings option from the menu

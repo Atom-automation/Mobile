@@ -16,7 +16,7 @@ public class IOSManager extends DriverManager {
     public void createDriver() throws Exception {
         capabilities.setCapability("platformName", "iOS");
         capabilities.setCapability("automationName","XCUITest");
-        capabilities.setCapability("autoDismissAlerts","true");
+        //capabilities.setCapability("autoDismissAlerts","true");
         //capabilities.setCapability(MobileCapabilityType.FULL_RESET, false);
         //capabilities.setCapability(MobileCapabilityType.NO_RESET, false);
 

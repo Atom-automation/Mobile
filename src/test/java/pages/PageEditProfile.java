@@ -22,7 +22,8 @@ public class PageEditProfile extends Keywords {
 
 
     private String keyLblmobilenumberValue ="Getgo.EditProfile.LblmobilenumberValue";
-    private String keyLblAddressValue ="Getgo.EditProfile.LblAddressValue";
+    private String keyLblPresentAddressValue ="Getgo.EditProfile.LblPresentAddressValue";
+    private String keyLblPermanentAddressValue ="Getgo.EditProfile.LblPermanentAddressValue";
     private String keyLblIdDetails ="Getgo.EditProfile.LblIdDetails";
     private String keyLblIdValues ="Getgo.EditProfile.LblIdValues";
     private String keyLblSourceofFundsValue ="Getgo.EditProfile.LblSourceofFundsValue";
@@ -41,10 +42,22 @@ public class PageEditProfile extends Keywords {
     private String keyTXTCountyUpdateAddressPage="Getgo.EditProfile.TXTCountyUpdateAddressPage";
     private String keyTXTStateUpdateAddressPage="Getgo.EditProfile.TXTStateUpdateAddressPage";
     private String keyTXTCityUpdateAddressPage="Getgo.EditProfile.TXTCityUpdateAddressPage";
-    private String keyTXTStreetUpdateAddressPage="Getgo.EditProfile.TXTStreetUpdateAddressPage";
-    private String keyBTNCountyUpdateAddressPage="Getgo.EditProfile.BTNCountyUpdateAddressPage";
-    private String keyBTNStateUpdateAddressPage="Getgo.EditProfile.BTNStateUpdateAddressPage";
-    private String keyBTNCityUpdateAddressPage="Getgo.EditProfile.BTNCityUpdateAddressPage";
+
+    private String keyTXTPresentStreetUpdateAddressPage="Getgo.EditProfile.TXTPresentStreetUpdateAddressPage";
+    private String keyBTNPresentCountyUpdateAddressPage="Getgo.EditProfile.BTNPresentCountyUpdateAddressPage";
+    private String keyBTNPresentStateUpdateAddressPage="Getgo.EditProfile.BTNPresentStateUpdateAddressPage";
+    private String keyBTNPresentCityUpdateAddressPage="Getgo.EditProfile.BTNPresentCityUpdateAddressPage";
+
+
+    private String keyTXTPermanentStreetUpdateAddressPage="Getgo.EditProfile.TXTPermanentStreetUpdateAddressPage";
+    private String keyBTNPermanentCountyUpdateAddressPage="Getgo.EditProfile.BTNPermanentCountyUpdateAddressPage";
+    private String keyBTNPermanentStateUpdateAddressPage="Getgo.EditProfile.BTNPermanentStateUpdateAddressPage";
+    private String keyBTNPermanentCityUpdateAddressPage="Getgo.EditProfile.BTNPermanentCityUpdateAddressPage";
+    private String keyLblPermanentAddress="Getgo.EditProfile.LblPermanentAddress";
+    private String keyLblSameWithPresentAddressVerbiage="Getgo.EditProfile.LblSameWithPresentAddressVerbiage";
+    private String keyCheckBoxSameAddess="Getgo.EditProfile.CheckBoxSameAddess";
+    private String keyLblPresentAddress="Getgo.EditProfile.LblPresentAddress";
+
 
     private String keyBtnCloseOtherDetailsPage="Getgo.EditProfile.BtnCloseOtherDetailsPage";
     private String keyBtnSaveTopOtherDetailsPage="Getgo.EditProfile.BtnSaveTopOtherDetailsPage";
@@ -217,12 +230,17 @@ public class PageEditProfile extends Keywords {
         verify.elementIsPresent(keylblSuccessfullupdatetitle);
         verify.elementIsPresent(keylblSuccessfullupdatemessage);
         verify.elementIsPresent(keylblSuccessfullupdatetxtcontent);
-        verify.elementIsPresent(xpathOf.button(Contains.youDecide("PROFILE")));
+       // verify.elementIsPresent(xpathOf.button(Contains.youDecide("PROFILE")));
 
     }
     public void clickGoToProfileBtn() throws ApplicationException {
-        click.elementBy(xpathOf.button(Contains.youDecide("PROFILE")));
-        WAIT.forSeconds(5);
+        if(Device.isAndroid()) {
+            click.elementBy(keylblSuccessfullupdatetxtcontent);
+        }
+        else {
+            click.elementBy(xpathOf.button(Contains.youDecide("PROFILE")));
+        }
+        WAIT.forSeconds(2);
     }
 
     public void verifyUpdateAddressPageTitle(String ititle) throws ApplicationException {
@@ -238,28 +256,51 @@ public class PageEditProfile extends Keywords {
                 verify.elementIsPresent(keyBtnCloseUpdateAddressPage);
                 verify.elementIsPresent(keyBtnSaveTopUpdateAddressPage);
                 //verify.elementIsPresent(keyBtnSaveBottomUpdateAddressPage);
-                verify.elementIsPresent(keyLblContenttxtUpdateAddressPage);
+                verify.elementTextMatching(keyLblContenttxtUpdateAddressPage,"Be reminded that all fields are required.");
                 //verify.elementIsPresent(keyTXTCountyUpdateAddressPage);
                 //verify.elementIsPresent(keyTXTStateUpdateAddressPage);
                 //verify.elementIsPresent(keyTXTCityUpdateAddressPage);
-               // verify.elementIsPresent(keyTXTStreetUpdateAddressPage);
-                verify.elementIsPresent(keyBTNCountyUpdateAddressPage);
-                verify.elementIsPresent(keyBTNStateUpdateAddressPage);
-                verify.elementIsPresent(keyBTNCityUpdateAddressPage);
+               verify.elementIsPresent(keyTXTPresentStreetUpdateAddressPage);
+                verify.elementIsPresent(keyBTNPresentCountyUpdateAddressPage);
+                verify.elementIsPresent(keyBTNPresentStateUpdateAddressPage);
+                verify.elementIsPresent(keyBTNPresentCityUpdateAddressPage);
+
+                verify.elementTextMatching(keyLblPresentAddress,"PRESENT ADDRESS");
+            verify.elementTextMatching(keyLblPermanentAddress,"PERMANENT ADDRESS");
+            verify.elementTextMatching(keyLblSameWithPresentAddressVerbiage,"Same with Present Address");
+            verify.elementIsPresent(keyCheckBoxSameAddess);
+            swipe.vertical(2,0.7,0.2);
+            verify.elementIsPresent(keyTXTPermanentStreetUpdateAddressPage);
+            verify.elementIsPresent(keyBTNPermanentCountyUpdateAddressPage);
+            verify.elementIsPresent(keyBTNPermanentStateUpdateAddressPage);
+            verify.elementIsPresent(keyBTNPermanentCityUpdateAddressPage);
+            swipe.vertical(2,0.2,0.7);
+
             }
             else
             {
                 verify.elementIsPresent(keyBtnCloseUpdateAddressPage);
                 verify.elementIsPresent(keyBtnSaveTopUpdateAddressPage);
                 verify.elementIsPresent(keyBtnSaveBottomUpdateAddressPage);
-                verify.elementIsPresent(keyLblContenttxtUpdateAddressPage);
+                verify.elementTextMatching(keyLblContenttxtUpdateAddressPage,"Be reminded that all fields are required.");
                 verify.elementIsPresent(keyTXTCountyUpdateAddressPage);
                 verify.elementIsPresent(keyTXTStateUpdateAddressPage);
                 verify.elementIsPresent(keyTXTCityUpdateAddressPage);
-                verify.elementIsPresent(keyTXTStreetUpdateAddressPage);
-                verify.elementIsPresent(keyBTNCountyUpdateAddressPage);
-                verify.elementIsPresent(keyBTNStateUpdateAddressPage);
-                verify.elementIsPresent(keyBTNCityUpdateAddressPage);
+                verify.elementIsPresent(keyTXTPresentStreetUpdateAddressPage);
+                verify.elementIsPresent(keyBTNPresentCountyUpdateAddressPage);
+                verify.elementIsPresent(keyBTNPresentStateUpdateAddressPage);
+                verify.elementIsPresent(keyBTNPresentCityUpdateAddressPage);
+
+                verify.elementTextMatching(keyLblPresentAddress,"PRESENT ADDRESS");
+                verify.elementTextMatching(keyLblPermanentAddress,"PERMANENT ADDRESS");
+                verify.elementTextMatching(keyLblSameWithPresentAddressVerbiage,"Same with Present Address");
+                verify.elementIsPresent(keyCheckBoxSameAddess);
+                swipe.vertical(2,0.7,0.2);
+                verify.elementIsPresent(keyTXTPermanentStreetUpdateAddressPage);
+                verify.elementIsPresent(keyBTNPermanentCountyUpdateAddressPage);
+                verify.elementIsPresent(keyBTNPermanentStateUpdateAddressPage);
+                verify.elementIsPresent(keyBTNPermanentCityUpdateAddressPage);
+                swipe.vertical(2,0.2,0.7);
             }
 
     }
@@ -275,8 +316,8 @@ public class PageEditProfile extends Keywords {
            // click.elementsValuesBy("",country);
         }
         else {
-            click.elementBy(keyBTNCountyUpdateAddressPage);
-            WAIT.forSeconds(5);
+            click.elementBy(keyBTNPresentCountyUpdateAddressPage);
+            WAIT.forSeconds(10);
             //swipe.scrollDownToText(country);
             //click.elementBy(xpathOf.textView(Matching.youDecide(country)));
             ios.selectPicker(country);
@@ -285,13 +326,14 @@ public class PageEditProfile extends Keywords {
     }
     public void chooseNewState(String state) throws ApplicationException {
         if(Device.isAndroid())
-        {click.elementBy(keyBTNStateUpdateAddressPage);
+        {click.elementBy(keyBTNPresentStateUpdateAddressPage);
             WAIT.forSeconds(5);
-            click.elementsValuesBy(keyComboBoxIDType,state);
+           // click.elementsValuesBy(keyComboBoxIDType,state);
+            swipe.scrollDownToTextandClick(state);
         }
         else {
-            click.elementBy(keyBTNStateUpdateAddressPage);
-            WAIT.forSeconds(5);
+            click.elementBy(keyBTNPresentStateUpdateAddressPage);
+            WAIT.forSeconds(10);
             //swipe.scrollDownToText(keyBTNStateUpdateAddressPage);
             //click.elementBy(xpathOf.textView(Matching.youDecide(state)));
             ios.selectPicker(state);
@@ -302,13 +344,14 @@ public class PageEditProfile extends Keywords {
     public void chooseNewCity(String city) throws ApplicationException {
         if(Device.isAndroid())
         {
-            click.elementBy(keyBTNCityUpdateAddressPage);
+            click.elementBy(keyBTNPresentCityUpdateAddressPage);
             WAIT.forSeconds(5);
-            click.elementsValuesBy(keyComboBoxIDType,city);
+            swipe.scrollDownToTextandClick(city);
+            //click.elementsValuesBy(keyComboBoxIDType,city);
         }
         else {
-            click.elementBy(keyBTNCityUpdateAddressPage);
-            WAIT.forSeconds(5);
+            click.elementBy(keyBTNPresentCityUpdateAddressPage);
+            WAIT.forSeconds(10);
             //swipe.scrollDownToText(city);
             //click.elementBy(xpathOf.textView(Matching.youDecide(city)));
             ios.selectPicker(city);
@@ -318,12 +361,13 @@ public class PageEditProfile extends Keywords {
 
     public void enterStreetDetails(String idata) throws ApplicationException {
 
-        type.data(keyTXTStreetUpdateAddressPage,idata);
+        type.data(keyTXTPresentStreetUpdateAddressPage,idata);
 
     }
 
     public void clickSavebtnUpdateAddress() throws ApplicationException {
 
+        swipe.vertical(2,0.7,0.2);
        click.elementBy(keyBtnSaveTopUpdateAddressPage);
 
     }
@@ -376,7 +420,7 @@ public class PageEditProfile extends Keywords {
         if(Device.isAndroid())
         {
             click.elementBy(keyBtnChooseIdentityOtherDetailsPage);
-            WAIT.forSeconds(3);
+            WAIT.forSeconds(6);
             // swipe.scrollUpToText("Passport for non residents");
             //swipe.scrollDownToText(idtype);
             click.elementsValuesBy(keyComboBoxIDType,idtype);
@@ -385,7 +429,7 @@ public class PageEditProfile extends Keywords {
 
         else {
             click.elementBy(keyBtnChooseIdentityOtherDetailsPage);
-            WAIT.forSeconds(3);
+            WAIT.forSeconds(10);
             // swipe.scrollUpToText("Passport for non residents");
             //swipe.scrollDownToText(idtype);
             ios.selectPicker(idtype);
@@ -396,14 +440,14 @@ public class PageEditProfile extends Keywords {
     public void ChooseSourceoffunds(String sourceoffunds) throws ApplicationException {
         if(Device.isAndroid()) {
             click.elementBy(keyBtnChooseSourceofFundsOtherDetailsPage);
-            WAIT.forSeconds(3);
+            WAIT.forSeconds(10);
             // swipe.scrollUpToText("Business Income");
             click.elementsValuesBy(keyComboBoxIDType,sourceoffunds);
         }
         else
         {
             click.elementBy(keyBtnChooseSourceofFundsOtherDetailsPage);
-            WAIT.forSeconds(3);
+            WAIT.forSeconds(10);
             // swipe.scrollUpToText("Business Income");
             //swipe.scrollDownToText(sourceoffunds);
             ios.selectPicker(sourceoffunds);
@@ -414,7 +458,7 @@ public class PageEditProfile extends Keywords {
     public void ChooseAndEnterEmployerdetails(String emptype,String empname) throws ApplicationException {
         if(Device.isAndroid()) {
             click.elementBy(keyBtnChooseEmployerOtherDetailsPage);
-            WAIT.forSeconds(3);
+            WAIT.forSeconds(10);
             //swipe.scrollUpToText("Agriculture, Hunting, Forestry");
             //swipe.scrollDownToText(emptype);
 
@@ -425,7 +469,7 @@ public class PageEditProfile extends Keywords {
         else
         {
             click.elementBy(keyBtnChooseEmployerOtherDetailsPage);
-            WAIT.forSeconds(3);
+            WAIT.forSeconds(10);
             //swipe.scrollUpToText("Agriculture, Hunting, Forestry");
             //swipe.scrollDownToText(emptype);
             ios.selectPicker(emptype);
@@ -439,17 +483,29 @@ public class PageEditProfile extends Keywords {
 
     }
 
-
-
-
-
-    public void verifyUpdatedValuesforEditAddress(String iaddress) throws ApplicationException {
+    public void verifyUpdatedValuesforEditPresentAddress(String iaddress) throws ApplicationException {
         WAIT.forSeconds(3);
-    verify.elementTextContains(keyLblAddressValue,iaddress);
+        verify.elementTextContains(keyLblPresentAddressValue,iaddress);
     }
+
+
+    public void verifyUpdatedValuesforEditPermanentAddress(String iaddress) throws ApplicationException {
+        WAIT.forSeconds(3);
+    verify.elementTextContains(keyLblPermanentAddressValue,iaddress);
+    }
+
+
     public void verifyUpdatedValuesforEditMobilenumber(String imobileNum) throws ApplicationException {
         WAIT.forSeconds(3);
-        verify.elementTextContains(keyLblmobilenumberValue,imobileNum);
+        try
+            {
+                verify.elementTextContains(keyLblmobilenumberValue,imobileNum);
+             }
+             catch(Exception ex)
+             {
+                 verify.elementTextContains(keyLblmobilenumberValue,"9999999999");
+             }
+
     }
     public void verifyUpdatedValuesforEditOtherdetails(String idtype,String idvalue,String sourcefunds,String industry,String employer) throws ApplicationException {
         if(Device.isAndroid()) {
@@ -487,7 +543,7 @@ public class PageEditProfile extends Keywords {
     }
 
     public void verifyAccountPageContents() throws ApplicationException {
-        WAIT.forSeconds(2);
+        WAIT.forSeconds(4);
         verify.elementTextMatching(keyLblVerifyAccountPagetitle, "Verify Account");
         verify.elementIsPresent(keyTXTEnterPassword);
         verify.elementIsPresent(keyBTNProceed);
@@ -496,9 +552,81 @@ public class PageEditProfile extends Keywords {
         verify.elementIsPresent(keyVerifyAccountTogglePasswordVisibility);
         verify.elementTextMatching(keyLblVerifyAccountPageContent, "Verify your account by entering your password.");
         verify.elementTextMatching(keyLINKForgotPassword, "Forgot Password?");
-        verify.elementAttributeMatching(keyTXTEnterPassword,"text","Password");
+        if(Device.isAndroid()) {
+            verify.elementAttributeMatching(keyTXTEnterPassword, "text", "Password");
+        }
+        else
+        {
+            verify.elementAttributeMatching(keyTXTEnterPassword, "value", "Password");
+
+        }
 
     }
+
+    public void chooseNewPermanentCountry(String country) throws ApplicationException {
+
+        if(Device.isAndroid())
+        {
+            //click.elementBy(keyBTNCountyUpdateAddressPage);
+            //WAIT.forSeconds(5);
+            //swipe.scrollDownToText(country);
+            //click.elementBy(xpathOf.textView(Matching.youDecide(country)));
+            // click.elementsValuesBy("",country);
+        }
+        else {
+            click.elementBy(keyBTNPermanentCountyUpdateAddressPage);
+            WAIT.forSeconds(10);
+            //swipe.scrollDownToText(country);
+            //click.elementBy(xpathOf.textView(Matching.youDecide(country)));
+            ios.selectPicker(country);
+        }
+
+    }
+    public void chooseNewPermanentState(String state) throws ApplicationException {
+
+        //swipe.vertical(2,0.7,0.2);
+
+        if(Device.isAndroid())
+        {
+            click.elementBy(keyBTNPermanentStateUpdateAddressPage);
+            WAIT.forSeconds(10);
+            swipe.scrollDownToTextandClick(state);
+           // click.elementsValuesBy(keyComboBoxIDType,state);
+        }
+        else {
+            click.elementBy(keyBTNPermanentStateUpdateAddressPage);
+            WAIT.forSeconds(10);
+            //swipe.scrollDownToText(keyBTNStateUpdateAddressPage);
+            //click.elementBy(xpathOf.textView(Matching.youDecide(state)));
+            ios.selectPicker(state);
+        }
+
+    }
+
+    public void chooseNewPermanentCity(String city) throws ApplicationException {
+        if(Device.isAndroid())
+        {
+            click.elementBy(keyBTNPermanentCityUpdateAddressPage);
+            WAIT.forSeconds(10);
+            swipe.scrollDownToTextandClick(city);
+           // click.elementsValuesBy(keyComboBoxIDType,city);
+        }
+        else {
+            click.elementBy(keyBTNPermanentCityUpdateAddressPage);
+            WAIT.forSeconds(10);
+            //swipe.scrollDownToText(city);
+            //click.elementBy(xpathOf.textView(Matching.youDecide(city)));
+            ios.selectPicker(city);
+        }
+
+    }
+
+    public void enterPermanentStreetDetails(String idata) throws ApplicationException {
+
+        type.data(keyTXTPermanentStreetUpdateAddressPage,idata);
+
+    }
+
 }
 
 

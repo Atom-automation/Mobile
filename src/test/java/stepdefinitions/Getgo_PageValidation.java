@@ -24,6 +24,7 @@ public class Getgo_PageValidation
     @Then("^I should see two buttons \"([^\"]*)\" \"([^\"]*)\", Getgo logo, a caption \"([^\"]*)\"$")
     public void i_should_see_two_buttons_Getgo_logo_a_caption(String loginBtnTxt, String signUpBtnTxt, String captionTxt) throws Throwable
     {
+        welcomePage.iosProductFeature();
         welcomePage.doesPageContains(loginBtnTxt,signUpBtnTxt,captionTxt);
     }
 

@@ -96,7 +96,7 @@ public class PageVirtualCardRegistration extends Keywords {
             type.data(keyTxtLastName, lastName);
 
             click.elementBy(keyBtnCalendar);
-            WAIT.forSeconds(5);
+            WAIT.forSeconds(10);
             ios.selectPickerByIndex("12",1);
             ios.selectPickerByIndex("July",2);
            ios.selectPickerByIndex("1992",3);
@@ -104,11 +104,11 @@ public class PageVirtualCardRegistration extends Keywords {
             //selectDOB("23", "July", "1992");
 
             click.elementBy(keyBtnNationality);
-            WAIT.forSeconds(5);
+            WAIT.forSeconds(10);
             ios.selectPicker(nationality);
             selectGender(gender);
             click.elementBy(keyBtnSourceofFunds);
-            WAIT.forSeconds(3);
+            WAIT.forSeconds(10);
             ios.selectPicker(sourceoffunds);
         }
     }
@@ -193,14 +193,14 @@ public class PageVirtualCardRegistration extends Keywords {
 
     public void selectState(String state) throws ApplicationException {
         click.elementBy(keyBtnPresentState);
-        WAIT.forSeconds(3);
+        WAIT.forSeconds(4);
         swipe.scrollDownToText(state);
         click.elementBy(xpathOf.textView(Matching.youDecide(state)));
     }
 
     public void selectCity(String city) throws ApplicationException {
         click.elementBy(keyBtnPresentCity);
-        WAIT.forSeconds(3);
+        WAIT.forSeconds(4);
         swipe.scrollDownToText(city);
         click.elementBy(xpathOf.textView(Matching.youDecide(city)));
     }
@@ -209,10 +209,10 @@ public class PageVirtualCardRegistration extends Keywords {
     public void enterPresentAddressDetails(String country,String state,String city,String address) throws ApplicationException {
 
             if(Device.isAndroid()) {
-                WAIT.forSeconds(3);
+                WAIT.forSeconds(4);
                 verify.elementTextMatching(keyTxtPresentCountry,country);
                 selectState(state);
-                WAIT.forSeconds(3);
+                WAIT.forSeconds(4);
                 selectCity(city);
                 WAIT.forSeconds(2);
                 type.data(keyTxtPresentAddress, address);
@@ -223,11 +223,11 @@ public class PageVirtualCardRegistration extends Keywords {
                 WAIT.forSeconds(3);
                 verify.elementTextMatching(keyTxtPresentCountry,country);
                 click.elementBy(keyBtnPresentState);
-                WAIT.forSeconds(2);
+                WAIT.forSeconds(10);
                 ios.selectPicker(state);
                 WAIT.forSeconds(1);
                 click.elementBy(keyBtnPresentCity);
-                WAIT.forSeconds(2);
+                WAIT.forSeconds(10);
                 ios.selectPicker(city);
                 WAIT.forSeconds(2);
                 type.data(keyTxtPresentAddress, address);

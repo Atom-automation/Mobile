@@ -5,6 +5,7 @@ import base.Test;
 import constants.Keys;
 import constants.OS;
 import exceptions.ApplicationException;
+import helper.Device;
 import helper.PropertyReader;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.ios.IOSDriver;
@@ -52,8 +53,8 @@ public class PageOTP extends Keywords {
             }
             catch (Exception e)
             {
-                if (get.elementBy(By.xpath("//XCUIElementTypeStaticText[@name='We’ll be sending you a 6 digit password to your mobile number ending in 0000. Please enter the code below.']/parent::*/XCUIElementTypeOther")).isDisplayed()) {
-                    type.OTPdata(By.xpath("//XCUIElementTypeStaticText[@name='We’ll be sending you a 6 digit password to your mobile number ending in 0000. Please enter the code below.']/parent::*/XCUIElementTypeOther"), PropertyReader.testDataOf("OTP"));
+                if (get.elementBy(By.xpath("//XCUIElementTypeButton[@name='RESEND']/preceding:: XCUIElementTypeOther[1]")).isDisplayed()) {
+                    type.OTPdata(By.xpath("//XCUIElementTypeButton[@name='RESEND']/preceding:: XCUIElementTypeOther[1]"), PropertyReader.testDataOf("OTP"));
                 }
 
             }
@@ -63,19 +64,37 @@ public class PageOTP extends Keywords {
 
     public void verifyOTPPageContents() throws ApplicationException {
         WAIT.forSeconds(5);
-        verify.elementTextMatching(keyLblPageTitle,"Verify");
-        verify.elementIsPresent(keyBtnCLose);
-        verify.elementTextMatching(keyLblPageContent1,"Your will receive a One-Time Password (OTP) on");
-        verify.elementTextMatching(keyLblPageContent2,"your registered mobile number ending");
-        verify.elementIsPresent(keyLblPageContent3);
-        verify.elementIsPresent(keyBlock1);
-        verify.elementIsPresent(keyBlock2);
-        verify.elementIsPresent(keyBlock3);
-        verify.elementIsPresent(keyBlock4);
-        verify.elementIsPresent(keyBlock5);
-        verify.elementIsPresent(keyBlock6);
-        verify.elementIsPresent(keyLblResetCountDown);
+        if(Device.isAndroid()) {
+            verify.elementTextMatching(keyLblPageTitle, "Verify");
+            verify.elementIsPresent(keyBtnCLose);
+            verify.elementTextMatching(keyLblPageContent1, "Your will receive a One-Time Password (OTP) on");
+            verify.elementTextMatching(keyLblPageContent2, "your registered mobile number ending");
+            verify.elementIsPresent(keyLblPageContent3);
+            verify.elementIsPresent(keyBlock1);
+            verify.elementIsPresent(keyBlock2);
+            verify.elementIsPresent(keyBlock3);
+            verify.elementIsPresent(keyBlock4);
+            verify.elementIsPresent(keyBlock5);
+            verify.elementIsPresent(keyBlock6);
+            verify.elementIsPresent(keyLblResetCountDown);
 //        verify.elementIsPresent(keyBtnResend);
+        }
+        else
+        {
+            verify.elementTextMatching(keyLblPageTitle, "Verify");
+            verify.elementIsPresent(keyBtnCLose);
+            verify.elementTextContains(keyLblPageContent1, "You will receive a One-Time Password (OTP) on your registered mobile number ending");
+            //verify.elementTextMatching(keyLblPageContent2, "your registered mobile number ending");
+            //verify.elementIsPresent(keyLblPageContent3);
+            verify.elementIsPresent(keyBlock1);
+            //verify.elementIsPresent(keyBlock2);
+            //verify.elementIsPresent(keyBlock3);
+            //verify.elementIsPresent(keyBlock4);
+            //verify.elementIsPresent(keyBlock5);
+            //verify.elementIsPresent(keyBlock6);
+            verify.elementIsPresent(keyLblResetCountDown);
+//        verify.elementIsPresent(keyBtnResend);
+        }
 
     }
 

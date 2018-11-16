@@ -87,7 +87,7 @@ public class PageActivities extends Keywords {
 
 
     public void verifyActivityPageTitle(String ititle) throws ApplicationException {
-        WAIT.forSeconds(55);
+        WAIT.forSeconds(30);
         verify.elementTextContains(keyLblPageTitle,ititle);
     }
 
@@ -248,7 +248,7 @@ public class PageActivities extends Keywords {
 
             verify.elementTextMatching(keyLblTransactionReferenceNumber, refno);
             verify.elementIsPresent(keyLblTransactionDate);
-            verify.elementTextMatching(keyLblDescription,desc);
+           // verify.elementTextMatching(keyLblDescription,desc);
             verify.elementIsPresent(keyLblTransactionAmount);
             verify.elementIsPresent(keyLblEndingBalance);
 
@@ -310,6 +310,8 @@ public class PageActivities extends Keywords {
 
         return data;
     }
+
+
 
 
 }

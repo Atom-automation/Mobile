@@ -169,7 +169,7 @@ PageAccountDashboard extends Keywords {
         //balance=Double.parseDouble(parentElement.findElements(By.xpath("//"+ ObjectClass.iOSTextView)).get(1).getText().trim().split(" ")[1].trim());
 
 
-        balance=Double.parseDouble(get.elementText(By.xpath(currencylocator.AmountLocator(currencyName))).trim().replaceAll("\\u00A0",""));
+        balance=Double.parseDouble(get.elementText(By.xpath(currencylocator.AmountLocator(currencyName))).trim().substring(1).replaceAll("\\u00A0",""));
         return balance;
     }
 
@@ -192,7 +192,7 @@ PageAccountDashboard extends Keywords {
     }
 
     public void displayBalanceOfCurrency(String currency) throws ApplicationException {
-        WAIT.forSeconds(20);
+        WAIT.forSeconds(10);
         currencyBalance=getBalanceOf(currency);
         Reporter.addStepLog("Balance of currency "+currency+" is --> "+currencyBalance);
     }
@@ -265,9 +265,9 @@ PageAccountDashboard extends Keywords {
 
     public void verifyMenuOption(String imenuoption) throws ApplicationException {
         if(Device.isAndroid()) {
-            verify.elementIsPresent(xpathOf.checkedTextView(Matching.text(imenuoption)));
+            verify.elementIsPresent(xpathOf.checkedTextView(Matching.text(imenuoption)),false);
         }else if(Device.isIOS()){
-            verify.elementIsPresent(MobileBy.AccessibilityId(imenuoption));
+            verify.elementIsPresent(MobileBy.AccessibilityId(imenuoption),false);
         }
     }
 
