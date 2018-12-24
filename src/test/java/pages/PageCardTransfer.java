@@ -33,6 +33,11 @@ public class PageCardTransfer extends Keywords
     private String keyLblCurrencyverbiage="Getgo.CardTransfer.LblCurrencyverbiage";
     private String keyLblAvailableBalanceText="Getgo.CardTransfer.LblAvailableBalanceText";
 
+    private String keyLblRepeatText="Getgo.CardTransfer.LblRepeatText";
+    private String keyToogleSwitch="Getgo.CardTransfer.ToogleSwitch";
+    private String keyBtnEndDateDropdown="Getgo.CardTransfer.BtnEndDateDropdown";
+    private String keyBtnScheduledActivitiesBottom="Getgo.CardTransfer.BtnScheduledActivitiesBottom";
+
     DecimalFormat df = new DecimalFormat("###.##");
     private double beforeBalance;
 
@@ -119,27 +124,65 @@ public class PageCardTransfer extends Keywords
         WAIT.forSeconds(5);
     }
     public void verifyPageContentDetails() throws ApplicationException {
-        verify.elementIsPresent(keyTxtRecipientCard);
-        verify.elementIsPresent(keyTxtRecipientName);
-        verify.elementIsPresent(keyTxtAmount);
-        verify.elementIsPresent(keyBtnCalendar);
-        verify.elementIsPresent(keyTxtMessage);
-        verify.elementIsPresent(keyBtnNext);
-        verify.elementIsPresent(keyLblAvailableBalance);
-        verify.elementTextMatching(keyLblPageHeader,"TRANSFER TO:");
-        verify.elementTextMatching(keyLblPageDescriptionBottom,"Don't forget to double-check the amount and card number you entered. Everything you do here is real time and money will be sent immediately.");
-        verify.elementTextMatching(keyLblCurrencyTranferFrom,"Transfer From:");
-        verify.elementIsPresent(keyLblCurrencyLogo);
-        verify.elementIsPresent(keyLblCurrencyverbiage);
-        if(Device.isAndroid()) {
-            verify.elementTextMatching(keyLblAvailableBalanceText, "Available Balance");
-        }
-        else
-        {
-            verify.elementIsPresent(keyLblAvailableBalanceText);
-        }
-
+    verify.elementIsPresent(keyTxtRecipientCard);
+    //verify.elementIsPresent(keyTxtRecipientName);
+    verify.elementIsPresent(keyTxtAmount);
+    verify.elementIsPresent(keyBtnCalendar);
+    verify.elementIsPresent(keyTxtMessage);
+    verify.elementIsPresent(keyBtnNext);
+    verify.elementIsPresent(keyLblAvailableBalance);
+    verify.elementTextMatching(keyLblPageHeader,"TRANSFER TO:");
+    verify.elementTextContains(keyLblPageDescriptionBottom,"Don't forget to double-check the amount and card number you entered. Everything you do here is real time and money will be sent immediately.");
+    verify.elementTextMatching(keyLblCurrencyTranferFrom,"Transfer From:");
+    verify.elementIsPresent(keyLblCurrencyLogo);
+    verify.elementIsPresent(keyLblCurrencyverbiage);
+    verify.elementTextMatching(keyLblRepeatText,"REPEAT");
+    if(Device.isAndroid()) {
+        verify.elementTextMatching(keyLblAvailableBalanceText, "Available Balance");
+    }
+    else
+    {
+        verify.elementIsPresent(keyLblAvailableBalanceText);
     }
 
+}
+
+    public void SwitchRepeatToogleIndicator() throws ApplicationException {
+        click.elementBy(keyToogleSwitch);
+        WAIT.forSeconds(1);
+        verify.elementIsPresent(keyBtnFrequencyDropdown);
+        verify.elementIsPresent(keyBtnEndDateDropdown);
+    }
+
+    public void chooseFrequency(String frequencyvalue) throws ApplicationException
+    {
+        click.elementBy(keyBtnFrequencyDropdown);
+        swipe.scrollDownToTextandClick(frequencyvalue);
+        WAIT.forSeconds(1);
+    }
+
+    public void chooseEndDate(String endDatevalue) throws ApplicationException
+    {
+        click.elementBy(keyBtnEndDateDropdown);
+        swipe.scrollDownToTextandClick(endDatevalue);
+        WAIT.forSeconds(1);
+    }
+
+    public void chooseTransactionDate(String year, String month,String date) throws ApplicationException
+    {
+        click.chooseTransactionDate(year,month,date);
+        WAIT.forSeconds(1);
+    }
+
+    public String getAvailabelBalance() throws ApplicationException
+    {
+        return get.elementText(keyLblAvailableBalance);
+    }
+
+    public void clickManageScheduledActivitiesOption() throws ApplicationException {
+        swipe.vertical(2,0.8,0.5,3);
+        click.elementBy(keyBtnScheduledActivitiesBottom);
+        WAIT.forSeconds(5);
+    }
 
 }

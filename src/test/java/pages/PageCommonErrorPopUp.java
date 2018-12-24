@@ -23,7 +23,7 @@ public class PageCommonErrorPopUp extends Keywords {
 
     public void CheckErrorMessageDetails(String PopUpHeading, String ErrorMessage) throws ApplicationException, InterruptedException {
         if(Device.isAndroid()) {
-            WAIT.forSeconds(4);
+            WAIT.forSeconds(6);
             verify.elementTextMatching(keyLblPageTitle, PopUpHeading);
             verify.elementIsPresent(keyBtnOk);
             verify.elementTextMatching(keyLblErrorDescription, ErrorMessage);

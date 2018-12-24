@@ -9,7 +9,7 @@
     Background: Open Getgo mobile application
       Given I'm on Getgo landing page
 
-    @failedcase
+
     Scenario: Register a new virtual card
       Given I'm on Getgo virtual card registration screen
       When  I enter Mobile Number, Email Address, and Nominate and Confirm password

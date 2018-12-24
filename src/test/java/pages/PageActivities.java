@@ -188,12 +188,12 @@ public class PageActivities extends Keywords {
     else
     {
         verify.elementIsPresent(keyBtnDetailsClose);
-        verify.elementTextMatching(keyLblDetailsReferenceNumberTitle,"Reference No.:");
+        verify.elementTextMatching(keyLblDetailsReferenceNumberTitle,"Transaction Reference No:");
         verify.elementTextMatching(keyLblDetailsTransactionDateTitle,"Transaction Date:");
         verify.elementTextMatching(keyLblDetailsDescriptionTitle,"Description:");
         verify.elementTextMatching(keyLblDetailsTransactionAmountTitle,"Transaction Amount:");
         //
-        verify.elementTextMatching(keyLblDetailsEndingBalanceTitle,"Ending Balance");
+        verify.elementTextMatching(keyLblDetailsEndingBalanceTitle,"End Balance");
         verify.elementIsPresent(keyLblTransactionReferenceNumber);
         verify.elementIsPresent(keyLblTransactionDate);
         verify.elementIsPresent(keyLblDescription);
@@ -248,7 +248,7 @@ public class PageActivities extends Keywords {
 
             verify.elementTextMatching(keyLblTransactionReferenceNumber, refno);
             verify.elementIsPresent(keyLblTransactionDate);
-           // verify.elementTextMatching(keyLblDescription,desc);
+           verify.elementIsPresent(keyLblDescription);
             verify.elementIsPresent(keyLblTransactionAmount);
             verify.elementIsPresent(keyLblEndingBalance);
 
@@ -258,12 +258,12 @@ public class PageActivities extends Keywords {
         else
         {
             verify.elementIsPresent(keyBtnDetailsClose);
-            verify.elementTextMatching(keyLblDetailsReferenceNumberTitle,"Reference No.:");
+            verify.elementTextMatching(keyLblDetailsReferenceNumberTitle,"Transaction Reference No:");
             verify.elementTextMatching(keyLblDetailsTransactionDateTitle,"Transaction Date:");
             verify.elementTextMatching(keyLblDetailsDescriptionTitle,"Description:");
             verify.elementTextMatching(keyLblDetailsTransactionAmountTitle,"Transaction Amount:");
             //
-            verify.elementTextMatching(keyLblDetailsEndingBalanceTitle,"Ending Balance");
+            verify.elementTextMatching(keyLblDetailsEndingBalanceTitle,"End Balance");
             verify.elementIsPresent(keyLblTransactionReferenceNumber);
             verify.elementIsPresent(keyLblTransactionDate);
             verify.elementIsPresent(keyLblDescription);

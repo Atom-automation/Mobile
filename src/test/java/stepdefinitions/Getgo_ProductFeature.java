@@ -18,6 +18,7 @@ public class Getgo_ProductFeature
     public void i_m_on_Getgo_application_with_welcome_page_one_content_details_greeting_image_next_button() throws Throwable {
         // Write code here that turns the phrase above into concrete actions
         welcomePage.launchGetgo();
+        welcomePage.dontAllowNotification();
         welcomePage.welcomepageone();
     }
 

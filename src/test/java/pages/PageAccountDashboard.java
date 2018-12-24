@@ -32,6 +32,7 @@ PageAccountDashboard extends Keywords {
     private double currencyBalance=0.00;
 
     public void isVirtualCardDisplayed() throws ApplicationException {
+        WAIT.forSeconds(2);
         verify.elementIsPresent("Getgo.Dashboard.ImgCard");
     }
 
@@ -158,7 +159,7 @@ PageAccountDashboard extends Keywords {
     private double getBalanceOfCurrency_Android(String currencyName) throws ApplicationException {
         double balance;
         WebElement parentElement=get.elementBy(By.xpath("//android.widget.TextView[@text='"+currencyName+"']/parent::*"));
-        balance=Double.parseDouble(parentElement.findElements(By.xpath("//"+ ObjectClass.AndroidTextView)).get(1).getText().trim());
+        balance=Double.parseDouble(parentElement.findElements(By.xpath("//"+ ObjectClass.AndroidTextView)).get(1).getText().trim().substring(1).replaceAll("\\u00A0",""));
         return balance;
     }
 
@@ -243,7 +244,8 @@ PageAccountDashboard extends Keywords {
 
     public void clickAvailableBalance() throws ApplicationException {
         if(Device.isAndroid()) {
-            click.elementBy(keyLblAvailableBalanceVirtualCard);
+            WAIT.forSeconds(4);
+            click.elementBy(keyLblAvailableBalancePeso);
             WAIT.forSeconds(2);
         }
         else

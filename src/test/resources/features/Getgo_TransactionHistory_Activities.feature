@@ -9,6 +9,7 @@ Feature: Transaction History/Activities
   Background: Login into account
     Given I'm on Getgo landing page
 
+
   Scenario: As a User, I want to view the transaction history details of my account in the GetGopay so that i am aware of my transaction details - Activities from Dashboard page
     Given I'm on "Dashboard" page of GetGo pay with valid "Peso_Username" and "Peso_Password"
     When I click on the Availabel Balance Amount field in the Dasboard page

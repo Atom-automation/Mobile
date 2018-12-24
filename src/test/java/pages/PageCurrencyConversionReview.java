@@ -51,7 +51,7 @@ public class PageCurrencyConversionReview extends Keywords {
     public void clickConvert() throws ApplicationException {
         WAIT.forSeconds(2);
         click.elementBy(keyBtnConvert);
-        WAIT.forSeconds(2);
+        WAIT.forSeconds(3);
 
     }
     public void verifyPageTitle(String ititle) throws ApplicationException {
@@ -61,7 +61,7 @@ public class PageCurrencyConversionReview extends Keywords {
 
     public void verifyCurrencyReviewPageContents() throws ApplicationException {
         if(Device.isAndroid()) {
-            verify.elementTextMatching(keyLblPageHeaderContent, "Always check and review your details to ensure that information is correct.");
+            verify.elementTextMatching(keyLblPageHeaderContent, "Always check and review your details to ensure that the information is correct.");
             verify.elementIsPresent(keyBtnClose);
             verify.elementIsPresent(keyBtnEdit);
             verify.elementTextMatching(keyLblConvertCurrencyFromVerbiage, "Convert from:");
@@ -75,7 +75,7 @@ public class PageCurrencyConversionReview extends Keywords {
             verify.elementIsPresent(keyBtnEdit);
             verify.elementTextMatching(keyLblConvertCurrencyFromVerbiage, "Convert from:");
             verify.elementTextMatching(keyLblConvertCurrencyToVerbiage, "Convert to:");
-            verify.elementTextMatching(keyLblConversionExchangeRateVerbiage, "Convertion:");
+            verify.elementTextMatching(keyLblConversionExchangeRateVerbiage, "Conversion:");
         }
 
         /////////////////

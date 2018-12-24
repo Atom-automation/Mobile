@@ -67,7 +67,7 @@ public class PageOTP extends Keywords {
         if(Device.isAndroid()) {
             verify.elementTextMatching(keyLblPageTitle, "Verify");
             verify.elementIsPresent(keyBtnCLose);
-            verify.elementTextMatching(keyLblPageContent1, "Your will receive a One-Time Password (OTP) on");
+            verify.elementTextMatching(keyLblPageContent1, "You will receive a One-Time Password (OTP) on");
             verify.elementTextMatching(keyLblPageContent2, "your registered mobile number ending");
             verify.elementIsPresent(keyLblPageContent3);
             verify.elementIsPresent(keyBlock1);

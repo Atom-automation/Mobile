@@ -138,11 +138,23 @@ public class PageWelcome extends Keywords {
     }
 
     public void iosProductFeature() throws ApplicationException {
-        click.elementBy(xpathOf.button(Matching.youDecide("NEXT")));
-        click.elementBy(xpathOf.button(Matching.youDecide("NEXT")));
-        click.elementBy(xpathOf.button(Matching.youDecide("NEXT")));
-        click.elementBy(xpathOf.button(Matching.youDecide("NEXT")));
-        click.elementBy(xpathOf.button(Matching.youDecide("GET STARTED")));
+        try {
+
+            click.elementBy(xpathOf.button(Matching.youDecide("Allow")));
+            click.elementBy(xpathOf.button(Matching.youDecide("NEXT")));
+            click.elementBy(xpathOf.button(Matching.youDecide("NEXT")));
+            click.elementBy(xpathOf.button(Matching.youDecide("NEXT")));
+            click.elementBy(xpathOf.button(Matching.youDecide("NEXT")));
+            click.elementBy(xpathOf.button(Matching.youDecide("GET STARTED")));
+        }
+        catch (Exception ex)
+        {
+            click.elementBy(xpathOf.button(Matching.youDecide("NEXT")));
+            click.elementBy(xpathOf.button(Matching.youDecide("NEXT")));
+            click.elementBy(xpathOf.button(Matching.youDecide("NEXT")));
+            click.elementBy(xpathOf.button(Matching.youDecide("NEXT")));
+            click.elementBy(xpathOf.button(Matching.youDecide("GET STARTED")));
+        }
         WAIT.forSeconds(2);
 
     }
@@ -309,6 +321,12 @@ public class PageWelcome extends Keywords {
     public void clickWelcomePageNextBtn() throws ApplicationException {
         click.elementBy(keyBtnNext);
         WAIT.forSeconds(4);
+    }
+
+    public void dontAllowNotification() throws ApplicationException {
+        if(Device.isIOS()) {
+            click.elementBy(xpathOf.button(Matching.youDecide("Allow")));
+        }
     }
 
 

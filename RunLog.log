@@ -1,6 +1,6 @@
-2018-11-14 11:17:12,700  INFO [main] StepsBase:16 - Executing S C E N A R I O : As a tester, I want to be able to change my personal profile so that my details are updated - Edit Present Address and Permanent Address
-2018-11-14 11:17:13,779  INFO [main] RunManager:23 - Hey! ubp, Logging everything from here ....
-2018-11-14 11:17:13,780  INFO [main] RunManager:24 - Run ID is --> Run-1477
-2018-11-14 11:17:13,998 ERROR [main] PropertyReader:40 - exceptions.EnvironmentException: Property [Device.null.OS] value is null in file ProjectSettings.properties
-2018-11-14 11:17:14,069 ERROR [main] StepsBase:23 - S C E N A R I O    F A I L E D !!!!!
-2018-11-14 11:17:14,072  INFO [main] Keywords:52 - Application closed
+2018-12-21 15:36:25,043  INFO [main] StepsBase:16 - Executing S C E N A R I O : As a tester, I want to complete a scheduled funds transfer transaction with future date from my Peso card account so that I can pass on funds to another cardholder.
+2018-12-21 15:36:25,811  INFO [main] RunManager:23 - Hey! ubp, Logging everything from here ....
+2018-12-21 15:36:25,812  INFO [main] RunManager:24 - Run ID is --> Run-1804
+2018-12-21 15:36:26,007 ERROR [main] PropertyReader:40 - exceptions.EnvironmentException: Property [Device.null.OS] value is null in file ProjectSettings.properties
+2018-12-21 15:36:26,071 ERROR [main] StepsBase:23 - S C E N A R I O    F A I L E D !!!!!
+2018-12-21 15:36:26,073  INFO [main] Keywords:52 - Application closed

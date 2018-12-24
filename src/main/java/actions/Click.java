@@ -10,6 +10,8 @@ import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
+import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 
 public class Click extends Keywords{
@@ -117,6 +119,104 @@ public class Click extends Keywords{
             }
 
         }
+    }
+
+
+    public void chooseTransactionDate(String tyear,String tmonth,String tday) throws ApplicationException {
+        screenshot.attachScreenshot("chooseTransactionDate");
+        int year=Integer.parseInt(tyear);
+        String month=tmonth.substring(0,3).trim();
+        //int date=Integer.parseInt(tday);
+        String formatdate=tday+" "+tmonth+" "+tyear;
+        String iyear;
+        String imonth;
+        //for loop iteration
+        int loopcount=10;
+
+        HashMap<String,String> imap=new LinkedHashMap<>();
+
+        imap.put("Jan","01");
+        imap.put("Feb","02");
+        imap.put("Mar","03");
+        imap.put("Apr","04");
+        imap.put("May","05");
+        imap.put("Jun","06");
+        imap.put("Jul","07");
+        imap.put("Aug","08");
+        imap.put("Sep","09");
+        imap.put("Oct","10");
+        imap.put("Nov","11");
+        imap.put("Dec","12");
+
+        iyear=driver.findElement(By.id("android:id/date_picker_header_year")).getText();
+
+        if(year==Integer.parseInt(iyear.trim()))
+        {
+            imonth = driver.findElement(By.id("android:id/date_picker_header_date")).getText();
+            imonth=imonth.substring(imonth.length()-3);
+            int ivalue=Integer.parseInt(imap.get(imonth));
+            for(int i=ivalue;i<=12;i++) {
+                if (imonth.contentEquals(month)) {
+                    driver.findElement(By.xpath("//android.view.View[@text='" + tday + "']")).click();
+                    break;
+                } else {
+                    driver.findElement(By.id("android:id/next")).click();
+                }
+
+            }
+
+           // driver.findElement(By.id("android:id/button1")).click();
+
+        }
+        else
+        {
+            click.elementBy(By.id("android:id/date_picker_header_year"));
+
+            for(int i=0;i<loopcount;i++)
+            {
+            try
+            {
+                List<WebElement> el=driver.findElements(By.id("android:id/text1"));
+                for(int j=0;j<el.size();j++)
+                {
+                    if(el.get(j).getText().toString().contentEquals(tyear.toLowerCase().trim()))
+                    {
+                        el.get(j).click();
+                        break;
+                    }
+                    else
+                    {
+                        swipe.vertical(2,0.3,0.8,5);
+
+                    }
+                }
+                //click.elementBy(By.id("android:id/button1"));
+            }
+            catch(Exception ex)
+            {
+                swipe.vertical(2,0.8,0.4,5);
+            }
+
+        }
+
+            imonth = driver.findElement(By.id("android:id/date_picker_header_date")).getText();
+            imonth=imonth.substring(imonth.length()-3);
+            int ivalue=Integer.parseInt(imap.get(imonth));
+            for(int i=ivalue;i<=12;i++) {
+                if (imonth.contentEquals(month)) {
+                    driver.findElement(By.xpath("//android.view.View[@text='" + tday + "']")).click();
+                    break;
+                } else {
+                    driver.findElement(By.id("android:id/next")).click();
+                }
+
+            }
+
+
+
+        }
+
+        driver.findElement(By.id("android:id/button1")).click();
     }
 
 }

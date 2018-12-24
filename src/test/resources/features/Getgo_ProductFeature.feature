@@ -8,6 +8,7 @@
 @ProductFeature @RegressionPack1 @RegressionPack
 Feature: Product Feature
 
+  @20failed
   Scenario: As a tester, I want to launch the GetGo Pay application freshly so that I am able to see the product welcome feature details
     Given I'm on Getgo application with welcome page one content details,greeting image & next button
     When  I click on next button

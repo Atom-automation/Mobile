@@ -1,0 +1,221 @@
+[
+  {
+    "comments": [
+      {
+        "line": 4,
+        "value": "# \u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d"
+      },
+      {
+        "line": 5,
+        "value": "# Author: Balabharathi Jayaraman"
+      },
+      {
+        "line": 6,
+        "value": "# Functionality : As a tester, I want to complete a funds transfer transaction so that I can pass on funds to another cardholder."
+      },
+      {
+        "line": 7,
+        "value": "# \u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d"
+      }
+    ],
+    "line": 10,
+    "elements": [
+      {
+        "line": 12,
+        "name": "Open Getgo mobile application",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "duration": 34580092333,
+              "status": "passed"
+            },
+            "line": 13,
+            "name": "I\u0027m on Getgo landing page",
+            "match": {
+              "location": "Getgo_PageValidation.i_m_on_Getgo_landing_page()"
+            },
+            "keyword": "Given "
+          }
+        ]
+      },
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 517406,
+              "status": "passed"
+            },
+            "match": {
+              "location": "StepsBase.beforeScenario(Scenario)"
+            }
+          }
+        ],
+        "line": 99,
+        "name": "Validation of Edit button in the Send Money Review page",
+        "description": "",
+        "id": "fund-transfer-from-peso+-card-to-another-card;validation-of-edit-button-in-the-send-money-review-page;;2",
+        "after": [
+          {
+            "result": {
+              "duration": 2465019203,
+              "status": "passed"
+            },
+            "match": {
+              "location": "StepsBase.ifScenarioFailed(Scenario)"
+            }
+          },
+          {
+            "result": {
+              "duration": 395292907,
+              "status": "passed"
+            },
+            "match": {
+              "location": "StepsBase.afterScenario()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 40626386700,
+              "status": "passed"
+            },
+            "line": 89,
+            "name": "I\u0027m login into my \"Peso\" account with my \"Peso_Username\" and \"Peso_Password\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Peso",
+                  "offset": 19
+                },
+                {
+                  "val": "Peso_Username",
+                  "offset": 42
+                },
+                {
+                  "val": "Peso_Password",
+                  "offset": 62
+                }
+              ],
+              "location": "Getgo_Login_NewCustomer.iMLoginIntoMyAccountWithMyAnd(String,String,String)"
+            },
+            "matchedColumns": [
+              0,
+              1,
+              2
+            ],
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 7264876576,
+              "status": "passed"
+            },
+            "line": 90,
+            "name": "I\u0027m on Getgo Fund transfer page of my \"Peso\" card account",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Peso",
+                  "offset": 39
+                }
+              ],
+              "location": "Getgo_CardTransfer_Peso.iMOnGetgoFundTransferPageOfMyCardAccount(String)"
+            },
+            "matchedColumns": [
+              0
+            ],
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 15567619119,
+              "status": "passed"
+            },
+            "line": 91,
+            "name": "I Enter card number, recipient name, amount, system date, frequency, and message",
+            "match": {
+              "location": "Getgo_CardTransfer_Peso.iEnterCardNumberRecipientNameAmountSystemDateFrequencyAndMessage()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 10805864969,
+              "status": "passed"
+            },
+            "line": 92,
+            "name": "I review transfer instruction and click Edit button",
+            "match": {
+              "location": "Getgo_CardTransfer_Peso.iReviewTransferInstructionAndclickEditbutton()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 15498959194,
+              "status": "passed"
+            },
+            "line": 93,
+            "name": "I edit the transaction amount, message \u0026 click Next button",
+            "match": {
+              "location": "Getgo_CardTransfer_Peso.IeditthetransactionamountmessageclickNextbutton()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 17241454807,
+              "status": "passed"
+            },
+            "line": 94,
+            "name": "I review transfer instruction with updated information and click submit",
+            "match": {
+              "location": "Getgo_CardTransfer_Peso.Ireviewtransferinstructionwithupdatedinformationandclicksubmit()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 12863936741,
+              "error_message": "exceptions.ApplicationException: expected:\u003cphp 38,4[6]4.60\u003e but was:\u003cphp 38,4[4]4.60\u003e\n\tat actions.Verify.elementTextMatching(Verify.java:57)\n\tat pages.PageCardTransferSuccess.TransferCompletePageDetails(PageCardTransferSuccess.java:102)\n\tat stepdefinitions.Getgo_CardTransfer_Peso.IshouldseetheconfirmationpagewithupdateddetailsandvalidateitintheActivitypage(Getgo_CardTransfer_Peso.java:334)\n\tat ✽.Then I should see the confirmation page with updated details and validate it in the Activity page(Getgo_CardTransfer_Peso.feature:95)\n",
+              "status": "failed"
+            },
+            "line": 95,
+            "name": "I should see the confirmation page with updated details and validate it in the Activity page",
+            "match": {
+              "location": "Getgo_CardTransfer_Peso.IshouldseetheconfirmationpagewithupdateddetailsandvalidateitintheActivitypage()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "line": 87,
+            "name": "@nowrun"
+          },
+          {
+            "line": 9,
+            "name": "@FundTransferphysical"
+          }
+        ]
+      }
+    ],
+    "name": "Fund Transfer from Peso+ card to another card",
+    "description": "",
+    "id": "fund-transfer-from-peso+-card-to-another-card",
+    "keyword": "Feature",
+    "uri": "Getgo_CardTransfer_Peso.feature",
+    "tags": [
+      {
+        "line": 9,
+        "name": "@FundTransferphysical"
+      }
+    ]
+  }
+]

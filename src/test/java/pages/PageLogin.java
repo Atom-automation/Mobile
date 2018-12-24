@@ -132,7 +132,7 @@ public class PageLogin extends Keywords {
         try {
                 PageOTP otp = new PageOTP();
                 otp.enterOTP();
-
+                WAIT.forSeconds(2);
                 //After login check if finger print pop is displayed and if its present handle it by clicking not now
                 if (Device.isAndroid())
                     {

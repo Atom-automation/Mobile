@@ -57,8 +57,8 @@ public class Getgo_EditProfile {
     @Then("^Mobile number should be updated and verified in \"([^\"]*)\" page$")
     public void mobile_number_should_be_updated_and_verified_in_page(String arg1) throws Throwable {
         // Write code here that turns the phrase above into concrete actions
-        editprofile.verifySuccessfullProfileUpdate();
-        editprofile.clickGoToProfileBtn();
+        ///// editprofile.verifySuccessfullProfileUpdate();
+        ///// editprofile.clickGoToProfileBtn();
         //logic for vrification
         editprofile.verifyUpdatedValuesforEditMobilenumber(PropertyReader.testDataOf("edit_mobilenumber"));
     }
@@ -70,10 +70,17 @@ public class Getgo_EditProfile {
         editprofile.verifyUpdateAddressPageElements();
     }
 
+    @Then("^\"([^\"]*)\" page should be displayed with Country,State,City Combo Boxes,Edit House/Street textbox and \"([^\"]*)\" button fields$")
+    public void page_should_be_displayed_with_Country_State_City_Combo_Boxes_Edit_House_Street_textbox_and_button_fields(String arg1, String arg2) throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        editprofile.verifyUpdateAddressPageTitle(arg1);
+        //editprofile.verifyUpdateAddressPageElements();
+    }
+
     @When("^I click on SAVE button with updated address details$")
     public void i_click_on_SAVE_button_with_updated_address_details() throws Throwable {
         // Write code here that turns the phrase above into concrete actions
-        editprofile.chooseNewCountry(PropertyReader.testDataOf("edit_country"));
+        //editprofile.chooseNewCountry(PropertyReader.testDataOf("edit_country"));
         editprofile.chooseNewState(PropertyReader.testDataOf("edit_state"));
         editprofile.chooseNewCity(PropertyReader.testDataOf("edit_city"));
         editprofile.enterStreetDetails(PropertyReader.testDataOf("edit_addresss"));
@@ -84,9 +91,9 @@ public class Getgo_EditProfile {
     @Then("^Address details should be updated and verified in \"([^\"]*)\" page$")
     public void address_details_should_be_updated_and_verified_in_page(String arg1) throws Throwable {
         // Write code here that turns the phrase above into concrete actions
-        editprofile.verifySuccessfullProfileUpdate();
+        ///// editprofile.verifySuccessfullProfileUpdate();
         ///logic for verification
-        editprofile.clickGoToProfileBtn();
+        ///// editprofile.clickGoToProfileBtn();
         editprofile.verifyUpdatedValuesforEditPresentAddress(PropertyReader.testDataOf("edit_addresss"));
     }
 
@@ -96,6 +103,14 @@ public class Getgo_EditProfile {
         editprofile.verifyUpdateOtherDetailsPageTitle(arg1);
         editprofile.verifyUpdateOtherDetailsPageElements();
     }
+
+    @Then("^\"([^\"]*)\" page should be displayed with necessary details$")
+    public void page_should_be_displayed_with_necessary_details(String arg1) throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        editprofile.verifyUpdateOtherDetailsPageTitle(arg1);
+       // editprofile.verifyUpdateOtherDetailsPageElements();
+    }
+
 
     @When("^I click on SAVE button with updated other details$")
     public void i_click_on_SAVE_button_with_updated_other_details() throws Throwable {
@@ -110,8 +125,8 @@ public class Getgo_EditProfile {
     @Then("^Other details should be updated and verified in \"([^\"]*)\" page$")
     public void other_details_should_be_updated_and_verified_in_page(String arg1) throws Throwable {
         // Write code here that turns the phrase above into concrete actions
-        editprofile.verifySuccessfullProfileUpdate();
-        editprofile.clickGoToProfileBtn();
+        /////editprofile.verifySuccessfullProfileUpdate();
+        ///// editprofile.clickGoToProfileBtn();
 
         editprofile.verifyUpdatedValuesforEditOtherdetails(
                 PropertyReader.testDataOf("edit_identityType"),
@@ -186,12 +201,12 @@ public class Getgo_EditProfile {
     @When("^I click on SAVE button with updated present and permanent address details$")
     public void i_click_on_SAVE_button_with_updated_present_and_permanent_address_details() throws Throwable {
         // Write code here that turns the phrase above into concrete actions
-        editprofile.chooseNewCountry(PropertyReader.testDataOf("edit_country"));
+        //editprofile.chooseNewCountry(PropertyReader.testDataOf("edit_country"));
         editprofile.chooseNewState(PropertyReader.testDataOf("edit_state"));
         editprofile.chooseNewCity(PropertyReader.testDataOf("edit_city"));
         editprofile.enterStreetDetails(PropertyReader.testDataOf("edit_addresss"));
 
-        editprofile.chooseNewPermanentCountry(PropertyReader.testDataOf("edit_Permanentcountry"));
+        //editprofile.chooseNewPermanentCountry(PropertyReader.testDataOf("edit_Permanentcountry"));
         editprofile.chooseNewPermanentState(PropertyReader.testDataOf("edit_Permanentstate"));
         editprofile.chooseNewPermanentCity(PropertyReader.testDataOf("edit_Permanentcity"));
         editprofile.enterPermanentStreetDetails(PropertyReader.testDataOf("edit_Permanentaddresss"));
@@ -202,9 +217,9 @@ public class Getgo_EditProfile {
     public void present_and_Permanent_Address_details_should_be_updated_and_verified_in_page(String arg1) throws Throwable {
         // Write code here that turns the phrase above into concrete actions
 
-        editprofile.verifySuccessfullProfileUpdate();
+        /////editprofile.verifySuccessfullProfileUpdate();
         ///logic for verification
-        editprofile.clickGoToProfileBtn();
+        /////editprofile.clickGoToProfileBtn();
         editprofile.verifyUpdatedValuesforEditPresentAddress(PropertyReader.testDataOf("edit_addresss"));
         editprofile.verifyUpdatedValuesforEditPermanentAddress(PropertyReader.testDataOf("edit_Permanentaddresss"));
 

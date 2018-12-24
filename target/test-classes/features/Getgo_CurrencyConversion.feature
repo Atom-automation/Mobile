@@ -46,6 +46,7 @@ Feature: Currency Conversion
     When  I review conversion details and click submit
     Then Enter OTP Page should be displayed
 
+
   Scenario: As a tester, I want to see an error message in OTP page After entering invalid OTP for the Currency conversion details
     Given I'm login into my "Peso" account with my "Peso_Username" and "Peso_Password"
     Given I'm on Currency conversion screen after noting down the balance of "USD" currency
@@ -63,7 +64,7 @@ Feature: Currency Conversion
     When I Click on Menu option in the Dashboard page
     Then I should not see the "Convert to Other Currencies" Menu option
 
-@iosfailed @failured
+  @20failed
   Scenario: As a tester, I want to complete a currency conversion transaction so that I can transact in another currency
     Given I'm login into my "Peso" account with my "Peso_Username" and "Peso_Password"
     Given I'm on Currency conversion screen after noting down the balance of "USD" currency

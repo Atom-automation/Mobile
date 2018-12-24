@@ -60,14 +60,15 @@ public class Getgo_CurrencyConversion {
         //review.transferFrom(PropertyReader.testDataOf("Peso_FullName"),PropertyReader.testDataOf("Peso_CardNumber"));
         review.transferAmount(fromCurrency + " " + String.valueOf(cc.getAmount()));
         review.convertedAmount(toCurrency + " " + String.valueOf(cc.getToAmount()));
-        if(Device.isAndroid()) {
+       /* if(Device.isAndroid()) {
             review.conversionRate("1 Philippine Peso equals " + cc.getExchangeRate());
         }
         else
         {
+        */
             review.conversionRate("1 Philippine Peso = " + cc.getExchangeRate());
 
-        }
+       // }
         review.clickConvert();
         otp.enterOTP();
     }
@@ -115,7 +116,7 @@ public class Getgo_CurrencyConversion {
         review.transferAmount(fromCurrency + " " + String.valueOf(cc.getAmount()));
         review.convertedAmount(toCurrency + " " + String.valueOf(cc.getToAmount()));
         if(Device.isAndroid()) {
-            review.conversionRate("1 Philippine Peso equals " + cc.getExchangeRate());
+            review.conversionRate("1 Philippine Peso = " + cc.getExchangeRate());
         }
         else
         {
@@ -153,9 +154,9 @@ public class Getgo_CurrencyConversion {
 
         activities.closeActivityDetailedPage();
         //issueeeeeeeee
-        if(Device.isIOS()) {
-            success.gotoDashboard();
-        }
+       // if(Device.isIOS()) {
+        //    success.gotoDashboard();
+        //}
         dashboard.clickAvailableBalance();
         activities.verifyActivityPageTitle("Activities");
         activities.selectActivityByReferneceNo(irefno);

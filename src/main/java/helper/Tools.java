@@ -76,7 +76,7 @@ public class Tools {
         return nf.format(amount).trim();
     }
 
-    public String upto2Decimals(String amount){
+    public String upto2Decimals(Object amount){
         return new DecimalFormat("#0.00").format(amount);
     }
 

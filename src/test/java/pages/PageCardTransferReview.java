@@ -27,6 +27,21 @@ public class PageCardTransferReview extends Keywords {
     private String keyLblPageDescription="Getgo.CardTransferReview.LblPageDescription";
     private String keyLblTransferFeesNotes="Getgo.CardTransferReview.LblTransferFeesNotes";
 
+
+    private String keyLblFrequencyValue="Getgo.CardTransferReview.LblFrequencyValue";
+    private String keyLblEndDateValue="Getgo.CardTransferReview.LblEndDateValue";
+    private String keyLblEndBalanceValue=" Getgo.CardTransferReview.LblEndBalanceValue";
+
+    private String keyReviewTitleTransferFrom="Getgo.CardTransferReview.ReviewTitleTransferFrom";
+    private String keyReviewTitleTransferTo=" Getgo.CardTransferReview.ReviewTitleTransferTo";
+    private String keyReviewTitleTransferAmount="Getgo.CardTransferReview.ReviewTitleTransferAmount";
+    private String keyReviewTitleTransferDate="Getgo.CardTransferReview.ReviewTitleTransferDate";
+    private String keyReviewTitleFrequencyValue="Getgo.CardTransferReview.ReviewTitleFrequencyValue";
+    private String keyReviewTitleEndDate="Getgo.CardTransferReview.ReviewTitleEndDate";
+    private String keyReviewTitleMessage="Getgo.CardTransferReview.ReviewTitleMessage";
+    private String keyReviewTitleEndBalance="Getgo.CardTransferReview.ReviewTitleEndBalance";
+
+
     public void fromDetails(String fromCard,String fromUser) throws ApplicationException {
         if(Test.attributes.get(Keys.OS).equalsIgnoreCase(OS.ANDROID))
         {
@@ -42,7 +57,7 @@ public class PageCardTransferReview extends Keywords {
     public void toDetails(String toCard,String toUser) throws ApplicationException {
         if(Test.attributes.get(Keys.OS).equalsIgnoreCase(OS.ANDROID))
         {
-            verify.elementTextContains(keyTransferTo,toUser);
+//            verify.elementTextContains(keyTransferTo,toUser);
             verify.elementTextContains(keyTransferTo,toCard);
         }else if(Test.attributes.get(Keys.OS).equalsIgnoreCase(OS.iOS)){
             verify.elementTextContains(keyTransferTo,toUser);
@@ -101,7 +116,7 @@ public class PageCardTransferReview extends Keywords {
     public void clickTransfer() throws ApplicationException {
         swipe.vertical(2,0.9,0.5,5);
         click.elementBy(keyBtnTransfer);
-    };
+    }
 
     public void verifyTitle(String ititle) throws ApplicationException {
         WAIT.forSeconds(3);
@@ -124,4 +139,78 @@ public class PageCardTransferReview extends Keywords {
         verify.elementIsPresent(keyTransferDate);
 
     }
+
+    public String getEndBalance() throws ApplicationException
+    {
+        return get.elementText(keyLblEndBalanceValue);
+    }
+
+    public void verifyEndBalance(String availableBalance,double transactionAmount,double transactionFees) throws ApplicationException
+    {
+        double availabelamount=Double.parseDouble(availableBalance.replaceAll(",",""));
+
+        double EndBalance=availabelamount-(transactionAmount+transactionFees);
+
+        verify.isMatching(get.elementText(keyLblEndBalanceValue),Test.tools.pesoAmount(EndBalance));
+
+    }
+
+    public void clickEdit() throws ApplicationException {
+        swipe.vertical(2,0.5,0.9,5);
+        click.elementBy(keyBtnEdit);
+    }
+
+    public void verifyFundTransferReviewPageContents() throws ApplicationException {
+        WAIT.forSeconds(3);
+        verify.elementTextMatching(keyLblPageTitle,"Review and Send Money");
+        verify.elementTextMatching(keyReviewTitleTransferFrom,"Send Money from:");
+        verify.elementTextMatching(keyReviewTitleTransferTo,"Send Money to:");
+        verify.elementTextMatching(keyReviewTitleTransferAmount,"Transaction amount:");
+        verify.elementTextMatching(keyReviewTitleTransferDate,"Date:");
+        verify.elementTextMatching(keyReviewTitleMessage,"Message:");
+        verify.elementTextMatching(keyReviewTitleEndBalance,"End Balance:");
+
+        verify.elementIsPresent(keyBtnClose);
+        verify.elementIsPresent(keyBtnEdit);
+        verify.elementIsPresent(keyBtnTransfer);
+        verify.elementIsPresent(keyTransferFrom);
+        verify.elementIsPresent(keyTransferTo);
+        verify.elementIsPresent(keyTransferAmount);
+        verify.elementIsPresent(keyTransferDate);
+        verify.elementIsPresent(keyLblEndBalanceValue);
+        verify.elementIsPresent(keyTransferMessage);
+     //   verify.elementTextMatching(keyLblPageDescription,"Always check and review your details to ensure that the information is correct.");
+        verify.elementTextMatching(keyLblTransferFeesNotes,"A PHP 20.00 transaction fee will charge on top of this transaction");
+
+    }
+
+    public void verifyScheduledFundTransferReviewPageContents() throws ApplicationException {
+        WAIT.forSeconds(3);
+        verify.elementTextMatching(keyLblPageTitle,"Review and Send Money");
+        verify.elementTextMatching(keyReviewTitleTransferFrom,"Send Money from:");
+        verify.elementTextMatching(keyReviewTitleTransferTo,"Send Money to:");
+        verify.elementTextMatching(keyReviewTitleTransferAmount,"Transaction amount:");
+        verify.elementTextMatching(keyReviewTitleTransferDate,"Date:");
+        verify.elementTextMatching(keyReviewTitleFrequencyValue,"Repeat:");
+        verify.elementTextMatching(keyReviewTitleEndDate,"End Date:");
+        verify.elementTextMatching(keyReviewTitleMessage,"Message:");
+
+        verify.elementIsPresent(keyBtnClose);
+        verify.elementIsPresent(keyBtnEdit);
+        verify.elementIsPresent(keyBtnTransfer);
+        verify.elementIsPresent(keyTransferFrom);
+        verify.elementIsPresent(keyTransferTo);
+        verify.elementIsPresent(keyTransferAmount);
+        verify.elementIsPresent(keyTransferDate);
+        verify.elementIsPresent(keyLblFrequencyValue);
+        verify.elementIsPresent(keyLblEndDateValue);
+        verify.elementIsPresent(keyTransferMessage);
+        //   verify.elementTextMatching(keyLblPageDescription,"Always check and review your details to ensure that the information is correct.");
+        verify.elementTextMatching(keyLblTransferFeesNotes,"A PHP 20.00 transaction fee will charge on top of this transaction");
+
+    }
+
+
+
+
 }

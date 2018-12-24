@@ -7,12 +7,13 @@ import exceptions.ApplicationException;
 import helper.Device;
 import helper.PropertyReader;
 import io.appium.java_client.AppiumDriver;
+import io.appium.java_client.TouchAction;
 import io.appium.java_client.ios.IOSDriver;
 import io.appium.java_client.remote.MobileCapabilityType;
+import io.appium.java_client.touch.offset.PointOption;
 import org.junit.Assert;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriverException;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
+import org.openqa.selenium.internal.Locatable;
 import org.openqa.selenium.remote.BrowserType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -25,7 +26,7 @@ public class PageVerificationLink extends Keywords {
     WebDriverWait browserWait;
 
     public void openOutlook(String username, String password) throws ApplicationException{
-       driver.quit();
+      driver.quit();
         DesiredCapabilities cap=new DesiredCapabilities();
         if(Device.isAndroid()) {
             cap.setCapability("platformName", "Android");
@@ -40,7 +41,7 @@ public class PageVerificationLink extends Keywords {
                 throw new ApplicationException("Failed to open chrome browser on the device");
             }
             browser.get("https://outlook.office.com");
-            browserWait = new WebDriverWait(browser, 30);
+            browserWait = new WebDriverWait(browser, 10);
             getWebElement(By.id("i0116")).sendKeys(username);
             keyboard.hideIfAndroid();
             getWebElement(By.id("idSIButton9")).click();
@@ -54,13 +55,13 @@ public class PageVerificationLink extends Keywords {
         else
         {
             cap.setCapability("platformName", "ios");
-            cap.setCapability("automationName", "XCUITest");
+           // cap.setCapability("automationName", "XCUITest");
             cap.setCapability("platformVersion", PropertyReader.valueOf("Device." + Test.attributes.get(Keys.Device) + ".Version"));
             cap.setCapability("deviceName", PropertyReader.valueOf("Device." + Test.attributes.get(Keys.Device) + ".Name"));
             cap.setCapability("udid", PropertyReader.valueOf("Device." + Test.attributes.get(Keys.Device) + ".ID"));
             cap.setCapability("newCommandTimeout", Integer.parseInt(PropertyReader.valueOf("Driver.Appium.CommandTimeout")));
             cap.setCapability(MobileCapabilityType.BROWSER_NAME, "safari");
-            cap.setCapability("safariAllowPopups", "true");
+            //cap.setCapability("safariAllowPopups", "true");
             //cap.setCapability("safariOpenLinksInBackground", "true");
             try {
                 browser = new IOSDriver<WebElement>(new URL(PropertyReader.valueOf("Driver.ServerAddress")), cap);
@@ -68,17 +69,17 @@ public class PageVerificationLink extends Keywords {
                 throw new ApplicationException("Failed to open safari browser on the device");
             }
             browser.get("https://outlook.office.com");
-            browserWait = new WebDriverWait(browser, 30);
+            browserWait = new WebDriverWait(browser, 15);
             try {
                 getWebElement(By.id("i0116")).sendKeys(username);
                 keyboard.hideIfIOS();
                 getWebElement(By.id("idSIButton9")).click();
                 WAIT.forSeconds(2);
                 getWebElement(By.id("i0118")).sendKeys(password);
-                keyboard.hideIfIOS();
+              //  keyboard.hideIfIOS();
                 getWebElement(By.id("idSIButton9")).click();
                 WAIT.forSeconds(2);
-                // getWebElement(By.id("idBtn_Back")).click();
+                getWebElement(By.id("idBtn_Back")).click();
             }
             catch(Exception ex)
             {
@@ -88,6 +89,7 @@ public class PageVerificationLink extends Keywords {
                //keyboard.hideIfIOS();
                 getWebElement(By.id("idSIButton9")).click();
                 WAIT.forSeconds(2);
+                getWebElement(By.id("idBtn_Back")).click();
             }
         }
     }
@@ -101,26 +103,39 @@ public class PageVerificationLink extends Keywords {
             //String verificationLink=getWebElement(By.xpath("//a[contains(text(),'https://')]")).getText();
             //browser.get(verificationLink);
             Thread.sleep(2000);
-            getWebElement(By.xpath("//a[text()='Verify Now ']")).click();
+            getWebElement(By.xpath("//a[contains(text(),'Verify')]")).click();
         }
         else
         {
             Thread.sleep(2000);
+            boolean itrue=getWebElement(By.xpath("(//*[contains(text(),'Get started today:')])[1]")).isDisplayed();
+            System.out.println(itrue);
             getWebElement(By.xpath("(//span[text()='Get started today: Verify your email now.'])[1]")).click();
+            WebElement element =getWebElement(By.xpath("(//span[text()='Get started today: Verify your email now.'])[1]"));
+
+            element.click();
+            ((JavascriptExecutor)browser).executeScript("arguments[0].click();", element);
+            Point p = element.getLocation();
+            new TouchAction(browser).press(PointOption.point(p.getX(),p.getY())).release().perform();
+
+           // JavascriptExecutor executor = (JavascriptExecutor)browser;
+            //executor.executeScript("arguments[0].click();", element);
+
             // getWebElement(By.xpath("(//span[text()='Get started today: Verify your email now.'])[1]/parent::*/parent::*/parent::*/parent::*")).click();
             //String verificationLink=getWebElement(By.xpath("//a[contains(text(),'https://')]")).getText();
             //browser.get(verificationLink);
             Thread.sleep(2000);
-            getWebElement(By.xpath("//a[text()='Verify Now ']")).click();
+            getWebElement(By.xpath("//*[contains(text(),'VERIFY NOW')]")).click();
         }
 
     }
 
-    public void isVerificationSuccess() throws ApplicationException {
+    public void isVerificationSuccess() throws ApplicationException, InterruptedException {
         String expectedValue="Email Verified";
-        WAIT.forSeconds(2);
-        String actualValue=getWebElement(By.xpath("//h1[text()='Email Verified']")).getText().trim();
-        Assert.assertEquals(actualValue,expectedValue);
+        Thread.sleep(2000);
+//        getWebElement(By.xpath("//div[@class='circles']/following-sibling::h1")).isDisplayed();
+       // String actualValue=getWebElement(By.xpath("//div[@class='circles']/following-sibling::h1']")).getText().trim();
+       // Assert.assertEquals(actualValue,expectedValue);
         browser.quit();
     }
 
@@ -156,8 +171,9 @@ public class PageVerificationLink extends Keywords {
         browser.navigate().refresh();
         Thread.sleep(5000);
         getWebElement(By.xpath("//span[text()='Password Reset']")).click();
-        String verificationLink=getWebElement(By.xpath("//a[contains(text(),'https://qz1lx46m.ngrok.io/reset-password?passwordResetId=')]")).getText();
-        browser.get(verificationLink);
+        getWebElement(By.xpath("//a[contains(text(),'Reset')]")).click();
+       // String verificationLink=getWebElement(By.xpath("//a[contains(text(),'https://qz1lx46m.ngrok.io/reset-password?passwordResetId=')]")).getText();
+      //  browser.get(verificationLink);
     }
 
     public void verifyandEnterReset(String pwd,String confirmpwd) throws ApplicationException, InterruptedException {
