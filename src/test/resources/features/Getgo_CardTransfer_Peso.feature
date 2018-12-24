@@ -119,3 +119,23 @@ Feature: Fund Transfer from Peso+ card to another card
     Examples:
       | accountType | username      | password      |
       | Peso        | Peso_Username | Peso_Password |
+
+  Scenario Outline: Validation of Send Money Review page
+    Given I'm login into my "<accountType>" account with my "<username>" and "<password>"
+    Given I'm on Getgo Fund transfer page of my "<accountType>" card account
+    When  I Enter card number, recipient name, amount, system date, frequency, and message - Add recipient from saved list by clicking on add button
+    Then  I  should see the review transfer page with fund transfer details
+
+    Examples:
+      | accountType | username      | password      |
+      | Peso        | Peso_Username | Peso_Password |
+
+  Scenario Outline: Validation of Send Money Review page -  Scheduled Transfer
+    Given I'm login into my "<accountType>" account with my "<username>" and "<password>"
+    Given I'm on Getgo Fund transfer page of my "<accountType>" card account
+    When  I Enter card number, recipient name, amount, system date, frequency, and message - Add recipient from saved list by clicking on add button
+    Then  I  should see the review transfer page with Scheduled fund transfer details
+
+    Examples:
+      | accountType | username      | password      |
+      | Peso        | Peso_Username | Peso_Password |
