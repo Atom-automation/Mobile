@@ -33,6 +33,7 @@ public class Getgo_CardTransfer_Peso {
     private static PageCardTransferSuccess success = new PageCardTransferSuccess();
     private static PageActivities activities = new PageActivities();
     private static PageOTP otp = new PageOTP();
+    private static PageCommonErrorPopUp errorPOPUP=new PageCommonErrorPopUp();
 
     public Getgo_CardTransfer_Peso() {
         toCard = PropertyReader.testDataOf("RecipientCardNumber");
@@ -224,7 +225,7 @@ public class Getgo_CardTransfer_Peso {
         transfer.SwitchRepeatToogleIndicator();
         transfer.chooseFrequency(arg1);
         transfer.chooseEndDate("Select Date");
-        transfer.chooseTransactionDate("2019","Dec","1");
+        transfer.chooseTransactionDate("2019","Dec","30");
         transfer.enterMessage(message);
         transfer.clickNext();
     }
@@ -346,4 +347,78 @@ public class Getgo_CardTransfer_Peso {
 
 
     }
+
+    @And("^I review transfer instruction with the provided details and click submit$")
+    public void Ireviewtransferinstructionwiththeprovideddetailsandclicksubmit() throws Throwable {
+        review.verifyTitle("Review and Send Money");
+        review.verifyPageContents();
+        review.fromDetails(PropertyReader.testDataOf(accountType + "_CardNumber"), PropertyReader.testDataOf(accountType + "_FullName"));
+        review.toDetails(toCard, toUser);
+        review.transferAmount(transferAmount);
+        review.verifyEndBalance(availabelBalance,transferAmount,transferFees);
+        endBalance=review.getEndBalance();
+//        review.transferFees(transferFees);
+//        review.transferDate(date.get(0),date.get(1),date.get(2));
+        review.verifyTransactionMessage(message);
+        review.verifyTransactionDate();
+        review.clickTransfer();
+       // otp.enterOTP();
+    }
+
+    @Then("^I should see OTP page$")
+    public void IshouldseeOTPpage() throws Throwable {
+        otp.verifyOTPPageContents();
+
+    }
+
+    @When("^I review transfer instruction with the provided details and submit with invalid OTP$")
+    public void i_review_transfer_instruction_with_the_provided_details_and_submit_with_invalid_OTP() throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        review.verifyTitle("Review and Send Money");
+        review.verifyPageContents();
+        review.fromDetails(PropertyReader.testDataOf(accountType + "_CardNumber"), PropertyReader.testDataOf(accountType + "_FullName"));
+        review.toDetails(toCard, toUser);
+        review.transferAmount(transferAmount);
+        review.verifyEndBalance(availabelBalance,transferAmount,transferFees);
+        endBalance=review.getEndBalance();
+//        review.transferFees(transferFees);
+//        review.transferDate(date.get(0),date.get(1),date.get(2));
+        review.verifyTransactionMessage(message);
+        review.verifyTransactionDate();
+        review.clickTransfer();
+        otp.enterInvalidOTP();
+    }
+
+    @Then("^I should see an error message pop up with content \"([^\"]*)\"$")
+    public void i_should_see_an_error_message_pop_up_with_content(String arg1) throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        errorPOPUP.CheckErrorMessageDetails("Error",arg1);
+        errorPOPUP.ClickOk();
+    }
+
+    @Then("^I  should see the review transfer page with fund transfer details$")
+    public void i_should_see_the_review_transfer_page_with_fund_transfer_details() throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        review.verifyTitle("Review and Send Money");
+        review.verifyFundTransferReviewPageContents();
+        review.fromDetails(PropertyReader.testDataOf(accountType + "_CardNumber"), PropertyReader.testDataOf(accountType + "_FullName"));
+        review.toDetails(toCard, toUser);
+        review.transferAmount(transferAmount);
+        review.verifyEndBalance(availabelBalance,transferAmount,transferFees);
+        endBalance=review.getEndBalance();
+//        review.transferFees(transferFees);
+//        review.transferDate(date.get(0),date.get(1),date.get(2));
+        review.verifyTransactionMessage(message);
+        review.verifyTransactionDate();
+    }
+
+    @Then("^I  should see the review transfer page with Scheduled fund transfer details$")
+    public void i_should_see_the_review_transfer_page_with_Scheduled_fund_transfer_details() throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        review.verifyTitle("Review and Send Money");
+        review.verifyScheduledFundTransferReviewPageContents();
+    }
+
+
+
 }

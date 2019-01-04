@@ -153,7 +153,7 @@ public class Click extends Keywords{
         if(year==Integer.parseInt(iyear.trim()))
         {
             imonth = driver.findElement(By.id("android:id/date_picker_header_date")).getText();
-            imonth=imonth.substring(imonth.length()-3);
+            imonth=imonth.substring(5,8);
             int ivalue=Integer.parseInt(imap.get(imonth));
             for(int i=ivalue;i<=12;i++) {
                 if (imonth.contentEquals(month)) {
@@ -200,7 +200,7 @@ public class Click extends Keywords{
         }
 
             imonth = driver.findElement(By.id("android:id/date_picker_header_date")).getText();
-            imonth=imonth.substring(imonth.length()-3);
+            imonth=imonth.substring(5,8);
             int ivalue=Integer.parseInt(imap.get(imonth));
             for(int i=ivalue;i<=12;i++) {
                 if (imonth.contentEquals(month)) {

@@ -50,7 +50,8 @@ public class PageCardTransferReview extends Keywords {
             verify.elementIsPresent(keyTransferFrom);
         }else if(Test.attributes.get(Keys.OS).equalsIgnoreCase(OS.iOS)){
            verify.elementTextContains(keyTransferFrom,fromUser);
-            verify.elementTextContains(xpathOf.textView(Contains.name("fund-transfer-from-card")),fromCard);
+            verify.elementIsPresent(keyTransferFrom);
+           // verify.elementTextContains(xpathOf.textView(Contains.name("fund-transfer-from-card")),fromCard);
         }
     }
 
@@ -60,7 +61,7 @@ public class PageCardTransferReview extends Keywords {
 //            verify.elementTextContains(keyTransferTo,toUser);
             verify.elementTextContains(keyTransferTo,toCard);
         }else if(Test.attributes.get(Keys.OS).equalsIgnoreCase(OS.iOS)){
-            verify.elementTextContains(keyTransferTo,toUser);
+//            verify.elementTextContains(keyTransferTo,toUser);
             verify.elementTextContains(xpathOf.textView(Contains.name("fund-transfer-to-card")),toCard);
         }
     }
@@ -116,6 +117,7 @@ public class PageCardTransferReview extends Keywords {
     public void clickTransfer() throws ApplicationException {
         swipe.vertical(2,0.9,0.5,5);
         click.elementBy(keyBtnTransfer);
+        WAIT.forSeconds(5);
     }
 
     public void verifyTitle(String ititle) throws ApplicationException {
@@ -147,11 +149,11 @@ public class PageCardTransferReview extends Keywords {
 
     public void verifyEndBalance(String availableBalance,double transactionAmount,double transactionFees) throws ApplicationException
     {
-        double availabelamount=Double.parseDouble(availableBalance.replaceAll(",",""));
+        double availabelamount=Double.parseDouble(Test.tools.nbspRemove(availableBalance.replaceAll(",","")));
 
         double EndBalance=availabelamount-(transactionAmount+transactionFees);
 
-        verify.isMatching(get.elementText(keyLblEndBalanceValue),Test.tools.pesoAmount(EndBalance));
+        verify.isMatching(Test.tools.nbspRemove(get.elementText(keyLblEndBalanceValue)),Test.tools.pesoAmount(EndBalance));
 
     }
 
@@ -172,7 +174,6 @@ public class PageCardTransferReview extends Keywords {
 
         verify.elementIsPresent(keyBtnClose);
         verify.elementIsPresent(keyBtnEdit);
-        verify.elementIsPresent(keyBtnTransfer);
         verify.elementIsPresent(keyTransferFrom);
         verify.elementIsPresent(keyTransferTo);
         verify.elementIsPresent(keyTransferAmount);
@@ -181,6 +182,9 @@ public class PageCardTransferReview extends Keywords {
         verify.elementIsPresent(keyTransferMessage);
      //   verify.elementTextMatching(keyLblPageDescription,"Always check and review your details to ensure that the information is correct.");
         verify.elementTextMatching(keyLblTransferFeesNotes,"A PHP 20.00 transaction fee will charge on top of this transaction");
+        swipe.vertical(2,0.9,0.5,5);
+        verify.elementIsPresent(keyBtnTransfer);
+        swipe.vertical(2,0.5,0.9,5);
 
     }
 
@@ -197,7 +201,6 @@ public class PageCardTransferReview extends Keywords {
 
         verify.elementIsPresent(keyBtnClose);
         verify.elementIsPresent(keyBtnEdit);
-        verify.elementIsPresent(keyBtnTransfer);
         verify.elementIsPresent(keyTransferFrom);
         verify.elementIsPresent(keyTransferTo);
         verify.elementIsPresent(keyTransferAmount);
@@ -207,6 +210,9 @@ public class PageCardTransferReview extends Keywords {
         verify.elementIsPresent(keyTransferMessage);
         //   verify.elementTextMatching(keyLblPageDescription,"Always check and review your details to ensure that the information is correct.");
         verify.elementTextMatching(keyLblTransferFeesNotes,"A PHP 20.00 transaction fee will charge on top of this transaction");
+        swipe.vertical(2,0.9,0.5,5);
+        verify.elementIsPresent(keyBtnTransfer);
+        swipe.vertical(2,0.5,0.9,5);
 
     }
 

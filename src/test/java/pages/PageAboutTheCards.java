@@ -53,19 +53,28 @@ public class PageAboutTheCards extends Keywords {
     private String keyLblPrivilegesSaleAlertIndicatorPhysical = "Getgo.AboutTheCards.LblPrivilegesSaleAlertIndicatorPhysical";
     private String keyLblAboutBottonIndicator = "Getgo.AboutTheCards.LblAboutBottonIndicator";
 
+    private String keyLblAboutBottonIndicator2 = "Getgo.AboutTheCards.LblAboutBottonIndicator2";
+    private String keyLblAboutBottonIndicator3 = "Getgo.AboutTheCards.LblAboutBottonIndicator3";
+
+    private String keyLblSecurtiySubTitle = "Getgo.AboutTheCards.LblSecurtiySubTitle";
+    private String keyLblSecurtiyDetails = "Getgo.AboutTheCards.LblSecurtiyDetails";
+    private String keyLblSecurtiyIndicatorVirtual = "Getgo.AboutTheCards.LblSecurtiyIndicatorVirtual";
+    private String keyLblSecurtiyIndicatorPhysical = "Getgo.AboutTheCards.LblSecurtiyIndicatorPhysical";
+    private String keyLblCardBalanceDetails = "Getgo.AboutTheCards.LblCardBalanceDetails";
+    private String keyLblCardBalanceVirtual = "Getgo.AboutTheCards.LblCardBalanceVirtual";
+    private String keyLblCardBalancePhysical = "Getgo.AboutTheCards.LblCardBalancePhysical";
+    private String keyLblATMWithdrawalDetails = "Getgo.AboutTheCards.LblATMWithdrawalDetails";
+    private String keyLblATMWithdrawalIndicatorVirtual = "Getgo.AboutTheCards.LblATMWithdrawalIndicatorVirtual";
+    private String keyLblATMWithdrawalIndicatorPhysical = "Getgo.AboutTheCards.LblATMWithdrawalIndicatorPhysical";
+
+
 
 
 
     public void verifyPageTitle(String ititle) throws ApplicationException {
-        WAIT.forSeconds(5);
-        //need to check it or modify
-        if(Device.isAndroid()) {
+            WAIT.forSeconds(5);
             verify.elementTextMatching(keyLblPageTitle, ititle);
-        }
-        else
-        {
-            verify.elementTextMatching(keyLblPageTitle,"About");
-        }
+
 
     }
 
@@ -76,8 +85,8 @@ public class PageAboutTheCards extends Keywords {
             verify.elementIsPresent(keyBtnClose);
             verify.elementIsPresent(keyIMGVirtualcard);
             verify.elementIsPresent(keyIMGPhysicalcard);
-            verify.elementTextMatching(keyLblVirtualcard,"GETGO VIRTUAL CARD");
-            verify.elementTextMatching(keyLblPhysicalcard,"GETGO PHYSICAL CARD");
+            verify.elementTextMatching(keyLblVirtualcard,"CEB GETGO PREPAID VIRTUAL");
+            verify.elementTextMatching(keyLblPhysicalcard,"CEB GETGO PREPAID CARD");
             verify.elementTextMatching(keyLblVirtualcardContent,"Shop online with a virtual prepaid card that earns GetGo Points. Get the card instantly upon signup.");
             verify.elementTextMatching(keyLblPhysicalcardContent,"Shop, dine and travel with a multi-currency card that earns GetGo Points.");
 
@@ -108,6 +117,20 @@ public class PageAboutTheCards extends Keywords {
             verify.elementTextMatching(keyLblConvenienceWithdrawalDetails,"Withdraw Money through Bancnet and Visa ATMs");
             verify.elementTextMatching(keyLblConvenienceWithdrawalIndicatorVirtual,"NOT APPLICABLE");
             verify.elementTextMatching(keyLblConvenienceWithdrawalIndicatorPhysical,"YES");
+            swipe.vertical(2,0.9,0.2,5);
+
+           // verify.elementTextMatching(keyLblSecurtiySubTitle,"Security");
+            verify.elementTextMatching(keyLblSecurtiyDetails,"EMV-enabled");
+            verify.elementTextMatching(keyLblSecurtiyIndicatorVirtual,"Not applicable for online transactions");
+            verify.elementTextMatching(keyLblSecurtiyIndicatorPhysical,"YES");
+            verify.elementTextMatching(keyLblCardBalanceDetails,"Maximum Card Balance");
+            verify.elementTextMatching(keyLblCardBalanceVirtual,"Php 50,000");
+            verify.elementTextMatching(keyLblCardBalancePhysical,"Php 450,000");
+            verify.elementTextMatching(keyLblATMWithdrawalDetails,"Maximum ATM withdrawal");
+            verify.elementTextMatching(keyLblATMWithdrawalIndicatorVirtual,"Not applicable");
+            verify.elementTextMatching(keyLblATMWithdrawalIndicatorPhysical,"Php 50,000");
+
+            swipe.vertical(2,0.9,0.3,5);
             verify.elementTextMatching(keyLblPrivilegesSubTitle,"Privileges");
             verify.elementTextMatching(keyLblPrivilegesDiscountDetails,"10% Discount on Redemption for Cebu Pacific flights");
             verify.elementTextMatching(keyLblPrivilegesDiscountIndicatorVirtual,"YES");
@@ -120,7 +143,11 @@ public class PageAboutTheCards extends Keywords {
             verify.elementTextMatching(keyLblPrivilegesSaleAlertDetails,"Cebu Pacific Early Seat Sale Alerts");
             verify.elementTextMatching(keyLblPrivilegesSaleAlertIndicatorVirtual,"YES");
             verify.elementTextMatching(keyLblPrivilegesSaleAlertIndicatorPhysical,"YES");
-            verify.elementTextMatching(keyLblAboutBottonIndicator,"* Fees and charges will apply. See FAQs for details.");
+            verify.elementTextMatching(keyLblAboutBottonIndicator,"* Fees and charges will apply. See");
+            verify.elementTextMatching(keyLblAboutBottonIndicator2,"Frequently Asked Questions");
+            verify.elementTextMatching(keyLblAboutBottonIndicator3,"for details.");
+
+
 
         }
         else
@@ -177,7 +204,7 @@ public class PageAboutTheCards extends Keywords {
             verify.elementTextMatching(keyLblAboutBottonIndicator,"* Fees and charges will apply. See FAQs for details.");
 
             */
-            verify.elementIsPresent(keyBtnClose);
+//            verify.elementIsPresent(keyBtnClose);
             verify.elementIsPresent(keyIMGVirtualcard);
             verify.elementIsPresent(keyIMGPhysicalcard);
             verify.elementIsPresent(keyLblVirtualcard);
@@ -232,6 +259,18 @@ public class PageAboutTheCards extends Keywords {
             verify.elementIsPresent(keyLblPrivilegesSaleAlertIndicatorVirtual);
             verify.elementIsPresent(keyLblPrivilegesSaleAlertIndicatorPhysical);
             verify.elementIsPresent(keyLblAboutBottonIndicator);
+            verify.elementIsPresent(keyLblAboutBottonIndicator2);
+            verify.elementIsPresent(keyLblAboutBottonIndicator3);
+
+            verify.elementIsPresent(keyLblSecurtiyDetails);
+            verify.elementIsPresent(keyLblSecurtiyIndicatorVirtual);
+            verify.elementIsPresent(keyLblSecurtiyIndicatorPhysical);
+            verify.elementIsPresent(keyLblCardBalanceDetails);
+            verify.elementIsPresent(keyLblCardBalanceVirtual);
+            verify.elementIsPresent(keyLblCardBalancePhysical);
+            verify.elementIsPresent(keyLblATMWithdrawalDetails);
+            verify.elementIsPresent(keyLblATMWithdrawalIndicatorVirtual);
+            verify.elementIsPresent(keyLblATMWithdrawalIndicatorPhysical);
 
 
         }

@@ -4,7 +4,7 @@
 # Functionality : As a tester, I want to be see the About The Cards page of the GetoPay app so that i am able to see details about the cards
 # ========================================================================================================================================
 
-@AboutTheCards
+@AboutTheCards @RegressionPack
 Feature: About The Cards
 
   Background: Login into account

@@ -46,36 +46,36 @@ public class PageContactUs extends Keywords {
             //unionbank section
             verify.elementIsPresent(keyBtnClose);
             verify.elementIsPresent(keyIMGUnionBankLogo);
-            verify.elementTextMatching(keyLblUnionbkDescription,"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor dolorum error laudantium nemo nobis omnis quae qui temporibus, vel voluptatum?");
-            verify.elementIsPresent(keyIMGUnionbkPhonelocal);
-            verify.elementTextMatching(keyLblUnionbkPhonelocal,"Local: +632 981-3699");
-            verify.elementTextMatching(keyLblUnionbkPhonetollfree,"Universal Toll Free (IAC): +800 8277 2273");
-            verify.elementIsPresent(keyIMGUnionbkEmail);
+            verify.elementTextMatching(keyLblUnionbkDescription,"For transaction inquiries, report lost or stolen cards, disputes, or general CEB GetGo Prepaid Cards inquiries:");
+           // verify.elementIsPresent(keyIMGUnionbkPhonelocal);
+            verify.elementTextMatching(keyLblUnionbkPhonelocal,"+632 981-3699");
+            verify.elementTextMatching(keyLblUnionbkPhonetollfree,"+800 8277 2273");
+            //verify.elementIsPresent(keyIMGUnionbkEmail);
             verify.elementTextMatching(keyLblUnionbkEmail,"getgoprepaid@unionbankph.com");
-            verify.elementIsPresent(keyIMGUnionbkFacebook);
+            //verify.elementIsPresent(keyIMGUnionbkFacebook);
             verify.elementTextMatching(keyLblUnionbkFacebook,"m.me/unionbankph");
-            verify.elementIsPresent(keyIMGUnionbkTwitter);
+            //verify.elementIsPresent(keyIMGUnionbkTwitter);
             verify.elementTextMatching(keyLblUnionbkTwitter,"twitter.com/unionbankph");
 
             swipe.vertical(2,0.9,0.2,5);
             //GetGopay section
             verify.elementIsPresent(keyIMGGetGoLogo);
-            verify.elementTextMatching(keyLblGetGoDescription,"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque beatae ducimus ea esse et ex fugit iusto rerum sit soluta.");
-            verify.elementIsPresent(keyIMGGetGoHelpline);
+            verify.elementTextMatching(keyLblGetGoDescription,"For GetGo membership concerns and inquiries:");
+            //verify.elementIsPresent(keyIMGGetGoHelpline);
             verify.elementTextMatching(keyLblGetGoHelpline,"helpcenter.getgo.com.ph");
-            verify.elementIsPresent(keyIMGGetGoFacebook);
+            //verify.elementIsPresent(keyIMGGetGoFacebook);
             verify.elementTextMatching(keyLblGetGoFacebook,"m.me/GetGoPH");
-            verify.elementIsPresent(keyIMGGetGoTwitter);
+            //verify.elementIsPresent(keyIMGGetGoTwitter);
             verify.elementTextMatching(keyLblGetGoTwitter,"twitter.com/GetGoPh");
-            verify.elementIsPresent(keyIMGGetGoInstagram);
+           // verify.elementIsPresent(keyIMGGetGoInstagram);
             verify.elementTextMatching(keyLblGetGoInstagram,"instagram.com/GetGoPh");
 
         }
         else
         {
-            verify.elementIsPresent(keyBtnClose);
+//            verify.elementIsPresent(keyBtnClose);
             verify.elementIsPresent(keyIMGUnionBankLogo);
-            verify.elementTextMatching(keyLblUnionbkDescription,"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor dolorum error laudantium nemo nobis omnis quae qui temporibus, vel voluptatum?");
+            verify.elementTextMatching(keyLblUnionbkDescription,"For transaction inquiries, report lost or stolen cards, disputes, or general CEB GetGo Prepaid Cards inquiries:");
             verify.elementIsPresent(keyIMGUnionbkPhonelocal);
             verify.elementTextMatching(xpathOf.textView(Matching.youDecide("Local:")),"Local:");
             verify.elementTextMatching(keyLblUnionbkPhonelocal,"+632 981-3699");
@@ -91,7 +91,7 @@ public class PageContactUs extends Keywords {
             swipe.vertical(2,0.9,0.2,5);
             //GetGopay section
             verify.elementIsPresent(keyIMGGetGoLogo);
-            verify.elementTextMatching(keyLblGetGoDescription,"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque beatae ducimus ea esse et ex fugit iusto rerum sit soluta.");
+            verify.elementTextMatching(keyLblGetGoDescription,"For GetGo membership concerns and inquiries:");
             verify.elementIsPresent(keyIMGGetGoHelpline);
             verify.elementTextMatching(keyLblGetGoHelpline,"helpcenter.getgo.com.ph");
             verify.elementIsPresent(keyIMGGetGoFacebook);

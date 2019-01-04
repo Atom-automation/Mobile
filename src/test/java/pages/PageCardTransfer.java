@@ -6,6 +6,7 @@ import constants.Keys;
 import constants.OS;
 import exceptions.ApplicationException;
 import helper.Device;
+import helper.Tools;
 import io.appium.java_client.MobileBy;
 import xpath.Matching;
 
@@ -124,26 +125,41 @@ public class PageCardTransfer extends Keywords
         WAIT.forSeconds(5);
     }
     public void verifyPageContentDetails() throws ApplicationException {
-    verify.elementIsPresent(keyTxtRecipientCard);
-    //verify.elementIsPresent(keyTxtRecipientName);
-    verify.elementIsPresent(keyTxtAmount);
-    verify.elementIsPresent(keyBtnCalendar);
-    verify.elementIsPresent(keyTxtMessage);
-    verify.elementIsPresent(keyBtnNext);
-    verify.elementIsPresent(keyLblAvailableBalance);
-    verify.elementTextMatching(keyLblPageHeader,"TRANSFER TO:");
-    verify.elementTextContains(keyLblPageDescriptionBottom,"Don't forget to double-check the amount and card number you entered. Everything you do here is real time and money will be sent immediately.");
-    verify.elementTextMatching(keyLblCurrencyTranferFrom,"Transfer From:");
-    verify.elementIsPresent(keyLblCurrencyLogo);
-    verify.elementIsPresent(keyLblCurrencyverbiage);
-    verify.elementTextMatching(keyLblRepeatText,"REPEAT");
-    if(Device.isAndroid()) {
-        verify.elementTextMatching(keyLblAvailableBalanceText, "Available Balance");
-    }
-    else
-    {
-        verify.elementIsPresent(keyLblAvailableBalanceText);
-    }
+        if(Device.isAndroid()) {
+            verify.elementIsPresent(keyTxtRecipientCard);
+            //verify.elementIsPresent(keyTxtRecipientName);
+            verify.elementIsPresent(keyTxtAmount);
+            verify.elementIsPresent(keyBtnCalendar);
+            verify.elementIsPresent(keyTxtMessage);
+            verify.elementIsPresent(keyBtnNext);
+            verify.elementIsPresent(keyLblAvailableBalance);
+            verify.elementTextMatching(keyLblPageHeader, "TRANSFER TO:");
+            verify.elementTextContains(keyLblPageDescriptionBottom, "Don't forget to double-check the amount and card number you entered. Everything you do here is real time and money will be sent immediately.");
+            verify.elementTextMatching(keyLblCurrencyTranferFrom, "Transfer From:");
+            verify.elementIsPresent(keyLblCurrencyLogo);
+            verify.elementIsPresent(keyLblCurrencyverbiage);
+            verify.elementTextMatching(keyLblRepeatText, "REPEAT");
+            verify.elementTextMatching(keyLblAvailableBalanceText, "Available Balance");
+
+        }
+        else
+        {
+            verify.elementIsPresent(keyTxtRecipientCard);
+            //verify.elementIsPresent(keyTxtRecipientName);
+            verify.elementIsPresent(keyTxtAmount);
+            verify.elementIsPresent(keyBtnCalendar);
+            verify.elementIsPresent(keyTxtMessage);
+            verify.elementIsPresent(keyBtnNext);
+            verify.elementIsPresent(keyLblAvailableBalance);
+            verify.elementTextMatching(keyLblPageHeader, "TRANSFER TO:");
+            verify.elementTextContains(keyLblPageDescriptionBottom, "A PHP 20.00 fee will charge on top of this transaction. Don’t forget to double-check the amount and card number you entered. Everything you do here is real time and money will be sent immediately.");
+            verify.elementTextMatching(keyLblCurrencyTranferFrom, "Transfer From:");
+            verify.elementIsPresent(keyLblCurrencyLogo);
+            verify.elementIsPresent(keyLblCurrencyverbiage);
+            verify.elementTextMatching(keyLblRepeatText, "REPEAT");
+            verify.elementIsPresent(keyLblAvailableBalanceText);
+
+        }
 
 }
 
@@ -156,22 +172,50 @@ public class PageCardTransfer extends Keywords
 
     public void chooseFrequency(String frequencyvalue) throws ApplicationException
     {
-        click.elementBy(keyBtnFrequencyDropdown);
-        swipe.scrollDownToTextandClick(frequencyvalue);
-        WAIT.forSeconds(1);
+        if(Device.isAndroid()) {
+            click.elementBy(keyBtnFrequencyDropdown);
+            swipe.scrollDownToTextandClick(frequencyvalue);
+            WAIT.forSeconds(1);
+        }
+        else
+        {
+            click.elementBy(keyBtnFrequencyDropdown);
+            ios.selectPicker(frequencyvalue);
+            WAIT.forSeconds(1);
+        }
     }
 
     public void chooseEndDate(String endDatevalue) throws ApplicationException
     {
-        click.elementBy(keyBtnEndDateDropdown);
-        swipe.scrollDownToTextandClick(endDatevalue);
+        if(Device.isAndroid()) {
+            click.elementBy(keyBtnEndDateDropdown);
+            swipe.scrollDownToTextandClick(endDatevalue);
+        }
+        else
+        {
+            click.elementBy(keyBtnEndDateDropdown);
+            WAIT.forSeconds(1);
+           click.elementBy(xpathOf.button(Matching.youDecide(endDatevalue)));
+        }
         WAIT.forSeconds(1);
     }
 
     public void chooseTransactionDate(String year, String month,String date) throws ApplicationException
     {
-        click.chooseTransactionDate(year,month,date);
-        WAIT.forSeconds(1);
+        if(Device.isAndroid()) {
+            click.chooseTransactionDate(year, month, date);
+            WAIT.forSeconds(1);
+
+        }
+        else
+        {
+            ios.selectPickerByIndex(date,1);
+            ios.selectPickerByIndex(Test.tools.GetMonthNameFully(month),2);
+            ios.selectPickerByIndex(year,3);
+            get.elementBy(xpathOf.button(Matching.name("Done"))).click();
+            WAIT.forSeconds(1);
+
+        }
     }
 
     public String getAvailabelBalance() throws ApplicationException

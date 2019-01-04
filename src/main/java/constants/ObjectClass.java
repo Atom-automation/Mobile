@@ -10,4 +10,5 @@ public interface ObjectClass {
     String AndroidButton = "android.widget.Button";
     String AndroidImageButton="android.widget.ImageButton";
     String AndroidCheckedTextView="android.widget.CheckedTextView";
+
 }

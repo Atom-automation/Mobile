@@ -4,7 +4,7 @@
 # Functionality : As a tester, I want to be see the Contact Us page of the GetoPay app so that i am able to see Contact Us details
 # ========================================================================================================================================
 
-@ContactUs
+@ContactUs @RegressionPack
 Feature: Contact Us
 
   Background: Login into account

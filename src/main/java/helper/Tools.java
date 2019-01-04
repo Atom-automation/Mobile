@@ -152,4 +152,27 @@ public class Tools {
 
 
     }
+
+    public String GetMonthNameFully(String idata) {
+
+
+
+        HashMap<String,String> map=new LinkedHashMap<String,String>();
+        map.put("Jan","January");
+        map.put("Feb","February");
+        map.put("Mar","March");
+        map.put("Apr","April");
+        map.put("May","May");
+        map.put("Jun","June");
+        map.put("Jul","July");
+        map.put("Aug","August");
+        map.put("Sep","September");
+        map.put("Oct","October");
+        map.put("Nov","November");
+        map.put("Dec","December");
+
+        return map.get(idata);
+
+
+    }
 }

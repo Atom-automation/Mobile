@@ -2,37 +2,37 @@
   {
     "comments": [
       {
+        "line": 1,
+        "value": "# \u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d"
+      },
+      {
+        "line": 2,
+        "value": "# Author: Gopinath Rajaram"
+      },
+      {
+        "line": 3,
+        "value": "# Functionality : As a tester, I want see Loading partner page on choosing Find Where to Load option from the Left Hand Menu"
+      },
+      {
         "line": 4,
-        "value": "# \u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d"
-      },
-      {
-        "line": 5,
-        "value": "# Author: Balabharathi Jayaraman"
-      },
-      {
-        "line": 6,
-        "value": "# Functionality : As a tester, I want to complete a funds transfer transaction so that I can pass on funds to another cardholder."
-      },
-      {
-        "line": 7,
-        "value": "# \u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d"
+        "value": "# \u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d"
       }
     ],
-    "line": 10,
+    "line": 7,
     "elements": [
       {
-        "line": 12,
-        "name": "Open Getgo mobile application",
+        "line": 9,
+        "name": "Login into account",
         "description": "",
         "type": "background",
         "keyword": "Background",
         "steps": [
           {
             "result": {
-              "duration": 34580092333,
+              "duration": 31272659102,
               "status": "passed"
             },
-            "line": 13,
+            "line": 10,
             "name": "I\u0027m on Getgo landing page",
             "match": {
               "location": "Getgo_PageValidation.i_m_on_Getgo_landing_page()"
@@ -45,7 +45,7 @@
         "before": [
           {
             "result": {
-              "duration": 517406,
+              "duration": 518046,
               "status": "passed"
             },
             "match": {
@@ -53,14 +53,14 @@
             }
           }
         ],
-        "line": 99,
-        "name": "Validation of Edit button in the Send Money Review page",
+        "line": 18,
+        "name": "As a tester, I want see Loading Partners page on choosing Find Where to Load option from the Left Hand Menu",
         "description": "",
-        "id": "fund-transfer-from-peso+-card-to-another-card;validation-of-edit-button-in-the-send-money-review-page;;2",
+        "id": "loadingpartners;as-a-tester,-i-want-see-loading-partners-page-on-choosing-find-where-to-load-option-from-the-left-hand-menu",
         "after": [
           {
             "result": {
-              "duration": 2465019203,
+              "duration": 50018,
               "status": "passed"
             },
             "match": {
@@ -69,7 +69,7 @@
           },
           {
             "result": {
-              "duration": 395292907,
+              "duration": 322474199,
               "status": "passed"
             },
             "match": {
@@ -78,143 +78,82 @@
           }
         ],
         "type": "scenario",
-        "keyword": "Scenario Outline",
+        "keyword": "Scenario",
         "steps": [
           {
             "result": {
-              "duration": 40626386700,
+              "duration": 53958947129,
               "status": "passed"
             },
-            "line": 89,
-            "name": "I\u0027m login into my \"Peso\" account with my \"Peso_Username\" and \"Peso_Password\"",
+            "line": 19,
+            "name": "I\u0027m on \"Dashboard\" page of GetGo pay with valid \"Peso_Username\" and \"Peso_Password\"",
             "match": {
               "arguments": [
                 {
-                  "val": "Peso",
-                  "offset": 19
+                  "val": "Dashboard",
+                  "offset": 8
                 },
                 {
                   "val": "Peso_Username",
-                  "offset": 42
+                  "offset": 49
                 },
                 {
                   "val": "Peso_Password",
-                  "offset": 62
+                  "offset": 69
                 }
               ],
-              "location": "Getgo_Login_NewCustomer.iMLoginIntoMyAccountWithMyAnd(String,String,String)"
+              "location": "Getgo_ChangePassword.i_m_on_page_of_GetGo_pay_with_valid_and(String,String,String)"
             },
-            "matchedColumns": [
-              0,
-              1,
-              2
-            ],
             "keyword": "Given "
           },
           {
             "result": {
-              "duration": 7264876576,
+              "duration": 4354223597,
               "status": "passed"
             },
-            "line": 90,
-            "name": "I\u0027m on Getgo Fund transfer page of my \"Peso\" card account",
+            "line": 20,
+            "name": "I choose Find Where to Load option from the menu",
             "match": {
-              "arguments": [
-                {
-                  "val": "Peso",
-                  "offset": 39
-                }
-              ],
-              "location": "Getgo_CardTransfer_Peso.iMOnGetgoFundTransferPageOfMyCardAccount(String)"
-            },
-            "matchedColumns": [
-              0
-            ],
-            "keyword": "Given "
-          },
-          {
-            "result": {
-              "duration": 15567619119,
-              "status": "passed"
-            },
-            "line": 91,
-            "name": "I Enter card number, recipient name, amount, system date, frequency, and message",
-            "match": {
-              "location": "Getgo_CardTransfer_Peso.iEnterCardNumberRecipientNameAmountSystemDateFrequencyAndMessage()"
+              "location": "Getgo_LoadingPartners.i_choose_Find_Where_to_Load_option_from_the_menu()"
             },
             "keyword": "When "
           },
           {
             "result": {
-              "duration": 10805864969,
+              "duration": 6120755971,
               "status": "passed"
             },
-            "line": 92,
-            "name": "I review transfer instruction and click Edit button",
+            "line": 21,
+            "name": "I should see \"Find Where to Load\" page and able to search the partners with their location",
             "match": {
-              "location": "Getgo_CardTransfer_Peso.iReviewTransferInstructionAndclickEditbutton()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 15498959194,
-              "status": "passed"
-            },
-            "line": 93,
-            "name": "I edit the transaction amount, message \u0026 click Next button",
-            "match": {
-              "location": "Getgo_CardTransfer_Peso.IeditthetransactionamountmessageclickNextbutton()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 17241454807,
-              "status": "passed"
-            },
-            "line": 94,
-            "name": "I review transfer instruction with updated information and click submit",
-            "match": {
-              "location": "Getgo_CardTransfer_Peso.Ireviewtransferinstructionwithupdatedinformationandclicksubmit()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 12863936741,
-              "error_message": "exceptions.ApplicationException: expected:\u003cphp 38,4[6]4.60\u003e but was:\u003cphp 38,4[4]4.60\u003e\n\tat actions.Verify.elementTextMatching(Verify.java:57)\n\tat pages.PageCardTransferSuccess.TransferCompletePageDetails(PageCardTransferSuccess.java:102)\n\tat stepdefinitions.Getgo_CardTransfer_Peso.IshouldseetheconfirmationpagewithupdateddetailsandvalidateitintheActivitypage(Getgo_CardTransfer_Peso.java:334)\n\tat ✽.Then I should see the confirmation page with updated details and validate it in the Activity page(Getgo_CardTransfer_Peso.feature:95)\n",
-              "status": "failed"
-            },
-            "line": 95,
-            "name": "I should see the confirmation page with updated details and validate it in the Activity page",
-            "match": {
-              "location": "Getgo_CardTransfer_Peso.IshouldseetheconfirmationpagewithupdateddetailsandvalidateitintheActivitypage()"
+              "arguments": [
+                {
+                  "val": "Find Where to Load",
+                  "offset": 14
+                }
+              ],
+              "location": "Getgo_LoadingPartners.i_should_see_page_and_able_to_search_the_partners_with_their_location(String)"
             },
             "keyword": "Then "
           }
         ],
         "tags": [
           {
-            "line": 87,
-            "name": "@nowrun"
-          },
-          {
-            "line": 9,
-            "name": "@FundTransferphysical"
+            "line": 17,
+            "name": "@dummy1223"
           }
         ]
       }
     ],
-    "name": "Fund Transfer from Peso+ card to another card",
+    "name": "LoadingPartners",
     "description": "",
-    "id": "fund-transfer-from-peso+-card-to-another-card",
+    "id": "loadingpartners",
     "keyword": "Feature",
-    "uri": "Getgo_CardTransfer_Peso.feature",
+    "uri": "Getgo_LoadingPartners.feature",
     "tags": [
       {
-        "line": 9,
-        "name": "@FundTransferphysical"
+        "line": 6,
+        "name": "@LoadingPartners"
       }
     ]
   }

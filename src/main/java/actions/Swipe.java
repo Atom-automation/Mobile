@@ -121,6 +121,44 @@ public class Swipe extends Keywords {
             }
             log.info("Scrolled to the element matching the text --> " + searchText);
         }
+        else
+        {
+            {
+                try {
+                    boolean found = false;
+                    JavascriptExecutor js = driver;
+                    HashMap scrollObject = new HashMap<>();
+                    scrollObject.put("predicateString", "value == '" + searchText + "'");
+                    scrollObject.put("direction", "down");
+                    int toleranceTime = 50;
+                    int i = 0;
+                    js.executeScript("mobile: scroll", scrollObject);
+                    while (!( driver.findElement(MobileBy.AccessibilityId(searchText)).isDisplayed() )) {
+                        i += 1;
+                        js.executeScript("mobile: scroll", scrollObject);
+                        if (i > toleranceTime) {
+                            break;
+                        }
+                        if (driver.findElement(MobileBy.AccessibilityId(searchText)).isDisplayed()) {
+                            driver.findElement(MobileBy.AccessibilityId(searchText)).click();
+                            found = true;
+                            break;
+                        }
+                    }
+                    if (!found) {
+                        log.error("Element matching the text " + searchText + " is not found");
+                        throw new ApplicationException("Element matching the text " + searchText + " is not found");
+                    }
+                    log.info("Scrolled to the element matching the text --> " + searchText);
+                   //driver.findElement(MobileBy.AccessibilityId("Done")).click();
+
+                } catch (Throwable ex) {
+                    log.error(ex.getMessage());
+                    ex.printStackTrace();
+
+                }
+            }
+        }
     }
 
     public void Horizontal(int divideScreenInto, double startPointPercentage, double endPointPercentage, double slowDownDurationInSeconds) throws ApplicationException {

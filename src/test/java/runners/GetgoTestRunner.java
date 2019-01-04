@@ -16,7 +16,7 @@ import constants.Device;
         glue = {"stepdefinitions"},
         plugin = {"com.cucumber.listener.ExtentCucumberFormatter:","pretty","json:target/json-output/Automation-Summary.json"},
         //tags={"@RegressionPack"},
-       tags={"@nowrun"},
+       tags={"@dummy1223"},
         monochrome=true
 )
 
@@ -26,7 +26,7 @@ public class GetgoTestRunner extends Test {
         String deviceName=System.getProperty("Device");
         if(deviceName==null){
         //deviceName=Device.TGSMOB2126;
-         deviceName=Device.TGSMOB2131;
+         deviceName=Device.TGSMOB2128;
         }
         setup(deviceName);
     }

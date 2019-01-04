@@ -5,6 +5,7 @@ import exceptions.ApplicationException;
 import exceptions.EnvironmentException;
 import helper.Device;
 import helper.PropertyReader;
+import io.appium.java_client.MobileBy;
 import org.openqa.selenium.By;
 import xpath.Matching;
 
@@ -139,13 +140,20 @@ public class PageWelcome extends Keywords {
 
     public void iosProductFeature() throws ApplicationException {
         try {
-
-            click.elementBy(xpathOf.button(Matching.youDecide("Allow")));
+            driver.findElement(MobileBy.AccessibilityId("Allow")).click();
+            driver.findElement(MobileBy.AccessibilityId("NEXT")).click();
+            driver.findElement(MobileBy.AccessibilityId("NEXT")).click();
+            driver.findElement(MobileBy.AccessibilityId("NEXT")).click();
+            driver.findElement(MobileBy.AccessibilityId("NEXT")).click();
+            driver.findElement(MobileBy.AccessibilityId("GET STARTED")).click();
+           // driver.findElementByAccessibilityId("").click();
+           /* click.elementBy(xpathOf.button(Matching.youDecide("Allow")));
             click.elementBy(xpathOf.button(Matching.youDecide("NEXT")));
             click.elementBy(xpathOf.button(Matching.youDecide("NEXT")));
             click.elementBy(xpathOf.button(Matching.youDecide("NEXT")));
             click.elementBy(xpathOf.button(Matching.youDecide("NEXT")));
             click.elementBy(xpathOf.button(Matching.youDecide("GET STARTED")));
+            */
         }
         catch (Exception ex)
         {
