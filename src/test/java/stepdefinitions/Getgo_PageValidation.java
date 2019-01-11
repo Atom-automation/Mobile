@@ -31,7 +31,7 @@ public class Getgo_PageValidation
     @Given("^I'm on Getgo SignUp page$")
     public void i_m_on_Getgo_SignUp_page() throws Throwable
     {
-        welcomePage.clickSignUp();
+        welcomePage.clickBtnSignUp();
     }
 
     @Then("^I should see two button \"([^\"]*)\" \"([^\"]*)\", Getgo card image, two messages \"([^\"]*)\" & \"([^\"]*)\"$")

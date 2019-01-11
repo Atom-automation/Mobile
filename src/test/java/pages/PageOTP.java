@@ -7,6 +7,7 @@ import constants.OS;
 import exceptions.ApplicationException;
 import helper.Device;
 import helper.PropertyReader;
+import io.appium.java_client.MobileBy;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.ios.IOSDriver;
 import org.openqa.selenium.By;
@@ -31,35 +32,36 @@ public class PageOTP extends Keywords {
 
     public void enterOTP() throws ApplicationException {
         if(Test.attributes.get(Keys.OS).equalsIgnoreCase(OS.ANDROID)){
-            if(get.elementBy(By.id("com.unionbankph.getgopay.qat:id/ivCircle1")).isDisplayed()){
-                AndroidDriver aDriver= (AndroidDriver) driver;
-                aDriver.pressKeyCode(7);
-                aDriver.pressKeyCode(7);
-                aDriver.pressKeyCode(7);
-                aDriver.pressKeyCode(7);
-                aDriver.pressKeyCode(7);
-                aDriver.pressKeyCode(7);
-            }
-        }else if(Test.attributes.get(Keys.OS).equalsIgnoreCase(OS.iOS)){
             try {
-                if (get.elementBy(By.xpath("//XCUIElementTypeStaticText[contains(@name,'OTP')]/parent::*/XCUIElementTypeOther")).isDisplayed()) {
-                    type.OTPdata(By.xpath("//XCUIElementTypeStaticText[contains(@name,'OTP')]/parent::*/XCUIElementTypeOther"), PropertyReader.testDataOf("OTP"));
+                if (get.elementBy(By.id("com.unionbankph.getgopay.qat:id/ivCircle1")).isDisplayed()) {
+                    AndroidDriver aDriver = (AndroidDriver) driver;
+                    aDriver.pressKeyCode(7);
+                    aDriver.pressKeyCode(7);
+                    aDriver.pressKeyCode(7);
+                    aDriver.pressKeyCode(7);
+                    aDriver.pressKeyCode(7);
+                    aDriver.pressKeyCode(7);
                 }
-                else
+            }
+                catch(Exception ex)
                 {
-                    type.OTPdata(By.xpath("(//XCUIElementTypeStaticText[@name=\"You will receive a One-Time-Password (OTP) on your registered mobile number ending 0000\"])[2]/parent::*/XCUIElementTypeOther"), PropertyReader.testDataOf("OTP"));
+                    AndroidDriver aDriver = (AndroidDriver) driver;
+                    aDriver.pressKeyCode(7);
+                    aDriver.pressKeyCode(7);
+                    aDriver.pressKeyCode(7);
+                    aDriver.pressKeyCode(7);
+                    aDriver.pressKeyCode(7);
+                    aDriver.pressKeyCode(7);
                 }
-
             }
-            catch (Exception e)
-            {
-                if (get.elementBy(By.xpath("//XCUIElementTypeButton[@name='RESEND']/preceding:: XCUIElementTypeOther[1]")).isDisplayed()) {
-                    type.OTPdata(By.xpath("//XCUIElementTypeButton[@name='RESEND']/preceding:: XCUIElementTypeOther[1]"), PropertyReader.testDataOf("OTP"));
-                }
 
-            }
+        else if(Test.attributes.get(Keys.OS).equalsIgnoreCase(OS.iOS)){
+
+            type.OTPdata(MobileBy.id("otp-input"),PropertyReader.testDataOf("OTP"));
 
         }
+
+
     }
 
     public void verifyOTPPageContents() throws ApplicationException {

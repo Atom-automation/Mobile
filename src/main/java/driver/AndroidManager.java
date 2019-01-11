@@ -14,7 +14,7 @@ public class AndroidManager extends DriverManager {
     @Override
     public void createDriver() throws Exception {
         capabilities.setCapability("platformName", "Android");
-        capabilities.setCapability("automationName","UiAutomator2");
+        capabilities.setCapability("automationName","Appium");
         capabilities.setCapability("resetKeyboard","true");
         capabilities.setCapability("unicodeKeyboard","true");
         capabilities.setCapability("fullReset","false");

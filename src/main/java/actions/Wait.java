@@ -8,7 +8,7 @@ public class Wait {
 
     public void forSeconds(int seconds) {
         try{
-            Thread.sleep(seconds*900);
+            Thread.sleep(seconds*1000);
             log.info("Waited for "+seconds+" seconds");
         }catch (InterruptedException e){
             log.warn("Failed to execute thread.sleep()");

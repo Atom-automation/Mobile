@@ -5,7 +5,7 @@
 # Functionality : As a tester, I want to login into the GetGo app and Logout so that Login-Logout process verification is successfull
 # ================================================================================================================
 
-@Logout
+@Logout @RegressionPack
 Feature: Logout Feature
 
   Background: Open Getgo mobile application
@@ -20,11 +20,11 @@ Feature: Logout Feature
     When I choose logout option from the menu
     Then I should see a "Logout?" popup window prompting you to logout from the current session
     When I click yes
-    Then I should be logged out from the current session & redirected to signin page with logged "<username>"
+    Then I should be logged out from the current session & redirected to signin page with logged "<accountType>"
 
     Examples: 
       | username         | password         | accountType |
- #     | Virtual_Username | Virtual_Password | Virtual     |
+      | Virtual_Username | Virtual_Password | Virtual     |
       | Peso_Username    | Peso_Password    | Peso        |
 
 

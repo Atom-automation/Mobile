@@ -86,7 +86,7 @@ public class PageLogin extends Keywords {
     public void invalidEmailIdFormat() throws ApplicationException, InterruptedException {
         WAIT.forSeconds(3);
         if(Device.isAndroid()) {
-            verify.elementTextMatching(keyInvalidErrorMessage, "Invalid email format");
+            verify.elementTextMatching(keyInvalidErrorMessage, "Invalid email format.");
         }
         else
         {
@@ -161,6 +161,7 @@ public class PageLogin extends Keywords {
         }
         catch(Exception ex)
             {
+                throw new ApplicationException(ex.getMessage());
 
             }
 
@@ -262,6 +263,7 @@ public class PageLogin extends Keywords {
         verify.elementIsPresent(keyBtnBack);
         keyboard.hideIfAndroid();
         verify.elementTextMatching(keyLblPageCaption,pageCaption);
+        //issue there in ios
         verify.elementTextMatching(keyTxtEmailAddress,usernameBoxText);
         verify.elementTextMatching(keyBtnNext,nextButtonText);
 
@@ -314,14 +316,14 @@ public class PageLogin extends Keywords {
             verify.elementIsPresent(keyBtnFingerprint);
             verify.elementTextMatching(keyLblfingerPrintContent, "Login with fingerprint");
             verify.elementIsPresent(keyBtnToswipeup);
-            verify.elementTextMatching(keyLblToswipeup, "SWIPE UP TO LEARN MORE");
+            verify.elementTextMatching(keyLblToswipeup, "TAP TO LEARN MORE");
         } else {
-            verify.elementIsPresent(keyLblLogoImage);
+//            verify.elementIsPresent(keyLblLogoImage);
             verify.elementIsPresent(keyLblusername);
             verify.elementTextMatching(keyLblEmailId, username);
             verify.elementIsPresent(keyBtnPassword);
             verify.elementIsPresent(keyBtnToswipeup);
-            verify.elementTextMatching(keyBtnToswipeup, "TAP HERE TO LEARN MORE");
+            verify.elementTextMatching(keyBtnToswipeup, "TAP TO LEARN MORE");
         }
     }
 

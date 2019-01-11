@@ -130,7 +130,7 @@ public class PageCardTransferReview extends Keywords {
         verify.elementIsPresent(keyBtnClose);
         verify.elementIsPresent(keyBtnEdit);
         verify.elementTextMatching(keyLblPageDescription,"Always check and review your details to ensure that the information is correct.");
-        verify.elementTextMatching(keyLblTransferFeesNotes,"A PHP 20.00 transaction fee will charge on top of this transaction");
+        verify.elementTextMatching(keyLblTransferFeesNotes,"A PHP 20.00 fee will be charged on top of this transaction.");
 
     }
     public void verifyTransactionMessage(String itext) throws ApplicationException {

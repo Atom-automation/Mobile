@@ -337,6 +337,10 @@ public class PageWelcome extends Keywords {
         }
     }
 
+    public void clickBtnSignUp() throws ApplicationException {
+        click.elementBy(keyBtnSignUp);
+    }
+
 
 
 }

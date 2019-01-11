@@ -12,6 +12,7 @@ Feature: Fund Transfer from Peso+ card to another card
   Background: Open Getgo mobile application
   	Given I'm on Getgo landing page
 
+@running
   Scenario Outline: As a tester, I want to complete a funds transfer transaction from my Peso card account so that I can pass on funds to another cardholder - Add recipient from saved list
     Given I'm login into my "<accountType>" account with my "<username>" and "<password>"
     Given I'm on Getgo Fund transfer page of my "<accountType>" card account

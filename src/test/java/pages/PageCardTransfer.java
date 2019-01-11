@@ -65,6 +65,7 @@ public class PageCardTransfer extends Keywords
     }
 
     public void enterAmount(double amount) throws ApplicationException {
+        WAIT.forSeconds(2);
         type.data(keyTxtAmount,Integer.toString((int) amount));
     }
 
@@ -152,7 +153,7 @@ public class PageCardTransfer extends Keywords
             verify.elementIsPresent(keyBtnNext);
             verify.elementIsPresent(keyLblAvailableBalance);
             verify.elementTextMatching(keyLblPageHeader, "TRANSFER TO:");
-            verify.elementTextContains(keyLblPageDescriptionBottom, "A PHP 20.00 fee will charge on top of this transaction. Don’t forget to double-check the amount and card number you entered. Everything you do here is real time and money will be sent immediately.");
+           verify.elementTextContains(keyLblPageDescriptionBottom, "A PHP 20.00 fee will be charged on top of this transaction. Don’t forget to double-check the amount and card number you entered. Everything you do here is real time and money will be sent immediately.");
             verify.elementTextMatching(keyLblCurrencyTranferFrom, "Transfer From:");
             verify.elementIsPresent(keyLblCurrencyLogo);
             verify.elementIsPresent(keyLblCurrencyverbiage);

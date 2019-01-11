@@ -5,6 +5,7 @@ import driver.DriverManager;
 import driver.DriverManagerFactory;
 import exceptions.EnvironmentException;
 import io.appium.java_client.AppiumDriver;
+import io.appium.java_client.MobileElement;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.WebDriverWait;

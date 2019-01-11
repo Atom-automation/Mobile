@@ -3,6 +3,7 @@ package actions;
 import base.Keywords;
 import exceptions.ApplicationException;
 import helper.PropertyReader;
+import io.appium.java_client.MobileBy;
 import io.appium.java_client.MobileElement;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
@@ -153,7 +154,7 @@ public class Click extends Keywords{
         if(year==Integer.parseInt(iyear.trim()))
         {
             imonth = driver.findElement(By.id("android:id/date_picker_header_date")).getText();
-            imonth=imonth.substring(5,8);
+            imonth=imonth.substring(7);
             int ivalue=Integer.parseInt(imap.get(imonth));
             for(int i=ivalue;i<=12;i++) {
                 if (imonth.contentEquals(month)) {
@@ -161,6 +162,11 @@ public class Click extends Keywords{
                     break;
                 } else {
                     driver.findElement(By.id("android:id/next")).click();
+                    WAIT.forSeconds(1);
+                     driver.findElement(By.xpath("//android.view.View[@text='11']")).click();
+                    WAIT.forSeconds(1);
+                    imonth = driver.findElement(By.id("android:id/date_picker_header_date")).getText();
+                    imonth=imonth.substring(7);
                 }
 
             }
@@ -208,6 +214,11 @@ public class Click extends Keywords{
                     break;
                 } else {
                     driver.findElement(By.id("android:id/next")).click();
+                    WAIT.forSeconds(1);
+                    driver.findElement(By.xpath("//android.view.View[@text='11']")).click();
+                    WAIT.forSeconds(1);
+                    imonth = driver.findElement(By.id("android:id/date_picker_header_date")).getText();
+                    imonth=imonth.substring(7);
                 }
 
             }
@@ -217,6 +228,12 @@ public class Click extends Keywords{
         }
 
         driver.findElement(By.id("android:id/button1")).click();
+    }
+
+
+    public void elementMobileBy(String locatorKey) throws ApplicationException {
+
+        driver.findElement(MobileBy.id(locatorKey)).click();
     }
 
 }

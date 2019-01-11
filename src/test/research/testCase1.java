@@ -14,6 +14,7 @@ public class testCase1 extends Keywords {
 
     public static void main(String[] args) throws MalformedURLException {
 
-       String a="PHP -5.00";
+        double total = 44;
+        String total2 = String.valueOf(total);
 
 }

@@ -38,7 +38,7 @@ public class Getgo_Logout {
 
     @Then("^I should be logged out from the current session & redirected to signin page with logged \"([^\"]*)\"$")
     public void i_should_be_logged_out_from_the_current_session_redirected_to_signin_page_with_logged(String arg1) throws Throwable {
-        login.isLogoutSuccess(PropertyReader.testDataOf(arg1));
+        login.isLogoutSuccess(PropertyReader.testDataOf(arg1+"_FullName"));
     }
 
 }

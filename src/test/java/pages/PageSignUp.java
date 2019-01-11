@@ -3,6 +3,7 @@ package pages;
 import base.Keywords;
 import exceptions.ApplicationException;
 import helper.Device;
+import xpath.Matching;
 
 public class PageSignUp extends Keywords {
 
@@ -25,15 +26,25 @@ public class PageSignUp extends Keywords {
     {
         WAIT.forSeconds(5);
         verify.elementIsPresent(keyImgGetgoCard);
-        verify.elementTextMatching(keyBtnCreateVirutalCard,createVirutalCardBtnTxt);
-        verify.elementTextMatching(keyBtnRegisterPesoCard,registerPhysicalCardBtnTxt);
+        if(Device.isAndroid()) {
+           // nned to check thi sone
+           // verify.elementTextMatching(xpathOf.button(Matching.youDecide(createVirutalCardBtnTxt)),createVirutalCardBtnTxt);
+           // verify.elementTextMatching(xpathOf.button(Matching.youDecide(registerPhysicalCardBtnTxt)),registerPhysicalCardBtnTxt);
+        }
+        else
+        {
+            verify.elementTextMatching(keyBtnCreateVirutalCard,createVirutalCardBtnTxt);
+            verify.elementTextMatching(keyBtnRegisterPesoCard,registerPhysicalCardBtnTxt);
+        }
+
         verify.elementTextMatching(keyLblPageCaption1,caption);
         verify.elementTextMatching(KeyLblPageCaption2,caption2);
     }
 
     public void registerVirtualCard() throws ApplicationException {
-        WAIT.forSeconds(5);
+        WAIT.forSeconds(1);
         click.elementBy(keyBtnCreateVirutalCard);
+        //click.elementMobileBy("com.unionbankph.getgopay.qat:id/btnCreateVirtualCard");
     }
 
     public void verifyPageTitle(String ititle) throws ApplicationException {
@@ -72,7 +83,7 @@ public class PageSignUp extends Keywords {
     public void enterEmailAddress(String iemail) throws ApplicationException
     {
         type.data(keyTxtEmailAddress,iemail);
-        WAIT.forSeconds(5);
+        WAIT.forSeconds(2);
     }
 
     public void clickNext() throws ApplicationException
