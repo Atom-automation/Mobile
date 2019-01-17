@@ -4,7 +4,7 @@
 # Functionality : Validate the fields & texts displayed on the Getgo application screens
 # ======================================================================================
 
-@PageValidation
+@PageValidation @RegressionPack
 Feature: Page Validation
 
   Background: Open Getgo mobile application

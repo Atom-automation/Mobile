@@ -32,16 +32,8 @@ public class Getgo_ManageRecipient
        // manageRecipient.verifyPageContentsAddRecipient();
         manageRecipient.addNewRecipient();
         manageRecipient.addToFavourites(manageRecipient.getNewlyAddedRecipientCard());
-        if(Device.isAndroid()) {
-            manageRecipient.goBack();
-            manageRecipient.goBack();
-            manageRecipient.goBack();
-        }
-        else
-        {
-            manageRecipient.goBack();
-            manageRecipient.goBack();
-        }
+//        manageRecipient.goBack();
+     //   manageRecipient.goBack();
 
     }
 
@@ -61,7 +53,7 @@ public class Getgo_ManageRecipient
     @When("^I Choose Manage Recipients option again$")
     public void iChooseManageRecipientsOptionAgain() throws Throwable
     {
-        //manageRecipient.goBack();
+        manageRecipient.goBack();
         transfer.clickAddRecipient();
     }
 

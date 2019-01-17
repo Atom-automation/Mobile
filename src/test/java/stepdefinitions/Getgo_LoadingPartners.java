@@ -24,6 +24,8 @@ public class Getgo_LoadingPartners {
     public void i_should_see_page_with_textbox_and_list_of_partners(String arg1, String arg2) throws Throwable {
         // Write code here that turns the phrase above into concrete actions
         loadingPartner.verifyPageTitle(arg1);
+        loadingPartner.clickFirstPartnersFromList();
+        loadingPartner.verifyPageTitle("Robinsons Malls");
         loadingPartner.verifyLoadingPartnersPageContents(arg2);
     }
 
@@ -32,6 +34,8 @@ public class Getgo_LoadingPartners {
         // Write code here that turns the phrase above into concrete actions
         if(Device.isAndroid()) {
             loadingPartner.verifyPageTitle(arg1);
+            loadingPartner.clickFirstPartnersFromList();
+            loadingPartner.verifyPageTitle("Robinsons Malls");
             loadingPartner.searchLoadPartners("Robinsons Place Imus");
             loadingPartner.CheckIFGoogleMapIsOpened();
         }

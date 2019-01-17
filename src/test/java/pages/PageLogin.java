@@ -136,10 +136,18 @@ public class PageLogin extends Keywords {
                 //After login check if finger print pop is displayed and if its present handle it by clicking not now
                 if (Device.isAndroid())
                     {
-                        if (get.elementBy(By.id("com.unionbankph.getgopay.qat:id/tvModalTitle")).isDisplayed()) {
-                        click.elementBy(By.id("com.unionbankph.getgopay.qat:id/btnCancel"));
+                        try {
+                            if (get.elementBy(By.id("com.unionbankph.getgopay.qat:id/tvModalTitle")).isDisplayed()) {
+                                click.elementBy(By.id("com.unionbankph.getgopay.qat:id/btnCancel"));
+
+                            }
+                        }
+                        catch(Exception ex)
+                        {
+                            click.elementBy(By.id("com.unionbankph.getgopay.qat:id/btnCancel"));
 
                         }
+
 
                     }
                 else {
@@ -310,8 +318,8 @@ public class PageLogin extends Keywords {
         if (Device.isAndroid()) {
 
             verify.elementIsPresent(keyLblLogoImage);
-            verify.elementIsPresent(keyLblusername);
-            verify.elementTextMatching(keyLblEmailId, username);
+            verify.elementTextMatching(keyLblusername,username);
+            verify.elementIsPresent(keyLblEmailId);
             verify.elementIsPresent(keyBtnPassword);
             verify.elementIsPresent(keyBtnFingerprint);
             verify.elementTextMatching(keyLblfingerPrintContent, "Login with fingerprint");

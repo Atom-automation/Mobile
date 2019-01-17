@@ -15,10 +15,11 @@ public class PageLoadingPartner extends Keywords {
     private String keyLblLocationMap = "Getgo.LoadingPartner.LblLocationMap";
     private String keyBtnMenu = "Getgo.LoadingPartner.BtnMenu";
     private String keyIMGGoogleMap = "Getgo.LoadingPartner.IMGGoogleMap";
+    private String keyPartnerList = "Getgo.LoadingPartner.PartnerList";
 
 
     public void verifyPageTitle(String ititle) throws ApplicationException {
-        WAIT.forSeconds(2);
+        WAIT.forSeconds(4);
 
             verify.elementTextMatching(keyLblPageTitle, ititle);
 
@@ -27,7 +28,6 @@ public class PageLoadingPartner extends Keywords {
 
     public void verifyLoadingPartnersPageContents(String placeholder) throws ApplicationException {
 
-        verify.elementIsPresent(keyTxtSearchLoadPartners);
         verify.elementIsPresent(keyTxtSearchLoadPartners);
         verify.elementIsPresent(keyLblLocationName);
         verify.elementIsPresent(keyLblLocationAddress);
@@ -62,7 +62,11 @@ public class PageLoadingPartner extends Keywords {
         click.elementBy(MobileBy.AccessibilityId(isearchText));
     }
 
+    public void clickFirstPartnersFromList() throws ApplicationException {
 
+        WAIT.forSeconds(2);
+        click.elementBy(keyPartnerList);
+    }
 
 
 }

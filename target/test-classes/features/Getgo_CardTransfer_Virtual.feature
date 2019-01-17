@@ -10,6 +10,7 @@ Feature: Fund Transfer from Virtual card to another card
   Background: Open Getgo mobile application
     Given I'm on Getgo landing page
 
+    @lastrun
   Scenario Outline: As a tester, I want to complete a funds transfer transaction from my virtual card account so that I can pass on funds to another cardholder - Add recipient from saved list
     Given I'm login into my "<accountType>" account with my "<username>" and "<password>"
     Given I'm on Getgo Fund transfer page of my "<accountType>" card account
@@ -33,6 +34,7 @@ Feature: Fund Transfer from Virtual card to another card
     | accountType | username         | password         |
     | Virtual     | Virtual_Username | Virtual_Password |
 
+  @lastrun
   Scenario Outline: As a tester, I want to complete a scheduled funds transfer transaction from my virtual card account so that I can pass on funds to another cardholder
     Given I'm login into my "<accountType>" account with my "<username>" and "<password>"
     Given I'm on Getgo Fund transfer page of my "<accountType>" card account
@@ -81,7 +83,7 @@ Feature: Fund Transfer from Virtual card to another card
       | accountType | username         | password         |
       | Virtual     | Virtual_Username | Virtual_Password |
 
-
+  @lastrun1
   Scenario Outline: Validation of Edit button in the Send Money Review page
     Given I'm login into my "<accountType>" account with my "<username>" and "<password>"
     Given I'm on Getgo Fund transfer page of my "<accountType>" card account

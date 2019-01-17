@@ -56,8 +56,34 @@ public class PageOTP extends Keywords {
             }
 
         else if(Test.attributes.get(Keys.OS).equalsIgnoreCase(OS.iOS)){
+            try {
+                type.OTPdata(MobileBy.id("otp-input"), PropertyReader.testDataOf("OTP"));
+            }
+            catch(Exception ex)
+            {
+                {
+                    try {
+                        if (get.elementBy(By.xpath("//XCUIElementTypeStaticText[contains(@name,'OTP')]/parent::*/XCUIElementTypeOther")).isDisplayed()) {
+                            type.OTPdata(By.xpath("//XCUIElementTypeStaticText[contains(@name,'OTP')]/parent::*/XCUIElementTypeOther"), PropertyReader.testDataOf("OTP"));
+                        }
+                        else
+                        {
+                            type.OTPdata(By.xpath("(//XCUIElementTypeStaticText[@name=\"You will receive a One-Time-Password (OTP) on your registered mobile number ending 0000\"])[2]/parent::*/XCUIElementTypeOther"), PropertyReader.testDataOf("OTP"));
+                        }
 
-            type.OTPdata(MobileBy.id("otp-input"),PropertyReader.testDataOf("OTP"));
+                    }
+                    catch (Exception e)
+                    {
+                        if (get.elementBy(By.xpath("//XCUIElementTypeButton[@name='RESEND']/preceding:: XCUIElementTypeOther[1]")).isDisplayed()) {
+                            type.OTPdata(By.xpath("//XCUIElementTypeButton[@name='RESEND']/preceding:: XCUIElementTypeOther[1]"), PropertyReader.testDataOf("OTP"));
+                        }
+
+                    }
+
+
+                }
+
+            }
 
         }
 
@@ -110,6 +136,7 @@ public class PageOTP extends Keywords {
                 aDriver.pressKeyCode(9);
                 aDriver.pressKeyCode(8);
                 aDriver.pressKeyCode(7);
+                WAIT.forSeconds(3);
             }
         }else if(Test.attributes.get(Keys.OS).equalsIgnoreCase(OS.iOS)){
             try {
@@ -131,6 +158,7 @@ public class PageOTP extends Keywords {
             }
 
         }
+
     }
 
 }

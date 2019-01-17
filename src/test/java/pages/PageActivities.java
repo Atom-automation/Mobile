@@ -170,7 +170,7 @@ public class PageActivities extends Keywords {
         verify.elementTextMatching(keyLblDetailsReferenceNumberTitle, "Reference No.:");
         verify.elementTextMatching(keyLblDetailsTransactionDateTitle, "Transaction Date:");
         //
-        verify.elementTextMatching(keyLblDetailsDescriptionTitle, "Description");
+        verify.elementTextMatching(keyLblDetailsDescriptionTitle, "Description:");
         verify.elementTextMatching(keyLblDetailsTransactionAmountTitle, "Transaction Amount:");
         verify.elementTextMatching(keyLblDetailsEndingBalanceTitle, "Ending Balance:");
         verify.elementIsPresent(keyLblTransactionReferenceNumber);
@@ -241,7 +241,7 @@ public class PageActivities extends Keywords {
             verify.elementTextMatching(keyLblDetailsReferenceNumberTitle, "Reference No.:");
             verify.elementTextMatching(keyLblDetailsTransactionDateTitle, "Transaction Date:");
             //
-            verify.elementTextMatching(keyLblDetailsDescriptionTitle, "Description");
+            verify.elementTextMatching(keyLblDetailsDescriptionTitle, "Description:");
             verify.elementTextMatching(keyLblDetailsTransactionAmountTitle, "Transaction Amount:");
             verify.elementTextMatching(keyLblDetailsEndingBalanceTitle, "Ending Balance:");
 
@@ -258,7 +258,7 @@ public class PageActivities extends Keywords {
         else
         {
             verify.elementIsPresent(keyBtnDetailsClose);
-            verify.elementTextMatching(keyLblDetailsReferenceNumberTitle,"Transaction Reference No:");
+            verify.elementTextMatching(keyLblDetailsReferenceNumberTitle,"Reference No:");
             verify.elementTextMatching(keyLblDetailsTransactionDateTitle,"Transaction Date:");
             verify.elementTextMatching(keyLblDetailsDescriptionTitle,"Description:");
             verify.elementTextMatching(keyLblDetailsTransactionAmountTitle,"Transaction Amount:");
